@@ -1,0 +1,11 @@
+stages:
+  - build
+
+build_project:
+  stage: build
+  script:
+    - xcodebuild clean -project Vancouver-Fruit-Tree-Project.xcodeproj -scheme Vancouver-Fruit-Tree-Project | xcpretty
+    - xcodebuild test -project Vancouver-Fruit-Tree-Project.xcodeproj -scheme Vancouver-Fruit-Tree-Project -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.4' | xcpretty -s
+  tags:
+    - ios_11-4
+    - xcode_9-4
