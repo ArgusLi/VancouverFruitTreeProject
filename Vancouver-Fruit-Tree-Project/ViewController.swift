@@ -7,12 +7,37 @@
 //
 
 import UIKit
-
+import AWSAuthCore
+import AWSAuthUI
+import AWSGoogleSignIn
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        if !AWSSignInManager.sharedInstance().isLoggedIn {
+            presentAuthUIViewController()
+        }
+    }
+    func presentAuthUIViewController(){
+        let config = AWSAuthUIConfiguration()
+        config.enableUserPoolsUI = true
+        config.addSignInButtonView(class: AWSGoogleSignInButton.self)
+        config.backgroundColor = UIColor(red: CGFloat(00)/225, green: CGFloat(64)/225, blue: CGFloat(00)/225, alpha: 1.0)
+        config.font = UIFont (name: "Helvetica Neue", size: 11)
+        config.isBackgroundColorFullScreen = true
+        config.logoImage = UIImage(named: "VFTP_LOGO_CS3-167x300")
+        config.canCancel = true
+        AWSAuthUIViewController.presentViewController(
+            with: self.navigationController!,
+            configuration: config, completionHandler: { (provider: AWSSignInProvider, error: Error?) in
+                if error == nil {
+                    // SignIn succeeded.
+                } else {
+                    // end user faced error while loggin in, take any required action here.
+                }
+        })
     }
 
     override func didReceiveMemoryWarning() {
