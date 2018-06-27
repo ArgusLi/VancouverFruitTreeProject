@@ -6,6 +6,8 @@ target 'Vancouver-Fruit-Tree-Project' do
   use_frameworks!
 
   # Pods for Vancouver-Fruit-Tree-Project
+  pod 'AWSUserPoolsSignIn', '~> 2.6.13'
+  pod 'AWSAuthUI', '~> 2.6.13'
   pod 'AWSMobileClient', '~> 2.6.13'
 
   target 'Vancouver-Fruit-Tree-ProjectTests' do
