@@ -9,6 +9,8 @@ target 'Vancouver-Fruit-Tree-Project' do
   pod 'AWSUserPoolsSignIn', '~> 2.6.13'
   pod 'AWSAuthUI', '~> 2.6.13'
   pod 'AWSMobileClient', '~> 2.6.13'
+  pod 'AWSPinpoint', '~> 2.6.13'
+  pod 'AWSGoogleSignIn', '~> 2.6.13' 
 
   target 'Vancouver-Fruit-Tree-ProjectTests' do
     inherit! :search_paths
