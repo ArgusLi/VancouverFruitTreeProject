@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4D29FDB7F6C76D497D88F882 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
 		A89AAD761B03A0FD5F4D1DD2 /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E51FD94831BDC812745429B /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework */; };
+		AC5150EE20E3239C00BE453D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5150ED20E3239C00BE453D /* awsconfiguration.json */; };
+		AC5150EF20E3239C00BE453D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5150ED20E3239C00BE453D /* awsconfiguration.json */; };
+		AC5150F020E3239C00BE453D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5150ED20E3239C00BE453D /* awsconfiguration.json */; };
 		AC8EB70420D03A91007E6CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB70320D03A91007E6CAA /* AppDelegate.swift */; };
 		AC8EB70620D03A91007E6CAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB70520D03A91007E6CAA /* ViewController.swift */; };
 		AC8EB70920D03A91007E6CAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8EB70720D03A91007E6CAA /* Main.storyboard */; };
@@ -43,6 +46,7 @@
 		62575C5D493EF0A87C4484FF /* Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8C3BB5A0CC6DD7805C1EA8F3 /* Pods-Vancouver-Fruit-Tree-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectTests/Pods-Vancouver-Fruit-Tree-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AADB9A7C35BAD577FC448817 /* Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC5150ED20E3239C00BE453D /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		AC8EB70020D03A91007E6CAA /* Vancouver-Fruit-Tree-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vancouver-Fruit-Tree-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8EB70320D03A91007E6CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC8EB70520D03A91007E6CAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 		AC8EB70220D03A91007E6CAA /* Vancouver-Fruit-Tree-Project */ = {
 			isa = PBXGroup;
 			children = (
+				AC5150ED20E3239C00BE453D /* awsconfiguration.json */,
 				AC8EB70320D03A91007E6CAA /* AppDelegate.swift */,
 				AC8EB70520D03A91007E6CAA /* ViewController.swift */,
 				AC8EB70720D03A91007E6CAA /* Main.storyboard */,
@@ -273,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5150EE20E3239C00BE453D /* awsconfiguration.json in Resources */,
 				AC8EB70E20D03A94007E6CAA /* LaunchScreen.storyboard in Resources */,
 				AC8EB70B20D03A94007E6CAA /* Assets.xcassets in Resources */,
 				AC8EB70920D03A91007E6CAA /* Main.storyboard in Resources */,
@@ -283,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5150EF20E3239C00BE453D /* awsconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5150F020E3239C00BE453D /* awsconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
