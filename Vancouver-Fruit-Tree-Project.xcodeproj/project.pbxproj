@@ -138,6 +138,7 @@
 				AC8EB70A20D03A94007E6CAA /* Assets.xcassets */,
 				AC8EB70C20D03A94007E6CAA /* LaunchScreen.storyboard */,
 				AC8EB70F20D03A94007E6CAA /* Info.plist */,
+				AC95BBB420E43C74000B0856 /* Models */,
 			);
 			path = "Vancouver-Fruit-Tree-Project";
 			sourceTree = "<group>";
@@ -158,6 +159,13 @@
 				AC8EB72520D03A94007E6CAA /* Info.plist */,
 			);
 			path = "Vancouver-Fruit-Tree-ProjectUITests";
+			sourceTree = "<group>";
+		};
+		AC95BBB420E43C74000B0856 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F3DA8E5439CDBEA9E0151A81 /* Frameworks */ = {
