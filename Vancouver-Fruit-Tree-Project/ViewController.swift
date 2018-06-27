@@ -24,8 +24,8 @@ class ViewController: UIViewController {
         let config = AWSAuthUIConfiguration()
         config.enableUserPoolsUI = true
         config.addSignInButtonView(class: AWSGoogleSignInButton.self)
-        config.backgroundColor = UIColor.green
-        config.font = UIFont (name: "Helvetica Neue", size: 20)
+        config.backgroundColor = UIColor(red: CGFloat(00)/225, green: CGFloat(64)/225, blue: CGFloat(00)/225, alpha: 1.0)
+        config.font = UIFont (name: "Helvetica Neue", size: 11)
         config.isBackgroundColorFullScreen = true
         config.logoImage = UIImage(named: "VFTP_LOGO_CS3-167x300")
         config.canCancel = true
