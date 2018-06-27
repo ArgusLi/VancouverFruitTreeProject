@@ -2,6 +2,8 @@ stages:
   - build
 
 build_project:
+  only: 
+   - master@csil-git1.cs.surrey.sfu.ca:cmpt276summer2018group8/ios-app
   stage: build
   script:
     - xcodebuild clean -workspace Vancouver-Fruit-Tree-Project.xcworkspace -scheme Vancouver-Fruit-Tree-Project | xcpretty
