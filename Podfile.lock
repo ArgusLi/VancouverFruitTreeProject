@@ -9,6 +9,8 @@ PODS:
     - AWSCore (= 2.6.22)
   - AWSCognitoIdentityProviderASF (1.0.1)
   - AWSCore (2.6.22)
+  - AWSDynamoDB (2.6.22):
+    - AWSCore (= 2.6.22)
   - AWSGoogleSignIn (2.6.22):
     - AWSAuthCore (= 2.6.22)
   - AWSMobileClient (2.6.22):
@@ -41,6 +43,7 @@ PODS:
 
 DEPENDENCIES:
   - AWSAuthUI (~> 2.6.13)
+  - AWSDynamoDB (~> 2.6.13)
   - AWSGoogleSignIn (~> 2.6.13)
   - AWSMobileClient (~> 2.6.13)
   - AWSPinpoint (~> 2.6.13)
@@ -54,6 +57,7 @@ SPEC REPOS:
     - AWSCognitoIdentityProvider
     - AWSCognitoIdentityProviderASF
     - AWSCore
+    - AWSDynamoDB
     - AWSGoogleSignIn
     - AWSMobileClient
     - AWSPinpoint
@@ -69,6 +73,7 @@ SPEC CHECKSUMS:
   AWSCognitoIdentityProvider: f7d15744ca3d70270de05a212e501f29a4a06307
   AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
   AWSCore: faae134779f0f6e46a8d426c0ccc02e34466b785
+  AWSDynamoDB: b2f5b6a98d40f875e89a974d56b62c418e872972
   AWSGoogleSignIn: 598222ccb914dc1daa0edd86b578cedd75dc8c4e
   AWSMobileClient: 091482a8bf8d9a92bc290fb2137892e2055e9b61
   AWSPinpoint: c74b4afd125b045b9e442d19afddcfc7ad8d1b42
@@ -78,6 +83,6 @@ SPEC CHECKSUMS:
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
 
-PODFILE CHECKSUM: 47cff7b5b6d6dd61097aaab022074745b7db8d24
+PODFILE CHECKSUM: 77bc1f7014bec3001ebbdef7f3511dccfe6ccd87
 
 COCOAPODS: 1.5.2

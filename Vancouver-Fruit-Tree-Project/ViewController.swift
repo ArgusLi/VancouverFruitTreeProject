@@ -18,22 +18,32 @@ class ViewController: UIViewController {
         
         if !AWSSignInManager.sharedInstance().isLoggedIn {
             presentAuthUIViewController()
+            
         }
+    }
+    
+    @IBAction func signOutButton(_ sender: Any) {
+        AWSSignInManager.sharedInstance().logout(completionHandler: {(result: Any?, error: Error?) in
+            self.presentAuthUIViewController()
+            
+            
+        })
     }
     func presentAuthUIViewController(){
         let config = AWSAuthUIConfiguration()
         config.enableUserPoolsUI = true
         config.addSignInButtonView(class: AWSGoogleSignInButton.self)
         config.backgroundColor = UIColor(red: CGFloat(00)/225, green: CGFloat(64)/225, blue: CGFloat(00)/225, alpha: 1.0)
-        config.font = UIFont (name: "Helvetica Neue", size: 11)
+        
         config.isBackgroundColorFullScreen = true
         config.logoImage = UIImage(named: "VFTP_LOGO_CS3-167x300")
-        config.canCancel = true
+        
         AWSAuthUIViewController.presentViewController(
             with: self.navigationController!,
             configuration: config, completionHandler: { (provider: AWSSignInProvider, error: Error?) in
                 if error == nil {
                     // SignIn succeeded.
+                    print("SignIn Succeeded")
                 } else {
                     // end user faced error while loggin in, take any required action here.
                 }
