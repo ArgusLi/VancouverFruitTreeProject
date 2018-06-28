@@ -11,7 +11,8 @@ target 'Vancouver-Fruit-Tree-Project' do
   pod 'AWSMobileClient', '~> 2.6.13'
   pod 'AWSPinpoint', '~> 2.6.13'
   pod 'AWSGoogleSignIn', '~> 2.6.13'
-  pod 'GoogleSignIn', '~> 4.0' 
+  pod 'GoogleSignIn', '~> 4.0'
+  pod 'AWSDynamoDB', '~> 2.6.13' 
 
   target 'Vancouver-Fruit-Tree-ProjectTests' do
     inherit! :search_paths
