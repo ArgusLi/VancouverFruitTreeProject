@@ -7,7 +7,9 @@
 //
 
 import XCTest
-
+import AWSAuthCore
+import AWSAuthUI
+import AWSGoogleSignIn
 class Vancouver_Fruit_Tree_ProjectUITests: XCTestCase {
         
     override func setUp() {

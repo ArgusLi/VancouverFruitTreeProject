@@ -113,7 +113,6 @@
 		3CC216ECA5DBB8EE8B665BEAD044A528 /* AWSTMDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E0E7136567FDF3DF6F27155E07138E0 /* AWSTMDiskCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D4F5D9DFD16CB9794304AAC1457422C /* Pods-Vancouver-Fruit-Tree-ProjectTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D5F1F9D6A46B788F6CEB3D42F2F53C /* Pods-Vancouver-Fruit-Tree-ProjectTests-dummy.m */; };
 		3D7611D7849D5C885C3D61E411660118 /* AWSFMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D60C5026CBC482BF0DFE438B50F4361 /* AWSFMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E273741ED1BBCF9BEF2D224CAC09713 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50CEF62B74E5CCB7E6CD1C38934DF6D /* Foundation.framework */; };
 		3EA5EB74DECDECA27E6505BD395A6BB9 /* GTMOAuth2ViewControllerTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = B68CD2C836CD2B63AFE87487E29104F2 /* GTMOAuth2ViewControllerTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F28610CFD277195A7F54C2BC7EAFB3E /* AWSSignInProviderApplicationIntercept.h in Headers */ = {isa = PBXBuildFile; fileRef = C5562CE0557B079789CCCB26E42A24E4 /* AWSSignInProviderApplicationIntercept.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FB0D65CDEEADB40B49318E17C5C7631 /* AWSFMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EEABF8E3ACBE74E7FF61F15C34B2CD /* AWSFMDatabase.m */; };
@@ -269,6 +268,7 @@
 		A05E36A720B4C2FF6B76335A04538325 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50CEF62B74E5CCB7E6CD1C38934DF6D /* Foundation.framework */; };
 		A0E9D582B2C11E101071661615A90324 /* AWSAuthUIConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FBB186EF66E3E29F6A692AB71A44CD /* AWSAuthUIConfiguration.m */; };
 		A118B6F62DEE0CD5F8FE54DC5CC521CA /* AWSDynamoDBRequestRetryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD74C0987774754281749BF1898C848 /* AWSDynamoDBRequestRetryHandler.m */; };
+		A29064D2E41542DE25E0E7625A97E328 /* Pods-Vancouver-Fruit-Tree-ProjectUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 975DAF8C2FDF1176237BD850B5515D8D /* Pods-Vancouver-Fruit-Tree-ProjectUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A30426E981E6B6EB3D6568A0DC73CA27 /* AWSURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C7654E871F24F3D1666BA8EAE878D /* AWSURLRequestSerialization.m */; };
 		A35CB93F01DE230888C8E02122FFC0D0 /* AWSTMMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F36895E686BC30F439881DE7B483A896 /* AWSTMMemoryCache.m */; };
 		A502064CDCCE921D6756F77934ECDB6C /* AWSSTSModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E5596091AE666912CCBB1A1A50FE4DC /* AWSSTSModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -333,7 +333,6 @@
 		CB8DEAB39CEA8CBFA79C0EE66C0B119A /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01847C2C1FC4B0C9BEC09BDBA66084 /* GTMSessionFetcher.framework */; };
 		CBA4D457F269419AD9FD8490AA65BEC8 /* AWSExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ABC694D7DCCE5E72F8CA8E31700C605 /* AWSExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CBAF534F27F473E43A94A545A080B947 /* AWSSignInProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = DF7B783ADB74B3456AFDD7C9840BD000 /* AWSSignInProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CC0F7D7391DD97A9765896305E6F003B /* Pods-Vancouver-Fruit-Tree-ProjectUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 975DAF8C2FDF1176237BD850B5515D8D /* Pods-Vancouver-Fruit-Tree-ProjectUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC295868B77F6A59DA225461CF3E978A /* AWSGoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5742757F651559E1E04F5A5DAC661E18 /* AWSGoogleSignIn.bundle */; };
 		CD02EFF91211DCC1DE607F885831F891 /* GTMOAuth2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40592AFEC6A800D635DA7CAA7DB0484A /* GTMOAuth2-dummy.m */; };
 		CF512BEE493F11565B063DF604A6D665 /* AWSDDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 687544F67A68EAD3E6C91D07865A2B4A /* AWSDDTTYLogger.m */; };
@@ -357,6 +356,7 @@
 		DC0165FE6FCAC78ED9D3B5545640421F /* AWSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C895051F6713160F95AC3270C5D351 /* AWSModel.m */; };
 		DCE6B945A1941881AAECFEF5FD1E7534 /* AWSUserPoolsUIHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 864D7FAE4EB76565D3050AD0F445FE25 /* AWSUserPoolsUIHelper.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		DD1F853E8FE6DC1EC09051BE70D1F035 /* GTMDebugSelectorValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = E80E0A5E2B4EEAD8E7D2679B2DC4A1AB /* GTMDebugSelectorValidation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE1960982634BE70004ADB69CDD0CCD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50CEF62B74E5CCB7E6CD1C38934DF6D /* Foundation.framework */; };
 		E003959B6CD1F722D32F027FF1AFE79D /* AWSAuthUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD887288D06697EC3B617F5C75A84FB /* AWSAuthUI-dummy.m */; };
 		E0CEC5E0AB1EDAD0C23EFD99FDF42A1D /* AWSXMLWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 55060EF25E0C29C6CDCED4D77C685FF4 /* AWSXMLWriter.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E12395432C5FDD215AF283B2C4B812CB /* AWSSTSService.h in Headers */ = {isa = PBXBuildFile; fileRef = 475B9D58B206BC2EBE5D7CA84BD14F33 /* AWSSTSService.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -367,9 +367,9 @@
 		E46EEC0DF01FC8C6CA48C23FFF9406F4 /* AWSInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE5787E353E6E4B456148A8FFF873C2 /* AWSInfo.m */; };
 		E4B72CE2398D476C41FF6C7B611A5B6F /* AWSUserPoolsUIOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = F2480E86526423AE74AAE244F97F620D /* AWSUserPoolsUIOperations.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E4D2CCB74C87396603BF374F39C7C048 /* AWSTMCache.h in Headers */ = {isa = PBXBuildFile; fileRef = FAC4A8D69768938189C4B87D4162C82F /* AWSTMCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E5E1EF99DD621D3B4E03EB19C93CD282 /* Pods-Vancouver-Fruit-Tree-ProjectUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4821E554758030CF05589C78415D49 /* Pods-Vancouver-Fruit-Tree-ProjectUITests-dummy.m */; };
 		E64C09F082474A16F991676EE498E6C2 /* AWSCognitoIdentity.h in Headers */ = {isa = PBXBuildFile; fileRef = 65E50878166C72B0366E0594FA34A54E /* AWSCognitoIdentity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E65C1E3E59633D030280A9851A2B2D50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50CEF62B74E5CCB7E6CD1C38934DF6D /* Foundation.framework */; };
+		E6DAEFAD5E107011E8F1492823C1AA0E /* Pods-Vancouver-Fruit-Tree-ProjectUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4821E554758030CF05589C78415D49 /* Pods-Vancouver-Fruit-Tree-ProjectUITests-dummy.m */; };
 		E780877BE9BAE488C126354DCE383604 /* AWSAuthUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2E8215A5DD72202D3F760F3509BD7A /* AWSAuthUIViewController.m */; };
 		E87369E98EDE614D2A5016939559EFFB /* AWSMTLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E5A8C7D3FA56D10285FE3ED9D68454 /* AWSMTLValueTransformer.m */; };
 		E879FDEFDDB3292F4EEA64C100FEC8F0 /* AWSPinpointConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = CF32FCCB9CDACE2EE8A9652D69E479C5 /* AWSPinpointConfiguration.m */; };
@@ -414,6 +414,27 @@
 			remoteGlobalIDString = 5FBBF392C411E7B83F897400683BAA73;
 			remoteInfo = AWSMobileClient;
 		};
+		06B34A6BFECF10BF6ECE208CFE533CB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1C4AAFAF49036C7007633DAA3C806AD;
+			remoteInfo = GTMOAuth2;
+		};
+		0996C806BC45D48F84F3970202A1DCA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C31C6708BB339229F107629A095B266;
+			remoteInfo = AWSUserPoolsSignIn;
+		};
+		0A62EE93AE282C4BE61E26587A8F869C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1814FB3014D3A97FCDD8D16DEC7D4394;
+			remoteInfo = "Pods-Vancouver-Fruit-Tree-Project";
+		};
 		0E605E58CDA971BA4D0B99BC97764F97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -456,12 +477,47 @@
 			remoteGlobalIDString = E2867C49D313792BCCB62BF15CCB0FCD;
 			remoteInfo = "AWSAuthUI-AWSAuthUI";
 		};
+		287030E1C93DF3845F783020D983CEBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AB5A8AC3850B56DFA91BE3763056B81;
+			remoteInfo = AWSCognitoIdentityProviderASF;
+		};
+		32406B77F3F255FDB78A141EAD9438B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F05BBF0ABCBAB1D55C2FE0C052A8CF62;
+			remoteInfo = GoogleToolboxForMac;
+		};
 		3959A2BF01305F4152EDF21196AB0304 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1585529DA784A1590EA31F3E20A317D2;
 			remoteInfo = AWSCognitoIdentityProvider;
+		};
+		3F2209DAF7E3C1E6ADD54D3BE1F5C780 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1585529DA784A1590EA31F3E20A317D2;
+			remoteInfo = AWSCognitoIdentityProvider;
+		};
+		4336926A0B762B160708D416FC42B0E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE261AFDB5D2EE675DC57D187E9DDAE9;
+			remoteInfo = AWSGoogleSignIn;
+		};
+		45C9ECF4EE29F7942E35A51DDB7631E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FBBF392C411E7B83F897400683BAA73;
+			remoteInfo = AWSMobileClient;
 		};
 		48E89F84E5C450FFD7433CFA4C89B7ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -512,12 +568,12 @@
 			remoteGlobalIDString = 6AC741B8F56A6C5819D0D45F3DFD5D4E;
 			remoteInfo = AWSCore;
 		};
-		6F1D9A6D766FE0BED554984122847C74 /* PBXContainerItemProxy */ = {
+		6E58A90AD4C40686087B6606CC4E01E2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1814FB3014D3A97FCDD8D16DEC7D4394;
-			remoteInfo = "Pods-Vancouver-Fruit-Tree-Project";
+			remoteGlobalIDString = 6AC741B8F56A6C5819D0D45F3DFD5D4E;
+			remoteInfo = AWSCore;
 		};
 		719D6EEF5C73D4D1BA655FEE07445C7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -539,6 +595,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1646CBD253AEDE4D9D17CE05B758F781;
 			remoteInfo = AWSAuthCore;
+		};
+		929057E5238D6B68B556DEDBD177B5F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 681BE6E3D02A43F9BA63777AC435C8FD;
+			remoteInfo = GTMSessionFetcher;
 		};
 		A6A7F3C7ABE1AA264AB1EEAD4208EE26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -574,6 +637,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1585529DA784A1590EA31F3E20A317D2;
 			remoteInfo = AWSCognitoIdentityProvider;
+		};
+		CDFC43238E9514EE076D0684DA0C6EFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D78D152BDACDFE093F652F4D2FF74D2E;
+			remoteInfo = AWSPinpoint;
+		};
+		D48B37E261714BDD7017D59FA8354001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AD64748DAF85E98E81A966D0637455C;
+			remoteInfo = AWSAuthUI;
 		};
 		D6855124847135268481BE3EEFAE56F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -617,6 +694,13 @@
 			remoteGlobalIDString = BE261AFDB5D2EE675DC57D187E9DDAE9;
 			remoteInfo = AWSGoogleSignIn;
 		};
+		EA6FA4F7218D2C3C6A4DCCD832FF9A69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 764BF5F8A7793010994AF3D12E8FB7BF;
+			remoteInfo = AWSDynamoDB;
+		};
 		EE30B3C2BA2EE39DAF255CA2A0079CF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -644,6 +728,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4AD64748DAF85E98E81A966D0637455C;
 			remoteInfo = AWSAuthUI;
+		};
+		FB50B92143E8B9DD4E33436946287D9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1646CBD253AEDE4D9D17CE05B758F781;
+			remoteInfo = AWSAuthCore;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1266,11 +1357,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D6F1385E1A91EF874459B8054FF62527 /* Frameworks */ = {
+		E44EC28117A69EC2418FCDF224026D8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E273741ED1BBCF9BEF2D224CAC09713 /* Foundation.framework in Frameworks */,
+				DE1960982634BE70004ADB69CDD0CCD0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2192,14 +2283,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		10D1AF916415257BA69D67427D6C3F31 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CC0F7D7391DD97A9765896305E6F003B /* Pods-Vancouver-Fruit-Tree-ProjectUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2083A6C7B77ED8F192708C18C57C8710 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2493,6 +2576,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0C4D6DA4397FB89534843CE63E61AC9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A29064D2E41542DE25E0E7625A97E328 /* Pods-Vancouver-Fruit-Tree-ProjectUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -2615,24 +2706,6 @@
 			productReference = 671D9EE8D336E1C48EA1900E2CBF7E73 /* Pods_Vancouver_Fruit_Tree_Project.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		1DFBA8B8AFE5DD106AC3A0699EB5CEDB /* Pods-Vancouver-Fruit-Tree-ProjectUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E8C9522E5C998EF5A93AAAE05CA33E4E /* Build configuration list for PBXNativeTarget "Pods-Vancouver-Fruit-Tree-ProjectUITests" */;
-			buildPhases = (
-				D872BCFDB5F53D202DAA56BB487AC813 /* Sources */,
-				D6F1385E1A91EF874459B8054FF62527 /* Frameworks */,
-				10D1AF916415257BA69D67427D6C3F31 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B5E144B91E330D7D2854892BCE7FDF11 /* PBXTargetDependency */,
-			);
-			name = "Pods-Vancouver-Fruit-Tree-ProjectUITests";
-			productName = "Pods-Vancouver-Fruit-Tree-ProjectUITests";
-			productReference = AC80D02A690A0ACED5D6565502C3BD86 /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		4AD64748DAF85E98E81A966D0637455C /* AWSAuthUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7970AC61AAD5B1320412A58F3C7A8F0 /* Build configuration list for PBXNativeTarget "AWSAuthUI" */;
@@ -2745,6 +2818,37 @@
 			name = AWSCore;
 			productName = AWSCore;
 			productReference = 9C108CCF0F61478CFB8FC58527305F09 /* AWSCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6E92CFBAC500972D116EF47F34ECA5B4 /* Pods-Vancouver-Fruit-Tree-ProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 765B2BAC7AFC769976A9B7A56C8871BA /* Build configuration list for PBXNativeTarget "Pods-Vancouver-Fruit-Tree-ProjectUITests" */;
+			buildPhases = (
+				C1B6AAC53D714CC4C9EB33BD48B767C6 /* Sources */,
+				E44EC28117A69EC2418FCDF224026D8E /* Frameworks */,
+				F0C4D6DA4397FB89534843CE63E61AC9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A36EA6615ABA55B8C7FFBF5705D3AAAE /* PBXTargetDependency */,
+				09C35DD0BE9052342F3FAF6EA987A55A /* PBXTargetDependency */,
+				5E70D6D36E091218DC89D173B31D1AF9 /* PBXTargetDependency */,
+				8F3B98811E79B3168251E8986F04AE5C /* PBXTargetDependency */,
+				C27B62626150C1822C0A6D600D4E3906 /* PBXTargetDependency */,
+				24FF1349F6A3A0611717AE6C661EE0B1 /* PBXTargetDependency */,
+				631D8F192EE89C0E4687EFD78A4BFB38 /* PBXTargetDependency */,
+				D0F90DA9D49B4C7847F57CDB50FFB66C /* PBXTargetDependency */,
+				5EC515B4AC1458C9C7E4030221D8FA2D /* PBXTargetDependency */,
+				726D1782E26ED353B3B2A516A5606717 /* PBXTargetDependency */,
+				B296EB200EE590FD12752423DD73CC2E /* PBXTargetDependency */,
+				2F62C08C7C90DEA8A05D587D9294F93A /* PBXTargetDependency */,
+				334CEE128608E2B79B52B0F89A7A7926 /* PBXTargetDependency */,
+				ABF987BDC0E97C08B60B83519261E710 /* PBXTargetDependency */,
+			);
+			name = "Pods-Vancouver-Fruit-Tree-ProjectUITests";
+			productName = "Pods-Vancouver-Fruit-Tree-ProjectUITests";
+			productReference = AC80D02A690A0ACED5D6565502C3BD86 /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		764BF5F8A7793010994AF3D12E8FB7BF /* AWSDynamoDB */ = {
@@ -2896,7 +3000,7 @@
 				681BE6E3D02A43F9BA63777AC435C8FD /* GTMSessionFetcher */,
 				1814FB3014D3A97FCDD8D16DEC7D4394 /* Pods-Vancouver-Fruit-Tree-Project */,
 				00718F2AAC369BCCFD4B443F035CCC81 /* Pods-Vancouver-Fruit-Tree-ProjectTests */,
-				1DFBA8B8AFE5DD106AC3A0699EB5CEDB /* Pods-Vancouver-Fruit-Tree-ProjectUITests */,
+				6E92CFBAC500972D116EF47F34ECA5B4 /* Pods-Vancouver-Fruit-Tree-ProjectUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -3190,6 +3294,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C1B6AAC53D714CC4C9EB33BD48B767C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6DAEFAD5E107011E8F1492823C1AA0E /* Pods-Vancouver-Fruit-Tree-ProjectUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C943A859CB0DA39C3E671E345D308FC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3205,14 +3317,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4F5D9DFD16CB9794304AAC1457422C /* Pods-Vancouver-Fruit-Tree-ProjectTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D872BCFDB5F53D202DAA56BB487AC813 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E5E1EF99DD621D3B4E03EB19C93CD282 /* Pods-Vancouver-Fruit-Tree-ProjectUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3264,11 +3368,29 @@
 			target = 5FBBF392C411E7B83F897400683BAA73 /* AWSMobileClient */;
 			targetProxy = 02E618AB329E9860DE5FD9EC2C93D020 /* PBXContainerItemProxy */;
 		};
+		09C35DD0BE9052342F3FAF6EA987A55A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSAuthUI;
+			target = 4AD64748DAF85E98E81A966D0637455C /* AWSAuthUI */;
+			targetProxy = D48B37E261714BDD7017D59FA8354001 /* PBXContainerItemProxy */;
+		};
 		1049E5764D6A4D5A2BEF357EF588005E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AWSCognitoIdentityProviderASF;
 			target = 0AB5A8AC3850B56DFA91BE3763056B81 /* AWSCognitoIdentityProviderASF */;
 			targetProxy = 0E605E58CDA971BA4D0B99BC97764F97 /* PBXContainerItemProxy */;
+		};
+		24FF1349F6A3A0611717AE6C661EE0B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSDynamoDB;
+			target = 764BF5F8A7793010994AF3D12E8FB7BF /* AWSDynamoDB */;
+			targetProxy = EA6FA4F7218D2C3C6A4DCCD832FF9A69 /* PBXContainerItemProxy */;
+		};
+		2F62C08C7C90DEA8A05D587D9294F93A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GTMSessionFetcher;
+			target = 681BE6E3D02A43F9BA63777AC435C8FD /* GTMSessionFetcher */;
+			targetProxy = 929057E5238D6B68B556DEDBD177B5F7 /* PBXContainerItemProxy */;
 		};
 		328EC1A77677C30C58978499494D7FCC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3281,6 +3403,12 @@
 			name = AWSAuthUI;
 			target = 4AD64748DAF85E98E81A966D0637455C /* AWSAuthUI */;
 			targetProxy = F7BF1D220AA22940C130F44138AB17B8 /* PBXContainerItemProxy */;
+		};
+		334CEE128608E2B79B52B0F89A7A7926 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleToolboxForMac;
+			target = F05BBF0ABCBAB1D55C2FE0C052A8CF62 /* GoogleToolboxForMac */;
+			targetProxy = 32406B77F3F255FDB78A141EAD9438B3 /* PBXContainerItemProxy */;
 		};
 		3685CC549B13D25F9B663361874E198F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3312,11 +3440,29 @@
 			target = F05BBF0ABCBAB1D55C2FE0C052A8CF62 /* GoogleToolboxForMac */;
 			targetProxy = DE633D91B1FE1703F5D66EFBF6291A55 /* PBXContainerItemProxy */;
 		};
+		5E70D6D36E091218DC89D173B31D1AF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSCognitoIdentityProvider;
+			target = 1585529DA784A1590EA31F3E20A317D2 /* AWSCognitoIdentityProvider */;
+			targetProxy = 3F2209DAF7E3C1E6ADD54D3BE1F5C780 /* PBXContainerItemProxy */;
+		};
+		5EC515B4AC1458C9C7E4030221D8FA2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSPinpoint;
+			target = D78D152BDACDFE093F652F4D2FF74D2E /* AWSPinpoint */;
+			targetProxy = CDFC43238E9514EE076D0684DA0C6EFB /* PBXContainerItemProxy */;
+		};
 		6147C9DF9F5FF1A4E39B2D5818D74CD1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AWSCore;
 			target = 6AC741B8F56A6C5819D0D45F3DFD5D4E /* AWSCore */;
 			targetProxy = B78E747FBFCC6905EEDEFDAE5E4E1B5E /* PBXContainerItemProxy */;
+		};
+		631D8F192EE89C0E4687EFD78A4BFB38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSGoogleSignIn;
+			target = BE261AFDB5D2EE675DC57D187E9DDAE9 /* AWSGoogleSignIn */;
+			targetProxy = 4336926A0B762B160708D416FC42B0E8 /* PBXContainerItemProxy */;
 		};
 		648A367AEB29CF6976ED8C83FDE89D67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3354,6 +3500,12 @@
 			target = 6AC741B8F56A6C5819D0D45F3DFD5D4E /* AWSCore */;
 			targetProxy = 6C808830892C8F8741A87F63B4AE1801 /* PBXContainerItemProxy */;
 		};
+		726D1782E26ED353B3B2A516A5606717 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSUserPoolsSignIn;
+			target = 5C31C6708BB339229F107629A095B266 /* AWSUserPoolsSignIn */;
+			targetProxy = 0996C806BC45D48F84F3970202A1DCA6 /* PBXContainerItemProxy */;
+		};
 		793A13D97878B7B7EEF69283ED4C9484 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AWSDynamoDB;
@@ -3365,6 +3517,12 @@
 			name = AWSCore;
 			target = 6AC741B8F56A6C5819D0D45F3DFD5D4E /* AWSCore */;
 			targetProxy = DA4EC717F60E7AE3A8E6420C70E595D6 /* PBXContainerItemProxy */;
+		};
+		8F3B98811E79B3168251E8986F04AE5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSCognitoIdentityProviderASF;
+			target = 0AB5A8AC3850B56DFA91BE3763056B81 /* AWSCognitoIdentityProviderASF */;
+			targetProxy = 287030E1C93DF3845F783020D983CEBF /* PBXContainerItemProxy */;
 		};
 		93FF09D089611AC110061E3C6619D414 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3378,11 +3536,23 @@
 			target = 6AB90F3AEB2B9E1A1AF655B57287A6FE /* AWSGoogleSignIn-AWSGoogleSignIn */;
 			targetProxy = 77AAE367DAFF88D915D433EC36EDF8CA /* PBXContainerItemProxy */;
 		};
+		A36EA6615ABA55B8C7FFBF5705D3AAAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSAuthCore;
+			target = 1646CBD253AEDE4D9D17CE05B758F781 /* AWSAuthCore */;
+			targetProxy = FB50B92143E8B9DD4E33436946287D9A /* PBXContainerItemProxy */;
+		};
 		A9F05122252667B1C2A13E77A3F4FB9C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AWSPinpoint;
 			target = D78D152BDACDFE093F652F4D2FF74D2E /* AWSPinpoint */;
 			targetProxy = 16A63846D30878EEFB134D5394C23FBD /* PBXContainerItemProxy */;
+		};
+		ABF987BDC0E97C08B60B83519261E710 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Vancouver-Fruit-Tree-Project";
+			target = 1814FB3014D3A97FCDD8D16DEC7D4394 /* Pods-Vancouver-Fruit-Tree-Project */;
+			targetProxy = 0A62EE93AE282C4BE61E26587A8F869C /* PBXContainerItemProxy */;
 		};
 		AF7DAD5217C2A523E87C330111477CE8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3390,23 +3560,29 @@
 			target = 5C31C6708BB339229F107629A095B266 /* AWSUserPoolsSignIn */;
 			targetProxy = C1AB66F9D4D44FCDFCCAF029D03E848D /* PBXContainerItemProxy */;
 		};
+		B296EB200EE590FD12752423DD73CC2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GTMOAuth2;
+			target = B1C4AAFAF49036C7007633DAA3C806AD /* GTMOAuth2 */;
+			targetProxy = 06B34A6BFECF10BF6ECE208CFE533CB2 /* PBXContainerItemProxy */;
+		};
 		B3D9325F807888A05F70C5405EEB5EC7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AWSAuthCore;
 			target = 1646CBD253AEDE4D9D17CE05B758F781 /* AWSAuthCore */;
 			targetProxy = A6A7F3C7ABE1AA264AB1EEAD4208EE26 /* PBXContainerItemProxy */;
 		};
-		B5E144B91E330D7D2854892BCE7FDF11 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Vancouver-Fruit-Tree-Project";
-			target = 1814FB3014D3A97FCDD8D16DEC7D4394 /* Pods-Vancouver-Fruit-Tree-Project */;
-			targetProxy = 6F1D9A6D766FE0BED554984122847C74 /* PBXContainerItemProxy */;
-		};
 		B94A9411F07275AC5A570D857AC1E49A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AWSCognitoIdentityProviderASF;
 			target = 0AB5A8AC3850B56DFA91BE3763056B81 /* AWSCognitoIdentityProviderASF */;
 			targetProxy = 5DE12EA6103241F9A6A5D4D7D05FB681 /* PBXContainerItemProxy */;
+		};
+		C27B62626150C1822C0A6D600D4E3906 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSCore;
+			target = 6AC741B8F56A6C5819D0D45F3DFD5D4E /* AWSCore */;
+			targetProxy = 6E58A90AD4C40686087B6606CC4E01E2 /* PBXContainerItemProxy */;
 		};
 		CCD2E1DA8900D5E2E90CFB65851B1C8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3419,6 +3595,12 @@
 			name = AWSCore;
 			target = 6AC741B8F56A6C5819D0D45F3DFD5D4E /* AWSCore */;
 			targetProxy = EE30B3C2BA2EE39DAF255CA2A0079CF6 /* PBXContainerItemProxy */;
+		};
+		D0F90DA9D49B4C7847F57CDB50FFB66C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AWSMobileClient;
+			target = 5FBBF392C411E7B83F897400683BAA73 /* AWSMobileClient */;
+			targetProxy = 45C9ECF4EE29F7942E35A51DDB7631E0 /* PBXContainerItemProxy */;
 		};
 		D394896268702D9B25461A2277DED9DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3772,45 +3954,6 @@
 			};
 			name = Release;
 		};
-		3C6E1C70065104721051EA43B884307A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F30A0F411A015CCCB466F2C1F62599BB /* Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		3DDA5855D4F5C7E619420D7035EA41FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D99C273856FFA0A8276F34C88EBA85E2 /* AWSUserPoolsSignIn.xcconfig */;
@@ -4103,7 +4246,23 @@
 			};
 			name = Release;
 		};
-		7476099E04490AE89733B5EDCE4D37E5 /* Debug */ = {
+		7F4F36E5C92A05A4301DB38B69D2390F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D99C273856FFA0A8276F34C88EBA85E2 /* AWSUserPoolsSignIn.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AWSUserPoolsSignIn";
+				INFOPLIST_FILE = "Target Support Files/AWSUserPoolsSignIn/ResourceBundle-AWSUserPoolsSignIn-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = AWSUserPoolsSignIn;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		81EBDB703E728818B7E1CC238CDDA107 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6A453468B84EC8A9949FEF799BB96654 /* Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig */;
 			buildSettings = {
@@ -4138,22 +4297,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7F4F36E5C92A05A4301DB38B69D2390F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D99C273856FFA0A8276F34C88EBA85E2 /* AWSUserPoolsSignIn.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AWSUserPoolsSignIn";
-				INFOPLIST_FILE = "Target Support Files/AWSUserPoolsSignIn/ResourceBundle-AWSUserPoolsSignIn-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = AWSUserPoolsSignIn;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
@@ -4430,6 +4573,45 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		AEF68D4F8CBAD3F097A06A3578E0F932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F30A0F411A015CCCB466F2C1F62599BB /* Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -4908,6 +5090,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		765B2BAC7AFC769976A9B7A56C8871BA /* Build configuration list for PBXNativeTarget "Pods-Vancouver-Fruit-Tree-ProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81EBDB703E728818B7E1CC238CDDA107 /* Debug */,
+				AEF68D4F8CBAD3F097A06A3578E0F932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8E3F6BFD1B032DCB37307B4B6ADB8714 /* Build configuration list for PBXNativeTarget "AWSGoogleSignIn-AWSGoogleSignIn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -4949,15 +5140,6 @@
 			buildConfigurations = (
 				22BD227B251346D34BE55E36E6A1B257 /* Debug */,
 				EA5EF79A3B6FC3AB2F35E40C78BEED2D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E8C9522E5C998EF5A93AAAE05CA33E4E /* Build configuration list for PBXNativeTarget "Pods-Vancouver-Fruit-Tree-ProjectUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7476099E04490AE89733B5EDCE4D37E5 /* Debug */,
-				3C6E1C70065104721051EA43B884307A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
