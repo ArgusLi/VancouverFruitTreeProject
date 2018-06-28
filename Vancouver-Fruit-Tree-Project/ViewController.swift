@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         config.isBackgroundColorFullScreen = true
         config.logoImage = UIImage(named: "VFTP_LOGO_CS3-167x300")
-        config.canCancel = true
+        
         AWSAuthUIViewController.presentViewController(
             with: self.navigationController!,
             configuration: config, completionHandler: { (provider: AWSSignInProvider, error: Error?) in

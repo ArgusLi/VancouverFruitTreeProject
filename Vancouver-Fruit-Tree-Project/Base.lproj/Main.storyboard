@@ -17,7 +17,18 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KXY-4T-NXg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KXY-4T-NXg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tnc-zT-VBH"/>
+                            <constraint firstItem="KXY-4T-NXg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yix-1i-4iR"/>
+                            <constraint firstItem="KXY-4T-NXg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZFM-r8-eP9"/>
+                            <constraint firstItem="KXY-4T-NXg" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fe8-8Y-68E"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="R4P-ej-9pb">
@@ -43,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="-676"/>
+            <point key="canvasLocation" x="973.60000000000002" y="-676.01199400299856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RFH-y5-1D1">
