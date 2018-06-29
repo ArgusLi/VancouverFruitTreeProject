@@ -11,7 +11,36 @@ import AWSAuthCore
 import AWSAuthUI
 import AWSGoogleSignIn
 class ViewController: UIViewController {
-
+    //hamburger menu vars
+    @IBOutlet weak var leadingC: NSLayoutConstraint!
+    @IBOutlet weak var trailingC: NSLayoutConstraint!
+    @IBOutlet var hamburgerView: UIView!
+    var hamburgerMenuIsVisible = false
+    
+    @IBAction func hamburgerButton(_ sender: Any) {
+        if !hamburgerMenuIsVisible{
+            leadingC.constant = 150
+            //trailingC.constant = -150
+            hamburgerMenuIsVisible = true
+        }
+        
+        else {
+            //move back
+            leadingC.constant = 0
+            //trailingC.constant = 0
+            hamburgerMenuIsVisible = false
+        }
+        
+        UIView.animate(withDuration: 0.2, animations: {self.view.layoutIfNeeded()}) {
+            
+            (animationComplete) in
+                print("The animation is complete!")
+            
+        }
+        
+    }
+    
+    //main
     override func viewDidLoad() {
         
         super.viewDidLoad()
