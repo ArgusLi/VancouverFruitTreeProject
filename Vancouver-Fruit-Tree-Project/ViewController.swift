@@ -11,7 +11,7 @@ import AWSAuthCore
 import AWSAuthUI
 import AWSGoogleSignIn
 class ViewController: UIViewController {
-    //hamburger menu vars
+    //MARK - hamburger menu vars
     @IBOutlet weak var leadingC: NSLayoutConstraint!
     @IBOutlet weak var trailingC: NSLayoutConstraint!
     @IBOutlet var hamburgerView: UIView!
