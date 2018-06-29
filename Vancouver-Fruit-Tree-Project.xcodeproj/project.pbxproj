@@ -684,13 +684,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APKLPH4X8H;
+				DEVELOPMENT_TEAM = 2UGU27J2HV;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.amazon.Vancouver-Fruit-Tree-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -703,13 +703,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APKLPH4X8H;
+				DEVELOPMENT_TEAM = 2UGU27J2HV;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.amazon.Vancouver-Fruit-Tree-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
