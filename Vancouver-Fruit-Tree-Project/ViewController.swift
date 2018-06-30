@@ -10,6 +10,7 @@ import UIKit
 import AWSAuthCore
 import AWSAuthUI
 import AWSGoogleSignIn
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -22,6 +23,14 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func TestDBUpload(_ sender: Any) {
+        
+        let DBInterface = DatabaseInterface();
+        
+        DBInterface.createPickEvent(eventTime: "15:30", eventDate:"2018:07:02" , latitude: "30", longitude: "30", teamID: "2");
+        
+        
+    }
     @IBAction func signOutButton(_ sender: Any) {
         AWSSignInManager.sharedInstance().logout(completionHandler: {(result: Any?, error: Error?) in
             self.presentAuthUIViewController()

@@ -1,5 +1,5 @@
 //
-//  PickEvents.swift
+//  Users.swift
 //  MySampleApp
 //
 //
@@ -14,20 +14,19 @@
 import Foundation
 import UIKit
 import AWSDynamoDB
-
-class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
+@objcMembers
+class Users: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: String?
-    var _time: String?
-    var _date: String?
-    var _latitude: String?
-    var _longitude: String?
-    var _randomString: String?
-    var _teamID: String?
+    var _userName: String?
+    var _email: String?
+    var _firstName: String?
+    var _lastName: String?
+    var _role: String?
     
     class func dynamoDBTableName() -> String {
 
-        return "vancouverfruittreepr-mobilehub-79870386-PickEvents"
+        return "vancouverfruittreepr-mobilehub-79870386-Users"
     }
     
     class func hashKeyAttribute() -> String {
@@ -37,18 +36,17 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     class func rangeKeyAttribute() -> String {
 
-        return "_time"
+        return "_userName"
     }
     
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [
                "_userId" : "userId",
-               "_time" : "time",
-               "_date" : "date",
-               "_latitude" : "latitude",
-               "_longitude" : "longitude",
-               "_randomString" : "randomString",
-               "_teamID" : "teamID",
+               "_userName" : "userName",
+               "_email" : "email",
+               "_firstName" : "firstName",
+               "_lastName" : "lastName",
+               "_role" : "role",
         ]
     }
 }
