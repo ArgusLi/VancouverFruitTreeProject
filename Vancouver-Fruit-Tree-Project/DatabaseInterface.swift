@@ -14,10 +14,11 @@ import AWSAuthCore
 @objcMembers
 class DatabaseInterface {
     
+    //MARK: create pick event
     func createPickEvent(eventTime: String, eventDate: String, latitude: String, longitude: String, teamID: String){
         
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
-        print("test")
+        print("in DatabaseInterface -> createPickEvent...")
         // Create data object using data models you downloaded from Mobile Hub
         let pickEventItem: PickEvents = PickEvents()
         pickEventItem._userId = AWSIdentityManager.default().identityId
@@ -27,8 +28,9 @@ class DatabaseInterface {
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
         
-        pickEventItem._creationTime = String(hour) + ":" + String(minutes)
+        pickEventItem._creationTime = String(hour) + ":" + String(minutes) + ":" + String(seconds)
         
         let year = calendar.component(.year, from: date)
         let month = calendar.component(.month, from: date)
@@ -47,7 +49,7 @@ class DatabaseInterface {
         //Save a new item
         dynamoDbObjectMapper.save(pickEventItem, completionHandler: {
             (error: Error?) -> Void in
-            
+
             if let error = error {
                 print("Amazon DynamoDB Save Error: \(error)")
                 return
@@ -56,5 +58,7 @@ class DatabaseInterface {
         })
     
     }
+    
+    
     
 }
