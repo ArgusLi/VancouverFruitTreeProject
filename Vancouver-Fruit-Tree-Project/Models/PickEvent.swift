@@ -15,61 +15,40 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
-class PickEvent: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
+class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: String?
-    var _time: NSNumber?
-    var _itemId: String?
-    var _latitude: NSNumber?
-    var _longitude: NSNumber?
-    var _streetaddress: String?
-    var _teamId: String?
-    var _date: NSNumber?
-    func recordNewEvent(UserID: String?, time: NSNumber?, latitude: NSNumber?, longtitude: NSNumber?, streetaddress: String?, teamId: String?, date: String?){
-        self._userId = UserID
-        self._time = time
-        
-    }
-    func changeteam(TeamID: String?){
-        self._teamId=TeamID
-        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
-        dynamoDbObjectMapper.save(self, completionHandler: {
-            (error: Error?) -> Void in
-            
-            if let error = error {
-                print("Amazon DynamoDB Save Error: \(error)")
-                return
-            }
-            print("An item was saved.")
-        })
+    var _time: String?
+    var _date: String?
+    var _latitude: String?
+    var _longitude: String?
+    var _randomString: String?
+    var _teamID: String?
     
-    }
-    func changetime(time: NSNumber?){
-        
-    }
     class func dynamoDBTableName() -> String {
-
-        return "vancouverfruittreepr-mobilehub-79870386-PiackLocations"
+        
+        return "vancouverfruittreepr-mobilehub-79870386-PickEvents"
     }
     
     class func hashKeyAttribute() -> String {
-
+        
         return "_userId"
     }
     
     class func rangeKeyAttribute() -> String {
-
+        
         return "_time"
     }
     
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [
-               "_userId" : "userId",
-               "_time" : "time",
-               "_itemId" : "itemId",
-               "_latitude" : "latitude",
-               "_longitude" : "longitude",
-               "_streetaddress" : "streetaddress",
+            "_userId" : "userId",
+            "_time" : "time",
+            "_date" : "date",
+            "_latitude" : "latitude",
+            "_longitude" : "longitude",
+            "_randomString" : "randomString",
+            "_teamID" : "teamID",
         ]
     }
 }
