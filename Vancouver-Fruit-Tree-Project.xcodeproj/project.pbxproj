@@ -24,6 +24,12 @@
 		AC95BBBC20E55627000B0856 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95BBB920E55627000B0856 /* Users.swift */; };
 		AC95BBBD20E58C9F000B0856 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
 		AC95BBBE20E58CA0000B0856 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
+		ACAB91ED20E816AB00EEE7A7 /* PickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91EC20E816AB00EEE7A7 /* PickEventTableViewCell.swift */; };
+		ACAB91EE20E816AB00EEE7A7 /* PickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91EC20E816AB00EEE7A7 /* PickEventTableViewCell.swift */; };
+		ACAB91EF20E816AB00EEE7A7 /* PickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91EC20E816AB00EEE7A7 /* PickEventTableViewCell.swift */; };
+		ACAB91F920E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
+		ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
+		ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
 		F3531E8E4EFB58D645FBBE1E /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282EA9A55D8B14EDA1330A08 /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +72,8 @@
 		AC8EB72320D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vancouver_Fruit_Tree_ProjectUITests.swift; sourceTree = "<group>"; };
 		AC8EB72520D03A94007E6CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC95BBB920E55627000B0856 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		ACAB91EC20E816AB00EEE7A7 /* PickEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickEventTableViewCell.swift; sourceTree = "<group>"; };
+		ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickEventTableViewController.swift; sourceTree = "<group>"; };
 		CDBCAF1C044F604802460E97 /* Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE518A03D3EADCC1D0B6AA96 /* Pods-Vancouver-Fruit-Tree-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectTests/Pods-Vancouver-Fruit-Tree-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +150,7 @@
 				AC5150ED20E3239C00BE453D /* awsconfiguration.json */,
 				AC8EB70320D03A91007E6CAA /* AppDelegate.swift */,
 				AC8EB70520D03A91007E6CAA /* ViewController.swift */,
+				ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */,
 				AC8EB70720D03A91007E6CAA /* Main.storyboard */,
 				AC8EB70A20D03A94007E6CAA /* Assets.xcassets */,
 				AC8EB70C20D03A94007E6CAA /* LaunchScreen.storyboard */,
@@ -173,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				AC95BBB920E55627000B0856 /* Users.swift */,
+				ACAB91EC20E816AB00EEE7A7 /* PickEventTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -506,8 +516,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC8EB70620D03A91007E6CAA /* ViewController.swift in Sources */,
+				ACAB91F920E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				AC95BBBA20E55627000B0856 /* Users.swift in Sources */,
 				AC8EB70420D03A91007E6CAA /* AppDelegate.swift in Sources */,
+				ACAB91ED20E816AB00EEE7A7 /* PickEventTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +528,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC95BBBB20E55627000B0856 /* Users.swift in Sources */,
+				ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				AC8EB71920D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectTests.swift in Sources */,
+				ACAB91EE20E816AB00EEE7A7 /* PickEventTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,7 +539,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC95BBBC20E55627000B0856 /* Users.swift in Sources */,
+				ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				AC8EB72420D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift in Sources */,
+				ACAB91EF20E816AB00EEE7A7 /* PickEventTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
