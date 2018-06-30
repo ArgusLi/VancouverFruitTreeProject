@@ -9,9 +9,30 @@
 import UIKit
 
 class PickEventTableViewController: UITableViewController {
-
+    
+    // TODO: Insert an array declaration here
+    //TODO: placeholder for a pick event class
+    struct PickEvent {
+        var date :NSNumber?
+        var time :NSNumber?
+        var teamlead :String?
+    }
+    var pickevents = [PickEvent]()
+   private func loadavailablepicks()
+   {
+    for _ in 1...10{
+        let pickevent = PickEvent(date:  123, time: 12, teamlead: "Test lead")
+        pickevents.append(pickevent)
+    }
+    
+    
+    }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadavailablepicks()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -20,6 +41,8 @@ class PickEventTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,23 +52,31 @@ class PickEventTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return pickevents.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cellidentifier = "PickEventTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellidentifier, for: indexPath) as? PickEventTableViewCell else {
+            fatalError("The dequeued cell is not an instance of \(cellidentifier)")
+            
+        }
+        let pick = pickevents[indexPath.row]
+        cell.Time.text="\(pick.time!)"
+        cell.Date.text = "\(pick.date!)"
+        cell.TeamLead.text = "Team Lead: \(pick.teamlead!)"
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
