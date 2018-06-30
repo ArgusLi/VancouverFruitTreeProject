@@ -14,50 +14,39 @@
 import Foundation
 import UIKit
 import AWSDynamoDB
-import AWSAuthCore
-import AWSAuthUI
-@objcMembers
+
 class Users: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
-    var _userID: String?
-    var _firstName: String?
-    var _role: String?
-    var _secondName: String?
+    var _userId: String?
+    var _userName: String?
     var _email: String?
-    func createNewUSer(FirsName: String?, SecondName: String?, role:String?, email:String?) {
-        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
-        self._userID=AWSIdentityManager.default().identityId
-        self._firstName=FirsName
-        self._secondName=SecondName
-        self._email=email
-        self._role=role
-        dynamoDbObjectMapper.save(self, completionHandler: {
-            (error: Error?) -> Void in
-            
-            if let error = error {
-                print("Amazon DynamoDB Save Error: \(error)")
-                return
-            }
-            print("An item was saved.")
-        })
-    }
+    var _firstName: String?
+    var _lastName: String?
+    var _role: String?
+    
     class func dynamoDBTableName() -> String {
 
-        return "vancouverfruittreepr-mobilehub-79870386-users"
+        return "vancouverfruittreepr-mobilehub-79870386-Users"
     }
     
     class func hashKeyAttribute() -> String {
 
-        return "_userID"
+        return "_userId"
+    }
+    
+    class func rangeKeyAttribute() -> String {
+
+        return "_userName"
     }
     
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [
-               "_userID" : "userID",
-               "_firstName" : "FirstName",
-               "_role" : "Role",
-               "_secondName" : "SecondName",
+               "_userId" : "userId",
+               "_userName" : "userName",
                "_email" : "email",
+               "_firstName" : "firstName",
+               "_lastName" : "lastName",
+               "_role" : "role",
         ]
     }
 }

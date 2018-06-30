@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4D29FDB7F6C76D497D88F882 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
+		7EC8774620E8101300F860C9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8774420E8101300F860C9 /* Users.swift */; };
+		7EC8774720E8101300F860C9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8774420E8101300F860C9 /* Users.swift */; };
+		7EC8774820E8101300F860C9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8774420E8101300F860C9 /* Users.swift */; };
+		7EC8774920E8101300F860C9 /* PickEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8774520E8101300F860C9 /* PickEvents.swift */; };
+		7EC8774A20E8101300F860C9 /* PickEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8774520E8101300F860C9 /* PickEvents.swift */; };
+		7EC8774B20E8101300F860C9 /* PickEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8774520E8101300F860C9 /* PickEvents.swift */; };
 		A89AAD761B03A0FD5F4D1DD2 /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E51FD94831BDC812745429B /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework */; };
 		AC5150EE20E3239C00BE453D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5150ED20E3239C00BE453D /* awsconfiguration.json */; };
 		AC5150EF20E3239C00BE453D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5150ED20E3239C00BE453D /* awsconfiguration.json */; };
@@ -19,14 +25,8 @@
 		AC8EB70E20D03A94007E6CAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8EB70C20D03A94007E6CAA /* LaunchScreen.storyboard */; };
 		AC8EB71920D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB71820D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectTests.swift */; };
 		AC8EB72420D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB72320D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift */; };
-		AC95BBBA20E55627000B0856 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95BBB920E55627000B0856 /* Users.swift */; };
-		AC95BBBB20E55627000B0856 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95BBB920E55627000B0856 /* Users.swift */; };
-		AC95BBBC20E55627000B0856 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95BBB920E55627000B0856 /* Users.swift */; };
 		AC95BBBD20E58C9F000B0856 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
 		AC95BBBE20E58CA0000B0856 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
-		AC95BBC220E5A544000B0856 /* PickEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95BBC120E5A544000B0856 /* PickEvent.swift */; };
-		AC95BBC320E5A544000B0856 /* PickEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95BBC120E5A544000B0856 /* PickEvent.swift */; };
-		AC95BBC420E5A544000B0856 /* PickEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95BBC120E5A544000B0856 /* PickEvent.swift */; };
 		F3531E8E4EFB58D645FBBE1E /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282EA9A55D8B14EDA1330A08 /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +52,8 @@
 		282EA9A55D8B14EDA1330A08 /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481C84BA36765041D733FDB7 /* Pods-Vancouver-Fruit-Tree-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project.release.xcconfig"; sourceTree = "<group>"; };
 		62575C5D493EF0A87C4484FF /* Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7EC8774420E8101300F860C9 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		7EC8774520E8101300F860C9 /* PickEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickEvents.swift; path = "../../../../../Downloads/Vancouver-Fruit-Tree-Project-integration-lib-aws-my-sample-app-ios-swift-2/AmazonAws/Models/NoSQL/PickEvents.swift"; sourceTree = "<group>"; };
 		8C3BB5A0CC6DD7805C1EA8F3 /* Pods-Vancouver-Fruit-Tree-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectTests/Pods-Vancouver-Fruit-Tree-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AADB9A7C35BAD577FC448817 /* Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC5150ED20E3239C00BE453D /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
@@ -68,8 +70,6 @@
 		AC8EB71F20D03A94007E6CAA /* Vancouver-Fruit-Tree-ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vancouver-Fruit-Tree-ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8EB72320D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vancouver_Fruit_Tree_ProjectUITests.swift; sourceTree = "<group>"; };
 		AC8EB72520D03A94007E6CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC95BBB920E55627000B0856 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		AC95BBC120E5A544000B0856 /* PickEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickEvent.swift; sourceTree = "<group>"; };
 		CDBCAF1C044F604802460E97 /* Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE518A03D3EADCC1D0B6AA96 /* Pods-Vancouver-Fruit-Tree-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectTests/Pods-Vancouver-Fruit-Tree-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,8 +176,8 @@
 		AC95BBB420E43C74000B0856 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AC95BBB920E55627000B0856 /* Users.swift */,
-				AC95BBC120E5A544000B0856 /* PickEvent.swift */,
+				7EC8774520E8101300F860C9 /* PickEvents.swift */,
+				7EC8774420E8101300F860C9 /* Users.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -511,9 +511,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC8EB70620D03A91007E6CAA /* ViewController.swift in Sources */,
-				AC95BBBA20E55627000B0856 /* Users.swift in Sources */,
+				7EC8774620E8101300F860C9 /* Users.swift in Sources */,
 				AC8EB70420D03A91007E6CAA /* AppDelegate.swift in Sources */,
-				AC95BBC220E5A544000B0856 /* PickEvent.swift in Sources */,
+				7EC8774920E8101300F860C9 /* PickEvents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,9 +521,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC95BBBB20E55627000B0856 /* Users.swift in Sources */,
+				7EC8774A20E8101300F860C9 /* PickEvents.swift in Sources */,
+				7EC8774720E8101300F860C9 /* Users.swift in Sources */,
 				AC8EB71920D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectTests.swift in Sources */,
-				AC95BBC320E5A544000B0856 /* PickEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,9 +531,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC95BBBC20E55627000B0856 /* Users.swift in Sources */,
+				7EC8774B20E8101300F860C9 /* PickEvents.swift in Sources */,
+				7EC8774820E8101300F860C9 /* Users.swift in Sources */,
 				AC8EB72420D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift in Sources */,
-				AC95BBC420E5A544000B0856 /* PickEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
