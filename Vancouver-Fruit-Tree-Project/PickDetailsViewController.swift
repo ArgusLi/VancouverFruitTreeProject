@@ -8,11 +8,12 @@
 
 import UIKit
 import MapKit
-class PickDetailsViewController: UIViewController {
+class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     var getdate = String()
     var gettime =  String()
     var getleader = String()
     var getCoordinates = CLLocationCoordinate2D()
+    var locationManager: CLLocationManager = CLLocationManager()
     @IBOutlet weak var date: UILabel!
     
     @IBOutlet weak var time: UILabel!
@@ -22,16 +23,17 @@ class PickDetailsViewController: UIViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         date.text=getdate
         time.text = gettime
         teamlead.text = "Team Lead: \(getleader)"
         mapView.setCenter( getCoordinates, animated: true)
-        let circle = MKCircle(center: getCoordinates , radius: 100 )
+        
         let mapspan = MKCoordinateSpanMake(0.1, 0.1)
         let mapregion = MKCoordinateRegionMake(getCoordinates, mapspan)
         
         self.mapView.setRegion(mapregion, animated: true)
-        self.mapView.add(circle)
+        
         
 
         
@@ -40,13 +42,26 @@ class PickDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    func addRadius(location: CLLocationCoordinate2D){
+        self.mapView.delegate = self
+        var circle = MKCircle(center: getCoordinates , radius: 100 )
+        self.mapView.add(circle)
+    }
     
 
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay is MKCircle {
+            var circle = MKCircleRenderer(overlay: overlay)
+            circle.strokeColor = UIColor.green
+            circle.fillColor = UIColor.green
+            circle.lineWidth = 1
+            return circle
+        } else {
+            return nil
+        }
     }
+}
+
     
 
     /*
@@ -59,4 +74,5 @@ class PickDetailsViewController: UIViewController {
     }
     */
 
-}
+
+

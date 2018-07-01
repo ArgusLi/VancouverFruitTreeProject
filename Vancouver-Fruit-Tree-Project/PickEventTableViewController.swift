@@ -23,7 +23,7 @@ class PickEventTableViewController: UITableViewController {
    private func loadavailablepicks()
    {
     for _ in 1...10{
-        let pickevent = PickEvent(date:  123, time: 12, teamlead: "Test lead", longtitute: -122.0  as CLLocationDegrees, latitude: 49.0 as CLLocationDegrees)
+        let pickevent = PickEvent(date:  123, time: 12, teamlead: "Test lead", longtitute: -122.9180  as CLLocationDegrees, latitude: 49.2768 as CLLocationDegrees)
         pickevents.append(pickevent)
     }
     
