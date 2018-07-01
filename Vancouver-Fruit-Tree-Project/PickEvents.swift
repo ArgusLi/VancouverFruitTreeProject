@@ -24,8 +24,8 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _creationDate: String?
     var _eventDate: String?
     var _eventTime: String?
-    var _latitude: String?
-    var _longitude: String?
+    var _latitude: NSNumber?
+    var _longitude: NSNumber?
     
     class func dynamoDBTableName() -> String {
         
