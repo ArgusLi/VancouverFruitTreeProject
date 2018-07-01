@@ -10,6 +10,7 @@ import UIKit
 import AWSAuthCore
 import AWSAuthUI
 import AWSGoogleSignIn
+import SideMenu
 class ViewController: UIViewController {
     //MARK - hamburger menu vars
     @IBOutlet weak var leadingC: NSLayoutConstraint!
@@ -19,15 +20,11 @@ class ViewController: UIViewController {
     
     @IBAction func hamburgerButton(_ sender: Any) {
         if !hamburgerMenuIsVisible{
-            leadingC.constant = 150
-            //trailingC.constant = -150
-            hamburgerMenuIsVisible = true
+            present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
         }
         
         else {
-            //move back
-            leadingC.constant = 0
-            //trailingC.constant = 0
+            dismiss(animated: true, completion: nil)
             hamburgerMenuIsVisible = false
         }
         
@@ -49,6 +46,10 @@ class ViewController: UIViewController {
             presentAuthUIViewController()
             
         }
+         let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
+        
+        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+        
     }
     
     @IBAction func signOutButton(_ sender: Any) {
