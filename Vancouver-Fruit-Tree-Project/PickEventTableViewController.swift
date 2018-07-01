@@ -76,6 +76,21 @@ class PickEventTableViewController: UITableViewController {
 
         return cell
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let event = pickevents[indexPath.row]
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "PickDetailsViewController") as! PickDetailsViewController
+        if ((event.date != nil && event.teamlead != nil) && event.teamlead != nil){
+        detailVC.getdate = "\(event.date!)"
+        detailVC.gettime = "\(event.time!)"
+        detailVC.getleader = "\(event.teamlead!)"
+            
+        self.navigationController?.pushViewController(detailVC, animated: true)}
+        else
+        {
+            print("At least on of the attributes is nil")
+        }
+        
+    }
     
 
     /*

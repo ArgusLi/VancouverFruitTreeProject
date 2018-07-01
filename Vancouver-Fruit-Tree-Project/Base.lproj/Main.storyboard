@@ -20,8 +20,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KXY-4T-NXg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="KXY-4T-NXg">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="h9i-Sz-VCQ">
                                 <rect key="frame" x="20" y="98" width="105" height="88.666666666666686"/>
@@ -148,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XcH-Vz-cuU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="1030"/>
+            <point key="canvasLocation" x="1642.4000000000001" y="1029.3103448275863"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cDc-Zd-bKW">
@@ -160,7 +161,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="OwM-E3-k80" kind="relationship" relationship="viewControllers" id="a7U-R1-0nb"/>
+                        <segue destination="a2k-Xs-oHT" kind="relationship" relationship="viewControllers" id="a7U-R1-0nb"/>
                         <segue destination="7Hj-oU-92h" kind="relationship" relationship="viewControllers" id="BMc-LK-v7p"/>
                     </connections>
                 </tabBarController>
@@ -168,7 +169,7 @@
             </objects>
             <point key="canvasLocation" x="33" y="105"/>
         </scene>
-        <!--List View-->
+        <!--Pick Event Table View Controller-->
         <scene sceneID="8AL-dZ-3qp">
             <objects>
                 <tableViewController id="OwM-E3-k80" customClass="PickEventTableViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -185,7 +186,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="amW-PW-M5Q">
-                                            <rect key="frame" x="15.999999999999996" y="0.0" width="41.666666666666657" height="47"/>
+                                            <rect key="frame" x="16" y="0.0" width="41.666666666666657" height="47"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20m-10-9zR">
                                                     <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="10.333333333333334"/>
@@ -233,11 +234,59 @@
                             <outlet property="delegate" destination="OwM-E3-k80" id="cbj-tc-R2c"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="List View" image="Icons" id="1VJ-dD-Yzh"/>
+                    <navigationItem key="navigationItem" id="4JI-Dv-8dL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PV3-Dl-FHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-607.20000000000005" y="1028.5714285714287"/>
+            <point key="canvasLocation" x="335.19999999999999" y="1028.5714285714287"/>
+        </scene>
+        <!--Pick Details View Controller-->
+        <scene sceneID="Y9U-f0-ksT">
+            <objects>
+                <viewController storyboardIdentifier="PickDetailsViewController" id="slh-jt-ZCp" customClass="PickDetailsViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ErD-qg-ce2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVo-Eb-IHq">
+                                <rect key="frame" x="16" y="424" width="343" height="237"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9Q-yN-UJ0">
+                                <rect key="frame" x="36" y="127" width="295" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1K-AJ-Wiq">
+                                <rect key="frame" x="36" y="216" width="295" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Lead" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAc-TZ-iTE">
+                                <rect key="frame" x="36" y="285" width="295" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fgu-ER-ctu"/>
+                    </view>
+                    <connections>
+                        <outlet property="Time" destination="U1K-AJ-Wiq" id="vaH-ra-2eH"/>
+                        <outlet property="date" destination="p9Q-yN-UJ0" id="a43-tT-vCx"/>
+                        <outlet property="mapView" destination="EVo-Eb-IHq" id="TZr-17-Lbx"/>
+                        <outlet property="teamlead" destination="wAc-TZ-iTE" id="wOu-dZ-BTv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDG-lR-OOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-607.20000000000005" y="1883.497536945813"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RYS-LJ-vwV">
@@ -287,8 +336,28 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="-665.21739130434787"/>
         </scene>
+        <!--List View-->
+        <scene sceneID="sa4-8S-C2P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a2k-Xs-oHT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List View" image="Icons" id="1VJ-dD-Yzh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ROC-MW-9Ue">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OwM-E3-k80" kind="relationship" relationship="rootViewController" id="BBi-wY-4W7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJh-k7-VNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-607.20000000000005" y="1028.5714285714287"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Background" width="425" height="640"/>
         <image name="HamburgerIcon" width="50" height="50"/>
         <image name="Icons" width="25" height="25"/>
         <image name="Map view" width="25" height="25"/>
