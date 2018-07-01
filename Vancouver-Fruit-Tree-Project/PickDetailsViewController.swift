@@ -19,16 +19,28 @@ class PickDetailsViewController: UIViewController {
     
     @IBOutlet weak var teamlead: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         date.text=getdate
         time.text = gettime
         teamlead.text = "Team Lead: \(getleader)"
+        mapView.setCenter( getCoordinates, animated: true)
+        let circle = MKCircle(center: getCoordinates , radius: 100 )
+        let mapspan = MKCoordinateSpanMake(0.1, 0.1)
+        let mapregion = MKCoordinateRegionMake(getCoordinates, mapspan)
+        
+        self.mapView.setRegion(mapregion, animated: true)
+        self.mapView.add(circle)
+        
+
+        
         
         
 
         // Do any additional setup after loading the view.
     }
+    
 
     
     override func didReceiveMemoryWarning() {

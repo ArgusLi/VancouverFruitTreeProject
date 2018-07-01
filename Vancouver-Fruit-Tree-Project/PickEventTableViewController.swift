@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MapKit
 class PickEventTableViewController: UITableViewController {
     
     // TODO: Insert an array declaration here
@@ -16,12 +16,14 @@ class PickEventTableViewController: UITableViewController {
         var date :NSNumber?
         var time :NSNumber?
         var teamlead :String?
+        var longtitute : CLLocationDegrees?
+        var latitude : CLLocationDegrees?
     }
     var pickevents = [PickEvent]()
    private func loadavailablepicks()
    {
     for _ in 1...10{
-        let pickevent = PickEvent(date:  123, time: 12, teamlead: "Test lead")
+        let pickevent = PickEvent(date:  123, time: 12, teamlead: "Test lead", longtitute: -122.0  as CLLocationDegrees, latitude: 49.0 as CLLocationDegrees)
         pickevents.append(pickevent)
     }
     
@@ -83,6 +85,7 @@ class PickEventTableViewController: UITableViewController {
         detailVC.getdate = "\(event.date!)"
         detailVC.gettime = "\(event.time!)"
         detailVC.getleader = "\(event.teamlead!)"
+            detailVC.getCoordinates = CLLocationCoordinate2D(latitude: event.latitude!, longitude: event.longtitute!)
             
         self.navigationController?.pushViewController(detailVC, animated: true)}
         else
