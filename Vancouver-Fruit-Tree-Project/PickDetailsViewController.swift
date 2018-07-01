@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+
 class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     var getdate = String()
     var gettime =  String()
@@ -20,6 +21,7 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     
     @IBOutlet weak var teamlead: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,9 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
         let mapregion = MKCoordinateRegionMake(getCoordinates, mapspan)
         
         self.mapView.setRegion(mapregion, animated: true)
+        let annontation = MapAnnotation(coor: getCoordinates, title: "Test Title")
+        mapView.addAnnotation(annontation)
+        addRadius(location: getCoordinates)
         
         
 
@@ -43,18 +48,19 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
         // Do any additional setup after loading the view.
     }
     func addRadius(location: CLLocationCoordinate2D){
-        self.mapView.delegate = self
-        var circle = MKCircle(center: getCoordinates , radius: 100 )
+        mapView.delegate = self
+        let circle = MKCircle(center:location , radius: 1000 )
         self.mapView.add(circle)
     }
     
 
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer! {
         if overlay is MKCircle {
-            var circle = MKCircleRenderer(overlay: overlay)
+            let circle = MKCircleRenderer(overlay: overlay)
             circle.strokeColor = UIColor.green
             circle.fillColor = UIColor.green
             circle.lineWidth = 1
+            circle.alpha = 0.5
             return circle
         } else {
             return nil
