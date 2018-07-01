@@ -14,6 +14,7 @@ class team:NSObject{
     var teamName:String?
     var pickEvent:String?
     var teamID:String?
+    var dbInterface=DatabaseInterface
     
     func addMember(accountID:String){
         //Add to database
@@ -55,6 +56,22 @@ class coordinator:NSObject{
         //Modify database to change team ID
     }
 }
-
-
+class volunteer:NSObject{
+    var teamID:String?
+    var pickCounter:Int?
+    var volunteerID:String?
+    var dbInterface=DatabaseInterface
+    var pickevent:Pickevents
+    
+    func requestTeam(teamID:String){
+        //Send notification to team leader
+        //Message team leader of team
+    }
+    func viewPick(pick:String?){
+        //pull pick from database and display data
+    }
+    func viewPickOnMap(pick:String?){
+        //display pick from database
+    }
+}
 
