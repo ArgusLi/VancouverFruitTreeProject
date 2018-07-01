@@ -59,6 +59,11 @@ class DatabaseInterface {
     
     }
     
+    //TODO: scan pick events using FindPick index
+    func scanPickEvent(){
+    
+        
+    }
     
     
 }
