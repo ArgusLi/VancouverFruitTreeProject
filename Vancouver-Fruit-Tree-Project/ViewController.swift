@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     @IBAction func TestDBIndexQuery(_ sender: Any) {
         
         let DBInterface = DatabaseInterface();
-        let pickArray: [PickEvents] = DBInterface.queryPickEventsByDate(date: "2018/07/02", time: "15:30")
+        let pickArray: [PickEvents] = DBInterface.queryPickEventsByDate(date: "2018/6/29", time: "15:30")
         print("Query completed")
         print(pickArray.count)
         for x in pickArray {
@@ -35,6 +35,18 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func TestDBScan(_ sender: Any) {
+        
+        let DBInterface = DatabaseInterface()
+        
+        let pickArray = DBInterface.scanPickEvents(itemLimit: 20, maxDate: "2018/07/01")
+        
+        print(pickArray.count)
+        for x in pickArray {
+            print(x._eventDate!)
+        }
+        
+    }
     @IBAction func TestDBQueryAndDelete(_ sender: Any) {
         
         let DBInterface = DatabaseInterface()
@@ -50,7 +62,7 @@ class ViewController: UIViewController {
             
         }
         
-        var result = DBInterface.deletePickEvent(itemToDelete: pick!)
+        let result = DBInterface.deletePickEvent(itemToDelete: pick!)
         
         print("Result of delete: " + String(result))
         
@@ -61,7 +73,12 @@ class ViewController: UIViewController {
         
         let DBInterface = DatabaseInterface();
         
-        DBInterface.createPickEvents(eventTime: "16:45", eventDate:"2018/07/02" , latitude: 4000, longitude: 2000, teamID: "2");
+        DBInterface.createPickEvents(eventTime: "16:45", eventDate:"2018/07/01" , latitude: 4000, longitude: 2000, teamID: "2");
+        
+        let d1 = "2018/07/29"
+        let d2 = "2018/12/02"
+        let result  = d1 > d2
+        print("Evaluation of " + String(d1) + " > "  + String(d2) + " :" + String(result) )
         
         
     }

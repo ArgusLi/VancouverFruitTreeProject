@@ -19,8 +19,8 @@ class DatabaseInterface {
     /// Creates and uploads a new pick event to the database
     ///
     /// - Parameters:
-    ///   - eventTime: the scheduled time for the event, in 24HR format. Format: "HH/MM/SS". Do not use leading 0s. Example: "12:30:5" ; "16:5:30"
-    ///   - eventDate: the scheduled date for the event, in YYYY/MM/DD format. Do not use leading 0s. Example: "2018/6/30"
+    ///   - eventTime: the scheduled time for the event, in 24HR format. Format: "HH/MM/SS". **MUST USE** leading 0s for correct query evaluation. Example: "12:30:05" ; "05:05:30"
+    ///   - eventDate: the scheduled date for the event, in YYYY/MM/DD format. **MUST USE** leading 0s for correct query evaluation. Example: "2018/06/03"
     ///   - latitude: the latitude for the location of the event
     ///   - longitude: the longitude for the location of the event
     ///   - teamID: the ID string for the team assigned to the pickEvent
@@ -129,17 +129,52 @@ class DatabaseInterface {
     }
     
     //MARK: scans whole table, then applies filters afterwards
-    //TODO:
-    func scanPickEvents(){
+    
+    /// Scans the whole table and returns all items that are equal to or earlier than the maxDate parameter
+    ///
+    /// - Parameters:
+    ///   - itemLimit: max number of items returned in the [PickEvents] array
+    ///   - maxDate: upper limit date range; **MUST** have leading 0s, be in format YYYY/MM/DD or else string evaluation will be wrong
+    /// - Returns: array of PickEvents objects that match scan parameters
+    func scanPickEvents(itemLimit: NSNumber, maxDate: String) -> [PickEvents]{
         
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let scanExpression = AWSDynamoDBScanExpression()
-        scanExpression.limit = 20
-        //scanExpression.
+        var pickArray: [PickEvents] = []
+        var queryComplete = false
         
+        scanExpression.limit = itemLimit
+        scanExpression.indexName = "FindPick"
+        scanExpression.filterExpression = "eventDate <= :maxDate"
+        //scanExpression.expressionAttributeNames =
+        scanExpression.expressionAttributeValues = [":maxDate" : maxDate]
         
-//        dynamoDBObjectMapper.scan(PickEvents.self, expression: <#T##AWSDynamoDBScanExpression#>, completionHandler: <#T##((AWSDynamoDBPaginatedOutput?, Error?) -> Void)?##((AWSDynamoDBPaginatedOutput?, Error?) -> Void)?##(AWSDynamoDBPaginatedOutput?, Error?) -> Void#>)
-//
+        dynamoDBObjectMapper.scan(PickEvents.self, expression: scanExpression)  { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            if error != nil {
+                print("The request failed. Error: \(String(describing: error))")
+            }
+            
+            if output != nil {
+                for pick in output!.items {
+                    let pickItem = pick as? PickEvents
+                    //print("\(pickItem!._eventDate!)")
+                    pickArray.append(pickItem!)
+                }
+            }
+            queryComplete = true;
+        }
+        
+        while queryComplete == false {
+            if queryComplete == true{
+                print("query is finished")
+                queryComplete = false
+                return pickArray
+            }
+        }
+        
+        return pickArray
+        
+
     }
     
     //MARK: Query database for a specific pickEvent using hash criteria
