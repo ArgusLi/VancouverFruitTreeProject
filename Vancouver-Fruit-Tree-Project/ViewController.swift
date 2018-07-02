@@ -23,11 +23,23 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func TestDBIndexQuery(_ sender: Any) {
+        
+        let DBInterface = DatabaseInterface();
+        let pickArray: [PickEvents] = DBInterface.queryPickEventsByDate(date: "2018/07/02", time: "15:30")
+        print("Query completed")
+        print(pickArray.count)
+        for x in pickArray {
+            print(x._userId!)
+        }
+        
+    }
+    
     @IBAction func TestDBUpload(_ sender: Any) {
         
         let DBInterface = DatabaseInterface();
         
-        DBInterface.createPickEvent(eventTime: "15:30", eventDate:"2018:07:02" , latitude: "30", longitude: "30", teamID: "2");
+        DBInterface.createPickEvents(eventTime: "16:45", eventDate:"2018/07/02" , latitude: 4000, longitude: 2000, teamID: "2");
         
         
     }

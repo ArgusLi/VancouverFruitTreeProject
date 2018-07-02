@@ -13,6 +13,7 @@ import AWSAuthCore
 
 @objcMembers
 class DatabaseInterface {
+    var _queryComplete = false
     
     //MARK: create pick event
     func createPickEvents(eventTime: String, eventDate: String, latitude: NSNumber, longitude: NSNumber, teamID: String){
@@ -70,36 +71,79 @@ class DatabaseInterface {
         * Returns all pick events that are at or before the submitted date and time
      
      - Parameter date:   Search criteria for Pick Event, format: "YYYY/MM/DD"
-                **NOTE** Do not put leading 0s
+                **NOTE** Do not use leading 0s
+                **Example** "1970/1/1"
      
      - Parameter time:    Search criteria for Pick Event, format: "HH:MM:SS"
-                **NOTE** Do not put leading 0s
+                **NOTE** Do not use leading 0s
      
     */
-    func queryPickEventsByDate(date: String, time: String?){
+    func queryPickEventsByDate(date: String, time: String?) -> [PickEvents] {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        print("in DatabaseInterface -> queryPickEventsByDate")
+        var pickArray: [PickEvents] = []
+        var queryComplete = false
         
         let queryExpression = AWSDynamoDBQueryExpression()
         queryExpression.indexName = "FindPick"
+        queryExpression.keyConditionExpression = "#eventDate = :eventDate AND #eventTime <= :eventTime";
+        queryExpression.expressionAttributeNames = ["#eventDate": "eventDate", "#eventTime": "eventTime"]
+        queryExpression.expressionAttributeValues = [":eventDate": date, ":eventTime": time!]
         
-        queryExpression.keyConditionExpression = "Date <= :maxDate AND Time <= :maxTime";
-        queryExpression.expressionAttributeValues = {":maxDate"; date; ":maxTime"; time};
         
-        dynamoDBObjectMapper.query(PickEvents.self, expression: queryExpression).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
-            if let error = task.error as? NSError {
-                print("The request failed. Error: \(error)")
-            } else if let paginatedOutput = task.result {
-                for book in paginateOutput.items as! Book {
-                    // Do something with book.
-                }
+        dynamoDBObjectMapper.query(PickEvents.self, expression: queryExpression)
+        { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            if error != nil {
+                print("The request failed. Error: \(String(describing: error))")
             }
-            return nil
-        })
+            
+            
+            
+            if output != nil {
+                for pick in output!.items {
+                    let pickItem = pick as? PickEvents
+                    //print("\(pickItem!._eventDate!)")
+                    pickArray.append(pickItem!)
+
+                }
+
+            }
+            
+            print("After appeding inside of function: ", pickArray.count)
+            
+            queryComplete = true;
+        }
+        
+        while queryComplete == false {
+            if queryComplete == true{
+                print("query is finished")
+                queryComplete = false
+                return pickArray
+            }
+        }
+        
+        return pickArray
+        //print("count outside of inside function:", self._pickArray.count)
+        //return self._pickArray
     }
     
     //MARK: scans whole table, then applies filters afterwards
     func scanPickEvents(){
         
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let scanExpression = AWSDynamoDBScanExpression()
+        scanExpression.limit = 20
+//        
+//        dynamoDBObjectMapper.scan(PickEvents.self, expression: scanExpression).continueWith(block: { (task:AWSTask<AWSDynamoDBPaginatedOutput>!) -> Any? in
+//            if let error = task.error as NSError? {
+//                print("The request failed. Error: \(error)")
+//            } else if let paginatedOutput = task.result {
+//                for pick in paginatedOutput.items as! PickEvents {
+//                    // Do something with pick.
+//                    print(type(of: PaginatedOutput.items))
+//                }
+//            }
+//        })
         
     }
     
