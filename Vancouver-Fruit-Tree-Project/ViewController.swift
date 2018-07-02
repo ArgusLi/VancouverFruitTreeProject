@@ -46,9 +46,7 @@ class ViewController: UIViewController {
             presentAuthUIViewController()
             
         }
-         let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
-        
-        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+         
         
     }
     
@@ -67,7 +65,6 @@ class ViewController: UIViewController {
         
         config.isBackgroundColorFullScreen = true
         config.logoImage = UIImage(named: "VFTP_LOGO_CS3-167x300")
-        
         AWSAuthUIViewController.presentViewController(
             with: self.navigationController!,
             configuration: config, completionHandler: { (provider: AWSSignInProvider, error: Error?) in

@@ -10,8 +10,19 @@ import UIKit
 import MapKit
 class PickEventMapViewController: UIViewController , CLLocationManagerDelegate, MKMapViewDelegate{
 
+    @IBOutlet weak var mapView: MKMapView!
+    let vancouverlocation = CLLocationCoordinate2DMake(  49.246292, -123.116226)
+    let mapspan = MKCoordinateSpanMake(0.8, 0.8)
+    var Events = [Any]()
+    func reset(){
+       let location = MKCoordinateRegion(center: vancouverlocation, span:mapspan)
+        mapView.setRegion(location, animated: true)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        reset()
+        
 
         // Do any additional setup after loading the view.
     }

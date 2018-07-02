@@ -35,8 +35,8 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
         let mapregion = MKCoordinateRegionMake(getCoordinates, mapspan)
         
         self.mapView.setRegion(mapregion, animated: true)
-        let annontation = MapAnnotation(coor: getCoordinates, title: "Test Title")
-        mapView.addAnnotation(annontation)
+        //let annontation = MapAnnotation(coor: getCoordinates, title: "Test Title")
+        //mapView.addAnnotation(annontation)
         addRadius(location: getCoordinates)
         
         

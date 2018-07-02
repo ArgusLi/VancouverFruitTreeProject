@@ -34,6 +34,8 @@ class PickEventTableViewController: UITableViewController {
         super.viewDidLoad()
         
         loadavailablepicks()
+        let mapVC = storyboard?.instantiateViewController(withIdentifier: "PickEventMapViewController") as! PickEventMapViewController
+        mapVC.Events = pickevents
         
 
         // Uncomment the following line to preserve selection between presentations
