@@ -35,12 +35,51 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func TestDBQueryAndDelete(_ sender: Any) {
+        
+        let DBInterface = DatabaseInterface()
+        let userID = AWSIdentityManager.default().identityId!
+        print("User #: " + userID)
+        
+        let pick = DBInterface.readPickEvent(userId: userID , creationTime: "2018/7/1-14:58:33")
+        var unwrappedPick: PickEvents
+        if pick != nil{
+            unwrappedPick = pick!
+            print("userID: " + unwrappedPick._userId!)
+            print("creationTime: " + unwrappedPick._creationTime!)
+            
+        }
+        
+        var result = DBInterface.deletePickEvent(itemToDelete: pick!)
+        
+        print("Result of delete: " + String(result))
+        
+    }
+    
+    
     @IBAction func TestDBUpload(_ sender: Any) {
         
         let DBInterface = DatabaseInterface();
         
         DBInterface.createPickEvents(eventTime: "16:45", eventDate:"2018/07/02" , latitude: 4000, longitude: 2000, teamID: "2");
         
+        
+    }
+    
+    @IBAction func TestDBFetch(_ sender: Any) {
+        
+        let DBInterface = DatabaseInterface()
+        let userID = AWSIdentityManager.default().identityId!
+        print("User #: " + userID)
+        
+        let pick = DBInterface.readPickEvent(userId: userID , creationTime: "2018/7/1-14:58:33")
+        
+        if pick != nil{
+            let unwrappedPick = pick!
+            print("userID: " + unwrappedPick._userId!)
+            print("creationTime: " + unwrappedPick._creationTime!)
+            
+        }
         
     }
     @IBAction func signOutButton(_ sender: Any) {
@@ -50,6 +89,7 @@ class ViewController: UIViewController {
             
         })
     }
+    
     func presentAuthUIViewController(){
         let config = AWSAuthUIConfiguration()
         config.enableUserPoolsUI = true

@@ -129,24 +129,114 @@ class DatabaseInterface {
     }
     
     //MARK: scans whole table, then applies filters afterwards
+    //TODO:
     func scanPickEvents(){
         
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let scanExpression = AWSDynamoDBScanExpression()
         scanExpression.limit = 20
-//        
-//        dynamoDBObjectMapper.scan(PickEvents.self, expression: scanExpression).continueWith(block: { (task:AWSTask<AWSDynamoDBPaginatedOutput>!) -> Any? in
-//            if let error = task.error as NSError? {
-//                print("The request failed. Error: \(error)")
-//            } else if let paginatedOutput = task.result {
-//                for pick in paginatedOutput.items as! PickEvents {
-//                    // Do something with pick.
-//                    print(type(of: PaginatedOutput.items))
-//                }
-//            }
-//        })
+        //scanExpression.
+        
+        
+//        dynamoDBObjectMapper.scan(PickEvents.self, expression: <#T##AWSDynamoDBScanExpression#>, completionHandler: <#T##((AWSDynamoDBPaginatedOutput?, Error?) -> Void)?##((AWSDynamoDBPaginatedOutput?, Error?) -> Void)?##(AWSDynamoDBPaginatedOutput?, Error?) -> Void#>)
+//
+    }
+    
+    //MARK: Query database for a specific pickEvent using hash criteria
+    /// Query database for a specific pickEvent using hash criteria - userId and creationTime
+    ///
+    /// - Parameters:
+    ///   - userId: the userId parameter of the PickEvents object
+    ///   - creationTime: the creationTime parameter of the PickEvents object
+    /// - Returns: an optional PickEvents? object; if the object is nil, then nothing was found for the submitted criterion or the query timed out
+    func readPickEvent(userId: String, creationTime: String) -> PickEvents? {
+        
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        var received: PickEvents?
+        var queryComplete = false
+        
+        let queryExpression = AWSDynamoDBQueryExpression()
+        
+        queryExpression.keyConditionExpression = "#userId = :userId AND #creationTime = :creationTime";
+        queryExpression.expressionAttributeNames = ["#userId": "userId", "#creationTime": "creationTime"]
+        queryExpression.expressionAttributeValues = [":userId": userId, ":creationTime": creationTime]
+        
+        let currentUserID = AWSIdentityManager.default().identityId
+        
+        if currentUserID != userId{
+            print("Error: User ID of current user and creator do not match, read denied")
+        }
+        
+        else {
+            dynamoDBObjectMapper.query(PickEvents.self, expression: queryExpression)
+            { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+                if error != nil {
+                    print("The request failed. Error: \(String(describing: error))")
+                }
+                
+                if output != nil {
+                    for pick in output!.items {
+                        let pickItem = pick as? PickEvents
+                        //print("\(pickItem!._eventDate!)")
+                        received = pickItem
+                    }
+                }
+                
+                queryComplete = true;
+            }
+        
+            //waits for query to complete before returning
+            while queryComplete == false {
+                if queryComplete == true{
+                    print("query is finished")
+                    queryComplete = false
+                    return received //received! != nil
+                }
+            }
+        }
+        return received //so Xcode stops complaining
+    }
+    
+    /// removes a pick event from the database
+    ///
+    /// - Parameter PickEvents: the PickEvents object that is to be removed from the table
+    /// - Returns: 1 for success, 0 for failure
+    func deletePickEvent(itemToDelete: PickEvents) -> Int {
+        
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        var ret: Int = 1
+        var queryComplete = false
+        
+        dynamoDBObjectMapper.remove(itemToDelete, completionHandler: {(error: Error?) -> Void in
+            if let error = error {
+                print(" Amazon DynamoDB Save Error: \(error)")
+                ret = 0
+                return
+            }
+            print("An item was deleted.")
+            ret = 1
+            queryComplete = true
+        })
+        
+        while queryComplete == false {
+            if queryComplete == true{
+                print("query is finished")
+                queryComplete = false
+                return ret
+            }
+        }
+        
+        return ret
         
     }
     
-    
 }
+
+
+
+
+
+
+
+
+
