@@ -8,11 +8,10 @@
 
 import UIKit
 import SideMenu
-class SlideMenuViewController: UISideMenuNavigationController{
+class SlideMenuViewController: UITableViewController{
 
-    @IBOutlet weak var buttonone: UIButton!
-    @IBOutlet weak var buttontwo: UIButton!
-    @IBOutlet weak var buttonthree: UIButton!
+    @IBOutlet weak var MyPicks: UITableViewCell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +22,13 @@ class SlideMenuViewController: UISideMenuNavigationController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        if indexPath.row != 0{
+            let alert = UIAlertController(title: "This functionality is unavailable", message: "We are currently working on this, check back later.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
 
     /*
     // MARK: - Navigation

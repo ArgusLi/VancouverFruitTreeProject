@@ -22,8 +22,8 @@ class PickEventTableViewController: UITableViewController {
     var pickevents = [PickEvent]()
    private func loadavailablepicks()
    {
-    for _ in 1...10{
-        let pickevent = PickEvent(date:  123, time: 12, teamlead: "Test lead", longtitute: -122.9180  as CLLocationDegrees, latitude: 49.2768 as CLLocationDegrees)
+    for index in 0...10{
+        let pickevent = PickEvent(date:  123, time: 12, teamlead: "Test lead", longtitute: -122.9180  as CLLocationDegrees, latitude: (49.2768 + Double(index)/100) as CLLocationDegrees)
         pickevents.append(pickevent)
     }
     
