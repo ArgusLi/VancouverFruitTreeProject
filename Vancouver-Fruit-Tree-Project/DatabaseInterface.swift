@@ -13,9 +13,17 @@ import AWSAuthCore
 
 @objcMembers
 class DatabaseInterface {
-    var _queryComplete = false
+    
     
     //MARK: create pick event
+    /// Creates and uploads a new pick event to the database
+    ///
+    /// - Parameters:
+    ///   - eventTime: the scheduled time for the event, in 24HR format. Format: "HH/MM/SS". Do not use leading 0s. Example: "12:30:5" ; "16:5:30"
+    ///   - eventDate: the scheduled date for the event, in YYYY/MM/DD format. Do not use leading 0s. Example: "2018/6/30"
+    ///   - latitude: the latitude for the location of the event
+    ///   - longitude: the longitude for the location of the event
+    ///   - teamID: the ID string for the team assigned to the pickEvent
     func createPickEvents(eventTime: String, eventDate: String, latitude: NSNumber, longitude: NSNumber, teamID: String){
         
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
@@ -65,19 +73,17 @@ class DatabaseInterface {
     
     }
     
-    //TODO:
-    /**
-        * Queries pick events by date and time using FindPick index
-        * Returns all pick events that are at or before the submitted date and time
-     
-     - Parameter date:   Search criteria for Pick Event, format: "YYYY/MM/DD"
-                **NOTE** Do not use leading 0s
-                **Example** "1970/1/1"
-     
-     - Parameter time:    Search criteria for Pick Event, format: "HH:MM:SS"
-                **NOTE** Do not use leading 0s
-     
-    */
+    //MARK: Search for pickEvents by date and time
+    /// Queries pick events by date and time using FindPick index.
+    /// Returns all pick events that are on the date and at or before the time.
+    ///
+    /// - Parameters:
+    ///   - date: Search criteria for Pick Event, format: "YYYY/MM/DD"
+    ///             **NOTE** Do not use leading 0s
+    ///             **Example** "1970/1/1"
+    ///   - time: Search criteria for Pick Event in 24HR format, format: "HH:MM:SS"
+    ///             **NOTE** Do not use leading 0s
+    /// - Returns: [PickEvents]
     func queryPickEventsByDate(date: String, time: String?) -> [PickEvents] {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         print("in DatabaseInterface -> queryPickEventsByDate")
@@ -90,14 +96,11 @@ class DatabaseInterface {
         queryExpression.expressionAttributeNames = ["#eventDate": "eventDate", "#eventTime": "eventTime"]
         queryExpression.expressionAttributeValues = [":eventDate": date, ":eventTime": time!]
         
-        
         dynamoDBObjectMapper.query(PickEvents.self, expression: queryExpression)
         { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
             if error != nil {
                 print("The request failed. Error: \(String(describing: error))")
             }
-            
-            
             
             if output != nil {
                 for pick in output!.items {
@@ -106,11 +109,9 @@ class DatabaseInterface {
                     pickArray.append(pickItem!)
 
                 }
-
             }
             
-            print("After appeding inside of function: ", pickArray.count)
-            
+            //print("After appeding inside of function: ", pickArray.count)
             queryComplete = true;
         }
         
