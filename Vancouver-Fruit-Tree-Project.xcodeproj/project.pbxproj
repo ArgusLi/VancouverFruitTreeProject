@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4D29FDB7F6C76D497D88F882 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
-		7E39CC0020E96C4F00CA1391 /* Objective-CBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39CBFF20E96C4F00CA1391 /* Objective-CBridgingHeader.m */; };
-		7E39CC0120E96C4F00CA1391 /* Objective-CBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39CBFF20E96C4F00CA1391 /* Objective-CBridgingHeader.m */; };
-		7E39CC0220E96C4F00CA1391 /* Objective-CBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39CBFF20E96C4F00CA1391 /* Objective-CBridgingHeader.m */; };
 		7EC8776120E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
 		7EC8776220E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
 		7EC8776320E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
@@ -58,10 +55,6 @@
 		282EA9A55D8B14EDA1330A08 /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481C84BA36765041D733FDB7 /* Pods-Vancouver-Fruit-Tree-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project.release.xcconfig"; sourceTree = "<group>"; };
 		62575C5D493EF0A87C4484FF /* Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7E39CBFC20E96C4E00CA1391 /* Vancouver-Fruit-Tree-Project-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vancouver-Fruit-Tree-Project-Bridging-Header.h"; sourceTree = "<group>"; };
-		7E39CBFD20E96C4E00CA1391 /* Vancouver-Fruit-Tree-ProjectTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vancouver-Fruit-Tree-ProjectTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		7E39CBFE20E96C4E00CA1391 /* Vancouver-Fruit-Tree-ProjectUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vancouver-Fruit-Tree-ProjectUITests-Bridging-Header.h"; sourceTree = "<group>"; };
-		7E39CBFF20E96C4F00CA1391 /* Objective-CBridgingHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Objective-CBridgingHeader.m"; sourceTree = "<group>"; };
 		7EC8776020E818B300F860C9 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		7EC8776420E81AA000F860C9 /* PickEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickEvents.swift; sourceTree = "<group>"; };
 		7EC8776520E81AA000F860C9 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -155,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				7EC8776420E81AA000F860C9 /* PickEvents.swift */,
-				7E39CBFF20E96C4F00CA1391 /* Objective-CBridgingHeader.m */,
 				7EC8776520E81AA000F860C9 /* Users.swift */,
 				7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */,
 				AC8EB70320D03A91007E6CAA /* AppDelegate.swift */,
@@ -165,7 +157,6 @@
 				AC8EB70C20D03A94007E6CAA /* LaunchScreen.storyboard */,
 				7EC8776020E818B300F860C9 /* awsconfiguration.json */,
 				AC8EB70F20D03A94007E6CAA /* Info.plist */,
-				7E39CBFC20E96C4E00CA1391 /* Vancouver-Fruit-Tree-Project-Bridging-Header.h */,
 			);
 			path = "Vancouver-Fruit-Tree-Project";
 			sourceTree = "<group>";
@@ -173,7 +164,6 @@
 		AC8EB71720D03A94007E6CAA /* Vancouver-Fruit-Tree-ProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				7E39CBFD20E96C4E00CA1391 /* Vancouver-Fruit-Tree-ProjectTests-Bridging-Header.h */,
 				AC8EB71820D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectTests.swift */,
 				AC8EB71A20D03A94007E6CAA /* Info.plist */,
 			);
@@ -183,7 +173,6 @@
 		AC8EB72220D03A94007E6CAA /* Vancouver-Fruit-Tree-ProjectUITests */ = {
 			isa = PBXGroup;
 			children = (
-				7E39CBFE20E96C4E00CA1391 /* Vancouver-Fruit-Tree-ProjectUITests-Bridging-Header.h */,
 				AC8EB72320D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift */,
 				AC8EB72520D03A94007E6CAA /* Info.plist */,
 			);
@@ -521,7 +510,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E39CC0020E96C4F00CA1391 /* Objective-CBridgingHeader.m in Sources */,
 				7EC8776920E81AA100F860C9 /* Users.swift in Sources */,
 				7EC8776620E81AA100F860C9 /* PickEvents.swift in Sources */,
 				AC8EB70620D03A91007E6CAA /* ViewController.swift in Sources */,
@@ -536,7 +524,6 @@
 			files = (
 				7EC8776E20E81EAC00F860C9 /* DatabaseInterface.swift in Sources */,
 				AC8EB71920D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectTests.swift in Sources */,
-				7E39CC0120E96C4F00CA1391 /* Objective-CBridgingHeader.m in Sources */,
 				7EC8776A20E81AA100F860C9 /* Users.swift in Sources */,
 				7EC8776720E81AA100F860C9 /* PickEvents.swift in Sources */,
 			);
@@ -548,7 +535,6 @@
 			files = (
 				7EC8776F20E81EAC00F860C9 /* DatabaseInterface.swift in Sources */,
 				AC8EB72420D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift in Sources */,
-				7E39CC0220E96C4F00CA1391 /* Objective-CBridgingHeader.m in Sources */,
 				7EC8776B20E81AA100F860C9 /* Users.swift in Sources */,
 				7EC8776820E81AA100F860C9 /* PickEvents.swift in Sources */,
 			);
