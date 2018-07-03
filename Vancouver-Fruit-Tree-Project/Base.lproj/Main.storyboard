@@ -20,15 +20,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VFTP_LOGO_CS3-167x300" translatesAutoresizingMaskIntoConstraints="NO" id="m6A-rD-b3K">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <rect key="frame" x="65" y="216" width="244" height="380"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="m6A-rD-b3K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="01x-K7-TPL"/>
-                            <constraint firstItem="m6A-rD-b3K" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2fU-u4-CdS"/>
-                            <constraint firstItem="m6A-rD-b3K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fIJ-Cq-HtN"/>
-                            <constraint firstItem="m6A-rD-b3K" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nba-Cw-ZpZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m6A-rD-b3K" secondAttribute="trailing" constant="66" id="EJR-WW-scE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m6A-rD-b3K" secondAttribute="bottom" constant="182" id="I2s-Kz-uB5"/>
+                            <constraint firstItem="m6A-rD-b3K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="cnA-3z-kxm"/>
+                            <constraint firstItem="m6A-rD-b3K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="128" id="z1y-JV-oVl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1133.5999999999999" y="-666.11694152923542"/>
+            <point key="canvasLocation" x="1133.5999999999999" y="-666.50246305418727"/>
         </scene>
         <!--Menu-->
         <scene sceneID="xBf-Zc-3Yc">
@@ -143,8 +143,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Become a pick leader" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbU-cW-nEk">
-                                                    <rect key="frame" x="104.99999999999999" y="11" width="164.66666666666663" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leaderboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbU-cW-nEk">
+                                                    <rect key="frame" x="138.66666666666666" y="11" width="97.333333333333343" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -390,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDG-lR-OOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="334" y="1853"/>
+            <point key="canvasLocation" x="-575" y="1790"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RYS-LJ-vwV">
