@@ -34,8 +34,7 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var curVC = self.navigationController?.topViewController?.title
-        print(curVC)
+       
         date.layer.cornerRadius = 8
         time.layer.cornerRadius = 8
         teamlead.layer.cornerRadius = 8
