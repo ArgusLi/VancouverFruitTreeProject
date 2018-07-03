@@ -10,9 +10,34 @@ import UIKit
 import AWSAuthCore
 import AWSAuthUI
 import AWSGoogleSignIn
-
+import SideMenu
 class ViewController: UIViewController {
-
+    //MARK - hamburger menu vars
+    @IBOutlet weak var leadingC: NSLayoutConstraint!
+    @IBOutlet weak var trailingC: NSLayoutConstraint!
+    @IBOutlet var hamburgerView: UIView!
+    var hamburgerMenuIsVisible = false
+    
+    @IBAction func hamburgerButton(_ sender: Any) {
+        if !hamburgerMenuIsVisible{
+            present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+        }
+        
+        else {
+            dismiss(animated: true, completion: nil)
+            hamburgerMenuIsVisible = false
+        }
+        
+        UIView.animate(withDuration: 0.2, animations: {self.view.layoutIfNeeded()}) {
+            
+            (animationComplete) in
+                print("The animation is complete!")
+            
+        }
+        
+    }
+    
+    //main
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -21,6 +46,8 @@ class ViewController: UIViewController {
             presentAuthUIViewController()
             
         }
+         
+        
     }
 
     @IBAction func signOutButton(_ sender: Any) {
@@ -39,7 +66,6 @@ class ViewController: UIViewController {
         
         config.isBackgroundColorFullScreen = true
         config.logoImage = UIImage(named: "VFTP_LOGO_CS3-167x300")
-        
         AWSAuthUIViewController.presentViewController(
             with: self.navigationController!,
             configuration: config, completionHandler: { (provider: AWSSignInProvider, error: Error?) in

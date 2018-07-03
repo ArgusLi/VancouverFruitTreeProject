@@ -21,6 +21,12 @@
 		7EC8776F20E81EAC00F860C9 /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */; };
 		7EC8777020E8382500F860C9 /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */; };
 		A89AAD761B03A0FD5F4D1DD2 /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E51FD94831BDC812745429B /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework */; };
+		AC5150EE20E3239C00BE453D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5150ED20E3239C00BE453D /* awsconfiguration.json */; };
+		AC5150EF20E3239C00BE453D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5150ED20E3239C00BE453D /* awsconfiguration.json */; };
+		AC5150F020E3239C00BE453D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5150ED20E3239C00BE453D /* awsconfiguration.json */; };
+		AC59A1FD20E85C450038BF30 /* PickDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59A1FC20E85C450038BF30 /* PickDetailsViewController.swift */; };
+		AC59A1FE20E85C450038BF30 /* PickDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59A1FC20E85C450038BF30 /* PickDetailsViewController.swift */; };
+		AC59A1FF20E85C450038BF30 /* PickDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59A1FC20E85C450038BF30 /* PickDetailsViewController.swift */; };
 		AC8EB70420D03A91007E6CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB70320D03A91007E6CAA /* AppDelegate.swift */; };
 		AC8EB70620D03A91007E6CAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB70520D03A91007E6CAA /* ViewController.swift */; };
 		AC8EB70920D03A91007E6CAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8EB70720D03A91007E6CAA /* Main.storyboard */; };
@@ -30,6 +36,22 @@
 		AC8EB72420D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB72320D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift */; };
 		AC95BBBD20E58C9F000B0856 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
 		AC95BBBE20E58CA0000B0856 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
+		ACA7FD4B20E972020040EEE0 /* PickEventMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA7FD4A20E972020040EEE0 /* PickEventMapViewController.swift */; };
+		ACA7FD4C20E972020040EEE0 /* PickEventMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA7FD4A20E972020040EEE0 /* PickEventMapViewController.swift */; };
+		ACA7FD4D20E972020040EEE0 /* PickEventMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA7FD4A20E972020040EEE0 /* PickEventMapViewController.swift */; };
+		ACA7FD4F20E975070040EEE0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA7FD4E20E975070040EEE0 /* MapKit.framework */; };
+		ACA7FD5120E9778D0040EEE0 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA7FD5020E9778D0040EEE0 /* MapAnnotation.swift */; };
+		ACA7FD5220E9778D0040EEE0 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA7FD5020E9778D0040EEE0 /* MapAnnotation.swift */; };
+		ACA7FD5320E9778D0040EEE0 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA7FD5020E9778D0040EEE0 /* MapAnnotation.swift */; };
+		ACA7FD5520E994040040EEE0 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA7FD5420E994040040EEE0 /* SlideMenuViewController.swift */; };
+		ACA7FD5620E994040040EEE0 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA7FD5420E994040040EEE0 /* SlideMenuViewController.swift */; };
+		ACA7FD5720E994040040EEE0 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA7FD5420E994040040EEE0 /* SlideMenuViewController.swift */; };
+		ACAB91ED20E816AB00EEE7A7 /* PickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91EC20E816AB00EEE7A7 /* PickEventTableViewCell.swift */; };
+		ACAB91EE20E816AB00EEE7A7 /* PickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91EC20E816AB00EEE7A7 /* PickEventTableViewCell.swift */; };
+		ACAB91EF20E816AB00EEE7A7 /* PickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91EC20E816AB00EEE7A7 /* PickEventTableViewCell.swift */; };
+		ACAB91F920E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
+		ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
+		ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
 		F3531E8E4EFB58D645FBBE1E /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282EA9A55D8B14EDA1330A08 /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +83,8 @@
 		7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseInterface.swift; sourceTree = "<group>"; };
 		8C3BB5A0CC6DD7805C1EA8F3 /* Pods-Vancouver-Fruit-Tree-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectTests/Pods-Vancouver-Fruit-Tree-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AADB9A7C35BAD577FC448817 /* Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC5150ED20E3239C00BE453D /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		AC59A1FC20E85C450038BF30 /* PickDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDetailsViewController.swift; sourceTree = "<group>"; };
 		AC8EB70020D03A91007E6CAA /* Vancouver-Fruit-Tree-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vancouver-Fruit-Tree-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8EB70320D03A91007E6CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC8EB70520D03A91007E6CAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +98,13 @@
 		AC8EB71F20D03A94007E6CAA /* Vancouver-Fruit-Tree-ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vancouver-Fruit-Tree-ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8EB72320D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vancouver_Fruit_Tree_ProjectUITests.swift; sourceTree = "<group>"; };
 		AC8EB72520D03A94007E6CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC95BBB920E55627000B0856 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		ACA7FD4A20E972020040EEE0 /* PickEventMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickEventMapViewController.swift; sourceTree = "<group>"; };
+		ACA7FD4E20E975070040EEE0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		ACA7FD5020E9778D0040EEE0 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		ACA7FD5420E994040040EEE0 /* SlideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
+		ACAB91EC20E816AB00EEE7A7 /* PickEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickEventTableViewCell.swift; sourceTree = "<group>"; };
+		ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickEventTableViewController.swift; sourceTree = "<group>"; };
 		CDBCAF1C044F604802460E97 /* Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE518A03D3EADCC1D0B6AA96 /* Pods-Vancouver-Fruit-Tree-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectTests/Pods-Vancouver-Fruit-Tree-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA7FD4F20E975070040EEE0 /* MapKit.framework in Frameworks */,
 				4D29FDB7F6C76D497D88F882 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +184,10 @@
 				7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */,
 				AC8EB70320D03A91007E6CAA /* AppDelegate.swift */,
 				AC8EB70520D03A91007E6CAA /* ViewController.swift */,
+				ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */,
+				AC59A1FC20E85C450038BF30 /* PickDetailsViewController.swift */,
+				ACA7FD5420E994040040EEE0 /* SlideMenuViewController.swift */,
+				ACA7FD4A20E972020040EEE0 /* PickEventMapViewController.swift */,
 				AC8EB70720D03A91007E6CAA /* Main.storyboard */,
 				AC8EB70A20D03A94007E6CAA /* Assets.xcassets */,
 				AC8EB70C20D03A94007E6CAA /* LaunchScreen.storyboard */,
@@ -179,9 +215,20 @@
 			path = "Vancouver-Fruit-Tree-ProjectUITests";
 			sourceTree = "<group>";
 		};
+		AC95BBB420E43C74000B0856 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC95BBB920E55627000B0856 /* Users.swift */,
+				ACA7FD5020E9778D0040EEE0 /* MapAnnotation.swift */,
+				ACAB91EC20E816AB00EEE7A7 /* PickEventTableViewCell.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F3DA8E5439CDBEA9E0151A81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ACA7FD4E20E975070040EEE0 /* MapKit.framework */,
 				E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */,
 				282EA9A55D8B14EDA1330A08 /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework */,
 				1E51FD94831BDC812745429B /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework */,
@@ -264,7 +311,11 @@
 				TargetAttributes = {
 					AC8EB6FF20D03A91007E6CAA = {
 						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					AC8EB71320D03A94007E6CAA = {
 						CreatedOnToolsVersion = 9.4;
@@ -385,6 +436,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -401,6 +453,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -409,7 +462,7 @@
 		};
 		7C4EB6B9CCE08B97DB2942F4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -420,10 +473,9 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		CF04E60022059B1FFA024C6C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -463,6 +515,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -479,6 +532,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -513,8 +567,14 @@
 				7EC8776920E81AA100F860C9 /* Users.swift in Sources */,
 				7EC8776620E81AA100F860C9 /* PickEvents.swift in Sources */,
 				AC8EB70620D03A91007E6CAA /* ViewController.swift in Sources */,
+				ACAB91F920E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
+				AC95BBBA20E55627000B0856 /* Users.swift in Sources */,
 				AC8EB70420D03A91007E6CAA /* AppDelegate.swift in Sources */,
-				7EC8777020E8382500F860C9 /* DatabaseInterface.swift in Sources */,
+				ACA7FD5520E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
+				ACA7FD4B20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
+				AC59A1FD20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
+				ACAB91ED20E816AB00EEE7A7 /* PickEventTableViewCell.swift in Sources */,
+				ACA7FD5120E9778D0040EEE0 /* MapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,10 +582,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EC8776E20E81EAC00F860C9 /* DatabaseInterface.swift in Sources */,
+				AC95BBBB20E55627000B0856 /* Users.swift in Sources */,
+				ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
+				ACA7FD5220E9778D0040EEE0 /* MapAnnotation.swift in Sources */,
 				AC8EB71920D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectTests.swift in Sources */,
-				7EC8776A20E81AA100F860C9 /* Users.swift in Sources */,
-				7EC8776720E81AA100F860C9 /* PickEvents.swift in Sources */,
+				ACAB91EE20E816AB00EEE7A7 /* PickEventTableViewCell.swift in Sources */,
+				ACA7FD5620E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
+				ACA7FD4C20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
+				AC59A1FE20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,10 +597,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EC8776F20E81EAC00F860C9 /* DatabaseInterface.swift in Sources */,
+				AC95BBBC20E55627000B0856 /* Users.swift in Sources */,
+				ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
+				ACA7FD5320E9778D0040EEE0 /* MapAnnotation.swift in Sources */,
 				AC8EB72420D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift in Sources */,
-				7EC8776B20E81AA100F860C9 /* Users.swift in Sources */,
-				7EC8776820E81AA100F860C9 /* PickEvents.swift in Sources */,
+				ACAB91EF20E816AB00EEE7A7 /* PickEventTableViewCell.swift in Sources */,
+				ACA7FD5720E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
+				ACA7FD4D20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
+				AC59A1FF20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,7 +762,7 @@
 			baseConfigurationReference = CDBCAF1C044F604802460E97 /* Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UGU27J2HV;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
@@ -702,9 +770,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.amazon.Vancouver-Fruit-Tree-Project1";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject23333;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -715,7 +783,7 @@
 			baseConfigurationReference = 481C84BA36765041D733FDB7 /* Pods-Vancouver-Fruit-Tree-Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UGU27J2HV;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
@@ -723,8 +791,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.amazon.Vancouver-Fruit-Tree-Project1";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject23333;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -10,6 +10,7 @@ import XCTest
 import AWSAuthCore
 import AWSAuthUI
 import AWSGoogleSignIn
+import SideMenu
 class Vancouver_Fruit_Tree_ProjectUITests: XCTestCase {
         
     override func setUp() {
