@@ -18,6 +18,15 @@ class ViewController: UIViewController {
     @IBOutlet var hamburgerView: UIView!
     var hamburgerMenuIsVisible = false
     
+    
+    
+    @IBAction func TestButtonFunction(_ sender: Any) {
+        
+        print("test button was pressed")
+        
+    }
+    
+    
     @IBAction func hamburgerButton(_ sender: Any) {
         if !hamburgerMenuIsVisible{
             present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
