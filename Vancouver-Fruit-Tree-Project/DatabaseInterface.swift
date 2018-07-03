@@ -5,14 +5,14 @@
 //  Created by Cameron Savage on 2018-06-30.
 //  Copyright © 2018 Harvest8. All rights reserved.
 //
-
+import UIKit
 import Foundation
 import AWSDynamoDB
 import AWSCognitoIdentityProvider
 import AWSAuthCore
 
 @objcMembers
-class DatabaseInterface {
+class DatabaseInterface: NSObject {
     
     
     //MARK: create pick event
