@@ -42,6 +42,14 @@
 		ACA7FD7620EC2DDE0040EEE0 /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */; };
 		ACA7FD7720EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */; };
 		ACA7FD7820EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */; };
+		ACA7FD7920EC2ECE0040EEE0 /* PickEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776420E81AA000F860C9 /* PickEvents.swift */; };
+		ACA7FD7A20EC2ECE0040EEE0 /* PickEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776420E81AA000F860C9 /* PickEvents.swift */; };
+		ACA7FD7B20EC2ED10040EEE0 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776520E81AA000F860C9 /* Users.swift */; };
+		ACA7FD7C20EC2ED10040EEE0 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776520E81AA000F860C9 /* Users.swift */; };
+		ACA7FD7D20EC2ED50040EEE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB70320D03A91007E6CAA /* AppDelegate.swift */; };
+		ACA7FD7E20EC2ED50040EEE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB70320D03A91007E6CAA /* AppDelegate.swift */; };
+		ACA7FD7F20EC2ED80040EEE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB70520D03A91007E6CAA /* ViewController.swift */; };
+		ACA7FD8020EC2ED80040EEE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB70520D03A91007E6CAA /* ViewController.swift */; };
 		ACAB91F920E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
 		ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
 		ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
@@ -573,9 +581,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA7FD7D20EC2ED50040EEE0 /* AppDelegate.swift in Sources */,
 				ACA7FD7720EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
 				ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
+				ACA7FD7B20EC2ED10040EEE0 /* Users.swift in Sources */,
 				ACA7FD7420EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
+				ACA7FD7920EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
+				ACA7FD7F20EC2ED80040EEE0 /* ViewController.swift in Sources */,
 				AC8EB71920D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectTests.swift in Sources */,
 				ACA7FD5620E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
 				ACA7FD4C20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
@@ -588,9 +600,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA7FD7E20EC2ED50040EEE0 /* AppDelegate.swift in Sources */,
 				ACA7FD7820EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
 				ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
+				ACA7FD7C20EC2ED10040EEE0 /* Users.swift in Sources */,
 				ACA7FD7520EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
+				ACA7FD7A20EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
+				ACA7FD8020EC2ED80040EEE0 /* ViewController.swift in Sources */,
 				AC8EB72420D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift in Sources */,
 				ACA7FD5720E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
 				ACA7FD4D20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
