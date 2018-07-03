@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		4D29FDB7F6C76D497D88F882 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
+		7EC8776120E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
+		7EC8776220E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
+		7EC8776320E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
+		7EC8776620E81AA100F860C9 /* PickEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776420E81AA000F860C9 /* PickEvents.swift */; };
+		7EC8776720E81AA100F860C9 /* PickEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776420E81AA000F860C9 /* PickEvents.swift */; };
+		7EC8776820E81AA100F860C9 /* PickEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776420E81AA000F860C9 /* PickEvents.swift */; };
+		7EC8776920E81AA100F860C9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776520E81AA000F860C9 /* Users.swift */; };
+		7EC8776A20E81AA100F860C9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776520E81AA000F860C9 /* Users.swift */; };
+		7EC8776B20E81AA100F860C9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776520E81AA000F860C9 /* Users.swift */; };
+		7EC8776E20E81EAC00F860C9 /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */; };
+		7EC8776F20E81EAC00F860C9 /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */; };
+		7EC8777020E8382500F860C9 /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */; };
 		A89AAD761B03A0FD5F4D1DD2 /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E51FD94831BDC812745429B /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework */; };
 		AC5150EE20E3239C00BE453D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5150ED20E3239C00BE453D /* awsconfiguration.json */; };
 		AC5150EF20E3239C00BE453D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5150ED20E3239C00BE453D /* awsconfiguration.json */; };
@@ -22,9 +34,6 @@
 		AC8EB70E20D03A94007E6CAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8EB70C20D03A94007E6CAA /* LaunchScreen.storyboard */; };
 		AC8EB71920D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB71820D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectTests.swift */; };
 		AC8EB72420D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB72320D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift */; };
-		AC95BBBA20E55627000B0856 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95BBB920E55627000B0856 /* Users.swift */; };
-		AC95BBBB20E55627000B0856 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95BBB920E55627000B0856 /* Users.swift */; };
-		AC95BBBC20E55627000B0856 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95BBB920E55627000B0856 /* Users.swift */; };
 		AC95BBBD20E58C9F000B0856 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
 		AC95BBBE20E58CA0000B0856 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
 		ACA7FD4B20E972020040EEE0 /* PickEventMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA7FD4A20E972020040EEE0 /* PickEventMapViewController.swift */; };
@@ -68,6 +77,10 @@
 		282EA9A55D8B14EDA1330A08 /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481C84BA36765041D733FDB7 /* Pods-Vancouver-Fruit-Tree-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project.release.xcconfig"; sourceTree = "<group>"; };
 		62575C5D493EF0A87C4484FF /* Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7EC8776020E818B300F860C9 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		7EC8776420E81AA000F860C9 /* PickEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickEvents.swift; sourceTree = "<group>"; };
+		7EC8776520E81AA000F860C9 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseInterface.swift; sourceTree = "<group>"; };
 		8C3BB5A0CC6DD7805C1EA8F3 /* Pods-Vancouver-Fruit-Tree-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectTests/Pods-Vancouver-Fruit-Tree-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AADB9A7C35BAD577FC448817 /* Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC5150ED20E3239C00BE453D /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
@@ -166,7 +179,9 @@
 		AC8EB70220D03A91007E6CAA /* Vancouver-Fruit-Tree-Project */ = {
 			isa = PBXGroup;
 			children = (
-				AC5150ED20E3239C00BE453D /* awsconfiguration.json */,
+				7EC8776420E81AA000F860C9 /* PickEvents.swift */,
+				7EC8776520E81AA000F860C9 /* Users.swift */,
+				7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */,
 				AC8EB70320D03A91007E6CAA /* AppDelegate.swift */,
 				AC8EB70520D03A91007E6CAA /* ViewController.swift */,
 				ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */,
@@ -176,8 +191,8 @@
 				AC8EB70720D03A91007E6CAA /* Main.storyboard */,
 				AC8EB70A20D03A94007E6CAA /* Assets.xcassets */,
 				AC8EB70C20D03A94007E6CAA /* LaunchScreen.storyboard */,
+				7EC8776020E818B300F860C9 /* awsconfiguration.json */,
 				AC8EB70F20D03A94007E6CAA /* Info.plist */,
-				AC95BBB420E43C74000B0856 /* Models */,
 			);
 			path = "Vancouver-Fruit-Tree-Project";
 			sourceTree = "<group>";
@@ -304,10 +319,12 @@
 					};
 					AC8EB71320D03A94007E6CAA = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 						TestTargetID = AC8EB6FF20D03A91007E6CAA;
 					};
 					AC8EB71E20D03A94007E6CAA = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 						TestTargetID = AC8EB6FF20D03A91007E6CAA;
 					};
 				};
@@ -337,7 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC5150EE20E3239C00BE453D /* awsconfiguration.json in Resources */,
+				7EC8776120E818B300F860C9 /* awsconfiguration.json in Resources */,
 				AC8EB70E20D03A94007E6CAA /* LaunchScreen.storyboard in Resources */,
 				AC8EB70B20D03A94007E6CAA /* Assets.xcassets in Resources */,
 				AC8EB70920D03A91007E6CAA /* Main.storyboard in Resources */,
@@ -348,7 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC5150EF20E3239C00BE453D /* awsconfiguration.json in Resources */,
+				7EC8776220E818B300F860C9 /* awsconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC5150F020E3239C00BE453D /* awsconfiguration.json in Resources */,
+				7EC8776320E818B300F860C9 /* awsconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +564,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC8776920E81AA100F860C9 /* Users.swift in Sources */,
+				7EC8776620E81AA100F860C9 /* PickEvents.swift in Sources */,
 				AC8EB70620D03A91007E6CAA /* ViewController.swift in Sources */,
 				ACAB91F920E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				AC95BBBA20E55627000B0856 /* Users.swift in Sources */,
@@ -745,7 +764,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APKLPH4X8H;
+				DEVELOPMENT_TEAM = 2UGU27J2HV;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -766,7 +785,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APKLPH4X8H;
+				DEVELOPMENT_TEAM = 2UGU27J2HV;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -786,6 +805,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-ProjectTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -795,6 +815,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sites.google.com-view-cmpt276group8-.Vancouver-Fruit-Tree-ProjectTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vancouver-Fruit-Tree-Project.app/Vancouver-Fruit-Tree-Project";
@@ -807,6 +828,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-ProjectTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -827,6 +849,7 @@
 			baseConfigurationReference = AADB9A7C35BAD577FC448817 /* Pods-Vancouver-Fruit-Tree-ProjectUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-ProjectUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -836,6 +859,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sites.google.com-view-cmpt276group8-.Vancouver-Fruit-Tree-ProjectUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Vancouver-Fruit-Tree-Project";
@@ -847,6 +871,7 @@
 			baseConfigurationReference = 62575C5D493EF0A87C4484FF /* Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-ProjectUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
