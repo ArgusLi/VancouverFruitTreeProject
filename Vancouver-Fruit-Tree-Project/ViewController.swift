@@ -13,9 +13,8 @@ import AWSGoogleSignIn
 import SideMenu
 class ViewController: UIViewController {
     //MARK - hamburger menu vars
-    @IBOutlet weak var leadingC: NSLayoutConstraint!
-    @IBOutlet weak var trailingC: NSLayoutConstraint!
-    @IBOutlet var hamburgerView: UIView!
+    
+    @IBOutlet weak var signOutButton: UIBarButtonItem!
     var hamburgerMenuIsVisible = false
     
     @IBAction func hamburgerButton(_ sender: Any) {
@@ -41,7 +40,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        self.navigationItem.rightBarButtonItem = signOutButton
         if !AWSSignInManager.sharedInstance().isLoggedIn {
             presentAuthUIViewController()
             

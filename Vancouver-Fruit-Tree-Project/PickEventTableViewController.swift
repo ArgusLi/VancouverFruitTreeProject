@@ -13,6 +13,7 @@ class PickEventTableViewController: UITableViewController {
     // TODO: Insert an array declaration here
     //TODO: placeholder for a pick event class
     
+    @IBOutlet weak var addButton: UIBarButtonItem!
     var picks=[PickEvents]()
    private func loadavailablepicks()
    {
@@ -28,7 +29,10 @@ class PickEventTableViewController: UITableViewController {
     }
    
     override func viewDidLoad() {
+        navigationItem.rightBarButtonItem = addButton
         super.viewDidLoad()
+        
+        
         
         loadavailablepicks()
         
