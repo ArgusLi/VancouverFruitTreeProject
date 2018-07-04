@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         
         let DBInterface = DatabaseInterface();
         
-        DBInterface.createPickEvent(eventTime: "15:30", eventDate:"2018:07:02" , latitude: "30", longitude: "30", teamID: "2");
+        DBInterface.createPickEvents(eventTime: "15:30", eventDate:"2018:07:02" , latitude: 30, longitude: 30, teamID: "2");
         
         
     }

@@ -77,24 +77,24 @@ class DatabaseInterface {
      
     */
     func queryPickEventsByDate(date: String, time: String?){
-        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-        
-        let queryExpression = AWSDynamoDBQueryExpression()
-        queryExpression.indexName = "FindPick"
-        
-        queryExpression.keyConditionExpression = "Date <= :maxDate AND Time <= :maxTime";
-        queryExpression.expressionAttributeValues = {":maxDate"; date; ":maxTime"; time};
-        
-        dynamoDBObjectMapper.query(PickEvents.self, expression: queryExpression).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
-            if let error = task.error as? NSError {
-                print("The request failed. Error: \(error)")
-            } else if let paginatedOutput = task.result {
-                for book in paginateOutput.items as! Book {
-                    // Do something with book.
-                }
-            }
-            return nil
-        })
+//        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+//
+//        let queryExpression = AWSDynamoDBQueryExpression()
+//        queryExpression.indexName = "FindPick"
+//
+//        queryExpression.keyConditionExpression = "Date <= :maxDate AND Time <= :maxTime";
+//        queryExpression.expressionAttributeValues = [":maxDate": date, ":maxTime": time];
+//
+//        dynamoDBObjectMapper.query(PickEvents.self, expression: queryExpression).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+//            if let error = task.error as? NSError {
+//                print("The request failed. Error: \(error)")
+//            } else if let paginatedOutput = task.result {
+//                for book in paginateOutput.items as! Book {
+//                    // Do something with book.
+//                }
+//            }
+//            return nil
+//        })
     }
     
     //MARK: scans whole table, then applies filters afterwards
