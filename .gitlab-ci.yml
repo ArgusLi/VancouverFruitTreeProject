@@ -5,7 +5,7 @@ build_project:
   
   stage: build
   script:
-    - xcodebuild clean -workspace Vancouver-Fruit-Tree-Project.xcworkspace -scheme Vancouver-Fruit-Tree-Project | xcpretty
-    - xcodebuild test -workspace Vancouver-Fruit-Tree-Project.xcworkspace -scheme Vancouver-Fruit-Tree-Project -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' | xcpretty -s
+    - xcodebuild clean -workspace Vancouver-Fruit-Tree-Project.xcworkspace -scheme Vancouver-Fruit-Tree-Project | xcpretty export LC_ALL=en_US.UTF-8
+    - xcodebuild test -workspace Vancouver-Fruit-Tree-Project.xcworkspace -scheme Vancouver-Fruit-Tree-Project -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' | xcpretty -s export LC_ALL=en_US.UTF-8
   tags:
     - ios_11-4 xcode_9-4
