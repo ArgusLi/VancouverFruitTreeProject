@@ -295,41 +295,48 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="72.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="amW-PW-M5Q">
-                                            <rect key="frame" x="0.0" y="-0.6666666666666643" width="375" height="72.666666666666657"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="amW-PW-M5Q">
+                                            <rect key="frame" x="15" y="-0.6666666666666643" width="150.66666666666666" height="73.333333333333314"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20m-10-9zR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="19"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="44.666666666666664" height="19"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ase-w2-X93">
-                                                    <rect key="frame" x="0.0" y="27" width="375" height="18.666666666666671"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="27" width="44.666666666666664" height="19.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgf-kI-873">
-                                                    <rect key="frame" x="0.0" y="53.666666666666664" width="375" height="18.999999999999993"/>
+                                                    <rect key="frame" x="0.0" y="54.333333333333329" width="41.666666666666664" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="amW-PW-M5Q" secondAttribute="height" multiplier="150:73" id="KH8-OJ-sGZ"/>
+                                            </constraints>
                                         </stackView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Green alert" translatesAutoresizingMaskIntoConstraints="NO" id="dmy-5d-BJp">
+                                            <rect key="frame" x="322" y="25" width="24" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="amW-PW-M5Q" firstAttribute="centerY" secondItem="WET-Ga-3cf" secondAttribute="centerY" id="PFE-FH-do4"/>
-                                        <constraint firstItem="amW-PW-M5Q" firstAttribute="centerX" secondItem="WET-Ga-3cf" secondAttribute="centerX" id="XlR-mB-2Qu"/>
-                                        <constraint firstItem="amW-PW-M5Q" firstAttribute="height" secondItem="WET-Ga-3cf" secondAttribute="height" id="egZ-RQ-izc"/>
-                                        <constraint firstItem="amW-PW-M5Q" firstAttribute="width" secondItem="WET-Ga-3cf" secondAttribute="width" id="hPA-qy-HFl"/>
+                                        <constraint firstItem="amW-PW-M5Q" firstAttribute="leading" secondItem="WET-Ga-3cf" secondAttribute="leading" constant="15" id="5iU-iA-za7"/>
+                                        <constraint firstItem="amW-PW-M5Q" firstAttribute="top" secondItem="WET-Ga-3cf" secondAttribute="top" id="HJ1-TX-6gJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="amW-PW-M5Q" secondAttribute="bottom" id="nOx-YW-GmZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="Date" destination="20m-10-9zR" id="z82-Dq-4Ev"/>
                                     <outlet property="TeamLead" destination="dgf-kI-873" id="hfz-To-ajl"/>
                                     <outlet property="Time" destination="Ase-w2-X93" id="lbR-GI-zyy"/>
+                                    <outlet property="sideImage" destination="dmy-5d-BJp" id="5T2-7u-nGo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -343,7 +350,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PV3-Dl-FHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-574" y="1068"/>
+            <point key="canvasLocation" x="-575.20000000000005" y="1067.7339901477833"/>
         </scene>
         <!--Pick Details View Controller-->
         <scene sceneID="Y9U-f0-ksT">
@@ -493,6 +500,7 @@
     </scenes>
     <resources>
         <image name="Background-1" width="375" height="667"/>
+        <image name="Green alert" width="64" height="64"/>
         <image name="Icons" width="25" height="25"/>
         <image name="Map view" width="25" height="25"/>
         <image name="VFTP_LOGO_CS3-167x300" width="167" height="300"/>
