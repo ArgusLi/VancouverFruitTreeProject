@@ -61,8 +61,6 @@
 		481C84BA36765041D733FDB7 /* Pods-Vancouver-Fruit-Tree-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project.release.xcconfig"; sourceTree = "<group>"; };
 		62575C5D493EF0A87C4484FF /* Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7E39CBFC20E96C4E00CA1391 /* Vancouver-Fruit-Tree-Project-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vancouver-Fruit-Tree-Project-Bridging-Header.h"; sourceTree = "<group>"; };
-		7E39CBFD20E96C4E00CA1391 /* Vancouver-Fruit-Tree-ProjectTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vancouver-Fruit-Tree-ProjectTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		7E39CBFE20E96C4E00CA1391 /* Vancouver-Fruit-Tree-ProjectUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vancouver-Fruit-Tree-ProjectUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		7E39CBFF20E96C4F00CA1391 /* Objective-CBridgingHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Objective-CBridgingHeader.m"; sourceTree = "<group>"; };
 		7EC8776020E818B300F860C9 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		7EC8776420E81AA000F860C9 /* PickEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickEvents.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 		AC8EB71720D03A94007E6CAA /* Vancouver-Fruit-Tree-ProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				7E39CBFD20E96C4E00CA1391 /* Vancouver-Fruit-Tree-ProjectTests-Bridging-Header.h */,
 				AC8EB71820D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectTests.swift */,
 				AC8EB71A20D03A94007E6CAA /* Info.plist */,
 			);
@@ -186,7 +183,6 @@
 		AC8EB72220D03A94007E6CAA /* Vancouver-Fruit-Tree-ProjectUITests */ = {
 			isa = PBXGroup;
 			children = (
-				7E39CBFE20E96C4E00CA1391 /* Vancouver-Fruit-Tree-ProjectUITests-Bridging-Header.h */,
 				AC8EB72320D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift */,
 				AC8EB72520D03A94007E6CAA /* Info.plist */,
 			);
@@ -766,7 +762,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sites.google.com-view-cmpt276group8-.Vancouver-Fruit-Tree-ProjectTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Vancouver-Fruit-Tree-Project/Vancouver-Fruit-Tree-ProjectTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -790,7 +787,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sites.google.com-view-cmpt276group8-.Vancouver-Fruit-Tree-ProjectTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Vancouver-Fruit-Tree-Project/Vancouver-Fruit-Tree-ProjectTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vancouver-Fruit-Tree-Project.app/Vancouver-Fruit-Tree-Project";
@@ -812,7 +810,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sites.google.com-view-cmpt276group8-.Vancouver-Fruit-Tree-ProjectUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Vancouver-Fruit-Tree-Project/Vancouver-Fruit-Tree-ProjectUITests-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -835,7 +833,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sites.google.com-view-cmpt276group8-.Vancouver-Fruit-Tree-ProjectUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Vancouver-Fruit-Tree-Project/Vancouver-Fruit-Tree-ProjectUITests-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Vancouver-Fruit-Tree-Project";
