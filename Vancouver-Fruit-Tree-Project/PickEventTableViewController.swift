@@ -68,8 +68,8 @@ class PickEventTableViewController: UITableViewController {
             
         }
         let pick = picks[indexPath.row]
-        cell.Time.text="Date: " + pick._eventTime!
-        cell.Date.text = "Time: " + pick._eventDate!
+        cell.Time.text="Time: " + pick._eventTime!
+        cell.Date.text = "Date: " + pick._eventDate!
         cell.TeamLead.text = "Team lead: none"
 
         // Configure the cell...
