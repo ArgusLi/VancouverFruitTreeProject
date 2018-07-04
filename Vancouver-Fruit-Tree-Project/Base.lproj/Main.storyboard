@@ -20,16 +20,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VFTP_LOGO_CS3-167x300" translatesAutoresizingMaskIntoConstraints="NO" id="m6A-rD-b3K">
-                                <rect key="frame" x="65" y="216" width="244" height="380"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-1" translatesAutoresizingMaskIntoConstraints="NO" id="RCX-ga-DI9">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VFTP_LOGO_CS3-167x300" translatesAutoresizingMaskIntoConstraints="NO" id="m6A-rD-b3K">
+                                <rect key="frame" x="16" y="88" width="70" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="2dm-xR-b9I"/>
+                                    <constraint firstAttribute="height" constant="125" id="hhV-ab-oLo"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBD-Tm-ksa">
+                                <rect key="frame" x="95" y="603" width="184" height="46"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="3Gm-py-Leg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="184" id="l0o-YW-X7H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Contact Us!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="contactUsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ld-Vg-peC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thoughts / Advise?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkJ-6H-H5q">
+                                <rect key="frame" x="114" y="574" width="147" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2sI-IH-FcB"/>
+                                    <constraint firstAttribute="width" constant="147" id="pX3-Ms-rZe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m6A-rD-b3K" secondAttribute="trailing" constant="66" id="EJR-WW-scE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m6A-rD-b3K" secondAttribute="bottom" constant="182" id="I2s-Kz-uB5"/>
-                            <constraint firstItem="m6A-rD-b3K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="cnA-3z-kxm"/>
-                            <constraint firstItem="m6A-rD-b3K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="128" id="z1y-JV-oVl"/>
+                            <constraint firstItem="m6A-rD-b3K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="01x-K7-TPL"/>
+                            <constraint firstItem="kBD-Tm-ksa" firstAttribute="top" secondItem="vkJ-6H-H5q" secondAttribute="bottom" constant="8" id="4KZ-0h-Hmh"/>
+                            <constraint firstItem="kBD-Tm-ksa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DXl-Eg-GEL"/>
+                            <constraint firstItem="RCX-ga-DI9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Veu-XE-b2c"/>
+                            <constraint firstItem="RCX-ga-DI9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="b2t-LC-8ao"/>
+                            <constraint firstAttribute="bottom" secondItem="RCX-ga-DI9" secondAttribute="bottom" id="e1x-71-k09"/>
+                            <constraint firstItem="m6A-rD-b3K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gcA-Pl-4RQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kBD-Tm-ksa" secondAttribute="bottom" constant="129" id="izq-VN-1QQ"/>
+                            <constraint firstItem="vkJ-6H-H5q" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kJV-JK-pup"/>
+                            <constraint firstItem="RCX-ga-DI9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zDu-Ef-odV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -454,6 +492,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background-1" width="375" height="667"/>
         <image name="Icons" width="25" height="25"/>
         <image name="Map view" width="25" height="25"/>
         <image name="VFTP_LOGO_CS3-167x300" width="167" height="300"/>
