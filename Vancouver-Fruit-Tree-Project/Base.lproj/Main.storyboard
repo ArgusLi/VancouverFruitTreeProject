@@ -222,10 +222,10 @@
             </objects>
             <point key="canvasLocation" x="1642.4000000000001" y="1028.6356821589206"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Available Picks-->
         <scene sceneID="cDc-Zd-bKW">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="yTY-1I-DKe" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" title="Available Picks" id="yTY-1I-DKe" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uya-11-IY8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -240,10 +240,10 @@
             </objects>
             <point key="canvasLocation" x="-82" y="196"/>
         </scene>
-        <!--Item-->
+        <!--List view-->
         <scene sceneID="8AL-dZ-3qp">
             <objects>
-                <tableViewController storyboardIdentifier="PickEventTableViewController" id="OwM-E3-k80" customClass="PickEventTableViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PickEventTableViewController" title="List view" id="OwM-E3-k80" customClass="PickEventTableViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="x5I-kI-bIZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -299,8 +299,8 @@
                             <outlet property="delegate" destination="OwM-E3-k80" id="cbj-tc-R2c"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" image="Icons" id="yfL-NO-2f1"/>
-                    <navigationItem key="navigationItem" id="4JI-Dv-8dL"/>
+                    <tabBarItem key="tabBarItem" title="List View" image="Icons" id="yfL-NO-2f1"/>
+                    <navigationItem key="navigationItem" title="List of available picks" id="4JI-Dv-8dL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PV3-Dl-FHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

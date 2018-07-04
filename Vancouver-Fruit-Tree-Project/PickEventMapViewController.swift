@@ -12,33 +12,50 @@ class PickEventMapViewController: UIViewController , CLLocationManagerDelegate, 
 
     @IBOutlet weak var mapView: MKMapView!
     let vancouverlocation = CLLocationCoordinate2DMake(  49.246292, -123.116226)
-    let mapspan = MKCoordinateSpanMake(0.7, 0.7)
-    var Events = [Any]()
+    let mapspan = MKCoordinateSpanMake(0.5, 0.5)
+    
     func reset(){
        let location = MKCoordinateRegion(center: vancouverlocation, span:mapspan)
         mapView.setRegion(location, animated: true)
         
     }
-    func addOverlays(list:[Any]){
-        //TODO: Use actual class to add overlays
-        /*
-        for pick in Events{
+    var picks=[PickEvents]()
+    private func loadavailablepicks()
+    {
+        let date = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let interface = DatabaseInterface()
+        let maxDate = String(year)+"/" + String(month + 6)+"/"+String(day)
+        picks =  interface.scanPickEvents(itemLimit: 100, maxDate: maxDate)
+        
+    }
+    func addCircles(Events:[PickEvents]){
+        mapView.delegate = self
+        for event in Events{
            
-            let location =CLLocationCoordinate2DMake(<#T##latitude: CLLocationDegrees##CLLocationDegrees#>, <#T##longitude: CLLocationDegrees##CLLocationDegrees#>)
-            let circle= MKCircle(center: location, radius: 1000)
+            if((event._latitude!.floatValue > -90  && event._latitude!.floatValue < 90) && ( event._longitude!.floatValue > -180 && event._longitude!.floatValue  < 180 ))
+            {
+            let location = CLLocationCoordinate2DMake(Double(event._latitude!.floatValue) as CLLocationDegrees, Double(event._longitude!.floatValue) as CLLocationDegrees)
+            let circle = MKCircle(center: location, radius: 1000)
              mapView.add(circle)
-             
+            }
+            
 
             
-        } */
+        }
     
     }
-    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
         if overlay is MKCircle{
             let circleRenderer = MKCircleRenderer(overlay: overlay)
-            circleRenderer.fillColor = UIColor.blue.withAlphaComponent(0.1)
-            circleRenderer.strokeColor = UIColor.blue
+            circleRenderer.fillColor = UIColor.green
+            circleRenderer.strokeColor = UIColor.green
             circleRenderer.lineWidth = 1
+            circleRenderer.alpha = 0.5
             return circleRenderer
         }
         return MKOverlayRenderer(overlay: overlay)
@@ -46,8 +63,9 @@ class PickEventMapViewController: UIViewController , CLLocationManagerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         reset()
-        //addOverlays(list:[Any])
-       mapView.delegate = self
+        loadavailablepicks()
+        addCircles(Events: picks)
+       
 
         // Do any additional setup after loading the view.
     }

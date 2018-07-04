@@ -82,6 +82,8 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
         } else {
             return nil
             }}
+        else {return nil}
+        
     }
 }
 

@@ -31,8 +31,7 @@ class PickEventTableViewController: UITableViewController {
         super.viewDidLoad()
         
         loadavailablepicks()
-        let mapVC = storyboard?.instantiateViewController(withIdentifier: "PickEventMapViewController") as! PickEventMapViewController
-        mapVC.Events = picks
+        
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -69,9 +68,9 @@ class PickEventTableViewController: UITableViewController {
             
         }
         let pick = picks[indexPath.row]
-        cell.Time.text=pick._eventTime!
-        cell.Date.text = pick._eventDate!
-        cell.TeamLead.text = pick._assignedTeamID!
+        cell.Time.text="Date: " + pick._eventTime!
+        cell.Date.text = "Time: " + pick._eventDate!
+        cell.TeamLead.text = "Team lead: none"
 
         // Configure the cell...
 
@@ -81,14 +80,14 @@ class PickEventTableViewController: UITableViewController {
         let event = picks[indexPath.row]
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "PickDetailsViewController") as! PickDetailsViewController
         if ((event._eventDate != nil && event._eventTime != nil) && event._assignedTeamID != nil){
-        detailVC.getdate = event._eventDate!
-        detailVC.gettime = event._eventTime!
-        detailVC.getleader = event._assignedTeamID!
-            if(((event._latitude as! Int) > -90 && (event._latitude as! Int) < 90) && ( (event._longitude as! Int) > -180 && (event._longitude as! Int) < 180 ))
+            detailVC.getdate = "Date: " + event._eventDate!
+            detailVC.gettime = "Time: " + event._eventTime!
+        detailVC.getleader = "none"
+            if((event._latitude!.floatValue > -90  && event._latitude!.floatValue < 90) && ( event._longitude!.floatValue > -180 && event._longitude!.floatValue  < 180 ))
             {
                 
             
-            detailVC.getCoordinates = CLLocationCoordinate2D(latitude: event._latitude as! CLLocationDegrees, longitude: event._longitude as! CLLocationDegrees)
+            detailVC.getCoordinates = CLLocationCoordinate2D(latitude: Double(event._latitude!.floatValue) as CLLocationDegrees, longitude: Double(event._longitude!.floatValue) as CLLocationDegrees)
             }
             else {
                 detailVC.getCoordinates = nil
