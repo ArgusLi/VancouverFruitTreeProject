@@ -34,9 +34,7 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        date.layer.cornerRadius = 8
-        time.layer.cornerRadius = 8
-        teamlead.layer.cornerRadius = 8
+        
         signupbotton.layer.cornerRadius = 8
         self.tabBarController?.tabBar.isHidden = true
         date.setTitle(getdate, for: .normal)
