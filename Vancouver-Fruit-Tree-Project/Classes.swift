@@ -14,7 +14,7 @@ class team:NSObject{
     var teamName:String?
     var pickEvent:String?
     var teamID:String?
-    var dbInterface=DatabaseInterface
+    var dbInterface=DatabaseInterface()
     
     func addMember(accountID:String){
         //Add to database
@@ -38,16 +38,17 @@ class team:NSObject{
 }
 class coordinator:NSObject{
     var adminID:String?
-    var dbInterface=DatabaseInterface
+    var dbInterface=DatabaseInterface()
     
     func viewYield()->String{
         //Todo
+        return "yield"
     }
     func pushNotificationforPick(){
         //Todo
     }
-    func createPickEvent(eventTime: String, eventDate: String, latitude: String, longitude: String, teamID: String){
-        dbInterface.createPickEvent(eventTime, eventDate, latitude, longitude, teamID)
+    func createPickEvent(eventTime: String, eventDate: String, latitude: NSNumber, longitude: NSNumber, teamID: String){
+        dbInterface.createPickEvents(eventTime: eventTime, eventDate: eventDate , latitude: latitude, longitude: longitude, teamID: teamID)
     }
     func assignPickToTeam(pickID:String,teamID:String){
         //modify database to change team ID
@@ -56,12 +57,12 @@ class coordinator:NSObject{
         //Modify database to change team ID
     }
 }
-class volunteer:NSObject{
-    var teamID:String?
-    var pickCounter:Int?
-    var volunteerID:String?
-    var dbInterface=DatabaseInterface
-    var pickevent:Pickevents
+class volunteer: NSObject{
+    var teamID: String?
+    var pickCounter: Int?
+    var volunteerID: String?
+    var dbInterface = DatabaseInterface()
+    var pickevent: PickEvents?
     
     func requestTeam(teamID:String){
         //Send notification to team leader
