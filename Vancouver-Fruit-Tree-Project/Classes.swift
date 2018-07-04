@@ -8,7 +8,7 @@
 
 import UIKit
 let dbInterface=DatabaseInterface()
-let pickEvents=PickEvents()
+//var pickEvents: PickEvents?
 
 /*TODO Ver2
 class team:NSObject{
@@ -42,7 +42,7 @@ class team:NSObject{
  */
 class coordinator:NSObject{
     var adminID:String?
-    var pickEvent=pickEvents
+    var pickEvent: PickEvents?
     var success:Int=0
     
     /*
@@ -59,25 +59,20 @@ class coordinator:NSObject{
     func assignPickToTeam(userId: String, creationTime: String, teamID:String){
         //find and read pick
         pickEvent=dbInterface.readPickEvent(userId: userId, creationTime: creationTime)
-        //delete pick on database
-        success=dbInterface.deletePickEvent(itemToDelete: pickEvent!)
         //upload pick with new teamID to database
-        if success==1{
-            pickEvent?._assignedTeamID=teamID
+        if pickEvent != nil{
+            pickEvent!._assignedTeamID=teamID
             dbInterface.createPickEvents(eventTime: (pickEvent?._eventTime)!, eventDate: (pickEvent?._eventDate)!, latitude: (pickEvent?._latitude)!, longitude: (pickEvent?._longitude)!, teamID: (pickEvent?._assignedTeamID)!)
         }
     }
     func removePickFromTeam(userId: String, creationTime: String, teamID:String){
         //find and read pick
         pickEvent=dbInterface.readPickEvent(userId: userId, creationTime: creationTime)
-        //delete pick on database
-        success=dbInterface.deletePickEvent(itemToDelete: pickEvent!)
         //upload pick with new teamID to database
-        if success==1{
-            pickEvent?._assignedTeamID=teamID
+        if pickEvent != nil{
+            pickEvent!._assignedTeamID=nil
             dbInterface.createPickEvents(eventTime: (pickEvent?._eventTime)!, eventDate: (pickEvent?._eventDate)!, latitude: (pickEvent?._latitude)!, longitude: (pickEvent?._longitude)!, teamID: (pickEvent?._assignedTeamID)!)
         }
-    }
 }
 class volunteer:NSObject{
     var teamID:String?
@@ -97,3 +92,4 @@ class volunteer:NSObject{
  */
 }
 
+}
