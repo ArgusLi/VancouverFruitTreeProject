@@ -13,7 +13,7 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     var getdate = String()
     var gettime =  String()
     var getleader = String()
-    var getCoordinates = CLLocationCoordinate2D()
+    var getCoordinates: CLLocationCoordinate2D?
     var locationManager: CLLocationManager = CLLocationManager()
     
     
@@ -34,27 +34,26 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var curVC = self.navigationController?.topViewController?.title
-        print(curVC)
-        date.layer.cornerRadius = 8
-        time.layer.cornerRadius = 8
-        teamlead.layer.cornerRadius = 8
+        
         signupbotton.layer.cornerRadius = 8
         self.tabBarController?.tabBar.isHidden = true
         date.setTitle(getdate, for: .normal)
         time.setTitle(gettime, for: .normal)
         teamlead.setTitle( "Team Lead: \(getleader)", for: .normal)
-        mapView.setCenter( getCoordinates, animated: true)
+        if getCoordinates != nil{
+            
+        
+        mapView.setCenter( getCoordinates!, animated: true)
         
         let mapspan = MKCoordinateSpanMake(0.1, 0.1)
-        let mapregion = MKCoordinateRegionMake(getCoordinates, mapspan)
+        let mapregion = MKCoordinateRegionMake(getCoordinates!, mapspan)
         
         self.mapView.setRegion(mapregion, animated: true)
         //let annontation = MapAnnotation(coor: getCoordinates, title: "Test Title")
         //mapView.addAnnotation(annontation)
-        addRadius(location: getCoordinates)
+        addRadius(location: getCoordinates!)
         
-        
+        }
 
         
         
@@ -70,6 +69,7 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer! {
+        if getCoordinates != nil {
         if overlay is MKCircle {
             let circle = MKCircleRenderer(overlay: overlay)
             circle.strokeColor = UIColor.green
@@ -79,7 +79,9 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
             return circle
         } else {
             return nil
-        }
+            }}
+        else {return nil}
+        
     }
 }
 

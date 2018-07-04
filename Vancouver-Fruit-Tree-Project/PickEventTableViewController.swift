@@ -12,21 +12,18 @@ class PickEventTableViewController: UITableViewController {
     
     // TODO: Insert an array declaration here
     //TODO: placeholder for a pick event class
-    struct PickEvent {
-        var date :NSNumber?
-        var time :NSNumber?
-        var teamlead :String?
-        var longtitute : CLLocationDegrees?
-        var latitude : CLLocationDegrees?
-    }
-    var pickevents = [PickEvent]()
+    
+    var picks=[PickEvents]()
    private func loadavailablepicks()
    {
-    for index in 0...10{
-        let pickevent = PickEvent(date:  123, time: 12, teamlead: "Test lead", longtitute: -122.9180  as CLLocationDegrees, latitude: (49.2768 + Double(index)/100) as CLLocationDegrees)
-        pickevents.append(pickevent)
-    }
-    
+    let date = Date()
+    let calendar = Calendar.current
+    let year = calendar.component(.year, from: date)
+    let month = calendar.component(.month, from: date)
+    let day = calendar.component(.day, from: date)
+    let interface = DatabaseInterface()
+    let maxDate = String(year)+"/" + String(month + 6)+"/"+String(day)
+    picks =  interface.scanPickEvents(itemLimit: 100, maxDate: maxDate)
     
     }
    
@@ -34,8 +31,7 @@ class PickEventTableViewController: UITableViewController {
         super.viewDidLoad()
         
         loadavailablepicks()
-        let mapVC = storyboard?.instantiateViewController(withIdentifier: "PickEventMapViewController") as! PickEventMapViewController
-        mapVC.Events = pickevents
+        
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -61,7 +57,7 @@ class PickEventTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return pickevents.count
+        return picks.count
     }
 
     
@@ -71,24 +67,31 @@ class PickEventTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of \(cellidentifier)")
             
         }
-        let pick = pickevents[indexPath.row]
-        cell.Time.text="\(pick.time!)"
-        cell.Date.text = "\(pick.date!)"
-        cell.TeamLead.text = "Team Lead: \(pick.teamlead!)"
+        let pick = picks[indexPath.row]
+        cell.Time.text="Date: " + pick._eventTime!
+        cell.Date.text = "Time: " + pick._eventDate!
+        cell.TeamLead.text = "Team lead: none"
 
         // Configure the cell...
 
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let event = pickevents[indexPath.row]
+        let event = picks[indexPath.row]
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "PickDetailsViewController") as! PickDetailsViewController
-        if ((event.date != nil && event.teamlead != nil) && event.teamlead != nil){
-        detailVC.getdate = "\(event.date!)"
-        detailVC.gettime = "\(event.time!)"
-        detailVC.getleader = "\(event.teamlead!)"
-            detailVC.getCoordinates = CLLocationCoordinate2D(latitude: event.latitude!, longitude: event.longtitute!)
+        if ((event._eventDate != nil && event._eventTime != nil) && event._assignedTeamID != nil){
+            detailVC.getdate = "Date: " + event._eventDate!
+            detailVC.gettime = "Time: " + event._eventTime!
+        detailVC.getleader = "none"
+            if((event._latitude!.floatValue > -90  && event._latitude!.floatValue < 90) && ( event._longitude!.floatValue > -180 && event._longitude!.floatValue  < 180 ))
+            {
+                
             
+            detailVC.getCoordinates = CLLocationCoordinate2D(latitude: Double(event._latitude!.floatValue) as CLLocationDegrees, longitude: Double(event._longitude!.floatValue) as CLLocationDegrees)
+            }
+            else {
+                detailVC.getCoordinates = nil
+            }
         self.navigationController?.pushViewController(detailVC, animated: true)}
         else
         {
