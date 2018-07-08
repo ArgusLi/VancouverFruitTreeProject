@@ -29,7 +29,14 @@ class PickEventTableViewController: UITableViewController {
     }
    
     override func viewDidLoad() {
-        navigationItem.rightBarButtonItem = addButton
+        let controllers = navigationController?.viewControllers
+        for controller in controllers!{
+            if controller is UITabBarController
+            {
+                controller.navigationItem.rightBarButtonItem = addButton
+            }
+        }
+        
         super.viewDidLoad()
         
         
