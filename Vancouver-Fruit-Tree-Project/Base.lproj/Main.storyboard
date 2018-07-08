@@ -332,7 +332,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LZu-1A-2EQ">
-                                <rect key="frame" x="0.0" y="101" width="375" height="103"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="103"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LZu-1A-2EQ" secondAttribute="height" multiplier="375:103" id="7kj-Hb-GmW"/>
                                 </constraints>
@@ -341,21 +341,11 @@
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYA-JM-bdR">
-                                <rect key="frame" x="5" y="73" width="111.33333333333333" height="20.333333333333329"/>
+                                <rect key="frame" x="5" y="99.666666666666657" width="111.33333333333333" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" placeholder="Location" translatesAutoresizingMaskIntoConstraints="NO" id="r2M-Kf-rDu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="r2M-Kf-rDu" secondAttribute="height" multiplier="375:56" id="DeF-dC-00e"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="wct-IT-gMI" id="kP1-Mj-677"/>
-                                </connections>
-                            </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCB-ho-UxM">
                                 <rect key="frame" x="100" y="563.33333333333337" width="175" height="31.666666666666629"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -365,15 +355,18 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButton:" destination="wct-IT-gMI" eventType="touchUpInside" id="FlE-8A-o6l"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of trees:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miT-Io-5qO">
-                                <rect key="frame" x="15.999999999999993" y="294" width="105.33333333333331" height="47"/>
+                                <rect key="frame" x="15.999999999999993" y="320.66666666666669" width="105.33333333333331" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="xnR-zo-X0m">
-                                <rect key="frame" x="5" y="204" width="370" height="57.333333333333314"/>
+                                <rect key="frame" x="5" y="230.66666666666671" width="370" height="57.333333333333343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ibO-RW-i0V">
                                         <rect key="frame" x="0.0" y="0.0" width="169" height="57.333333333333336"/>
@@ -386,6 +379,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ySF-gJ-hqP">
                                                 <rect key="frame" x="0.0" y="28.333333333333314" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="treeIncrementer:" destination="wct-IT-gMI" eventType="valueChanged" id="k1h-Fp-wiD"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -400,6 +396,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="YKb-bk-hpb">
                                                 <rect key="frame" x="0.0" y="28.333333333333314" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="volunteerIncrementer:" destination="wct-IT-gMI" eventType="valueChanged" id="UzM-Ca-hJy"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -411,24 +410,28 @@
                                     <constraint firstAttribute="width" secondItem="G35-LR-ZrG" secondAttribute="height" multiplier="125:26" id="PqH-aB-YPX"/>
                                 </constraints>
                             </pickerView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CK5-Mv-hYy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wct-IT-gMI" id="XBR-oo-5lf"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZYA-JM-bdR" firstAttribute="leading" secondItem="hSE-J0-lYE" secondAttribute="leading" constant="5" id="1Pj-eG-WuI"/>
-                            <constraint firstItem="ZYA-JM-bdR" firstAttribute="top" secondItem="r2M-Kf-rDu" secondAttribute="bottom" constant="17" id="2O4-ff-ihp"/>
-                            <constraint firstItem="r2M-Kf-rDu" firstAttribute="leading" secondItem="hSE-J0-lYE" secondAttribute="leading" id="4l2-E3-763"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZYA-JM-bdR" secondAttribute="trailing" constant="20" symbolic="YES" id="75c-r9-9rt"/>
                             <constraint firstItem="hSE-J0-lYE" firstAttribute="bottom" secondItem="UCB-ho-UxM" secondAttribute="bottom" constant="46" id="8fJ-rR-zOv"/>
                             <constraint firstItem="hSE-J0-lYE" firstAttribute="trailing" secondItem="UCB-ho-UxM" secondAttribute="trailing" constant="100" id="Hfu-nY-1fx"/>
                             <constraint firstItem="LZu-1A-2EQ" firstAttribute="leading" secondItem="hSE-J0-lYE" secondAttribute="leading" id="JfP-dg-Ax8"/>
                             <constraint firstItem="xnR-zo-X0m" firstAttribute="top" secondItem="LZu-1A-2EQ" secondAttribute="bottom" id="Jrc-Eb-yJe"/>
-                            <constraint firstItem="r2M-Kf-rDu" firstAttribute="trailing" secondItem="hSE-J0-lYE" secondAttribute="trailing" id="KLL-Kd-XMb"/>
                             <constraint firstItem="miT-Io-5qO" firstAttribute="top" secondItem="xnR-zo-X0m" secondAttribute="bottom" constant="32.666666666666686" id="M0S-S5-kpz"/>
                             <constraint firstItem="xnR-zo-X0m" firstAttribute="leading" secondItem="hSE-J0-lYE" secondAttribute="leading" constant="5" id="QkE-q6-Ifb"/>
                             <constraint firstItem="UCB-ho-UxM" firstAttribute="top" secondItem="G35-LR-ZrG" secondAttribute="bottom" constant="134.33000000000001" id="R7m-x7-Yp6"/>
                             <constraint firstItem="LZu-1A-2EQ" firstAttribute="trailing" secondItem="hSE-J0-lYE" secondAttribute="trailing" id="Svb-1c-7mD"/>
                             <constraint firstItem="G35-LR-ZrG" firstAttribute="top" secondItem="miT-Io-5qO" secondAttribute="bottom" constant="10" id="XbQ-9d-kzi"/>
-                            <constraint firstItem="r2M-Kf-rDu" firstAttribute="top" secondItem="hSE-J0-lYE" secondAttribute="top" id="ZSx-qW-KfM"/>
                             <constraint firstItem="UCB-ho-UxM" firstAttribute="leading" secondItem="hSE-J0-lYE" secondAttribute="leading" constant="100" id="iO2-ga-c4d"/>
                             <constraint firstAttribute="trailing" secondItem="G35-LR-ZrG" secondAttribute="trailing" id="iWJ-nk-dEo"/>
                             <constraint firstItem="G35-LR-ZrG" firstAttribute="leading" secondItem="hSE-J0-lYE" secondAttribute="leading" id="mJB-gu-gxu"/>
@@ -436,26 +439,81 @@
                             <constraint firstItem="hSE-J0-lYE" firstAttribute="trailing" secondItem="xnR-zo-X0m" secondAttribute="trailing" id="oIw-cZ-W8B"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="miT-Io-5qO" secondAttribute="trailing" constant="20" symbolic="YES" id="pXW-AX-XVf"/>
                             <constraint firstItem="LZu-1A-2EQ" firstAttribute="top" secondItem="ZYA-JM-bdR" secondAttribute="bottom" constant="8" id="sc8-M6-xzf"/>
-                            <constraint firstItem="LZu-1A-2EQ" firstAttribute="top" secondItem="r2M-Kf-rDu" secondAttribute="bottom" constant="45" id="uVI-xZ-HYE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hSE-J0-lYE"/>
                     </view>
                     <connections>
-                        <outlet property="searchDisplayController" destination="yMB-L9-bic" id="f5V-GN-xsO"/>
+                        <outlet property="dateandtimeSelector" destination="LZu-1A-2EQ" id="RDp-hm-x7I"/>
+                        <outlet property="numberofTrees" destination="cLH-UP-0tf" id="Tcw-xs-UOa"/>
+                        <outlet property="numberofVolunteers" destination="bl1-wx-GqR" id="e5H-w4-2yq"/>
+                        <outlet property="searchDisplayController" destination="9De-xa-brI" id="2vB-9I-ruA"/>
+                        <outlet property="typeTreeSelector" destination="G35-LR-ZrG" id="EEC-l6-L4O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOn-Ze-mje" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="yMB-L9-bic">
                     <connections>
                         <outlet property="delegate" destination="wct-IT-gMI" id="f0T-xf-uFC"/>
-                        <outlet property="searchBar" destination="r2M-Kf-rDu" id="xiZ-bC-xZ6"/>
                         <outlet property="searchContentsController" destination="wct-IT-gMI" id="d69-zE-Lok"/>
                         <outlet property="searchResultsDataSource" destination="wct-IT-gMI" id="u5R-BR-sAO"/>
                         <outlet property="searchResultsDelegate" destination="wct-IT-gMI" id="8Mg-M9-BzD"/>
                     </connections>
                 </searchDisplayController>
+                <searchDisplayController id="9De-xa-brI">
+                    <connections>
+                        <outlet property="delegate" destination="wct-IT-gMI" id="Kpm-yh-46R"/>
+                        <outlet property="searchBar" destination="CK5-Mv-hYy" id="Ks0-i1-kcf"/>
+                        <outlet property="searchContentsController" destination="wct-IT-gMI" id="Zzz-QK-dP7"/>
+                        <outlet property="searchResultsDataSource" destination="wct-IT-gMI" id="2h0-Um-28g"/>
+                        <outlet property="searchResultsDelegate" destination="wct-IT-gMI" id="AlD-QY-QAk"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="434.39999999999998" y="1291.6256157635469"/>
+        </scene>
+        <!--Search Location Table View Controller-->
+        <scene sceneID="XpD-AB-JdO">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchLocationTableViewController" id="mOe-HX-tS7" customClass="SearchLocationTableViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fwD-OI-TKM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="location" textLabel="jko-Gh-mvQ" detailTextLabel="yYj-aY-YSV" style="IBUITableViewCellStyleSubtitle" id="Jzo-Sb-yMU">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jzo-Sb-yMU" id="bJe-C1-Hgf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jko-Gh-mvQ">
+                                            <rect key="frame" x="16.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yYj-aY-YSV">
+                                            <rect key="frame" x="15.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mOe-HX-tS7" id="Vyk-Ax-mQA"/>
+                            <outlet property="delegate" destination="mOe-HX-tS7" id="sCe-yE-hs3"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0gY-Yl-pda" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="434" y="1990"/>
         </scene>
         <!--Pick Details View Controller-->
         <scene sceneID="Y9U-f0-ksT">

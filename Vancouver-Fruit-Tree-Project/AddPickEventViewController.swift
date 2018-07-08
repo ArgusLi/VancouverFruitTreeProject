@@ -10,8 +10,31 @@ import UIKit
 
 class AddPickEventViewController: UIViewController {
 
+    @IBOutlet weak var locationSearch: UISearchBar!
+    @IBOutlet weak var dateandtimeSelector: UIDatePicker!
+    @IBAction func saveButton(_ sender: Any) {
+    }
+    @IBOutlet weak var numberofTrees: UILabel!
+    @IBAction func treeIncrementer(_ sender: Any) {
+    }
+    @IBOutlet weak var numberofVolunteers: UILabel!
+    @IBAction func volunteerIncrementer(_ sender: Any) {
+    }
+    @IBOutlet weak var typeTreeSelector: UIPickerView!
+    var resultSearchController:UISearchController? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let locationSearchTable = storyboard?.instantiateViewController(withIdentifier: "SearchLocationTableViewController") as! SearchLocationTableViewController
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Enter the location"
+        navigationItem.titleView = resultSearchController?.searchBar
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
 
         // Do any additional setup after loading the view.
     }
