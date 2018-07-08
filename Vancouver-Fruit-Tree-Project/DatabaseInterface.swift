@@ -15,7 +15,7 @@ import AWSAuthCore
 class DatabaseInterface: NSObject {
     
     
-    //MARK: create pick event
+    //MARK: create pick event (V1)
     /// Creates and uploads a new pick event to the database
     ///
     /// - Parameters:
@@ -24,7 +24,7 @@ class DatabaseInterface: NSObject {
     ///   - latitude: the latitude for the location of the event
     ///   - longitude: the longitude for the location of the event
     ///   - teamID: the ID string for the team assigned to the pickEvent
-    func createPickEvents(eventTime: String, eventDate: String, latitude: NSNumber, longitude: NSNumber, teamID: String){
+    func createPickEvents(eventTime: String, eventDate: String, latitude: NSNumber, longitude: NSNumber, teamID: String, address: String, treeMap: [String:String]){
         
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
         print("in DatabaseInterface -> createPickEvent...")
@@ -59,6 +59,8 @@ class DatabaseInterface: NSObject {
         
         pickEventItem._latitude = latitude
         pickEventItem._longitude = longitude
+        pickEventItem._address = address
+        pickEventItem._treeMap = treeMap
         
         //Save a new item
         dynamoDbObjectMapper.save(pickEventItem, completionHandler: {
@@ -71,6 +73,76 @@ class DatabaseInterface: NSObject {
             print("An item was saved.")
         })
     
+    }
+    
+    
+
+    
+    // MARK: create pick event (V2) - same as V1, except strips attributes from
+    ///Creates and uploads a new pick event to the database
+    ///
+    /// - Parameter pickEventItem: event that is to be uploaded, with all relevant parameters except for creationTime, which is set in this function
+    func createPickEvents(pickEventItem: PickEvents){
+        
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        print("in DatabaseInterface -> createPickEvent...")
+        // Create data object using data models you downloaded from Mobile Hub
+        let pickEventItem: PickEvents = PickEvents()
+        pickEventItem._userId = AWSIdentityManager.default().identityId
+        
+        //get time
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
+        
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        
+        /*  ._creationTime stores a combination of the date and time as
+         the sorting hash to guarantee the uniqueness of the primary
+         hash
+         */
+        pickEventItem._creationTime = String(year) + "/" + String(month) + "/" + String(day) + "-" + String(hour) + ":" + String(minutes) + ":" + String(seconds)
+        
+        //this isn't really a necessary attribute, since creationTime stores both anyway
+        pickEventItem._creationDate = String(year) + "/" + String(month) + "/" + String(day)
+        
+        //Save a new item
+        dynamoDbObjectMapper.save(pickEventItem, completionHandler: {
+            (error: Error?) -> Void in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            print("An item was saved.")
+        })
+        
+    }
+    
+    // MARK: create pick event (V3) - uses primary hash
+    ///Call this when wanting to push changes to the database on an existing event
+    ///
+    /// - Parameter pickEventItem: event that is to be uploaded, with modified attributes, but with _userId and creationTime unmodified
+    func modifyPickEventsWithHash(pickEventItem: PickEvents){
+        
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        print("in DatabaseInterface -> modifyPickEvent...")
+
+        //re-save a new item
+        dynamoDbObjectMapper.save(pickEventItem, completionHandler: {
+            (error: Error?) -> Void in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            print("An item was overwritten.")
+        })
+        
     }
     
     //MARK: Search for pickEvents by date and time
