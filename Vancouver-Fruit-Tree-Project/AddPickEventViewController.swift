@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import MapKit
+class AddPickEventViewController: UIViewController, setLocation {
 
-class AddPickEventViewController: UIViewController {
-
-    @IBOutlet weak var locationSearch: UISearchBar!
+    var event = PickEvents()
+    
+    
+    @IBOutlet weak var addressTitle: UIButton!
+    @IBAction func addressButton(_ sender: Any) {
+        let searchAdressVC = storyboard?.instantiateViewController(withIdentifier: "SearchLocationTableViewController") as! SearchLocationTableViewController
+        searchAdressVC.delegate = self
+        navigationController?.pushViewController(searchAdressVC, animated: true)
+    }
     @IBOutlet weak var dateandtimeSelector: UIDatePicker!
     @IBAction func saveButton(_ sender: Any) {
     }
@@ -25,20 +33,35 @@ class AddPickEventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let locationSearchTable = storyboard?.instantiateViewController(withIdentifier: "SearchLocationTableViewController") as! SearchLocationTableViewController
-        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
-        resultSearchController?.searchResultsUpdater = locationSearchTable
-        let searchBar = resultSearchController!.searchBar
-        searchBar.sizeToFit()
-        searchBar.placeholder = "Enter the location"
-        navigationItem.titleView = resultSearchController?.searchBar
-        resultSearchController?.hidesNavigationBarDuringPresentation = false
-        resultSearchController?.dimsBackgroundDuringPresentation = true
-        definesPresentationContext = true
+        
 
         // Do any additional setup after loading the view.
     }
-
+    func getLocation(location: MKMapItem, address: String?) {
+        if (location.placemark.location != nil){
+        event?._latitude = NSNumber(value:(location.placemark.location?.coordinate.latitude)!)
+        event?._longitude = NSNumber(value:(location.placemark.location?.coordinate.longitude)!)
+            
+            
+           
+           addressTitle.setTitle(address, for: .normal)
+            addressTitle.setTitleColor(.black, for: .normal)
+        
+        
+        
+            
+            
+        
+        
+            
+        }
+        else{
+            let alert = UIAlertController(title: "Error", message: "There has been some problem with getting location", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
