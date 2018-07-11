@@ -8,9 +8,12 @@
 
 import UIKit
 import MapKit
-class AddPickEventViewController: UIViewController, setLocation {
+class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, setLocation {
+    
+    
 
     var event = PickEvents()
+    var typeofTrees = [String]()
     let dateFormatter = DateFormatter()
     let timeFormatter = DateFormatter()
     func setUpFormatters(){
@@ -22,6 +25,8 @@ class AddPickEventViewController: UIViewController, setLocation {
         timeFormatter.timeStyle = .full
         timeFormatter.dateFormat = "hh:mm:ss"
     }
+    
+    @IBOutlet weak var save: UIButton!
     @IBOutlet weak var addressTitle: UIButton!
     @IBAction func addressButton(_ sender: Any) {
         let searchAdressVC = storyboard?.instantiateViewController(withIdentifier: "SearchLocationTableViewController") as! SearchLocationTableViewController
@@ -41,33 +46,38 @@ class AddPickEventViewController: UIViewController, setLocation {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
         }
-        else if (event?._eventTime == nil || event?._eventDate == nil)
-        {
-            let alert = UIAlertController(title: "Time not specified", message: "Please provide the date and time of the pick", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
-        }
+        
         else{
-            let database = DatabaseInterface()
+            //let database = DatabaseInterface()
             //TODO: database.createNewEvent(event)
         }
     }
     @IBOutlet weak var numberofTrees: UILabel!
-    @IBAction func treeIncrementer(_ sender: Any) {
+    
+    @IBOutlet weak var treeStepper: UIStepper!
+    
+    @IBOutlet weak var volunteerStepper: UIStepper!
+    
+    @IBAction func treeChanged(_ sender: Any) {
+        numberofTrees.text = "Trees: \(Int(treeStepper.value))"
     }
     @IBOutlet weak var numberofVolunteers: UILabel!
-    @IBAction func volunteerIncrementer(_ sender: Any) {
+    
+    @IBAction func volunteersChanged(_ sender: Any) {
+        numberofVolunteers.text = "Volunteers: \(Int(volunteerStepper.value))"
     }
     @IBOutlet weak var typeTreeSelector: UIPickerView!
     var resultSearchController:UISearchController? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+        save.layer.cornerRadius = 8
         dateandtimeSelector.minimumDate = Date()
         setUpFormatters()
-        
+        typeTreeSelector.delegate = self
+        typeTreeSelector.dataSource = self
         event?._eventDate = dateFormatter.string(from: dateandtimeSelector.date)
         event?._eventTime = timeFormatter.string(from: dateandtimeSelector.date)
-        
+        typeofTrees = ["Apple", "Orange", "Plum"]
         
 
         // Do any additional setup after loading the view.
@@ -77,19 +87,9 @@ class AddPickEventViewController: UIViewController, setLocation {
         if (location.placemark.location != nil){
         event?._latitude = NSNumber(value:(location.placemark.location?.coordinate.latitude)!)
         event?._longitude = NSNumber(value:(location.placemark.location?.coordinate.longitude)!)
-            
-            
-           
            addressTitle.setTitle(address, for: .normal)
             addressTitle.setTitleColor(.black, for: .normal)
         
-        
-        
-            
-            
-        
-        
-            
         }
         else{
             let alert = UIAlertController(title: "Error", message: "There has been some problem with getting location", preferredStyle: .alert)
@@ -103,7 +103,20 @@ class AddPickEventViewController: UIViewController, setLocation {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // The number of rows of data
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return typeofTrees.count
+    }
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        //TODO: event._typeoftree = typeofTrees[row]
+        return typeofTrees[row]
+    }
     /*
     // MARK: - Navigation
 

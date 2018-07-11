@@ -359,7 +359,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveButton:" destination="wct-IT-gMI" eventType="touchUpInside" id="FlE-8A-o6l"/>
+                                    <action selector="saveButton:" destination="wct-IT-gMI" eventType="touchUpInside" id="F7N-GT-B5q"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of trees:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miT-Io-5qO">
@@ -368,14 +368,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="xnR-zo-X0m">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="xnR-zo-X0m">
                                 <rect key="frame" x="5" y="230.66666666666671" width="370" height="57.333333333333343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ibO-RW-i0V">
-                                        <rect key="frame" x="0.0" y="0.0" width="169" height="57.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="57.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trees: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLH-UP-0tf">
-                                                <rect key="frame" x="0.0" y="0.0" width="169" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="173" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -383,16 +383,16 @@
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ySF-gJ-hqP">
                                                 <rect key="frame" x="0.0" y="28.333333333333314" width="94" height="29"/>
                                                 <connections>
-                                                    <action selector="treeIncrementer:" destination="wct-IT-gMI" eventType="valueChanged" id="k1h-Fp-wiD"/>
+                                                    <action selector="treeChanged:" destination="wct-IT-gMI" eventType="valueChanged" id="tKq-da-iH5"/>
                                                 </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RMX-qP-RcI">
-                                        <rect key="frame" x="187" y="0.0" width="183" height="57.333333333333336"/>
+                                        <rect key="frame" x="197" y="0.0" width="173" height="57.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volunteers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bl1-wx-GqR">
-                                                <rect key="frame" x="0.0" y="0.0" width="183" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="173" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -400,7 +400,7 @@
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="YKb-bk-hpb">
                                                 <rect key="frame" x="0.0" y="28.333333333333314" width="94" height="29"/>
                                                 <connections>
-                                                    <action selector="volunteerIncrementer:" destination="wct-IT-gMI" eventType="valueChanged" id="UzM-Ca-hJy"/>
+                                                    <action selector="volunteersChanged:" destination="wct-IT-gMI" eventType="valueChanged" id="0ZZ-Rc-XJu"/>
                                                 </connections>
                                             </stepper>
                                         </subviews>
@@ -459,8 +459,11 @@
                         <outlet property="dateandtimeSelector" destination="LZu-1A-2EQ" id="RDp-hm-x7I"/>
                         <outlet property="numberofTrees" destination="cLH-UP-0tf" id="Tcw-xs-UOa"/>
                         <outlet property="numberofVolunteers" destination="bl1-wx-GqR" id="e5H-w4-2yq"/>
+                        <outlet property="save" destination="UCB-ho-UxM" id="mjD-KQ-2MN"/>
                         <outlet property="searchDisplayController" destination="9De-xa-brI" id="2vB-9I-ruA"/>
+                        <outlet property="treeStepper" destination="ySF-gJ-hqP" id="ylW-zZ-PDs"/>
                         <outlet property="typeTreeSelector" destination="G35-LR-ZrG" id="EEC-l6-L4O"/>
+                        <outlet property="volunteerStepper" destination="YKb-bk-hpb" id="kTJ-hK-JAs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOn-Ze-mje" userLabel="First Responder" sceneMemberID="firstResponder"/>
