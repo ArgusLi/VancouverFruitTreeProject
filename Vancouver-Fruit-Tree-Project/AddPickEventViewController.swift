@@ -11,8 +11,17 @@ import MapKit
 class AddPickEventViewController: UIViewController, setLocation {
 
     var event = PickEvents()
-    
-    
+    let dateFormatter = DateFormatter()
+    let timeFormatter = DateFormatter()
+    func setUpFormatters(){
+        
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "YYYY/MM/dd"
+        timeFormatter.dateFormat = .none
+        timeFormatter.timeStyle = .full
+        timeFormatter.dateFormat = "hh:mm:ss"
+    }
     @IBOutlet weak var addressTitle: UIButton!
     @IBAction func addressButton(_ sender: Any) {
         let searchAdressVC = storyboard?.instantiateViewController(withIdentifier: "SearchLocationTableViewController") as! SearchLocationTableViewController
@@ -20,7 +29,28 @@ class AddPickEventViewController: UIViewController, setLocation {
         navigationController?.pushViewController(searchAdressVC, animated: true)
     }
     @IBOutlet weak var dateandtimeSelector: UIDatePicker!
+    @IBAction func dateChanged(sender: UIDatePicker){
+        event?._eventDate = dateFormatter.string(from: dateandtimeSelector.date)
+        event?._eventTime = timeFormatter.string(from: dateandtimeSelector.date)
+        
+    }
     @IBAction func saveButton(_ sender: Any) {
+        if (event?._latitude == nil || event?._longitude == nil)
+        {
+            let alert = UIAlertController(title: "Location missing", message: "Please provide location of the pick", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        else if (event?._eventTime == nil || event?._eventDate == nil)
+        {
+            let alert = UIAlertController(title: "Time not specified", message: "Please provide the date and time of the pick", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        else{
+            let database = DatabaseInterface()
+            //TODO: database.createNewEvent(event)
+        }
     }
     @IBOutlet weak var numberofTrees: UILabel!
     @IBAction func treeIncrementer(_ sender: Any) {
@@ -32,11 +62,17 @@ class AddPickEventViewController: UIViewController, setLocation {
     var resultSearchController:UISearchController? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateandtimeSelector.minimumDate = Date()
+        setUpFormatters()
+        
+        event?._eventDate = dateFormatter.string(from: dateandtimeSelector.date)
+        event?._eventTime = timeFormatter.string(from: dateandtimeSelector.date)
         
         
 
         // Do any additional setup after loading the view.
     }
+    
     func getLocation(location: MKMapItem, address: String?) {
         if (location.placemark.location != nil){
         event?._latitude = NSNumber(value:(location.placemark.location?.coordinate.latitude)!)

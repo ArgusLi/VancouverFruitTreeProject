@@ -339,6 +339,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="552697846.91159296">
                                     <!--2018-07-07 23:10:46 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="dateChangedWithSender:" destination="wct-IT-gMI" eventType="valueChanged" id="xS7-8z-Cks"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYA-JM-bdR">
                                 <rect key="frame" x="5" y="99.666666666666657" width="111.33333333333333" height="20.333333333333329"/>
