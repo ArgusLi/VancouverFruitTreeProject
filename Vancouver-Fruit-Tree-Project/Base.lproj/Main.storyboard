@@ -49,7 +49,7 @@
                                 <rect key="frame" x="114" y="574" width="147" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="2sI-IH-FcB"/>
-                                    <constraint firstAttribute="width" constant="147" id="pX3-Ms-rZe"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="pX3-Ms-rZe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -74,6 +74,7 @@
                     <navigationItem key="navigationItem" id="R4P-ej-9pb">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="Icons" id="ybz-yu-iHl">
                             <connections>
+                                <action selector="hamburgerButton:" destination="BYZ-38-t0r" id="gKQ-9O-aeV"/>
                                 <segue destination="JXB-ic-mq4" kind="presentation" id="foe-XP-ND7"/>
                             </connections>
                         </barButtonItem>
@@ -97,7 +98,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="signOutButton" destination="5fX-3T-3GP" id="W9h-r9-QYT"/>
+                        <outlet property="signOutButton" destination="5fX-3T-3GP" id="Uzy-Te-29P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -303,13 +304,13 @@
                                             <rect key="frame" x="15" y="-0.6666666666666643" width="150.66666666666666" height="73.333333333333314"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20m-10-9zR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="44.666666666666664" height="19.333333333333332"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="44.666666666666664" height="19"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ase-w2-X93">
-                                                    <rect key="frame" x="0.0" y="27.333333333333336" width="44.666666666666664" height="19"/>
+                                                    <rect key="frame" x="0.0" y="27" width="44.666666666666664" height="19.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -605,7 +606,6 @@
                                 <rect key="frame" x="0.0" y="468" width="375" height="54"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.62352941179999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="Ob2-Ed-lMU"/>
                                     <constraint firstAttribute="width" secondItem="Lgc-OQ-sFg" secondAttribute="height" multiplier="125:18" id="Y32-E8-IA8"/>
                                 </constraints>
                                 <state key="normal" title="Time">
