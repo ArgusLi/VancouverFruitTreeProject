@@ -29,6 +29,8 @@ class PickEventTableViewController: UITableViewController {
     }
    
     override func viewDidLoad() {
+        
+        
         let controllers = navigationController?.viewControllers
         for controller in controllers!{
             if controller is UITabBarController
@@ -43,7 +45,7 @@ class PickEventTableViewController: UITableViewController {
         
         loadavailablepicks()
         
-        
+        super.view.isUserInteractionEnabled = true
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

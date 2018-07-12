@@ -48,8 +48,13 @@ class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
         
         else{
+            print(typeofTrees[typeTreeSelector.selectedRow(inComponent: 0)])
             //let database = DatabaseInterface()
             //TODO: database.createNewEvent(event)
+            let alert = UIAlertController(title: "Event Saved Successfully", message: "The event has been successfully saved", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in self.navigationController?.popViewController(animated: true) }))
+            self.present(alert, animated: true)
+            
         }
     }
     @IBOutlet weak var numberofTrees: UILabel!
@@ -77,7 +82,7 @@ class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPick
         typeTreeSelector.dataSource = self
         event?._eventDate = dateFormatter.string(from: dateandtimeSelector.date)
         event?._eventTime = timeFormatter.string(from: dateandtimeSelector.date)
-        typeofTrees = ["Apple", "Orange", "Plum"]
+        typeofTrees = ["none","Apple", "Orange", "Plum"]
         
 
         // Do any additional setup after loading the view.
@@ -114,7 +119,8 @@ class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        //TODO: event._typeoftree = typeofTrees[row]
+        
+        
         return typeofTrees[row]
     }
     /*
