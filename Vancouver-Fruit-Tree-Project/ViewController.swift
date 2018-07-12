@@ -13,9 +13,24 @@ import AWSGoogleSignIn
 import SideMenu
 class ViewController: UIViewController {
     //MARK - hamburger menu vars
-    
-    @IBOutlet weak var signOutButton: UIBarButtonItem!
+    @IBOutlet weak var leadingC: NSLayoutConstraint!
+    @IBOutlet weak var trailingC: NSLayoutConstraint!
+    @IBAction func contactUsButton(_ sender: Any) {
+        let alert = UIAlertController(title: "276Harvest8@gmail.com", message: "We appreciate any comments and feedback :)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    @IBOutlet var hamburgerView: UIView!
     var hamburgerMenuIsVisible = false
+    
+    
+    
+    @IBAction func TestButtonFunction(_ sender: Any) {
+        
+        print("test button was pressed")
+        
+    }
+    
     
     @IBAction func hamburgerButton(_ sender: Any) {
         if !hamburgerMenuIsVisible{

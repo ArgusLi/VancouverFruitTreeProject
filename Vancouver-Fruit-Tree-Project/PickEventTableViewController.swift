@@ -81,9 +81,17 @@ class PickEventTableViewController: UITableViewController {
             
         }
         let pick = picks[indexPath.row]
-        cell.Time.text="Date: " + pick._eventTime!
-        cell.Date.text = "Time: " + pick._eventDate!
+        cell.Time.text="Time: " + pick._eventTime!
+        cell.Date.text = "Date: " + pick._eventDate!
         cell.TeamLead.text = "Team lead: none"
+        if (indexPath.row % 2 == 0){
+            cell.sideImage.image = UIImage(named: "Green alert")}
+        else if(indexPath.row % 5 == 0){
+            cell.sideImage.image = UIImage(named: "Red Alert")
+        }
+        else{
+            cell.sideImage.image = UIImage(named: "Amber Alert")
+        }
 
         // Configure the cell...
 
