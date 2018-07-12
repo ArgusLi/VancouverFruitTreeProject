@@ -52,10 +52,12 @@ class ViewController: UIViewController {
     }
     
     //main
+    
+    @IBOutlet weak var signOutButton: UIBarButtonItem!
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        self.navigationItem.rightBarButtonItem = signOutButton
         if !AWSSignInManager.sharedInstance().isLoggedIn {
             presentAuthUIViewController()
             

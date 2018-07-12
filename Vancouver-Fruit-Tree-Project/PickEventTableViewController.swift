@@ -13,6 +13,7 @@ class PickEventTableViewController: UITableViewController {
     // TODO: Insert an array declaration here
     //TODO: placeholder for a pick event class
     
+    @IBOutlet weak var addButton: UIBarButtonItem!
     var picks=[PickEvents]()
    private func loadavailablepicks()
    {
@@ -28,11 +29,23 @@ class PickEventTableViewController: UITableViewController {
     }
    
     override func viewDidLoad() {
+        
+        
+        let controllers = navigationController?.viewControllers
+        for controller in controllers!{
+            if controller is UITabBarController
+            {
+                controller.navigationItem.rightBarButtonItem = addButton
+            }
+        }
+        
         super.viewDidLoad()
+        
+        
         
         loadavailablepicks()
         
-        
+        super.view.isUserInteractionEnabled = true
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
