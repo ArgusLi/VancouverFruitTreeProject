@@ -632,7 +632,9 @@
                                 <rect key="frame" x="0.0" y="530" width="375" height="54"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.62352941179999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="SeX-fA-27W" secondAttribute="height" multiplier="125:18" id="0ly-BV-3Qt"/>
                                     <constraint firstAttribute="width" secondItem="SeX-fA-27W" secondAttribute="height" multiplier="125:18" id="UZQ-3D-M5b"/>
+                                    <constraint firstAttribute="width" secondItem="SeX-fA-27W" secondAttribute="height" multiplier="125:18" id="aSe-C9-VqU"/>
                                     <constraint firstAttribute="width" secondItem="SeX-fA-27W" secondAttribute="height" multiplier="125:18" id="fiy-Fb-kmb"/>
                                 </constraints>
                                 <state key="normal" title="Team Lead">
