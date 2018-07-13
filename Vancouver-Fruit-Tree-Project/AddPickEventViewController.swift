@@ -70,6 +70,7 @@ class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     @IBAction func volunteersChanged(_ sender: Any) {
         numberofVolunteers.text = "Volunteers: \(Int(volunteerStepper.value))"
+        print("Volunteers Changed")
     }
     @IBOutlet weak var typeTreeSelector: UIPickerView!
     var resultSearchController:UISearchController? = nil
