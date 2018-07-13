@@ -586,15 +586,11 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVo-Eb-IHq">
                                 <rect key="frame" x="0.0" y="44" width="375" height="339"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="339" id="bo3-fY-v5l"/>
-                                </constraints>
                             </mapView>
                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSP-95-OwA">
                                 <rect key="frame" x="0.0" y="408" width="375" height="52"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.62352941179999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="0gm-Yt-oW5"/>
                                     <constraint firstAttribute="width" secondItem="WSP-95-OwA" secondAttribute="height" multiplier="375:52" id="O6i-jA-vkG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
@@ -629,7 +625,9 @@
                                 <rect key="frame" x="0.0" y="530" width="375" height="54"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.62352941179999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="SeX-fA-27W" secondAttribute="height" multiplier="125:18" id="0ly-BV-3Qt"/>
                                     <constraint firstAttribute="width" secondItem="SeX-fA-27W" secondAttribute="height" multiplier="125:18" id="UZQ-3D-M5b"/>
+                                    <constraint firstAttribute="width" secondItem="SeX-fA-27W" secondAttribute="height" multiplier="125:18" id="aSe-C9-VqU"/>
                                     <constraint firstAttribute="width" secondItem="SeX-fA-27W" secondAttribute="height" multiplier="125:18" id="fiy-Fb-kmb"/>
                                 </constraints>
                                 <state key="normal" title="Team Lead">
