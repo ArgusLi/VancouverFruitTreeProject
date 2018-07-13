@@ -29,8 +29,12 @@ class PickEventTableViewController: UITableViewController {
     }
    
     override func viewDidLoad() {
-        
-        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.tintColor = UIColor.green
+        self.refreshControl!.addTarget(self, action:
+            #selector(self.handleRefresh(_:)),
+                                 for: UIControlEvents.valueChanged)
+        self.tableView.addSubview(self.refreshControl!)
         let controllers = navigationController?.viewControllers
         for controller in controllers!{
             if controller is UITabBarController
@@ -62,7 +66,13 @@ class PickEventTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        
+        loadavailablepicks()
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
