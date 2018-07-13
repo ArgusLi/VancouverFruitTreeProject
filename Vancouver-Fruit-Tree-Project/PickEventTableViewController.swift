@@ -30,6 +30,7 @@ class PickEventTableViewController: UITableViewController {
    
     override func viewDidLoad() {
         self.refreshControl = UIRefreshControl()
+        self.refreshControl!.tintColor = UIColor.green
         self.refreshControl!.addTarget(self, action:
             #selector(self.handleRefresh(_:)),
                                  for: UIControlEvents.valueChanged)

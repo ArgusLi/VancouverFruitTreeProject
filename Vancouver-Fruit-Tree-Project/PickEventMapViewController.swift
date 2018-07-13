@@ -9,16 +9,17 @@
 import UIKit
 import MapKit
 class PickEventMapViewController: UIViewController , CLLocationManagerDelegate, MKMapViewDelegate{
-
+    let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
     let vancouverlocation = CLLocationCoordinate2DMake(  49.246292, -123.116226)
     let mapspan = MKCoordinateSpanMake(0.5, 0.5)
-    
+
     func reset(){
-       let location = MKCoordinateRegion(center: vancouverlocation, span:mapspan)
+        let location = MKCoordinateRegion(center: vancouverlocation, span:mapspan)
         mapView.setRegion(location, animated: true)
         
     }
+
     var picks=[PickEvents]()
     private func loadavailablepicks()
     {
@@ -53,9 +54,9 @@ class PickEventMapViewController: UIViewController , CLLocationManagerDelegate, 
         if overlay is MKCircle{
             let circleRenderer = MKCircleRenderer(overlay: overlay)
             circleRenderer.fillColor = UIColor.green
-            circleRenderer.strokeColor = UIColor.green
+            circleRenderer.strokeColor = UIColor.black
             circleRenderer.lineWidth = 1
-            circleRenderer.alpha = 0.5
+            circleRenderer.alpha = 0.2
             return circleRenderer
         }
         return MKOverlayRenderer(overlay: overlay)
@@ -63,11 +64,24 @@ class PickEventMapViewController: UIViewController , CLLocationManagerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         reset()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
         loadavailablepicks()
         addCircles(Events: picks)
        
+        
+        
+        
+       
 
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        locationManager.requestLocation()
+        loadavailablepicks()
+        addCircles(Events: picks)
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,6 +89,25 @@ class PickEventMapViewController: UIViewController , CLLocationManagerDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
+    private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+        if (status == .denied || status == .restricted)
+        {
+            reset()
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let region = MKCoordinateRegion(center: location.coordinate, span: span)
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error:: (error)")
+    }
 
     /*
     // MARK: - Navigation
