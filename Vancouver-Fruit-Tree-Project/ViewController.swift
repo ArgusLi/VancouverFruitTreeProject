@@ -23,11 +23,38 @@ class ViewController: UIViewController {
     @IBOutlet var hamburgerView: UIView!
     var hamburgerMenuIsVisible = false
     
+    @IBAction func TestUserQuery(_ sender: Any) {
+        print("test user query button was pressed")
+        
+        let DBINT = DatabaseInterface()
+        
+        let output = DBINT.queryUsers()
+        
+        if (output) != nil {
+            
+            print(output![0])
+            
+        }
+        
+    }
     
     
     @IBAction func TestButtonFunction(_ sender: Any) {
         
         print("test button was pressed")
+        let DBINT = DatabaseInterface()
+        
+        DBINT.createPickEvents(eventTime: "12:00", eventDate: "2018/07/16", latitude: 40, longitude: 49, teamID: "1", address: "Test Address", treeMap: ["Apple": "1", "Cherry" : "2"])
+        
+        let pickQuery: [PickEvents] = DBINT.queryPickEventsByDate(date: "2018/07/16", time: "12:00")
+        
+        let team = Team()
+        
+        DBINT.createTeam(teamItem: team!, pickItem: pickQuery[0])
+        
+        //readPick = DBINT.readPickEvent(userId: pickQuery[0]._userId!, creationTime: pickQuery[0]._creationTime!)
+        
+        print("After creation call")
         
     }
     
@@ -80,6 +107,7 @@ class ViewController: UIViewController {
         
         config.isBackgroundColorFullScreen = true
         config.logoImage = UIImage(named: "VFTP_LOGO_CS3-167x300")
+        
         AWSAuthUIViewController.presentViewController(
             with: self.navigationController!,
             configuration: config, completionHandler: { (provider: AWSSignInProvider, error: Error?) in

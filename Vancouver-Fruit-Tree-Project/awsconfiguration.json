@@ -17,7 +17,7 @@
             "PoolId": "us-east-1_LXKwVfwkz",
             "AppClientId": "7bgr1sfh851ajh0v3t65hq69q3",
             "AppClientSecret": "9bllitmncjkeb9nnnvb4ei0e6vod746e7pa83hqm39nsvssqh05",
-            "Region": "us-east-1"
+            "Region": "us-east-1" 
         }
     },
     "DynamoDBObjectMapper": {

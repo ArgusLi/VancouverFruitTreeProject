@@ -15,6 +15,7 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
+@objcMembers // <-- don't remove this, it will break uploading
 class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: String?
@@ -27,6 +28,8 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _latitude: NSNumber?
     var _longitude: NSNumber?
     var _treeMap: [String: String]?
+    
+    
     
     class func dynamoDBTableName() -> String {
         

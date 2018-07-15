@@ -10,10 +10,100 @@ import Foundation
 import AWSDynamoDB
 import AWSCognitoIdentityProvider
 import AWSAuthCore
+//import AWSCognitoIdentityProviderASF
 
 @objcMembers
 class DatabaseInterface: NSObject {
     
+    //MARK: User Methods
+    
+    func queryUsers() -> [AWSCognitoIdentityProviderUserType]?{
+        
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,identityPoolId:"us-east-1:418ae064-cd87-4807-9234-412af6afcb20")
+        let configuration = AWSServiceConfiguration(region:.USEast1, credentialsProvider:credentialsProvider)
+
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+        
+        let Cognito = AWSCognitoIdentityProvider.default()
+        var queryComplete = false
+        let request = AWSCognitoIdentityProviderListUsersRequest()
+        request?.attributesToGet = []
+        request?.userPoolId = "us-east-1_LXKwVfwkz"
+        
+        let response = AWSCognitoIdentityProviderListUsersResponse()
+        
+        Cognito.listUsers(request!, completionHandler: { (response, error: Error?) in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                queryComplete = true;
+                return
+            }
+            print("Accounts were queried")
+            queryComplete = true;
+        })
+     
+        while queryComplete == false {
+            if queryComplete == true{
+                print("query is finished")
+                queryComplete = false
+                
+                if (response?.users) != nil{
+                    return (response?.users!)!
+                    
+                }
+                
+                return (response?.users)
+            }
+        }
+        
+
+        if (response?.users) != nil{
+            return (response?.users!)!
+            
+        }
+        
+        return (response?.users)
+        
+    }
+    
+    
+    //MARK: Team Methods
+    
+    func createTeam(teamItem: Team, pickItem: PickEvents ){
+        
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        print("in DatabaseInterface -> createPickEvent...")
+        // Create data object using data models you downloaded from Mobile Hub
+        
+        teamItem._teamLeader = "test"
+        teamItem._members = ["one" : ["two" : "three"] ]
+        teamItem._pickEventHashKey = pickItem._userId
+        teamItem._pickEventRangeKey = pickItem._creationTime
+        teamItem._teamNumber = "1"
+        
+        //Save a new item
+        dynamoDbObjectMapper.save(teamItem, completionHandler: {
+            (error: Error?) -> Void in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            print("An item was saved.")
+        })
+        
+        //let request = AWSCognitoIdentityProvider()
+        
+        //request.List
+        
+        //AWSCognitoIdentityProvider.adminAddUser(<#T##AWSCognitoIdentityProvider#>)
+        
+    }
+    
+    
+    
+    //MARK: PickEvent Methods
     
     //MARK: create pick event (V1)
     /// Creates and uploads a new pick event to the database
@@ -30,7 +120,8 @@ class DatabaseInterface: NSObject {
         print("in DatabaseInterface -> createPickEvent...")
         // Create data object using data models you downloaded from Mobile Hub
         let pickEventItem: PickEvents = PickEvents()
-        pickEventItem._userId = AWSIdentityManager.default().identityId
+        let userID = AWSIdentityManager.default().identityId
+        pickEventItem._userId = userID
         
         //get time
         let date = Date()
@@ -49,7 +140,7 @@ class DatabaseInterface: NSObject {
         */
         pickEventItem._creationTime = String(year) + "/" + String(month) + "/" + String(day) + "-" + String(hour) + ":" + String(minutes) + ":" + String(seconds)
 
-        //this isn't really a necessary attribute
+        //this isn't a necessary attribute
         pickEventItem._creationDate = String(year) + "/" + String(month) + "/" + String(day)
         
         pickEventItem._eventTime = eventTime
@@ -72,11 +163,15 @@ class DatabaseInterface: NSObject {
             }
             print("An item was saved.")
         })
+        
+        //let request = AWSCognitoIdentityProvider()
+        
+        //request.List
+        
+        //AWSCognitoIdentityProvider.adminAddUser(<#T##AWSCognitoIdentityProvider#>)
     
     }
     
-    
-
     
     // MARK: create pick event (V2) - same as V1, except strips attributes from
     ///Creates and uploads a new pick event to the database
@@ -308,6 +403,7 @@ class DatabaseInterface: NSObject {
     ///
     /// - Parameter PickEvents: the PickEvents object that is to be removed from the table
     /// - Returns: 1 for success, 0 for failure
+    
     func deletePickEvent(itemToDelete: PickEvents) -> Int {
         
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()

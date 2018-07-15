@@ -71,7 +71,7 @@ class coordinator:NSObject{
         //upload pick with new teamID to database
         if pickEvent != nil{
             pickEvent!._assignedTeamID=nil
-            dbInterface.createPickEvents(eventTime: (pickEvent?._eventTime)!, eventDate: (pickEvent?._eventDate)!, latitude: (pickEvent?._latitude)!, longitude: (pickEvent?._longitude)!, teamID: (pickEvent?._assignedTeamID)!, address: (pickEvent?._address)! , treeMap: (pickEvent?._treeMap)!)
+            dbInterface.createPickEvents(eventTime: (pickEvent?._eventTime)!, eventDate: (pickEvent?._eventDate)!, latitude: (pickEvent?._latitude)!, longitude: (pickEvent?._longitude)!, teamID: (pickEvent?._assignedTeamID)!, address: (pickEvent?._address)!, treeMap: (pickEvent?._treeMap)!)
         }
 }
 class volunteer:NSObject{
