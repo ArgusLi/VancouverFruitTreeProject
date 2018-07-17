@@ -11,7 +11,7 @@ import AWSDynamoDB
 import AWSCognitoIdentityProvider
 import AWSAuthCore
 import AWSCore
-import AWSS3
+//import AWSS3
 //import AWSCognitoIdentityProviderASF
 
 @objcMembers
