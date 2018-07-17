@@ -16,11 +16,15 @@ import AWSAuthCore
 class DatabaseInterface: NSObject {
     
     //MARK: User Methods
-    
+   
     func queryUsers() -> [AWSCognitoIdentityProviderUserType]?{
+        var users = [AWSCognitoIdentityProviderUserType]()
+        var test = [Dictionary<String, String>]()
+        
         
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,identityPoolId:"us-east-1:418ae064-cd87-4807-9234-412af6afcb20")
         let configuration = AWSServiceConfiguration(region:.USEast1, credentialsProvider:credentialsProvider)
+        
 
         AWSServiceManager.default().defaultServiceConfiguration = configuration
         
@@ -29,47 +33,127 @@ class DatabaseInterface: NSObject {
         let request = AWSCognitoIdentityProviderListUsersRequest()
         request?.attributesToGet = []
         request?.userPoolId = "us-east-1_LXKwVfwkz"
-        
-        let response = AWSCognitoIdentityProviderListUsersResponse()
-        
-        Cognito.listUsers(request!, completionHandler: { (response, error: Error?) in
+        Cognito.listUsers(request!).continueOnSuccessWith(block: { (task: AWSTask) -> AnyObject?
+        in
+        if let error = task.error as NSError? {
             
-            if let error = error {
-                print("Amazon DynamoDB Save Error: \(error)")
-                queryComplete = true;
-                return
-            }
-            print("Accounts were queried")
+            print("Amazon DynamoDB Save Error: \(error)")
             queryComplete = true;
+            
+            return nil
+        }
+            
+            
+            if task.result?.users != nil{
+            for us in (task.result?.users)!{
+                
+                users.append(us)
+                
+            }
+            }
+            
+            
+                        return task
+            
+            
+        }).continueOnSuccessWith(block: {(task: AWSTask) -> AnyObject?
+            in
+            queryComplete = true
+            print("Query set to complete")
+            
+            return task.result
         })
+        
+        
+        
      
+        
+        
+        
         while queryComplete == false {
+        
             if queryComplete == true{
                 print("query is finished")
+                
                 queryComplete = false
                 
-                if (response?.users) != nil{
-                    return (response?.users!)!
-                    
-                }
-                
-                return (response?.users)
+                return users
             }
         }
-        
-
-        if (response?.users) != nil{
-            return (response?.users!)!
-            
-        }
-        
-        return (response?.users)
+        return users
         
     }
     
-    
+   
     //MARK: Team Methods
-    
+    func getUsername() -> String? {
+        //to check if user is logged in with Cognito... not sure if this is necessary
+        let identityManager = AWSIdentityManager.default()
+        let identityProvider = identityManager.credentialsProvider.identityProvider.identityProviderName
+        
+        if identityProvider == "cognito-identity.amazonaws.com" {
+            
+            let serviceConfiguration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: nil)
+            let userPoolConfiguration = AWSCognitoIdentityUserPoolConfiguration(clientId: "7bgr1sfh851ajh0v3t65hq69q3", clientSecret: "9bllitmncjkeb9nnnvb4ei0e6vod746e7pa83hqm39nsvssqh05", poolId: "us-east-1_LXKwVfwkz")
+            AWSCognitoIdentityUserPool.register(with: serviceConfiguration, userPoolConfiguration: userPoolConfiguration, forKey: "vancouverfruittreepr_userpool_MOBILEHUB_79870386")
+            let pool = AWSCognitoIdentityUserPool(forKey: "vancouverfruittreepr_userpool_MOBILEHUB_79870386")
+            
+            if let username = pool.currentUser()?.username {
+                print("Username Retrieved Successfully: \(username)")
+            } else {
+                print("Error getting username from current user - attempt to get user")
+                let user = pool.getUser()
+        
+                let username = user.username
+                return username
+            }
+            
+           
+            
+            
+
+        }
+        return nil
+    }
+    func getEmail() -> String? {
+        let identityManager = AWSIdentityManager.default()
+        let identityProvider = identityManager.credentialsProvider.identityProvider.identityProviderName
+        var responseEmail: String?
+        if identityProvider == "cognito-identity.amazonaws.com" {
+            
+            let serviceConfiguration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: nil)
+            let userPoolConfiguration = AWSCognitoIdentityUserPoolConfiguration(clientId: "7bgr1sfh851ajh0v3t65hq69q3", clientSecret: "9bllitmncjkeb9nnnvb4ei0e6vod746e7pa83hqm39nsvssqh05", poolId: "us-east-1_LXKwVfwkz")
+            AWSCognitoIdentityUserPool.register(with: serviceConfiguration, userPoolConfiguration: userPoolConfiguration, forKey: "vancouverfruittreepr_userpool_MOBILEHUB_79870386")
+            let pool = AWSCognitoIdentityUserPool(forKey: "vancouverfruittreepr_userpool_MOBILEHUB_79870386")
+            if let userFromPool = pool.currentUser() {
+                userFromPool.getDetails().continueOnSuccessWith(block: { (task) -> Any? in
+                    DispatchQueue.main.async {
+                        
+                        if let error = task.error as NSError? {
+                            print("Error getting user attributes from Cognito: \(error)")
+                        } else {
+                            let response = task.result
+                            if let userAttributes = response?.userAttributes {
+                                print("user attributes found: \(userAttributes)")
+                                for attribute in userAttributes {
+                                    if attribute.name == "email" {
+                                        if let email = attribute.value
+                                        {
+                                            responseEmail = email
+                                        }
+                                         else{ print("Email is null")
+                                           
+                                        }
+                                            
+                                        
+                                        
+                                    }
+                                } } } } } )
+             
+            }
+    }
+        return responseEmail
+    }
     func createTeam(teamItem: Team, pickItem: PickEvents ){
         
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()

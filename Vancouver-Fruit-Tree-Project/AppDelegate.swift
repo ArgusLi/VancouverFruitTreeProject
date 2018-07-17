@@ -10,6 +10,7 @@ import UIKit
 import AWSMobileClient
 import AWSCore
 import AWSPinpoint
+import AWSCognitoIdentityProvider
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -37,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let didFinishLaunching = AWSMobileClient.sharedInstance().interceptApplication(
             application, didFinishLaunchingWithOptions:
             launchOptions)
+        
+        // fetch the user pool client we initialized in above step
         
         // Initialize Pinpoint to enable session analytics
         let pinpoint = AWSPinpoint(configuration:

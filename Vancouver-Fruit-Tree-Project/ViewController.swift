@@ -9,6 +9,7 @@
 import UIKit
 import AWSAuthCore
 import AWSAuthUI
+import AWSCognitoIdentityProvider
 import AWSGoogleSignIn
 import SideMenu
 class ViewController: UIViewController {
@@ -29,12 +30,18 @@ class ViewController: UIViewController {
         let DBINT = DatabaseInterface()
         
         let output = DBINT.queryUsers()
-        
-        if (output) != nil {
-            
-            print(output![0])
-            
+        DBINT.getUsername()
+        if output != nil {
+            for element in output!{
+                
+               print(element)
+            }
         }
+        else {
+            print("Output is nil")
+        }
+        
+        
         
     }
     
