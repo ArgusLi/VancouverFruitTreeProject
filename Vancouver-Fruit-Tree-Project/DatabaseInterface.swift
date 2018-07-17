@@ -10,6 +10,8 @@ import Foundation
 import AWSDynamoDB
 import AWSCognitoIdentityProvider
 import AWSAuthCore
+import AWSCore
+import AWSS3
 //import AWSCognitoIdentityProviderASF
 
 @objcMembers
@@ -67,9 +69,93 @@ class DatabaseInterface: NSObject {
         
     }
     
+    func queryUserInfo(userId: String) -> Users? {
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        var received: Users?
+        var queryComplete = false
+        
+        let queryExpression = AWSDynamoDBQueryExpression()
+        
+        queryExpression.keyConditionExpression = "#userId = :userId";
+        queryExpression.expressionAttributeNames = ["#userId": "userId"]
+        queryExpression.expressionAttributeValues = [":userId": userId]
+        
+        //let currentUserID = AWSIdentityManager.default().identityId
+        
+        //if currentUserID != userId{
+           // print("Error: User ID of current user and creator do not match, read denied")
+       // }
+        
+       
+        dynamoDBObjectMapper.query(Users.self, expression: queryExpression)
+        { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            if error != nil {
+                print("The request failed. Error: \(String(describing: error))")
+            }
+            
+            if output != nil {
+                for user in output!.items {
+                    let userItem = user as? Users
+                    //print("\(pickItem!._eventDate!)")
+                    received = userItem!
+                }
+            }
+            
+            queryComplete = true;
+        }
+    
+        //waits for query to complete before returning
+        while queryComplete == false {
+            if queryComplete == true{
+                print("query is finished")
+                queryComplete = false
+                return received //received! != nil
+            }
+        }
+        
+        return received //so Xcode stops complaining
+        
+    }
+    
+    func signUpForPickEvent (pickItem: PickEvents, userId: String){
+        
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        print("in DatabaseInterface -> signUpForPickEvent...")
+        
+        let UserItem: Users = Users()
+        
+        UserItem._userId = AWSIdentityManager.default().identityId
+        //UserItem._pickEvents?.append((pickItem._userId!, pickItem._creationTime!, "0"))
+        
+        if UserItem._pickEvents != nil {
+            //UserItem._pickEvents!.append((pickItem, "0"))
+            UserItem._pickEvents!.append([pickItem._userId!, pickItem._creationTime!, "0"])
+        }
+        
+        else {
+            UserItem._pickEvents = [[pickItem._userId!, pickItem._creationTime!, "0"]]
+        }
+        
+        
+        UserItem._role = "Volunteer"
+
+        
+        //Save a new item
+        dynamoDbObjectMapper.save(UserItem, completionHandler: {
+            (error: Error?) -> Void in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            print("An item was saved.")
+        })
+        
+    }
+    
     
     //MARK: Team Methods
-    
+    //not needed anymore
     func createTeam(teamItem: Team, pickItem: PickEvents ){
         
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
