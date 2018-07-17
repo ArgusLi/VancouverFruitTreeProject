@@ -23,39 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet var hamburgerView: UIView!
     var hamburgerMenuIsVisible = false
     
-    @IBAction func TestUserQuery(_ sender: Any) {
-        print("test user query button was pressed")
-        
-        let DBINT = DatabaseInterface()
-        
-        let output: Users? = DBINT.queryUserInfo(userId: AWSIdentityManager.default().identityId!)!
-        
-        if (output) != nil {
-            
-            if (output!._pickEvents != nil) {
-                print(output!._pickEvents![0][0])
-            }
-        }
-        
-    }
     
-    
-    @IBAction func TestButtonFunction(_ sender: Any) {
-        
-        print("test button was pressed")
-        let DBINT = DatabaseInterface()
-        
-        let pickQuery: [PickEvents] = DBINT.queryPickEventsByDate(date: "2018/07/16", time: "12:00")
-        
-        
-        
-        DBINT.signUpForPickEvent(pickItem: pickQuery[0], userId: AWSIdentityManager.default().identityId!)
-        
-        //readPick = DBINT.readPickEvent(userId: pickQuery[0]._userId!, creationTime: pickQuery[0]._creationTime!)
-        
-        print("After creation call")
-        
-    }
+
     
     
     @IBAction func hamburgerButton(_ sender: Any) {
