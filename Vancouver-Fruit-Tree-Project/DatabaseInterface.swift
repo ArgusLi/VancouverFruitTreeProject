@@ -69,6 +69,10 @@ class DatabaseInterface: NSObject {
         
     }
     
+    /// returns hashes for all pick events that a user is signed up for
+    ///
+    /// - Parameter userId: the user's userID
+    /// - Returns: returns a Users() object; hashes can be accessed via the ._pickEvents attribute, which contains a [ [String] ] array. Each [String] element contains 3 elements: the partition hash (userId) and the sort hash (creationTime) of the PickEvent, which can be used to read it, and another element that is either 0 or 1 to mark a volunteer's attendance of an event
     func queryUserInfo(userId: String) -> Users? {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         var received: Users?
@@ -117,28 +121,73 @@ class DatabaseInterface: NSObject {
         
     }
     
+    /// Saves a pick event to the user's personal database entry
+    ///
+    /// - Parameters:
+    ///   - pickItem: the PickEvent that the user is signing up for
+    ///   - userId: the userId of the user
     func signUpForPickEvent (pickItem: PickEvents, userId: String){
         
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
         print("in DatabaseInterface -> signUpForPickEvent...")
         
-        let UserItem: Users = Users()
+        let UserItemQuery: Users? = queryUserInfo(userId: userId)
         
-        UserItem._userId = AWSIdentityManager.default().identityId
+        var UserItem: Users = Users()
+        
+        if UserItemQuery != nil {
+            UserItem = UserItemQuery!
+        }
+        
+        else {
+            UserItem._userId = userId
+        }
+        
+        //UserItem._userId = AWSIdentityManager.default().identityId
         //UserItem._pickEvents?.append((pickItem._userId!, pickItem._creationTime!, "0"))
         
         if UserItem._pickEvents != nil {
             //UserItem._pickEvents!.append((pickItem, "0"))
-            UserItem._pickEvents!.append([pickItem._userId!, pickItem._creationTime!, "0"])
+            print("There are existing events in the list")
+            //check if pick event exists in the array already
+            
+            let count = UserItem._pickEvents!.count
+            var index: Int?
+            var i: Int = 0
+            
+            while index == nil || count != i {
+                
+                if pickItem._userId == UserItem._pickEvents![i][0] && pickItem._creationTime == UserItem._pickEvents![i][1]{
+                    index = i
+                    print("item with matching hash found at index [" + String(index!) + "]")
+                }
+                
+                i += 1
+                print("at loop itr #" + String(i))
+                
+            }
+            
+            if index != nil {
+                
+                UserItem._pickEvents![index!] = [pickItem._userId!, pickItem._creationTime!, "0"]
+                print("item at index [" + String(index!) + "] was replaced")
+                
+            }
+                
+            else {
+                UserItem._pickEvents!.append([pickItem._userId!, pickItem._creationTime!, "0"])
+                print("new item was appended")
+            }
         }
         
         else {
+            print("list is empty")
             UserItem._pickEvents = [[pickItem._userId!, pickItem._creationTime!, "0"]]
         }
         
-        
-        UserItem._role = "Volunteer"
-
+        if UserItem._role == nil {
+            UserItem._role = "Volunteer"
+        }
         
         //Save a new item
         dynamoDbObjectMapper.save(UserItem, completionHandler: {
@@ -151,8 +200,81 @@ class DatabaseInterface: NSObject {
             print("An item was saved.")
         })
         
+        //removeSignUpForPickEvent(pickItem: pickItem, userId: userId)
     }
     
+    /// removes a pick event from the user's personal database entry
+    ///
+    /// - Parameters:
+    ///   - pickItem: the PickEvent that the user is signed up for that they are to be removed from
+    ///   - userId: the userID of the user
+    func removeSignUpForPickEvent (pickItem: PickEvents, userId: String) {
+        
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        print("in DatabaseInterface -> removeSignUpForPickEvent...")
+        //let ret: Int = 1
+        //var queryComplete = false
+        
+        let UserItem: Users = queryUserInfo(userId: userId)!
+        
+        if UserItem._pickEvents != nil {
+            //UserItem._pickEvents!.append((pickItem, "0"))
+            print("There are existing events in the list")
+            //check if pick event exists in the array
+            
+            let count = UserItem._pickEvents!.count
+            var index: Int?
+            var i: Int = 0
+            
+            while index == nil || count != i {
+                
+                if pickItem._userId == UserItem._pickEvents![i][0] && pickItem._creationTime == UserItem._pickEvents![i][1]{
+                    index = i
+                    print("item with matching hash found at index [" + String(index!) + "]")
+                }
+                
+                i += 1
+                print("at loop itr #" + String(i))
+                
+            }
+            
+            if index != nil {
+                UserItem._pickEvents!.remove(at: index!)
+                print("item at index [" + String(index!) + "] was removed")
+                
+                if UserItem._pickEvents!.count == 0 {
+                    UserItem._pickEvents = nil
+                }
+                
+            }
+                
+            else {
+                print("user is not signed up for passed PickEvent")
+            }
+        }
+            
+        else {
+            print("user is not signed up for any PickEvent")
+        }
+        
+        if UserItem._role == nil {
+            UserItem._role = "Volunteer"
+        }
+        
+        //Save a new item
+        dynamoDbObjectMapper.save(UserItem, completionHandler: {
+            (error: Error?) -> Void in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            print("An item was saved.")
+        })
+        
+        
+    }
+
     
     //MARK: Team Methods
     //not needed anymore
@@ -186,8 +308,6 @@ class DatabaseInterface: NSObject {
         //AWSCognitoIdentityProvider.adminAddUser(<#T##AWSCognitoIdentityProvider#>)
         
     }
-    
-    
     
     //MARK: PickEvent Methods
     
