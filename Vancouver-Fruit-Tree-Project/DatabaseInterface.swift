@@ -10,6 +10,8 @@ import Foundation
 import AWSDynamoDB
 import AWSCognitoIdentityProvider
 import AWSAuthCore
+import AWSCore
+//import AWSS3
 //import AWSCognitoIdentityProviderASF
 
 @objcMembers
@@ -184,8 +186,6 @@ class DatabaseInterface: NSObject {
         //AWSCognitoIdentityProvider.adminAddUser(<#T##AWSCognitoIdentityProvider#>)
         
     }
-    
-    
     
     //MARK: PickEvent Methods
     
