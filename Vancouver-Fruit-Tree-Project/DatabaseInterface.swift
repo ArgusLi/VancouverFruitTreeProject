@@ -174,10 +174,11 @@ class DatabaseInterface: NSObject {
             //check if pick event exists in the array already
             
             let count = UserItem._pickEvents!.count
+            print("there are " + String(count) + " items")
             var index: Int?
             var i: Int = 0
             
-            while index == nil || count != i {
+            while index == nil && count != i {
                 
                 if pickItem._userId == UserItem._pickEvents![i][0] && pickItem._creationTime == UserItem._pickEvents![i][1]{
                     index = i
