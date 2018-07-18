@@ -202,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				7EC8776420E81AA000F860C9 /* PickEvents.swift */,
+				7E2A611520F7FFA200080ABB /* Team.swift */,
 				7EC8776520E81AA000F860C9 /* Users.swift */,
 				7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */,
 				AC8EB70320D03A91007E6CAA /* AppDelegate.swift */,
@@ -531,6 +532,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthUI/AWSAuthUI.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
@@ -538,6 +540,7 @@
 				"${BUILT_PRODUCTS_DIR}/AWSGoogleSignIn/AWSGoogleSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSPinpoint/AWSPinpoint.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -548,6 +551,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
@@ -555,6 +559,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSGoogleSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSPinpoint.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -593,6 +598,7 @@
 			files = (
 				7EC8776920E81AA100F860C9 /* Users.swift in Sources */,
 				ACA7FD7620EC2DDE0040EEE0 /* DatabaseInterface.swift in Sources */,
+				7E2A611620F7FFA200080ABB /* Team.swift in Sources */,
 				11CE2F0C20ED5A46004B0B79 /* Classes.swift in Sources */,
 				62DB729A20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */,
 				7EC8776620E81AA100F860C9 /* PickEvents.swift in Sources */,
@@ -620,6 +626,7 @@
 				AC5CD3CE20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
 				AC5CD3D220F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				ACA7FD7720EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
+				7E2A611720F8007D00080ABB /* Team.swift in Sources */,
 				ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				62DB729B20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */,
 				ACA7FD7B20EC2ED10040EEE0 /* Users.swift in Sources */,
@@ -644,6 +651,7 @@
 				AC5CD3CF20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
 				AC5CD3D320F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				ACA7FD7820EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
+				7E2A611820F8007E00080ABB /* Team.swift in Sources */,
 				ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				62DB729C20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */,
 				ACA7FD7C20EC2ED10040EEE0 /* Users.swift in Sources */,
@@ -732,6 +740,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"$(inherited)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -792,6 +804,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"$(inherited)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

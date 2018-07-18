@@ -15,17 +15,20 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
-@objcMembers
+@objcMembers // <-- don't remove this, it will break uploading
 class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: String?
     var _creationTime: String?
+    var _address: String?
     var _assignedTeamID: String?
     var _creationDate: String?
     var _eventDate: String?
     var _eventTime: String?
     var _latitude: NSNumber?
     var _longitude: NSNumber?
+    var _registeredUsers: [String]?
+    var _treeMap: [String: String]?
     
     class func dynamoDBTableName() -> String {
         
@@ -46,12 +49,15 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
         return [
             "_userId" : "userId",
             "_creationTime" : "creationTime",
+            "_address" : "address",
             "_assignedTeamID" : "assignedTeamID",
             "_creationDate" : "creationDate",
             "_eventDate" : "eventDate",
             "_eventTime" : "eventTime",
             "_latitude" : "latitude",
             "_longitude" : "longitude",
+            "_registeredUsers" : "registeredUsers",
+            "_treeMap" : "treeMap",
         ]
     }
 }

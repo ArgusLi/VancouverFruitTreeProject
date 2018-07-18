@@ -4,6 +4,8 @@ PODS:
   - AWSAuthUI (2.6.22):
     - AWSAuthCore (= 2.6.22)
     - AWSCore (= 2.6.22)
+  - AWSCognito (2.6.22):
+    - AWSCore (= 2.6.22)
   - AWSCognitoIdentityProvider (2.6.22):
     - AWSCognitoIdentityProviderASF (= 1.0.1)
     - AWSCore (= 2.6.22)
@@ -16,6 +18,8 @@ PODS:
   - AWSMobileClient (2.6.22):
     - AWSAuthCore (= 2.6.22)
   - AWSPinpoint (2.6.22):
+    - AWSCore (= 2.6.22)
+  - AWSS3 (2.6.22):
     - AWSCore (= 2.6.22)
   - AWSUserPoolsSignIn (2.6.22):
     - AWSAuthCore (= 2.6.22)
@@ -44,10 +48,12 @@ PODS:
 
 DEPENDENCIES:
   - AWSAuthUI (~> 2.6.13)
+  - AWSCognito (~> 2.6.13)
   - AWSDynamoDB (~> 2.6.13)
   - AWSGoogleSignIn (~> 2.6.13)
   - AWSMobileClient (~> 2.6.13)
   - AWSPinpoint (~> 2.6.13)
+  - AWSS3 (~> 2.6.13)
   - AWSUserPoolsSignIn (~> 2.6.13)
   - GoogleSignIn (~> 4.0)
   - SideMenu (~> 4.0)
@@ -56,6 +62,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AWSAuthCore
     - AWSAuthUI
+    - AWSCognito
     - AWSCognitoIdentityProvider
     - AWSCognitoIdentityProviderASF
     - AWSCore
@@ -63,6 +70,7 @@ SPEC REPOS:
     - AWSGoogleSignIn
     - AWSMobileClient
     - AWSPinpoint
+    - AWSS3
     - AWSUserPoolsSignIn
     - GoogleSignIn
     - GoogleToolboxForMac
@@ -73,6 +81,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AWSAuthCore: cbe932da2bd77b94e0efa73c81428b3646796427
   AWSAuthUI: f1bc40e3a42d589efa27153158b78842823e92f7
+  AWSCognito: e8d697e797166cb1b813d12c08765ff26daf19ac
   AWSCognitoIdentityProvider: f7d15744ca3d70270de05a212e501f29a4a06307
   AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
   AWSCore: faae134779f0f6e46a8d426c0ccc02e34466b785
@@ -80,6 +89,7 @@ SPEC CHECKSUMS:
   AWSGoogleSignIn: 598222ccb914dc1daa0edd86b578cedd75dc8c4e
   AWSMobileClient: 091482a8bf8d9a92bc290fb2137892e2055e9b61
   AWSPinpoint: c74b4afd125b045b9e442d19afddcfc7ad8d1b42
+  AWSS3: 2b70463225a455ba26494f06346bddb74dedf73d
   AWSUserPoolsSignIn: 6df1d4a3293be08a58d8d99d2152fad2bb9616f3
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
@@ -87,6 +97,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
 
-PODFILE CHECKSUM: b5b381d550b2140e60334efef5c7fbe34a480923
+PODFILE CHECKSUM: 1c73156102e5bde406d91bead78228814863f13b
 
 COCOAPODS: 1.5.3
