@@ -61,15 +61,11 @@ class MyAccountViewController: UIViewController {
                                         {
                                             self.myAccEmail.text = email
                                         }
-                                        else{ self.myAccEmail.text = "Email is Null"
-                                            
+                                        else{
+                                            self.myAccEmail.text = "Null"
                                         }
-                                        
-                                        
-                                        
                                     }
-                                } } } } } )
-                
+                    } } } } } )
             }
         }
         
