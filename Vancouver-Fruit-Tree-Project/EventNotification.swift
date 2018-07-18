@@ -25,9 +25,10 @@ class EventNotification: NSObject {
                 event.startDate = startDate
                 event.endDate = endDate
                 event.notes = description
+                
                 event.calendar = eventStore.defaultCalendarForNewEvents
                 do {
-                    try eventStore.save(event, span: .thisEvent)
+                    try eventStore.save(event, span: .thisEvent, commit: true)
                 } catch let e as NSError {
                     completion?(false, e)
                     return
@@ -39,28 +40,46 @@ class EventNotification: NSObject {
         })
     }
     
-    func removeEventFromCalendar(startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil){
-    //Remove event from default calendar !important! Will crash if no such event exists
+    func findEvent(startDate: Date, endDate: Date) -> EKEvent? {
         var predicate:NSPredicate?
         var events = [EKEvent]()
-        var delEvent:EKEvent?
+        eventStore.requestAccess(to: .event, completion: { (granted, error) in
+            if (granted) && (error == nil) {
+                predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: nil)
+            }else {
+                return
+            }
+        })
+        if predicate != nil {
+            if let aPredicate = predicate {
+                events = eventStore.events(matching: aPredicate)
+            }
+            return events[0]
+        }
+        else{
+            return nil
+        }
+    }
+    
+    func removeEventFromCalendar(delEvent: EKEvent) -> Int?{
+    //Remove event from default calendar !important! Will crash if no such event exists
         var calendars=[EKCalendar]()
+        var success = 1
         calendars.append(eventStore.defaultCalendarForNewEvents!)
         eventStore.requestAccess(to: .event, completion: { (granted, error) in
             if (granted) && (error == nil) {
-                predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: calendars)
-                events = eventStore.events(matching: predicate!)
-                delEvent = events[0]
                 do {
-                    try eventStore.remove(delEvent!, span: .thisEvent, commit: true)
+                    try eventStore.remove(delEvent, span: .thisEvent, commit: true)
                 } catch let e as NSError {
-                    completion?(false, e)
+                    success = 0
                     return
                 }
-                completion?(true, nil)
+                
             }else {
-                completion?(false, error as NSError?)
+                success = 0
+                return
             }
         })
+        return success
     }
 }

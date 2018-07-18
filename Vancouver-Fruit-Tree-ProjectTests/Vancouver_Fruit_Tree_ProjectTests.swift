@@ -7,11 +7,14 @@
 //
 
 import XCTest
+import EventKit
 @testable import Vancouver_Fruit_Tree_Project
 
 class Vancouver_Fruit_Tree_ProjectTests: XCTestCase {
     
-    let DBInterface = DatabaseInterface()
+    let DBInterface = DatabaseInterface() //for database interface
+    let eventNotification = EventNotification() // for event notifications
+    let formatter = DateFormatter() // for event notifications
     
     override func setUp() {
         super.setUp()
@@ -45,4 +48,17 @@ class Vancouver_Fruit_Tree_ProjectTests: XCTestCase {
         XCTAssertEqual(DBInterface.deletePickEvent(itemToDelete: pickEvents[0]), 1, "Delete Failed")
     }
     */
+    
+    func testEventNotification(){
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let startDatE = formatter.date(from: "2018/10/09 20:45")
+        let endDatE = formatter.date(from: "2018/11/09 22:45")
+        eventNotification.addEventToCalendar(title: "Test", description: "Test", startDate: startDatE!, endDate: endDatE!)
+        var event = eventNotification.findEvent(startDate: startDatE!, endDate: endDatE!)
+        XCTAssertNotNil(event, "Event not being created")
+        let success = eventNotification.removeEventFromCalendar(delEvent: event!)
+        XCTAssertEqual(success, 1, "removeEvent not being successfully deleted")
+        event = eventNotification.findEvent(startDate: startDatE!, endDate: endDatE!)
+        XCTAssertNil(event, "Can find non-existing events")
+    }
 }
