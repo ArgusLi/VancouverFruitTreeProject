@@ -1,55 +1,44 @@
 //
-//  PickEventTableViewController.swift
+//  MyPicksTableViewController.swift
 //  Vancouver-Fruit-Tree-Project
 //
-//  Created by Artem Gromov on 2018-06-30.
+//  Created by Oliver Fujiki on 2018-07-16.
 //  Copyright © 2018 Harvest8. All rights reserved.
 //
 
 import UIKit
 import MapKit
-class PickEventTableViewController: UITableViewController {
+
+class MyPicksTableViewController: UITableViewController {
     
-    // TODO: Insert an array declaration here
-    //TODO: placeholder for a pick event class
     
-    @IBOutlet weak var addButton: UIBarButtonItem!
-    var picks=[PickEvents]()
-   private func loadavailablepicks()
-   {
-    let date = Date()
-    let calendar = Calendar.current
-    let year = calendar.component(.year, from: date)
-    let month = calendar.component(.month, from: date)
-    let day = calendar.component(.day, from: date)
-    let interface = DatabaseInterface()
-    let maxDate = String(year)+"/" + String(month + 6)+"/"+String(day)
-    picks =  interface.scanPickEvents(itemLimit: 100, maxDate: maxDate)
+    //Array declaration
+    var myPicks=[PickEvents]()
     
-    }
-   
-    override func viewDidLoad() {
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl!.tintColor = UIColor.green
-        self.refreshControl!.addTarget(self, action:
-            #selector(self.handleRefresh(_:)),
-                                 for: UIControlEvents.valueChanged)
-        self.tableView.addSubview(self.refreshControl!)
-        let controllers = navigationController?.viewControllers
-        for controller in controllers!{
-            if controller is UITabBarController
-            {
-                controller.navigationItem.rightBarButtonItem = addButton
-            }
-        }
+    //
+    private func loadMyPicks()
+    {
         
+        //Temprorary func until we get database to load myPicks
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let interface = DatabaseInterface()
+        let maxDate = String(year)+"/" + String(month)+"/"+String(day + 4)
+        myPicks = interface.scanPickEvents(itemLimit: 3, maxDate: maxDate)
+        
+        
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         
+       loadMyPicks()
         
-        
-        loadavailablepicks()
-        
-        super.view.isUserInteractionEnabled = true
+        //tableView.register(MyPickEventTableViewCell.self, forCellReuseIdentifier: "MyPickEventTableViewCell")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -58,102 +47,84 @@ class PickEventTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    
-   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
-        
-        loadavailablepicks()
-        
-        self.tableView.reloadData()
-        refreshControl.endRefreshing()
-    }
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return picks.count
+        
+        //Counting number of rows
+        return myPicks.count
     }
+    
+    
 
     
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - tableView: <#tableView description#>
+    ///   - indexPath: <#indexPath description#>
+    /// - Returns: 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellidentifier = "PickEventTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellidentifier, for: indexPath) as? PickEventTableViewCell else {
-            fatalError("The dequeued cell is not an instance of \(cellidentifier)")
-            
+        
+        let cellIdentifier = "MyPickEventTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MyPickEventTableViewCell else {
+            fatalError("Dequeued cell is not an instance of \(cellIdentifier)")
         }
-        let pick = picks[indexPath.row]
-        cell.Time.text="Time: " + pick._eventTime!
-        cell.Date.text = "Date: " + pick._eventDate!
-        cell.TeamLead.text = "Team lead: none"
-        if (indexPath.row % 2 == 0){
-            cell.sideImage.image = UIImage(named: "Green alert")}
-        else if(indexPath.row % 5 == 0){
-            cell.sideImage.image = UIImage(named: "Red Alert")
-        }
-        else{
-            cell.sideImage.image = UIImage(named: "Amber Alert")
-        }
-
+        
+        let myPick = myPicks[indexPath.row]
+        
+            cell.Time.text = "Time: " + myPick._eventTime!
+            cell.Date.text = "Date: " + myPick._eventDate!
+            cell.TeamLead.text = "Team lead: N/A"
+        
+        
         // Configure the cell...
 
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let event = picks[indexPath.row]
+        let event = myPicks[indexPath.row]
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "PickDetailsViewController") as! PickDetailsViewController
+        
+        detailVC.buttonColour = UIColor.red
+        detailVC.buttonTitle = "Cancel"
         if ((event._eventDate != nil && event._eventTime != nil) && event._assignedTeamID != nil){
             detailVC.getdate = "Date: " + event._eventDate!
             detailVC.gettime = "Time: " + event._eventTime!
-        detailVC.getleader = "none"
+            detailVC.getleader = "N/A"
             if((event._latitude!.floatValue > -90  && event._latitude!.floatValue < 90) && ( event._longitude!.floatValue > -180 && event._longitude!.floatValue  < 180 ))
             {
                 
-            
-            detailVC.getCoordinates = CLLocationCoordinate2D(latitude: Double(event._latitude!.floatValue) as CLLocationDegrees, longitude: Double(event._longitude!.floatValue) as CLLocationDegrees)
+                
+                detailVC.getCoordinates = CLLocationCoordinate2D(latitude: Double(event._latitude!.floatValue) as CLLocationDegrees, longitude: Double(event._longitude!.floatValue) as CLLocationDegrees)
             }
             else {
                 detailVC.getCoordinates = nil
             }
-        self.navigationController?.pushViewController(detailVC, animated: true)}
+            self.navigationController?.pushViewController(detailVC, animated: true)}
         else
         {
-            print("At least on of the attributes is nil")
+            print("At least one of the attributes is nil")
         }
         
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
-    {
-        if editingStyle == UITableViewCellEditingStyle.delete
-        {
-            let pick = picks[indexPath.row]
-            
-            picks.remove(at: indexPath.row)
-            
-            let DBINT = DatabaseInterface()
-            var result = DBINT.deletePickEvent(itemToDelete: pick)
-            
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            
-          /*
-            tableView.reloadData()
-            loadavailablepicks()
-            self.viewDidLoad()
-            */
-        }
-    }
     
+    
+
 
     /*
     // Override to support conditional editing of the table view.
