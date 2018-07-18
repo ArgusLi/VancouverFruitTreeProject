@@ -13,6 +13,7 @@ class PickEventTableViewController: UITableViewController {
     // TODO: Insert an array declaration here
     //TODO: placeholder for a pick event class
     
+    @IBOutlet weak var addButton: UIBarButtonItem!
     var picks=[PickEvents]()
    private func loadavailablepicks()
    {
@@ -28,11 +29,27 @@ class PickEventTableViewController: UITableViewController {
     }
    
     override func viewDidLoad() {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.tintColor = UIColor.green
+        self.refreshControl!.addTarget(self, action:
+            #selector(self.handleRefresh(_:)),
+                                 for: UIControlEvents.valueChanged)
+        self.tableView.addSubview(self.refreshControl!)
+        let controllers = navigationController?.viewControllers
+        for controller in controllers!{
+            if controller is UITabBarController
+            {
+                controller.navigationItem.rightBarButtonItem = addButton
+            }
+        }
+        
         super.viewDidLoad()
+        
+        
         
         loadavailablepicks()
         
-        
+        super.view.isUserInteractionEnabled = true
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -49,7 +66,13 @@ class PickEventTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        
+        loadavailablepicks()
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
