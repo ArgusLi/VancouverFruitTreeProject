@@ -24,6 +24,7 @@ class Users: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _pickEvents: [[String]]?
     var _role: String?
     
+
     class func dynamoDBTableName() -> String {
         
         return "vancouverfruittreepr-mobilehub-79870386-Users"

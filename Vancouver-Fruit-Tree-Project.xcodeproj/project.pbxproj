@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		11FBEB6520F2AE9000C74616 /* EventNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEB6420F2AE9000C74616 /* EventNotification.swift */; };
 		4D29FDB7F6C76D497D88F882 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
-		62DB729A20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DB729920FD479B003221C1 /* MyPicksTableViewController.swift */; };
-		62DB729B20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DB729920FD479B003221C1 /* MyPicksTableViewController.swift */; };
-		62DB729C20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DB729920FD479B003221C1 /* MyPicksTableViewController.swift */; };
-		62DB72A220FD6084003221C1 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DB72A120FD6084003221C1 /* MyPickEventTableViewCell.swift */; };
-		62DB72A320FD6084003221C1 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DB72A120FD6084003221C1 /* MyPickEventTableViewCell.swift */; };
-		62DB72A420FD6084003221C1 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DB72A120FD6084003221C1 /* MyPickEventTableViewCell.swift */; };
-		62DB72A620FD8DE9003221C1 /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DB72A520FD8DE9003221C1 /* MyPickMapViewController.swift */; };
-		62DB72A720FD8DE9003221C1 /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DB72A520FD8DE9003221C1 /* MyPickMapViewController.swift */; };
-		62DB72A820FD8DE9003221C1 /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DB72A520FD8DE9003221C1 /* MyPickMapViewController.swift */; };
+		7A78B94520FF6012005569E2 /* FoodBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94420FF6012005569E2 /* FoodBankViewController.swift */; };
+		7A78B95220FFE358005569E2 /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */; };
+		7A78B95320FFE358005569E2 /* MyPickEventTavleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94F20FFE358005569E2 /* MyPickEventTavleViewCell.swift */; };
+		7A78B95420FFE358005569E2 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
+		7A78B95520FFE358005569E2 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
+		7AFFF53D20FEB1F000A4D54D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
+
 		7EC8776120E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
 		7EC8776220E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
 		7EC8776320E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
@@ -93,14 +92,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+
 		11FBEB6420F2AE9000C74616 /* EventNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventNotification.swift; sourceTree = "<group>"; };
 		1E51FD94831BDC812745429B /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		282EA9A55D8B14EDA1330A08 /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481C84BA36765041D733FDB7 /* Pods-Vancouver-Fruit-Tree-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project.release.xcconfig"; sourceTree = "<group>"; };
 		62575C5D493EF0A87C4484FF /* Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
-		62DB729920FD479B003221C1 /* MyPicksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPicksTableViewController.swift; sourceTree = "<group>"; };
-		62DB72A120FD6084003221C1 /* MyPickEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPickEventTableViewCell.swift; sourceTree = "<group>"; };
-		62DB72A520FD8DE9003221C1 /* MyPickMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPickMapViewController.swift; sourceTree = "<group>"; };
+		7A78B94420FF6012005569E2 /* FoodBankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBankViewController.swift; sourceTree = "<group>"; };
+		7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPickMapViewController.swift; sourceTree = "<group>"; };
+		7A78B94F20FFE358005569E2 /* MyPickEventTavleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPickEventTavleViewCell.swift; sourceTree = "<group>"; };
+		7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPickEventTableViewCell.swift; sourceTree = "<group>"; };
+		7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPicksTableViewController.swift; sourceTree = "<group>"; };
+		7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+
 		7EC8776020E818B300F860C9 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		7EC8776420E81AA000F860C9 /* PickEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickEvents.swift; sourceTree = "<group>"; };
 		7EC8776520E81AA000F860C9 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -212,17 +216,20 @@
 				ACE8543520FFBFA900C2FADE /* Team.swift */,
 				AC8EB70520D03A91007E6CAA /* ViewController.swift */,
 				ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */,
-				62DB729920FD479B003221C1 /* MyPicksTableViewController.swift */,
 				AC59A1FC20E85C450038BF30 /* PickDetailsViewController.swift */,
 				ACA7FD6E20EB4EB50040EEE0 /* MapAnnotation.swift */,
-				62DB72A120FD6084003221C1 /* MyPickEventTableViewCell.swift */,
 				ACA7FD7220EB4EC30040EEE0 /* PickEventTableViewCell.swift */,
-				62DB72A520FD8DE9003221C1 /* MyPickMapViewController.swift */,
 				ACA7FD5420E994040040EEE0 /* SlideMenuViewController.swift */,
+				7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */,
+				7A78B94F20FFE358005569E2 /* MyPickEventTavleViewCell.swift */,
+				7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */,
+				7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */,
 				ACA7FD4A20E972020040EEE0 /* PickEventMapViewController.swift */,
-				AC8EB70720D03A91007E6CAA /* Main.storyboard */,
+				7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */,
 				AC5CD3CC20F17E1E00C196B9 /* AddPickEventViewController.swift */,
 				AC5CD3D020F297CC00C196B9 /* SearchLocationTableViewController.swift */,
+				7A78B94420FF6012005569E2 /* FoodBankViewController.swift */,
+				AC8EB70720D03A91007E6CAA /* Main.storyboard */,
 				AC8EB70A20D03A94007E6CAA /* Assets.xcassets */,
 				AC8EB70C20D03A94007E6CAA /* LaunchScreen.storyboard */,
 				7EC8776020E818B300F860C9 /* awsconfiguration.json */,
@@ -412,6 +419,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+
 		35D8B292C5515EB8EFA739E3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -536,7 +544,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthUI/AWSAuthUI.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
@@ -544,7 +551,6 @@
 				"${BUILT_PRODUCTS_DIR}/AWSGoogleSignIn/AWSGoogleSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSPinpoint/AWSPinpoint.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -555,7 +561,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthUI.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
@@ -563,7 +568,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSGoogleSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSPinpoint.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -593,6 +597,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -602,8 +607,12 @@
 			files = (
 				ACE8543620FFBFA900C2FADE /* Team.swift in Sources */,
 				7EC8776920E81AA100F860C9 /* Users.swift in Sources */,
+				7A78B95320FFE358005569E2 /* MyPickEventTavleViewCell.swift in Sources */,
 				ACA7FD7620EC2DDE0040EEE0 /* DatabaseInterface.swift in Sources */,
-				62DB729A20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */,
+
+				7AFFF53D20FEB1F000A4D54D /* MyAccountViewController.swift in Sources */,
+				7A78B95520FFE358005569E2 /* MyPicksTableViewController.swift in Sources */,
+
 				7EC8776620E81AA100F860C9 /* PickEvents.swift in Sources */,
 				AC8EB70620D03A91007E6CAA /* ViewController.swift in Sources */,
 				ACAB91F920E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
@@ -611,13 +620,14 @@
 				AC8EB70420D03A91007E6CAA /* AppDelegate.swift in Sources */,
 				11FBEB6520F2AE9000C74616 /* EventNotification.swift in Sources */,
 				AC5CD3D120F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
+				7A78B94520FF6012005569E2 /* FoodBankViewController.swift in Sources */,
 				ACA7FD5520E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
 				AC5CD3CD20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
+				7A78B95420FFE358005569E2 /* MyPickEventTableViewCell.swift in Sources */,
+				7A78B95220FFE358005569E2 /* MyPickMapViewController.swift in Sources */,
 				ACA7FD4B20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
 				AC59A1FD20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACA7FD7320EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
-				62DB72A220FD6084003221C1 /* MyPickEventTableViewCell.swift in Sources */,
-				62DB72A620FD8DE9003221C1 /* MyPickMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +641,6 @@
 				AC5CD3D220F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				ACA7FD7720EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
 				ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
-				62DB729B20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */,
 				ACA7FD7B20EC2ED10040EEE0 /* Users.swift in Sources */,
 				ACA7FD7420EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
 				ACA7FD7920EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
@@ -641,8 +650,6 @@
 				ACA7FD4C20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
 				AC59A1FE20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACA7FD7020EB4EB60040EEE0 /* MapAnnotation.swift in Sources */,
-				62DB72A320FD6084003221C1 /* MyPickEventTableViewCell.swift in Sources */,
-				62DB72A720FD8DE9003221C1 /* MyPickMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,7 +663,6 @@
 				AC5CD3D320F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				ACA7FD7820EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
 				ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
-				62DB729C20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */,
 				ACA7FD7C20EC2ED10040EEE0 /* Users.swift in Sources */,
 				ACA7FD7520EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
 				ACA7FD7A20EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
@@ -666,8 +672,6 @@
 				ACA7FD4D20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
 				AC59A1FF20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACA7FD7120EB4EB60040EEE0 /* MapAnnotation.swift in Sources */,
-				62DB72A420FD6084003221C1 /* MyPickEventTableViewCell.swift in Sources */,
-				62DB72A820FD8DE9003221C1 /* MyPickMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +710,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+
 		AC8EB72620D03A94007E6CAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -743,10 +748,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)",
-					"$(inherited)",
-				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -807,10 +808,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)",
-					"$(inherited)",
-				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -835,13 +832,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VPUNR272W3;
+				DEVELOPMENT_TEAM = QM3BQJAZQB;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject890;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject89;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -856,13 +853,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VPUNR272W3;
+				DEVELOPMENT_TEAM = QM3BQJAZQB;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject890;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject89;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -958,6 +955,7 @@
 			};
 			name = Release;
 		};
+
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
