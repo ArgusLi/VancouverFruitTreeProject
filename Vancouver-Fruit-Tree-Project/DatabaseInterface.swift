@@ -368,7 +368,7 @@ class DatabaseInterface: NSObject {
     }
         return responseEmail
     }
-    func createTeam(teamItem: Team, pickItem: PickEvents ){
+    /*func createTeam(teamItem: team, pickItem: PickEvents ){
         
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
         print("in DatabaseInterface -> createPickEvent...")
@@ -397,7 +397,7 @@ class DatabaseInterface: NSObject {
         
         //AWSCognitoIdentityProvider.adminAddUser(<#T##AWSCognitoIdentityProvider#>)
         
-    }
+    }*/
     
     //MARK: PickEvent Methods
     
