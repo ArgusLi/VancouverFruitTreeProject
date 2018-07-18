@@ -11,10 +11,16 @@ import XCTest
 
 class Vancouver_Fruit_Tree_ProjectTests: XCTestCase {
     
+    let DBInterface = DatabaseInterface()
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        /*
+        // Trying createPickEvents
+        DBInterface.createPickEvents(eventTime:"01:01:01", eventDate:"0001/01/01", latitude:1, longitude:2, teamID: "1")
+        */
     }
+    
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -27,12 +33,16 @@ class Vancouver_Fruit_Tree_ProjectTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    /*
+    func testDatabaseInterface() {
+        var pickEvents = [PickEvents]()
+        // Trying createPickEvents
+        pickEvents = DBInterface.queryPickEventsByDate(date: "1/1/1", time: "1:1:1")
+        XCTAssertEqual(pickEvents[0]._assignedTeamID, "1", "TeamID Wrong")
+        XCTAssertEqual(pickEvents[0]._latitude, 1, "Latitude Wrong")
+        XCTAssertEqual(pickEvents[0]._longitude, 2, "Longitude Wrong")
+        // Trying deletePickEvent
+        XCTAssertEqual(DBInterface.deletePickEvent(itemToDelete: pickEvents[0]), 1, "Delete Failed")
     }
-    
+    */
 }
