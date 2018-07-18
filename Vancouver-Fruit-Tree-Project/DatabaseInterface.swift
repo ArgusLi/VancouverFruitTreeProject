@@ -48,13 +48,18 @@ class DatabaseInterface: NSObject {
             
             if task.result?.users != nil{
             for us in (task.result?.users)!{
-                
+                var temp = Dictionary<String,String>()
+                temp["user-name"] = us.username
+                temp["enabled"] = "\(us.enabled)"
+                temp["user-create-date"] = us.username
+                temp["status"] = "\(us.userStatus)"
+                test.append(temp)
                 users.append(us)
                 
             }
             }
             
-            
+            print(test)
                         return task
             
             
