@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, setLocation {
     
-    
+    var TreeMap = Dictionary<String, String>()
 
     var event = PickEvents()
     var typeofTrees = [String]()
@@ -48,9 +48,12 @@ class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
         
         else{
-            print(typeofTrees[typeTreeSelector.selectedRow(inComponent: 0)])
-            //let database = DatabaseInterface()
-            //TODO: database.createNewEvent(event)
+            TreeMap["type-of-trees"]=typeofTrees[typeTreeSelector.selectedRow(inComponent: 0)]
+            TreeMap["number-of-volunteers"] = "\(Int(volunteerStepper.value))"
+            TreeMap["number-of-trees"] = "\(Int(treeStepper.value))"
+            event?._treeMap = TreeMap
+            let database = DatabaseInterface()
+            database.createPickEvents(pickEventItem: event!)
             let alert = UIAlertController(title: "Event Saved Successfully", message: "The event has been successfully saved", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in self.navigationController?.popViewController(animated: true) }))
             self.present(alert, animated: true)
@@ -70,7 +73,7 @@ class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     @IBAction func volunteersChanged(_ sender: Any) {
         numberofVolunteers.text = "Volunteers: \(Int(volunteerStepper.value))"
-        print("Volunteers Changed")
+        
     }
     @IBOutlet weak var typeTreeSelector: UIPickerView!
     var resultSearchController:UISearchController? = nil
@@ -93,6 +96,7 @@ class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPick
         if (location.placemark.location != nil){
         event?._latitude = NSNumber(value:(location.placemark.location?.coordinate.latitude)!)
         event?._longitude = NSNumber(value:(location.placemark.location?.coordinate.longitude)!)
+            event?._address = address
            addressTitle.setTitle(address, for: .normal)
             addressTitle.setTitleColor(.black, for: .normal)
         

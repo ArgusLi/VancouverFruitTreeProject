@@ -102,9 +102,7 @@ class MyPicksTableViewController: UITableViewController {
         detailVC.buttonColour = UIColor.red
         detailVC.buttonTitle = "Cancel"
         if ((event._eventDate != nil && event._eventTime != nil) && event._assignedTeamID != nil){
-            detailVC.getdate = "Date: " + event._eventDate!
-            detailVC.gettime = "Time: " + event._eventTime!
-            detailVC.getleader = "N/A"
+            detailVC.event = event
             if((event._latitude!.floatValue > -90  && event._latitude!.floatValue < 90) && ( event._longitude!.floatValue > -180 && event._longitude!.floatValue  < 180 ))
             {
                 
