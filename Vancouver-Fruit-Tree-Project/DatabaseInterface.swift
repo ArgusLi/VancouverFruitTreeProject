@@ -314,6 +314,7 @@ class DatabaseInterface: NSObject {
             
             if let username = pool.currentUser()?.username {
                 print("Username Retrieved Successfully: \(username)")
+                return username
             } else {
                 print("Error getting username from current user - attempt to get user")
                 let user = pool.getUser()
@@ -478,7 +479,7 @@ class DatabaseInterface: NSObject {
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
         print("in DatabaseInterface -> createPickEvent...")
         // Create data object using data models you downloaded from Mobile Hub
-        let pickEventItem: PickEvents = PickEvents()
+        
         pickEventItem._userId = AWSIdentityManager.default().identityId
         
         //get time

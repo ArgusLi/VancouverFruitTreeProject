@@ -110,24 +110,10 @@ class PickEventTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let event = picks[indexPath.row]
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "PickDetailsViewController") as! PickDetailsViewController
-        if ((event._eventDate != nil && event._eventTime != nil) && event._assignedTeamID != nil){
-            detailVC.getdate = "Date: " + event._eventDate!
-            detailVC.gettime = "Time: " + event._eventTime!
-        detailVC.getleader = "none"
-            if((event._latitude!.floatValue > -90  && event._latitude!.floatValue < 90) && ( event._longitude!.floatValue > -180 && event._longitude!.floatValue  < 180 ))
-            {
-                
-            
-            detailVC.getCoordinates = CLLocationCoordinate2D(latitude: Double(event._latitude!.floatValue) as CLLocationDegrees, longitude: Double(event._longitude!.floatValue) as CLLocationDegrees)
-            }
-            else {
-                detailVC.getCoordinates = nil
-            }
-        self.navigationController?.pushViewController(detailVC, animated: true)}
-        else
-        {
-            print("At least on of the attributes is nil")
-        }
+        detailVC.event = event
+      
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        
         
     }
     

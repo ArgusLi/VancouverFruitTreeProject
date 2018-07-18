@@ -10,14 +10,12 @@ import UIKit
 import MapKit
 
 class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-    var getdate = String()
-    var gettime =  String()
-    var getleader = String()
+    var event: PickEvents? = nil
     var getCoordinates: CLLocationCoordinate2D?
     var locationManager: CLLocationManager = CLLocationManager()
     var buttonTitle: String?
     var buttonColour: UIColor?
-    
+    var gettypeofTrees: String?
     @IBOutlet weak var date: UIButton!
     
     
@@ -26,25 +24,53 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet weak var teamlead: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var typeOfTrees: UIButton!
     @IBOutlet weak var signupbotton: UIButton!
     @IBAction func signup(_ sender: Any) {
-        let alert = UIAlertController(title: "This functionality is unavailable", message: "We are currently working on this, check back later.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(alert, animated: true)
+        if signupbotton.title(for: .normal) == "Sign-up" {
+            let DBINT = DatabaseInterface()
+            let userName = DBINT.getUsername()
+            if (userName != nil && event != nil){
+                DBINT.signUpForPickEvent(pickItem: event!, userId: userName!)
+                let alert = UIAlertController(title: "Sign-up succesful", message: "Thank you for signing up", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+            else{
+                print("There has been some problem, userName or event is nil")
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         signupbotton.layer.cornerRadius = 8
+        if (event!._eventDate != nil && event!._eventTime != nil) {
+            date.setTitle("Date:  \(event!._eventDate!)", for: .normal)
+            
+            time.setTitle("Time: \(event!._eventTime!)", for: .normal)
+            if event!._assignedTeamID != nil {
+                teamlead.setTitle( "Team Lead: \(event!._assignedTeamID!)", for: .normal)
+            }
+            
+            if event!._treeMap != nil {
+                typeOfTrees.setTitle("Type of trees: \(event!._treeMap!["type-of-trees"]!)", for: .normal)
+            }
+            
+            if((event!._latitude!.floatValue > -90  && event!._latitude!.floatValue < 90) && ( event!._longitude!.floatValue > -180 && event!._longitude!.floatValue  < 180 ))
+            {
+                
+                
+                getCoordinates = CLLocationCoordinate2D(latitude: Double(event!._latitude!.floatValue) as CLLocationDegrees, longitude: Double(event!._longitude!.floatValue) as CLLocationDegrees)
+            }
+        }
         if (buttonTitle != nil && buttonColour != nil) {
             signupbotton.setTitle(buttonTitle!, for: .normal)
             signupbotton.backgroundColor = buttonColour!
         }
         self.tabBarController?.tabBar.isHidden = true
-        date.setTitle(getdate, for: .normal)
-        time.setTitle(gettime, for: .normal)
-        teamlead.setTitle( "Team Lead: \(getleader)", for: .normal)
+        
         if getCoordinates != nil{
             
         
@@ -59,6 +85,7 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
         addRadius(location: getCoordinates!)
         
         }
+        
 
         
         
