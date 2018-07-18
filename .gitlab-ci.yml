@@ -3,7 +3,7 @@ stages:
 
 build_project:
   only:
-    - master@csil-git1.cs.surrey.sfu.ca/cmpt276summer2018group8/ios-app/
+    - master
   stage: build
   script:
     - xcodebuild clean -workspace Vancouver-Fruit-Tree-Project.xcworkspace -scheme Vancouver-Fruit-Tree-Project | xcpretty export LC_ALL=en_US.UTF-8
