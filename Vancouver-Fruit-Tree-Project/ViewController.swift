@@ -9,6 +9,7 @@
 import UIKit
 import AWSAuthCore
 import AWSAuthUI
+import AWSCognitoIdentityProvider
 import AWSGoogleSignIn
 import SideMenu
 class ViewController: UIViewController {
@@ -25,11 +26,8 @@ class ViewController: UIViewController {
     
     
     
-    @IBAction func TestButtonFunction(_ sender: Any) {
-        
-        print("test button was pressed")
-        
-    }
+    
+   
     
     
     @IBAction func hamburgerButton(_ sender: Any) {
@@ -82,6 +80,7 @@ class ViewController: UIViewController {
         
         config.isBackgroundColorFullScreen = true
         config.logoImage = UIImage(named: "VFTP_LOGO_CS3-167x300")
+        
         AWSAuthUIViewController.presentViewController(
             with: self.navigationController!,
             configuration: config, completionHandler: { (provider: AWSSignInProvider, error: Error?) in

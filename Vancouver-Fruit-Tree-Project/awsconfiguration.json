@@ -1,43 +1,43 @@
 {
-  "UserAgent": "MobileHub/1.0",
-  "Version": "1.0",
-  "CredentialsProvider": {
-    "CognitoIdentity": {
-      "Default": {
-        "PoolId": "us-east-1:418ae064-cd87-4807-9234-412af6afcb20",
-        "Region": "us-east-1"
-      }
+    "UserAgent": "MobileHub/1.0",
+    "Version": "1.0",
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "us-east-1:418ae064-cd87-4807-9234-412af6afcb20",
+                "Region": "us-east-1"
+            }
+        }
+    },
+    "IdentityManager": {
+        "Default": {}
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "us-east-1_LXKwVfwkz",
+            "AppClientId": "7bgr1sfh851ajh0v3t65hq69q3",
+            "AppClientSecret": "9bllitmncjkeb9nnnvb4ei0e6vod746e7pa83hqm39nsvssqh05",
+            "Region": "us-east-1" 
+        }
+    },
+    "DynamoDBObjectMapper": {
+        "Default": {
+            "Region": "us-east-1"
+        }
+    },
+    "PinpointAnalytics": {
+        "Default": {
+            "AppId": "b314369836684176a1a61f4d9971d83a",
+            "Region": "us-east-1"
+        }
+    },
+    "PinpointTargeting": {
+        "Default": {
+            "Region": "us-east-1"
+        }
+    },
+    "GoogleSignIn": {
+        "ClientId-iOS": "98647939723-lhmpji900et4qmhjlcs4fnp2d4imj06d.apps.googleusercontent.com",
+        "Permissions": "email,profile,openid"
     }
-  },
-  "IdentityManager": {
-    "Default": {}
-  },
-  "CognitoUserPool": {
-    "Default": {
-      "PoolId": "us-east-1_LXKwVfwkz",
-      "AppClientId": "7bgr1sfh851ajh0v3t65hq69q3",
-      "AppClientSecret": "9bllitmncjkeb9nnnvb4ei0e6vod746e7pa83hqm39nsvssqh05",
-      "Region": "us-east-1"
-    }
-  },
-  "DynamoDBObjectMapper": {
-    "Default": {
-      "Region": "us-east-1"
-    }
-  },
-  "PinpointAnalytics": {
-    "Default": {
-      "AppId": "b314369836684176a1a61f4d9971d83a",
-      "Region": "us-east-1"
-    }
-  },
-  "PinpointTargeting": {
-    "Default": {
-      "Region": "us-east-1"
-    }
-  },
-  "GoogleSignIn": {
-    "ClientId-iOS": "98647939723-lhmpji900et4qmhjlcs4fnp2d4imj06d.apps.googleusercontent.com",
-    "Permissions": "email,profile,openid"
-  }
 }

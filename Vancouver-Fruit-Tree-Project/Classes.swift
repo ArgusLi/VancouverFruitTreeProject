@@ -53,8 +53,8 @@ class coordinator:NSObject{
         //Todo ver 2
     }
  */
-    func createPickEvent(eventTime: String, eventDate: String, latitude: NSNumber, longitude: NSNumber, teamID: String){
-        dbInterface.createPickEvents(eventTime: eventTime, eventDate: eventDate, latitude: latitude, longitude: longitude, teamID: teamID)
+    func createPickEvent(eventTime: String, eventDate: String, latitude: NSNumber, longitude: NSNumber, teamID: String, address: String, treeMap: [String:String]){
+        dbInterface.createPickEvents(eventTime: eventTime, eventDate: eventDate, latitude: latitude, longitude: longitude, teamID: teamID, address: address, treeMap: treeMap)
     }
     func assignPickToTeam(userId: String, creationTime: String, teamID:String){
         //find and read pick
@@ -62,7 +62,7 @@ class coordinator:NSObject{
         //upload pick with new teamID to database
         if pickEvent != nil{
             pickEvent!._assignedTeamID=teamID
-            dbInterface.createPickEvents(eventTime: (pickEvent?._eventTime)!, eventDate: (pickEvent?._eventDate)!, latitude: (pickEvent?._latitude)!, longitude: (pickEvent?._longitude)!, teamID: (pickEvent?._assignedTeamID)!)
+            dbInterface.createPickEvents(eventTime: (pickEvent?._eventTime)!, eventDate: (pickEvent?._eventDate)!, latitude: (pickEvent?._latitude)!, longitude: (pickEvent?._longitude)!, teamID: (pickEvent?._assignedTeamID)!, address: (pickEvent?._address)! , treeMap: (pickEvent?._treeMap)!)
         }
     }
     func removePickFromTeam(userId: String, creationTime: String, teamID:String){
@@ -71,7 +71,7 @@ class coordinator:NSObject{
         //upload pick with new teamID to database
         if pickEvent != nil{
             pickEvent!._assignedTeamID=nil
-            dbInterface.createPickEvents(eventTime: (pickEvent?._eventTime)!, eventDate: (pickEvent?._eventDate)!, latitude: (pickEvent?._latitude)!, longitude: (pickEvent?._longitude)!, teamID: (pickEvent?._assignedTeamID)!)
+            dbInterface.createPickEvents(eventTime: (pickEvent?._eventTime)!, eventDate: (pickEvent?._eventDate)!, latitude: (pickEvent?._latitude)!, longitude: (pickEvent?._longitude)!, teamID: (pickEvent?._assignedTeamID)!, address: (pickEvent?._address)!, treeMap: (pickEvent?._treeMap)!)
         }
 }
 class volunteer:NSObject{

@@ -192,14 +192,18 @@
 			isa = PBXGroup;
 			children = (
 				7EC8776420E81AA000F860C9 /* PickEvents.swift */,
+				7E2A611520F7FFA200080ABB /* Team.swift */,
 				7EC8776520E81AA000F860C9 /* Users.swift */,
 				7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */,
 				AC8EB70320D03A91007E6CAA /* AppDelegate.swift */,
 				AC8EB70520D03A91007E6CAA /* ViewController.swift */,
 				ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */,
+				62DB729920FD479B003221C1 /* MyPicksTableViewController.swift */,
 				AC59A1FC20E85C450038BF30 /* PickDetailsViewController.swift */,
 				ACA7FD6E20EB4EB50040EEE0 /* MapAnnotation.swift */,
+				62DB72A120FD6084003221C1 /* MyPickEventTableViewCell.swift */,
 				ACA7FD7220EB4EC30040EEE0 /* PickEventTableViewCell.swift */,
+				62DB72A520FD8DE9003221C1 /* MyPickMapViewController.swift */,
 				ACA7FD5420E994040040EEE0 /* SlideMenuViewController.swift */,
 				ACA7FD4A20E972020040EEE0 /* PickEventMapViewController.swift */,
 				7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */,
@@ -519,6 +523,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthUI/AWSAuthUI.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
@@ -526,6 +531,7 @@
 				"${BUILT_PRODUCTS_DIR}/AWSGoogleSignIn/AWSGoogleSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSPinpoint/AWSPinpoint.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -536,6 +542,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
@@ -543,6 +550,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSGoogleSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSPinpoint.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -594,6 +602,8 @@
 				ACA7FD4B20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
 				AC59A1FD20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACA7FD7320EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
+				62DB72A220FD6084003221C1 /* MyPickEventTableViewCell.swift in Sources */,
+				62DB72A620FD8DE9003221C1 /* MyPickMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,7 +615,9 @@
 				AC5CD3CE20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
 				AC5CD3D220F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				ACA7FD7720EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
+				7E2A611720F8007D00080ABB /* Team.swift in Sources */,
 				ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
+				62DB729B20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */,
 				ACA7FD7B20EC2ED10040EEE0 /* Users.swift in Sources */,
 				ACA7FD7420EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
 				ACA7FD7920EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
@@ -615,6 +627,8 @@
 				ACA7FD4C20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
 				AC59A1FE20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACA7FD7020EB4EB60040EEE0 /* MapAnnotation.swift in Sources */,
+				62DB72A320FD6084003221C1 /* MyPickEventTableViewCell.swift in Sources */,
+				62DB72A720FD8DE9003221C1 /* MyPickMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +640,9 @@
 				AC5CD3CF20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
 				AC5CD3D320F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				ACA7FD7820EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
+				7E2A611820F8007E00080ABB /* Team.swift in Sources */,
 				ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
+				62DB729C20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */,
 				ACA7FD7C20EC2ED10040EEE0 /* Users.swift in Sources */,
 				ACA7FD7520EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
 				ACA7FD7A20EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
@@ -636,6 +652,8 @@
 				ACA7FD4D20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
 				AC59A1FF20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACA7FD7120EB4EB60040EEE0 /* MapAnnotation.swift in Sources */,
+				62DB72A420FD6084003221C1 /* MyPickEventTableViewCell.swift in Sources */,
+				62DB72A820FD8DE9003221C1 /* MyPickMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,6 +729,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"$(inherited)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -771,6 +793,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"$(inherited)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -795,7 +821,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APKLPH4X8H;
+				DEVELOPMENT_TEAM = VPUNR272W3;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -816,7 +842,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APKLPH4X8H;
+				DEVELOPMENT_TEAM = VPUNR272W3;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

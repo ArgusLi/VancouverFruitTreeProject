@@ -15,7 +15,8 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     var getleader = String()
     var getCoordinates: CLLocationCoordinate2D?
     var locationManager: CLLocationManager = CLLocationManager()
-    
+    var buttonTitle: String?
+    var buttonColour: UIColor?
     
     @IBOutlet weak var date: UIButton!
     
@@ -36,6 +37,10 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
         super.viewDidLoad()
         
         signupbotton.layer.cornerRadius = 8
+        if (buttonTitle != nil && buttonColour != nil) {
+            signupbotton.setTitle(buttonTitle!, for: .normal)
+            signupbotton.backgroundColor = buttonColour!
+        }
         self.tabBarController?.tabBar.isHidden = true
         date.setTitle(getdate, for: .normal)
         time.setTitle(gettime, for: .normal)
