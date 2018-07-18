@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		11FBEB6520F2AE9000C74616 /* EventNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEB6420F2AE9000C74616 /* EventNotification.swift */; };
 		4D29FDB7F6C76D497D88F882 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
+		7AFFF53D20FEB1F000A4D54D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
 		7EC8776120E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
 		7EC8776220E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
 		7EC8776320E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
@@ -86,6 +87,7 @@
 		282EA9A55D8B14EDA1330A08 /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481C84BA36765041D733FDB7 /* Pods-Vancouver-Fruit-Tree-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project.release.xcconfig"; sourceTree = "<group>"; };
 		62575C5D493EF0A87C4484FF /* Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectUITests/Pods-Vancouver-Fruit-Tree-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		7EC8776020E818B300F860C9 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		7EC8776420E81AA000F860C9 /* PickEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickEvents.swift; sourceTree = "<group>"; };
 		7EC8776520E81AA000F860C9 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -200,9 +202,10 @@
 				ACA7FD7220EB4EC30040EEE0 /* PickEventTableViewCell.swift */,
 				ACA7FD5420E994040040EEE0 /* SlideMenuViewController.swift */,
 				ACA7FD4A20E972020040EEE0 /* PickEventMapViewController.swift */,
-				AC8EB70720D03A91007E6CAA /* Main.storyboard */,
+				7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */,
 				AC5CD3CC20F17E1E00C196B9 /* AddPickEventViewController.swift */,
 				AC5CD3D020F297CC00C196B9 /* SearchLocationTableViewController.swift */,
+				AC8EB70720D03A91007E6CAA /* Main.storyboard */,
 				AC8EB70A20D03A94007E6CAA /* Assets.xcassets */,
 				AC8EB70C20D03A94007E6CAA /* LaunchScreen.storyboard */,
 				7EC8776020E818B300F860C9 /* awsconfiguration.json */,
@@ -578,6 +581,7 @@
 			files = (
 				7EC8776920E81AA100F860C9 /* Users.swift in Sources */,
 				ACA7FD7620EC2DDE0040EEE0 /* DatabaseInterface.swift in Sources */,
+				7AFFF53D20FEB1F000A4D54D /* MyAccountViewController.swift in Sources */,
 				7EC8776620E81AA100F860C9 /* PickEvents.swift in Sources */,
 				AC8EB70620D03A91007E6CAA /* ViewController.swift in Sources */,
 				ACAB91F920E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
