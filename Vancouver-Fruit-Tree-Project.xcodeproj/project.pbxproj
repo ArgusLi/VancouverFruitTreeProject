@@ -69,6 +69,9 @@
 		ACAB91F920E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
 		ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
 		ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
+		ACE8543620FFBFA900C2FADE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8543520FFBFA900C2FADE /* Team.swift */; };
+		ACE8543720FFBFA900C2FADE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8543520FFBFA900C2FADE /* Team.swift */; };
+		ACE8543820FFBFA900C2FADE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8543520FFBFA900C2FADE /* Team.swift */; };
 		F3531E8E4EFB58D645FBBE1E /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282EA9A55D8B14EDA1330A08 /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +129,7 @@
 		ACA7FD6E20EB4EB50040EEE0 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		ACA7FD7220EB4EC30040EEE0 /* PickEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickEventTableViewCell.swift; sourceTree = "<group>"; };
 		ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickEventTableViewController.swift; sourceTree = "<group>"; };
+		ACE8543520FFBFA900C2FADE /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		CDBCAF1C044F604802460E97 /* Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE518A03D3EADCC1D0B6AA96 /* Pods-Vancouver-Fruit-Tree-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-ProjectTests/Pods-Vancouver-Fruit-Tree-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,10 +206,10 @@
 			isa = PBXGroup;
 			children = (
 				7EC8776420E81AA000F860C9 /* PickEvents.swift */,
-				7E2A611520F7FFA200080ABB /* Team.swift */,
 				7EC8776520E81AA000F860C9 /* Users.swift */,
 				7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */,
 				AC8EB70320D03A91007E6CAA /* AppDelegate.swift */,
+				ACE8543520FFBFA900C2FADE /* Team.swift */,
 				AC8EB70520D03A91007E6CAA /* ViewController.swift */,
 				ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */,
 				62DB729920FD479B003221C1 /* MyPicksTableViewController.swift */,
@@ -596,10 +600,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACE8543620FFBFA900C2FADE /* Team.swift in Sources */,
 				7EC8776920E81AA100F860C9 /* Users.swift in Sources */,
 				ACA7FD7620EC2DDE0040EEE0 /* DatabaseInterface.swift in Sources */,
-				7E2A611620F7FFA200080ABB /* Team.swift in Sources */,
-				11CE2F0C20ED5A46004B0B79 /* Classes.swift in Sources */,
 				62DB729A20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */,
 				7EC8776620E81AA100F860C9 /* PickEvents.swift in Sources */,
 				AC8EB70620D03A91007E6CAA /* ViewController.swift in Sources */,
@@ -622,11 +625,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACE8543720FFBFA900C2FADE /* Team.swift in Sources */,
 				ACA7FD7D20EC2ED50040EEE0 /* AppDelegate.swift in Sources */,
 				AC5CD3CE20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
 				AC5CD3D220F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				ACA7FD7720EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
-				7E2A611720F8007D00080ABB /* Team.swift in Sources */,
 				ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				62DB729B20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */,
 				ACA7FD7B20EC2ED10040EEE0 /* Users.swift in Sources */,
@@ -647,11 +650,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACE8543820FFBFA900C2FADE /* Team.swift in Sources */,
 				ACA7FD7E20EC2ED50040EEE0 /* AppDelegate.swift in Sources */,
 				AC5CD3CF20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
 				AC5CD3D320F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				ACA7FD7820EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
-				7E2A611820F8007E00080ABB /* Team.swift in Sources */,
 				ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				62DB729C20FD479B003221C1 /* MyPicksTableViewController.swift in Sources */,
 				ACA7FD7C20EC2ED10040EEE0 /* Users.swift in Sources */,
