@@ -89,8 +89,8 @@ class SearchLocationTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let location =  Locations[indexPath.row]
-        let adressstring = parseAddress(selectedItem: location.placemark)
-        delegate?.getLocation(location: location, address: adressstring)
+        let adresstring = parseAddress(selectedItem: location.placemark)
+        delegate?.getLocation(location: location, address: adresstring)
         navigationController?.popViewController(animated: true)
         
     }
