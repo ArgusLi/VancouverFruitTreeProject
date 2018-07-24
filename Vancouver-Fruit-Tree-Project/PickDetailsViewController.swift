@@ -27,14 +27,31 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet weak var typeOfTrees: UIButton!
     @IBOutlet weak var signupbotton: UIButton!
     @IBAction func signup(_ sender: Any) {
+        let DBINT = DatabaseInterface()
+        let userName = DBINT.getUsername()
         if signupbotton.title(for: .normal) == "Sign-up" {
-            let DBINT = DatabaseInterface()
-            let userName = DBINT.getUsername()
+            
+            
             if (userName != nil && event != nil){
                 DBINT.signUpForPickEvent(pickItem: event!, userId: userName!)
                 let alert = UIAlertController(title: "Sign-up succesful", message: "Thank you for signing up", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (handler) in
+                    self.navigationController?.popViewController(animated: true) }))
                 self.present(alert, animated: true)
+                
+            }
+            else{
+                print("There has been some problem, userName or event is nil")
+            }
+        }
+        if signupbotton.title(for: .normal) == "Cancel"{
+            if (userName != nil && event != nil){
+                DBINT.removeSignUpForPickEvent(pickItem: event!, userId: userName!)
+                let alert = UIAlertController(title: "Cancelation successful", message: "You cancelled your partipication in the event", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (handler) in
+                    self.navigationController?.popViewController(animated: true) }))
+                self.present(alert, animated: true)
+              
             }
             else{
                 print("There has been some problem, userName or event is nil")

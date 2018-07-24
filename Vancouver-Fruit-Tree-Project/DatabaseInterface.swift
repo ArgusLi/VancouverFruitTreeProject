@@ -640,6 +640,31 @@ class DatabaseInterface: NSObject {
         
 
     }
+    func getMyPickEvents() -> [PickEvents]?{
+        let DBIN = DatabaseInterface()
+        var events = [PickEvents]()
+        guard let userName = DBIN.getUsername()
+            else{
+                fatalError("userName is nil")
+        
+        }
+        guard let user = DBIN.queryUserInfo(userId: userName)
+            else{
+                fatalError("user retunrned is nil")
+        }
+        guard let attributesutes = user._pickEvents
+            else{
+                print("No pick events for this user")
+                return events
+        }
+        for pick in attributesutes{
+            let event = DBIN.readPickEvent(userId: pick[0], creationTime: pick[1])
+            if event != nil{
+                events.append(event!)}
+            
+        }
+        return events
+    }
     
     //MARK: Query database for a specific pickEvent using hash criteria
     /// Query database for a specific pickEvent using hash criteria - userId and creationTime
@@ -660,13 +685,13 @@ class DatabaseInterface: NSObject {
         queryExpression.expressionAttributeNames = ["#userId": "userId", "#creationTime": "creationTime"]
         queryExpression.expressionAttributeValues = [":userId": userId, ":creationTime": creationTime]
         
-        let currentUserID = AWSIdentityManager.default().identityId
         
-        if currentUserID != userId{
-            print("Error: User ID of current user and creator do not match, read denied")
-        }
         
-        else {
+        
+        
+        
+        
+        
             dynamoDBObjectMapper.query(PickEvents.self, expression: queryExpression)
             { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
                 if error != nil {
@@ -692,7 +717,7 @@ class DatabaseInterface: NSObject {
                     return received //received! != nil
                 }
             }
-        }
+        
         return received //so Xcode stops complaining
     }
     

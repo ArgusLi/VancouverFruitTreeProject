@@ -16,28 +16,24 @@ class MyPicksTableViewController: UITableViewController {
     var myPicks=[PickEvents]()
     
     //
-    private func loadMyPicks()
+    func loadMyPicks() -> [PickEvents]?
     {
         
         //Temprorary func until we get database to load myPicks
+        let DBINT = DatabaseInterface()
         
-        let date = Date()
-        let calendar = Calendar.current
-        let year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        let interface = DatabaseInterface()
-        let maxDate = String(year)+"/" + String(month)+"/"+String(day + 4)
-        myPicks = interface.scanPickEvents(itemLimit: 3, maxDate: maxDate)
-        
-        
+        guard let temp = DBINT.getMyPickEvents() else {
+            return nil
+        }
+        myPicks = temp
+        return temp
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let mapVC = storyboard?.instantiateViewController(withIdentifier: "MyPickMapViewController") as! MyPickMapViewController
        loadMyPicks()
-        
+        mapVC.myPicks = myPicks
         //tableView.register(MyPickEventTableViewCell.self, forCellReuseIdentifier: "MyPickEventTableViewCell")
 
         // Uncomment the following line to preserve selection between presentations
@@ -67,7 +63,9 @@ class MyPicksTableViewController: UITableViewController {
         return myPicks.count
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        loadMyPicks()
+    }
 
     
     /// <#Description#>
@@ -122,7 +120,6 @@ class MyPicksTableViewController: UITableViewController {
     
     
     
-
 
     /*
     // Override to support conditional editing of the table view.
