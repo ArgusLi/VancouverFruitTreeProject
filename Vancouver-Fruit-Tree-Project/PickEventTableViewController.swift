@@ -17,6 +17,7 @@ class PickEventTableViewController: UITableViewController {
     var picks=[PickEvents]()
    private func loadavailablepicks()
    {
+    //loads available picks 6 months from today, and puts them into picks array
     let date = Date()
     let calendar = Calendar.current
     let year = calendar.component(.year, from: date)
@@ -34,7 +35,7 @@ class PickEventTableViewController: UITableViewController {
         self.refreshControl!.addTarget(self, action:
             #selector(self.handleRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
-        self.tableView.addSubview(self.refreshControl!)
+        self.tableView.insertSubview(self.refreshControl!, at: 0)
         let controllers = navigationController?.viewControllers
         for controller in controllers!{
             if controller is UITabBarController

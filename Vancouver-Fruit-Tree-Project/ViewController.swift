@@ -56,6 +56,7 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = signOutButton
+        //check if the user is signed in
         if !AWSSignInManager.sharedInstance().isLoggedIn {
             presentAuthUIViewController()
             
