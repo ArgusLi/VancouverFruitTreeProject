@@ -2,8 +2,6 @@ stages:
   - build
 
 build_project:
-  only:
-    - master
   stage: build
   script:
     - xcodebuild clean -workspace Vancouver-Fruit-Tree-Project.xcworkspace -scheme Vancouver-Fruit-Tree-Project | xcpretty export LC_ALL=en_US.UTF-8
