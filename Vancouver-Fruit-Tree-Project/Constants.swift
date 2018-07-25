@@ -13,3 +13,8 @@ enum TreeProerties: String{
     case type = "type-of-trees"
     case numofTrees = "number-of-trees"
 }
+enum Roles: String{
+    case volunteer = "Volunteer"
+    case lead = "Leader"
+    case admin = "Administrator"
+}

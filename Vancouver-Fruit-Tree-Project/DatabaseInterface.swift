@@ -90,6 +90,7 @@ class DatabaseInterface: NSObject {
         return users
         
     }
+    
     //MARK: User info methods
     /// returns username of a current user
     ///
@@ -401,7 +402,7 @@ class DatabaseInterface: NSObject {
         else if (UserItem._role == Roles.lead.rawValue){
             if pickItem._teamLead != nil{
                 pickItem._teamLead = nil
-                pickItem._volunteers?.removeAll()
+                
             }
             else {
                 print("Team lead does not exist ")

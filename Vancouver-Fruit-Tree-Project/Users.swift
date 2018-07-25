@@ -43,9 +43,4 @@ class Users: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
         ]
     }
 }
-enum Roles: String{
-    case volunteer = "Volunteer"
-    
-    case lead = "Leader"
-    case admin = "Administrator"
-}
+
