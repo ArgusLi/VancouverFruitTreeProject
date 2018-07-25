@@ -29,7 +29,7 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _longitude: NSNumber?
     var _registeredUsers: [String]?
     var _treeMap: [String: String]?
-    
+    var _distanceFrom: Int?
     class func dynamoDBTableName() -> String {
         
         return "vancouverfruittreepr-mobilehub-79870386-PickEvents"

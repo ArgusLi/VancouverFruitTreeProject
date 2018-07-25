@@ -64,7 +64,19 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
         
         signupbotton.layer.cornerRadius = 8
         if (event!._eventDate != nil && event!._eventTime != nil) {
-            date.setTitle("Date:  \(event!._eventDate!)", for: .normal)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy/MM/dd"
+            let dt = dateFormatter.date(from: (event!._eventDate!))
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            
+            
+            
+            
+            
+            // US English Locale (en_US)
+            dateFormatter.locale = Locale(identifier: "en_US")
+            date.setTitle("Date:  \(dateFormatter.string(from: dt!))", for: .normal)
             
             time.setTitle("Time: \(event!._eventTime!)", for: .normal)
             if event!._assignedTeamID != nil {

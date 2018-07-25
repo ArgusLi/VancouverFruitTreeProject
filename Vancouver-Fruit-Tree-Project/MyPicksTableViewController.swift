@@ -86,7 +86,7 @@ class MyPicksTableViewController: UITableViewController {
         
             cell.Time.text = "Time: " + myPick._eventTime!
             cell.Date.text = "Date: " + myPick._eventDate!
-            cell.TeamLead.text = "Team lead: N/A"
+            cell.TeamLead.text = "NA"
         
         
         // Configure the cell...
