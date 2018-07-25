@@ -34,6 +34,7 @@ class MyPicksTableViewController: UITableViewController {
         let mapVC = storyboard?.instantiateViewController(withIdentifier: "MyPickMapViewController") as! MyPickMapViewController
        loadMyPicks()
         mapVC.myPicks = myPicks
+    self.view.isUserInteractionEnabled = true
         //tableView.register(MyPickEventTableViewCell.self, forCellReuseIdentifier: "MyPickEventTableViewCell")
 
         // Uncomment the following line to preserve selection between presentations

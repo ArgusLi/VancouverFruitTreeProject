@@ -335,30 +335,37 @@ class DatabaseInterface: NSObject {
         let identityManager = AWSIdentityManager.default()
         let identityProvider = identityManager.credentialsProvider.identityProvider.identityProviderName
         var responseEmail: String?
+        let group = DispatchGroup()
         if identityProvider == "cognito-identity.amazonaws.com" {
             
+            group.enter()
             let serviceConfiguration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: nil)
             let userPoolConfiguration = AWSCognitoIdentityUserPoolConfiguration(clientId: "7bgr1sfh851ajh0v3t65hq69q3", clientSecret: "9bllitmncjkeb9nnnvb4ei0e6vod746e7pa83hqm39nsvssqh05", poolId: "us-east-1_LXKwVfwkz")
             AWSCognitoIdentityUserPool.register(with: serviceConfiguration, userPoolConfiguration: userPoolConfiguration, forKey: "vancouverfruittreepr_userpool_MOBILEHUB_79870386")
             let pool = AWSCognitoIdentityUserPool(forKey: "vancouverfruittreepr_userpool_MOBILEHUB_79870386")
             if let userFromPool = pool.currentUser() {
+                
+                
                 userFromPool.getDetails().continueOnSuccessWith(block: { (task) -> Any? in
-                    DispatchQueue.main.async {
+                    DispatchQueue.global(qos: .userInitiated).async {
                         
                         if let error = task.error as NSError? {
                             print("Error getting user attributes from Cognito: \(error)")
+                            group.leave()
                         } else {
                             let response = task.result
                             if let userAttributes = response?.userAttributes {
-                                print("user attributes found: \(userAttributes)")
+                                
                                 for attribute in userAttributes {
                                     if attribute.name == "email" {
                                         if let email = attribute.value
                                         {
+                                            
                                             responseEmail = email
+                                            group.leave()
                                         }
                                          else{ print("Email is null")
-                                           
+                                           group.leave()
                                         }
                                             
                                         
@@ -368,7 +375,9 @@ class DatabaseInterface: NSObject {
              
             }
     }
-        return responseEmail
+        group.wait()
+       return responseEmail
+        
     }
     /*func createTeam(teamItem: team, pickItem: PickEvents ){
         

@@ -17,63 +17,34 @@ class MyAccountViewController: UIViewController {
     @IBOutlet weak var myAccUsername: UILabel!
     @IBOutlet weak var myAccEmail: UILabel!
 
-    func getUsername() {
-        //to check if user is logged in with Cognito... not sure if this is necessary
-        let identityManager = AWSIdentityManager.default()
-        let identityProvider = identityManager.credentialsProvider.identityProvider.identityProviderName
-        
-        if identityProvider == "cognito-identity.amazonaws.com" {
-            
-            let serviceConfiguration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: nil)
-            let userPoolConfiguration = AWSCognitoIdentityUserPoolConfiguration(clientId: "7bgr1sfh851ajh0v3t65hq69q3", clientSecret: "9bllitmncjkeb9nnnvb4ei0e6vod746e7pa83hqm39nsvssqh05", poolId: "us-east-1_LXKwVfwkz")
-            AWSCognitoIdentityUserPool.register(with: serviceConfiguration, userPoolConfiguration: userPoolConfiguration, forKey: "vancouverfruittreepr_userpool_MOBILEHUB_79870386")
-            let pool = AWSCognitoIdentityUserPool(forKey: "vancouverfruittreepr_userpool_MOBILEHUB_79870386")
-            
-            if let username = pool.currentUser()?.username {
-                myAccUsername.text = username
-            } else {
-                myAccUsername.text = "Error"
-            }
-        }
-    }
     
-    func getEmail() {
-        let identityManager = AWSIdentityManager.default()
-        let identityProvider = identityManager.credentialsProvider.identityProvider.identityProviderName
-        if identityProvider == "cognito-identity.amazonaws.com" {
-            
-            let serviceConfiguration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: nil)
-            let userPoolConfiguration = AWSCognitoIdentityUserPoolConfiguration(clientId: "7bgr1sfh851ajh0v3t65hq69q3", clientSecret: "9bllitmncjkeb9nnnvb4ei0e6vod746e7pa83hqm39nsvssqh05", poolId: "us-east-1_LXKwVfwkz")
-            AWSCognitoIdentityUserPool.register(with: serviceConfiguration, userPoolConfiguration: userPoolConfiguration, forKey: "vancouverfruittreepr_userpool_MOBILEHUB_79870386")
-            let pool = AWSCognitoIdentityUserPool(forKey: "vancouverfruittreepr_userpool_MOBILEHUB_79870386")
-            if let userFromPool = pool.currentUser() {
-                userFromPool.getDetails().continueOnSuccessWith(block: { (task) -> Any? in
-                    DispatchQueue.main.async {
-                        
-                        if let error = task.error as NSError? {
-                            print("Error getting user attributes from Cognito: \(error)")
-                        } else {
-                            let response = task.result
-                            if let userAttributes = response?.userAttributes {
-                                for attribute in userAttributes {
-                                    if attribute.name == "email" {
-                                        if let email = attribute.value
-                                        {
-                                            self.myAccEmail.text = email
-                                        }
-                                        else{
-                                            self.myAccEmail.text = "Null"
-                                        }
-                                    }
-                    } } } } } )
-            }
-        }
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-            getUsername()
-            getEmail()
+        let db = DatabaseInterface()
+        if let username = db.getUsername(){
+            myAccUsername.text = username
+        }
+        else {
+            myAccUsername.text = "none"
+        }
+        
+        if let email = db.getEmail(){
+            myAccEmail.text = email
+        }
+        
+        else {
+            myAccEmail.text = "none"
+        }
+        
+           
+        
+        
+        
+       
+        
+    
+        
+        self.view.isUserInteractionEnabled = true
         }
 
     
