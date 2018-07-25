@@ -8,13 +8,14 @@
 
 import UIKit
 import MapKit
-class PickEventTableViewController: UITableViewController {
-    
+class PickEventTableViewController: UITableViewController, CLLocationManagerDelegate {
+    let locationManager = CLLocationManager()
     // TODO: Insert an array declaration here
     //TODO: placeholder for a pick event class
-    
+    let gr =  DispatchGroup()
     @IBOutlet weak var addButton: UIBarButtonItem!
     var picks=[PickEvents]()
+    private var myLocation: CLLocation?
    private func loadavailablepicks()
    {
     let date = Date()
@@ -27,8 +28,19 @@ class PickEventTableViewController: UITableViewController {
     picks =  interface.scanPickEvents(itemLimit: 100, maxDate: maxDate)
     
     }
+    private func setTheDistance(location: CLLocation){
+        for pick in picks{
+            if (pick._latitude != nil && pick._longitude != nil){
+            let destination = CLLocation(latitude: Double(truncating: pick._latitude!), longitude: Double(truncating: pick._longitude!))
+            let distance = location.distance(from:destination)
+            pick._distanceFrom = Int(distance)
+            }
+            
+        }
+    }
    
     override func viewDidLoad() {
+        
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.tintColor = UIColor.green
         self.refreshControl!.addTarget(self, action:
@@ -45,11 +57,26 @@ class PickEventTableViewController: UITableViewController {
         
         super.viewDidLoad()
         
-        
-        
         loadavailablepicks()
-        
         super.view.isUserInteractionEnabled = true
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
+        gr.enter()
+        DispatchQueue.main.async{
+           self.locationManager.requestLocation()
+        }
+        gr.notify(queue: .main){
+            if self.myLocation != nil{
+             self.setTheDistance(location: self.myLocation!)
+                self.tableView.reloadData()
+            }
+            else{
+                print("Location is nil")
+            }
+        }
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -92,7 +119,31 @@ class PickEventTableViewController: UITableViewController {
         }
         let pick = picks[indexPath.row]
         cell.Time.text="Time: " + pick._eventTime!
-        cell.Date.text = "Date: " + pick._eventDate!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        let date = dateFormatter.date(from: pick._eventDate!)
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
+        
+        
+        
+        
+        // US English Locale (en_US)
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        cell.Date.text = "Date: " + dateFormatter.string(from: date!)
+        
+        if pick._distanceFrom != nil{
+            if (pick._distanceFrom! > 500){
+                cell.DistanceFrom.text = "\(pick._distanceFrom!/1000) km away"
+            }
+            else{
+                cell.DistanceFrom.text = "\(pick._distanceFrom!) m away"}
+        }
+        else{
+            cell.DistanceFrom.text = ""
+        }
         cell.TeamLead.text = "Team lead: none"
         if (indexPath.row % 2 == 0){
             cell.sideImage.image = UIImage(named: "Green alert")}
@@ -139,7 +190,29 @@ class PickEventTableViewController: UITableViewController {
             */
         }
     }
-    
+    private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+        if (status == .denied || status == .restricted)
+        {
+            print("Location services is not enabled")
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+      
+        if let location = locations.first {
+            
+            myLocation = location
+            gr.leave()
+            
+        }
+        else{
+            gr.leave()}
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error:: (error)")
+    }
 
     /*
     // Override to support conditional editing of the table view.

@@ -19,6 +19,7 @@ class PickEventTableViewCell: UITableViewCell {
     @IBOutlet weak var Time: UILabel!
     @IBOutlet weak var TeamLead: UILabel!
     
+    @IBOutlet weak var DistanceFrom: UILabel!
     @IBOutlet weak var sideImage: UIImageView!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
