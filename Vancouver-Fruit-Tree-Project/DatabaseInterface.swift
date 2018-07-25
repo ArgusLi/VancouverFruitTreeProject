@@ -18,7 +18,8 @@ import AWSCore
 class DatabaseInterface: NSObject {
     
     //MARK: User Methods
-   
+    
+    // Author: Artem
     func queryUsers() -> [AWSCognitoIdentityProviderUserType]?{
         var users = [AWSCognitoIdentityProviderUserType]()
         var test = [Dictionary<String, String>]()
@@ -91,6 +92,8 @@ class DatabaseInterface: NSObject {
         
     }
     //MARK: User info methods
+    
+    //Author: Artem
     /// returns username of a current user
     ///
     /// - Returns: returns optional String if the userName is found in the user pool, nil otherwise
@@ -124,9 +127,9 @@ class DatabaseInterface: NSObject {
         }
         return nil
     }
+    //Author: Artem
     /// function for getting current's user email
     ///
-    
     /// - Returns: returns optional string that contains current user email or nil otherwise. The function will return only after the task is finished.
     func getEmail() -> String? {
         let identityManager = AWSIdentityManager.default()
@@ -177,6 +180,7 @@ class DatabaseInterface: NSObject {
         
     }
     
+    //Author: Cameron
     /// returns hashes for all pick events that a user is signed up for
     ///
     /// - Parameter userId: the user's userID
@@ -229,6 +233,7 @@ class DatabaseInterface: NSObject {
         
     }
     
+    //Author: Cameron
     /// Saves a pick event to the user's personal database entry
     ///
     /// - Parameters:
@@ -311,7 +316,7 @@ class DatabaseInterface: NSObject {
         
         //removeSignUpForPickEvent(pickItem: pickItem, userId: userId)
     }
-    
+    //Author: Cameron
     /// removes a pick event from the user's personal database entry
     ///
     /// - Parameters:
@@ -384,7 +389,105 @@ class DatabaseInterface: NSObject {
         
     }
 
+    //MARK: User query methods
     
+    //Author: Cameron
+    /// For admins / coordinators: returns a list of all users who have entries in Users() table
+    ///
+    /// - Parameter itemLimit: max number of users to be returned
+    /// - Returns: tuple of [Users] and int; if user authentication fails, or an entry for the user in the Users table doesn't exist, will return ([], 0)
+    func adminGetUsersTable(itemLimit: NSNumber) -> ([Users], Int) {
+       
+        let group = DispatchGroup()
+        
+        var UsersArray: [Users] = [Users]()
+        
+        //authenticate admin user
+        let auth: Users? = self.queryUserInfo(userId: self.getUsername()!)
+        if auth != nil {
+            
+            if auth?._role != "Administrator"{
+                return (UsersArray, 0)
+            }
+        }
+        
+        else if auth == nil {
+            return (UsersArray, 0)
+        }
+        
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let scanExpression = AWSDynamoDBScanExpression()
+        
+        
+        scanExpression.limit = itemLimit
+        
+        group.enter()
+        dynamoDBObjectMapper.scan(Users.self, expression: scanExpression)  { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            
+            DispatchQueue.global(qos: .userInitiated).async {
+                
+                if error != nil {
+                    print("The request failed. Error: \(String(describing: error))")
+                    group.leave()
+                }
+            
+                if output != nil {
+                    for user in output!.items {
+                        let UserItem = user as? Users
+                        print("\(UserItem!._userId!)")
+                        UsersArray.append(UserItem!)
+                    }
+                }
+                group.leave()
+            }
+            
+        }
+        
+
+        group.wait()
+        return (UsersArray, 1)
+        
+        
+    }
+    
+    // Author: Cameron
+    /// For admins: change the user role of another user
+    ///
+    /// - Parameters:
+    ///   - username: username of the user to be modified
+    ///   - roleToChangeTo: role to change the user to; Volunteer, Leader, Administrator
+    /// - Returns: <#return value description#>
+    func adminChangeUserRole(username: String, roleToChangeTo: String) -> Int {
+        
+        let group = DispatchGroup()
+        group.enter()
+        //authenticate admin user
+        let auth: Users? = self.queryUserInfo(userId: self.getUsername()!)
+        if auth != nil {
+            
+            if auth?._role != "Administrator"{
+                group.leave()
+                return 0
+            }
+        }
+            
+        else if auth == nil {
+            group.leave()
+            return 0
+        }
+        
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        
+        let UserInfo = self.queryUserInfo(userId: username)
+        
+        
+        
+        group.wait()
+        return 1
+        
+        
+    }
    
     //MARK: Team Methods
     
@@ -422,6 +525,7 @@ class DatabaseInterface: NSObject {
     //MARK: PickEvent Methods
     
     //MARK: create pick event (V1)
+    //Author: Cameron
     /// Creates and uploads a new pick event to the database
     ///
     /// - Parameters:

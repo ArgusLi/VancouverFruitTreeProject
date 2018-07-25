@@ -25,6 +25,22 @@ class ViewController: UIViewController {
     var hamburgerMenuIsVisible = false
     
     
+    @IBAction func TestUserTableQuery(_ sender: Any) {
+        
+        let DBINT = DatabaseInterface()
+        
+        let result = DBINT.adminGetUsersTable(itemLimit: 50)
+        
+        let count = result.0.count
+        print ("# of users returned: " + String(count))
+        
+        for i in result.0 {
+            print(i._userId! + ", " + i._role!)
+        }
+    
+    }
+    
+    
     
     
    
