@@ -496,8 +496,8 @@
                                             <rect key="frame" x="322" y="25" width="24" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD4-ii-R3v">
-                                            <rect key="frame" x="313" y="62.5" width="42" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dts-KK-y3f">
+                                            <rect key="frame" x="313" y="70.5" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -505,17 +505,17 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.74509803921568629" green="1" blue="0.70196078431372544" alpha="0.060519366197183101" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Dts-KK-y3f" secondAttribute="bottom" constant="10.5" id="0XT-Dz-kpu"/>
                                         <constraint firstItem="amW-PW-M5Q" firstAttribute="leading" secondItem="WET-Ga-3cf" secondAttribute="leading" constant="15" id="5iU-iA-za7"/>
-                                        <constraint firstAttribute="bottom" secondItem="aD4-ii-R3v" secondAttribute="bottom" constant="18.5" id="AqE-0B-htz"/>
                                         <constraint firstItem="amW-PW-M5Q" firstAttribute="top" secondItem="WET-Ga-3cf" secondAttribute="top" id="HJ1-TX-6gJ"/>
-                                        <constraint firstItem="aD4-ii-R3v" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WET-Ga-3cf" secondAttribute="leading" constant="20" symbolic="YES" id="IWN-fi-bEG"/>
+                                        <constraint firstAttribute="trailing" secondItem="Dts-KK-y3f" secondAttribute="trailing" constant="20" id="KRF-lx-Apy"/>
+                                        <constraint firstItem="Dts-KK-y3f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WET-Ga-3cf" secondAttribute="leading" constant="20" symbolic="YES" id="cgf-BE-bd7"/>
                                         <constraint firstAttribute="bottom" secondItem="amW-PW-M5Q" secondAttribute="bottom" constant="25.333333333333329" id="oBB-HE-Vw8"/>
-                                        <constraint firstAttribute="trailing" secondItem="aD4-ii-R3v" secondAttribute="trailing" constant="20" id="uK3-AH-EgO"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="Date" destination="20m-10-9zR" id="z82-Dq-4Ev"/>
-                                    <outlet property="DistanceFrom" destination="aD4-ii-R3v" id="9wm-qk-cZK"/>
+                                    <outlet property="DistanceFrom" destination="Dts-KK-y3f" id="La3-Ip-rsQ"/>
                                     <outlet property="TeamLead" destination="dgf-kI-873" id="hfz-To-ajl"/>
                                     <outlet property="Time" destination="Ase-w2-X93" id="lbR-GI-zyy"/>
                                     <outlet property="sideImage" destination="dmy-5d-BJp" id="5T2-7u-nGo"/>

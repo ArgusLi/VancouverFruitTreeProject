@@ -79,9 +79,7 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
             date.setTitle("Date:  \(dateFormatter.string(from: dt!))", for: .normal)
             
             time.setTitle("Time: \(event!._eventTime!)", for: .normal)
-            if event!._assignedTeamID != nil {
-                teamlead.setTitle( "Team Lead: \(event!._assignedTeamID!)", for: .normal)
-            }
+            
             
             if event!._treeMap != nil {
                 typeOfTrees.setTitle("Type of trees: \(event!._treeMap!["type-of-trees"]!)", for: .normal)
