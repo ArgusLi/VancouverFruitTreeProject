@@ -48,10 +48,11 @@ class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
         
         else{
-            TreeMap["type-of-trees"]=typeofTrees[typeTreeSelector.selectedRow(inComponent: 0)]
-            TreeMap["number-of-volunteers"] = "\(Int(volunteerStepper.value))"
-            TreeMap["number-of-trees"] = "\(Int(treeStepper.value))"
+            TreeMap[TreeProerties.type.rawValue]=typeofTrees[typeTreeSelector.selectedRow(inComponent: 0)]
+            TreeMap[TreeProerties.numofTrees.rawValue] = "\(Int(volunteerStepper.value))"
+            TreeMap[TreeProerties.numofV.rawValue] = "\(Int(treeStepper.value))"
             event?._treeMap = TreeMap
+            
             let database = DatabaseInterface()
             database.createPickEvents(pickEventItem: event!)
             let alert = UIAlertController(title: "Event Saved Successfully", message: "The event has been successfully saved", preferredStyle: .alert)

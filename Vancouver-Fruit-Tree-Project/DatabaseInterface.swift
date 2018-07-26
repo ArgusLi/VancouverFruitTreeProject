@@ -90,6 +90,7 @@ class DatabaseInterface: NSObject {
         return users
         
     }
+    
     //MARK: User info methods
     /// returns username of a current user
     ///
@@ -123,6 +124,54 @@ class DatabaseInterface: NSObject {
             
         }
         return nil
+    }
+    /// Marks a user with a given username as present for a pick passed in pickItem
+    ///
+    /// - Parameter userId: the user's userID
+    /// - Parameter pickeItem: Pick event
+    /// - Returns: returns true if the operation succeded, false otherwise
+    func markPresent(pickItem: PickEvents, userID: String) -> Bool{
+        var user = queryUserInfo(userId: userID)
+        if (user == nil){
+            print("user is nil")
+            return false
+        }
+        if let events = user?._pickEvents{
+            var index: Int?
+            for event in events{
+                if (event[0] == pickItem._userId! && event[1] == pickItem._creationTime!)
+                {
+                    index = events.index(of: event)
+                }
+            }
+            if (index == nil){
+                print("No mathing event found in user records")
+                return false
+            }
+            else{
+                //Mark this person as present for this event
+                user?._pickEvents![index!][2] = "1"
+                let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+                dynamoDbObjectMapper.save(user!, completionHandler: {
+                    (error: Error?) -> Void in
+                    
+                    if let error = error {
+                        print("Amazon DynamoDB Save Error: \(error)")
+                        return
+                    }
+                    print("An item was saved.")
+                })
+                
+                return true
+                
+            }
+            
+        }
+        else{
+            print("This user has no events")
+            return false
+        }
+      
     }
     /// function for getting current's user email
     ///
@@ -295,11 +344,32 @@ class DatabaseInterface: NSObject {
         }
         
         if UserItem._role == nil {
-            UserItem._role = "Volunteer"
+            UserItem._role = Roles.volunteer.rawValue
         }
         
         //Save a new item
         dynamoDbObjectMapper.save(UserItem, completionHandler: {
+            (error: Error?) -> Void in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            print("An item was saved.")
+        })
+        if (UserItem._role == Roles.volunteer.rawValue) {
+       
+                     if( pickItem._volunteers?.append(userId) == nil)
+                     {
+                        pickItem._volunteers = [userId]
+            }
+            print("Appended user id")
+        }
+        if (UserItem._role == Roles.lead.rawValue || UserItem._role == Roles.admin.rawValue){
+            pickItem._teamLead = userId
+        }
+        pickItem._distanceFrom = nil
+        dynamoDbObjectMapper.save(pickItem, completionHandler: {
             (error: Error?) -> Void in
             
             if let error = error {
@@ -367,11 +437,36 @@ class DatabaseInterface: NSObject {
         }
         
         if UserItem._role == nil {
-            UserItem._role = "Volunteer"
+            UserItem._role = Roles.volunteer.rawValue
         }
-        
+        if (UserItem._role == Roles.volunteer.rawValue){
+            if let i = pickItem._volunteers?.index(of: userId){
+                pickItem._volunteers?.remove(at: i)
+            }
+            else{
+                print("User is not signed up for this event")
+            }
+        }
+        else if (UserItem._role == Roles.lead.rawValue){
+            if pickItem._teamLead != nil{
+                pickItem._teamLead = nil
+                
+            }
+            else {
+                print("Team lead does not exist ")
+            }
+        }
         //Save a new item
         dynamoDbObjectMapper.save(UserItem, completionHandler: {
+            (error: Error?) -> Void in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            print("An item was saved.")
+        })
+        dynamoDbObjectMapper.save(pickItem, completionHandler: {
             (error: Error?) -> Void in
             
             if let error = error {
@@ -384,7 +479,24 @@ class DatabaseInterface: NSObject {
         
     }
 
-    
+    func getVolunteers(pickItem: PickEvents) -> [Users]{
+        var users = [Users]()
+        if let userNames = pickItem._volunteers{
+            for user in userNames{
+                if let us = queryUserInfo(userId: user){
+                    users.append(us)
+                    
+                }
+                else{
+                    print("Did not find a user with username \(user)")
+                }
+            }
+        }
+        else{
+            print("No volunteers for this event")
+        }
+        return users
+    }
    
     //MARK: Team Methods
     
@@ -462,7 +574,7 @@ class DatabaseInterface: NSObject {
         pickEventItem._eventTime = eventTime
         pickEventItem._eventDate = eventDate
         
-        pickEventItem._assignedTeamID = teamID
+        
         
         pickEventItem._latitude = latitude
         pickEventItem._longitude = longitude
@@ -521,6 +633,10 @@ class DatabaseInterface: NSObject {
         //this isn't really a necessary attribute, since creationTime stores both anyway
         pickEventItem._creationDate = String(year) + "/" + String(month) + "/" + String(day)
         
+        pickEventItem._distanceFrom = nil
+        pickEventItem._volunteers = nil
+        pickEventItem._teamLead = nil
+        
         //Save a new item
         dynamoDbObjectMapper.save(pickEventItem, completionHandler: {
             (error: Error?) -> Void in
@@ -555,6 +671,17 @@ class DatabaseInterface: NSObject {
         })
         
     }
+    //MARK: Search for pickEvents by ID hash
+    /// Queries pick events by date and time using FindPick index.
+    /// Returns all pick events that are **on** the date AND at or before the time.
+    ///
+    /// - Parameters:
+    ///   - date: Search criteria for Pick Event, format: "YYYY/MM/DD"
+    ///             **NOTE** Do not use leading 0s
+    ///             **Example** "1970/1/1"
+    ///   - time: Search criteria for Pick Event in 24HR format, format: "HH:MM:SS"
+    ///             **NOTE** Do not use leading 0s
+    /// - Returns: [PickEvents]
     
     //MARK: Search for pickEvents by date and time
     /// Queries pick events by date and time using FindPick index.
@@ -658,6 +785,10 @@ class DatabaseInterface: NSObject {
         
 
     }
+    //MARK: Search for all events user signed-up for
+    ///
+    /// returns all pick events a current user is signedup for
+    /// - Returns: [PickEvents]
     func getMyPickEvents() -> [PickEvents]?{
         let DBIN = DatabaseInterface()
         var events = [PickEvents]()

@@ -34,7 +34,7 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
             if (pick._latitude != nil && pick._longitude != nil){
             let destination = CLLocation(latitude: Double(truncating: pick._latitude!), longitude: Double(truncating: pick._longitude!))
             let distance = location.distance(from:destination)
-            pick._distanceFrom = Int(distance)
+                pick._distanceFrom = NSNumber(value: distance)
             }
             
         }
@@ -47,6 +47,7 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
         self.refreshControl!.addTarget(self, action:
             #selector(self.handleRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
+        
         self.tableView.insertSubview(self.refreshControl!, at: 0)
         let controllers = navigationController?.viewControllers
         for controller in controllers!{
@@ -136,8 +137,8 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
         cell.Date.text = "Date: " + dateFormatter.string(from: date!)
         
         if pick._distanceFrom != nil{
-            if (pick._distanceFrom! > 500){
-                cell.DistanceFrom.text = "\(pick._distanceFrom!/1000) km away"
+            if (Int(truncating: pick._distanceFrom!) > 500){
+                cell.DistanceFrom.text = "\(Int(truncating: pick._distanceFrom!)/1000) km away"
             }
             else{
                 cell.DistanceFrom.text = "\(pick._distanceFrom!) m away"}

@@ -43,3 +43,4 @@ class Users: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
         ]
     }
 }
+
