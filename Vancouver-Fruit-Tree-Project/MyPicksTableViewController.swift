@@ -66,6 +66,7 @@ class MyPicksTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         loadMyPicks()
+        tableView.reloadData()
     }
 
     
