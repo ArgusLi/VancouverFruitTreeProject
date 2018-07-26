@@ -195,6 +195,11 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
+        let DBIT = DatabaseInterface()
+        let user = DBIT.queryUserInfo(userId: DBIT.getUsername()!)
+        if (user?._role == Roles.admin.rawValue){
+            
+        
         if editingStyle == UITableViewCellEditingStyle.delete
         {
             let pick = picks[indexPath.row]
@@ -202,18 +207,23 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
             picks.remove(at: indexPath.row)
             
             let DBINT = DatabaseInterface()
-            var result = DBINT.deletePickEvent(itemToDelete: pick)
-            
+            let result = DBINT.deletePickEvent(itemToDelete: pick)
+            if result == 1{
             
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
+            }
+            else{
+                print("The event was not deleted")
+            }
             
           /*
-            tableView.reloadData()
+            
             loadavailablepicks()
             self.viewDidLoad()
             */
         }
+        }
+        
     }
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
