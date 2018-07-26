@@ -608,14 +608,15 @@ class DatabaseInterface: NSObject {
     ///Creates and uploads a new pick event to the database
     ///
     /// - Parameter pickEventItem: event that is to be uploaded, with all relevant parameters except for creationTime, which is set in this function
-    func createPickEvents(pickEventItem: PickEvents){
+    ///  - Returns: true if the operation was successful and false otherwise
+    func createPickEvents(pickEventItem: PickEvents)-> Bool{
         
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
         print("in DatabaseInterface -> createPickEvent...")
         // Create data object using data models you downloaded from Mobile Hub
         
         pickEventItem._userId = AWSIdentityManager.default().identityId
-        
+        var result = false
         //get time
         let date = Date()
         let calendar = Calendar.current
@@ -639,18 +640,25 @@ class DatabaseInterface: NSObject {
         pickEventItem._distanceFrom = nil
         pickEventItem._volunteers = nil
         pickEventItem._teamLead = nil
-        
+        let group = DispatchGroup()
+        group.enter()
         //Save a new item
-        dynamoDbObjectMapper.save(pickEventItem, completionHandler: {
-            (error: Error?) -> Void in
-            
-            if let error = error {
-                print("Amazon DynamoDB Save Error: \(error)")
-                return
-            }
-            print("An item was saved.")
-        })
-        
+        DispatchQueue.global(qos: .userInitiated).async {
+            dynamoDbObjectMapper.save(pickEventItem, completionHandler: {
+                (error: Error?) -> Void in
+                
+                if let error = error {
+                    print("Amazon DynamoDB Save Error: \(error)")
+                    group.leave()
+                    return
+                }
+                group.leave()
+                result = true
+                print("An item was saved.")
+            })
+        }
+       group.wait()
+      return result
     }
     
     // MARK: create pick event (V3) - uses primary hash

@@ -66,6 +66,7 @@ class MyPicksTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         loadMyPicks()
+        tableView.reloadData()
     }
 
     
@@ -83,10 +84,32 @@ class MyPicksTableViewController: UITableViewController {
         }
         
         let myPick = myPicks[indexPath.row]
+        cell.Time.text="Time: " + myPick._eventTime!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        let date = dateFormatter.date(from: myPick._eventDate!)
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
         
-            cell.Time.text = "Time: " + myPick._eventTime!
-            cell.Date.text = "Date: " + myPick._eventDate!
-            cell.TeamLead.text = "NA"
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
+        
+        let time = timeFormatter.date(from: "\(myPick._eventDate!) \(myPick._eventTime!)")
+        timeFormatter.timeStyle = .short
+        timeFormatter.dateStyle = .none
+        timeFormatter.locale = Locale(identifier: "en_US")
+        
+        cell.Time.text="Time: " + timeFormatter.string(from: time!)
+        // US English Locale (en_US)
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        cell.Date.text = "Date: " + dateFormatter.string(from: date!)
+        if let lead = myPick._teamLead{
+            cell.TeamLead.text = "Team lead: \(lead)"
+        }
+        else{
+            cell.TeamLead.text = "Team lead: none"}
+        
         
         
         // Configure the cell...

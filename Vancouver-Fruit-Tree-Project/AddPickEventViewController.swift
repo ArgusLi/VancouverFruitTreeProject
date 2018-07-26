@@ -40,26 +40,50 @@ class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPick
         
     }
     @IBAction func saveButton(_ sender: Any) {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        TreeMap[TreeProperties.type.rawValue]=typeofTrees[typeTreeSelector.selectedRow(inComponent: 0)]
+        TreeMap[TreeProperties.numofTrees.rawValue] = "\(Int(volunteerStepper.value))"
+        TreeMap[TreeProperties.numofV.rawValue] = "\(Int(treeStepper.value))"
+        event?._treeMap = TreeMap
         if (event?._latitude == nil || event?._longitude == nil)
         {
-            let alert = UIAlertController(title: "Location missing", message: "Please provide location of the pick", preferredStyle: .alert)
+            alert.title = "Location missing"
+            alert.message = "Please provide location of the pick"
+        
+    
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
+            
+        }
+        else if(event?._treeMap == nil){
+            alert.title = "Error"
+            alert.message = "This event ha no proprties"
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        }
+            else if(event?._treeMap![TreeProperties.numofV.rawValue] == nil)
+        {
+            alert.title  =  "Missing value"
+            alert.title = "Please specify the number of volunteers for this event"
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         }
         
         else{
-            TreeMap[TreeProerties.type.rawValue]=typeofTrees[typeTreeSelector.selectedRow(inComponent: 0)]
-            TreeMap[TreeProerties.numofTrees.rawValue] = "\(Int(volunteerStepper.value))"
-            TreeMap[TreeProerties.numofV.rawValue] = "\(Int(treeStepper.value))"
-            event?._treeMap = TreeMap
+            
             
             let database = DatabaseInterface()
-            database.createPickEvents(pickEventItem: event!)
-            let alert = UIAlertController(title: "Event Saved Successfully", message: "The event has been successfully saved", preferredStyle: .alert)
+            let result = database.createPickEvents(pickEventItem: event!)
+            alert.title = "Event Saved Successfully"
+            alert.message = "The event has been successfully saved"
+            
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in self.navigationController?.popViewController(animated: true) }))
-            self.present(alert, animated: true)
+            if (!result){
+                alert.title = "Error"
+                alert.message = "There has been some problem saving the event"
+            }
+            
+            
             
         }
+        self.present(alert, animated: true)
     }
     @IBOutlet weak var numberofTrees: UILabel!
     

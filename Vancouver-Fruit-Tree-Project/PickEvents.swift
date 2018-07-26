@@ -45,7 +45,36 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
         
         return "_creationTime"
     }
-    
+    func isFull() -> Bool{
+        if _volunteers != nil{
+            if let map = _treeMap {
+                if let capacity = map[TreeProperties.numofV.rawValue]{
+                    if(_volunteers!.count >= Int(capacity)!){
+                        return true
+                    }
+                    else {
+                        return false
+                    }
+                }
+                fatalError("This event has no capacity property")
+            }
+            else {
+                fatalError("This event has no properties in the map")
+            }
+        }
+        else {
+            return false
+        }
+        return false
+    }
+    func hasTeamLead() -> Bool{
+        if _teamLead != nil{
+            return true
+        }
+        else {
+            return false
+        }
+    }
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [
             "_userId" : "userId",
