@@ -478,7 +478,10 @@ class DatabaseInterface: NSObject {
         
         
     }
-
+    /// Gets a list of users signed-up for a specific event
+    ///
+    /// - Parameter pickeItem: Pick event
+    /// - Returns: list of Users objects if the username in the users table matches usernames in the pick event volunters
     func getVolunteers(pickItem: PickEvents) -> [Users]{
         var users = [Users]()
         if let userNames = pickItem._volunteers{
