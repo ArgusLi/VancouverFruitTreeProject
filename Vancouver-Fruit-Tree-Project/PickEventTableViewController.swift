@@ -170,13 +170,13 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
         }
         else{
             cell.TeamLead.text = "Team lead: none"}
-        if (indexPath.row % 2 == 0){
-            cell.sideImage.image = UIImage(named: "Green alert")}
-        else if(indexPath.row % 5 == 0){
-            cell.sideImage.image = UIImage(named: "Red Alert")
+        if (pick._teamLead == nil){
+            cell.sideImage.image = UIImage(named: "Red Alert")}
+        else if(!pick.isFull()){
+            cell.sideImage.image = UIImage(named: "Amber Alert")
         }
         else{
-            cell.sideImage.image = UIImage(named: "Amber Alert")
+            cell.sideImage.image = UIImage(named: "Green alert")
         }
 
         // Configure the cell...
