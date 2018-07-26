@@ -125,6 +125,54 @@ class DatabaseInterface: NSObject {
         }
         return nil
     }
+    /// Marks a user with a given username as present for a pick passed in pickItem
+    ///
+    /// - Parameter userId: the user's userID
+    /// - Parameter pickeItem: Pick event
+    /// - Returns: returns true if the operation succeded, false otherwise
+    func markPresent(pickItem: PickEvents, userID: String) -> Bool{
+        var user = queryUserInfo(userId: userID)
+        if (user == nil){
+            print("user is nil")
+            return false
+        }
+        if let events = user?._pickEvents{
+            var index: Int?
+            for event in events{
+                if (event[0] == pickItem._userId! && event[1] == pickItem._creationTime!)
+                {
+                    index = events.index(of: event)
+                }
+            }
+            if (index == nil){
+                print("No mathing event found in user records")
+                return false
+            }
+            else{
+                //Mark this person as present for this event
+                user?._pickEvents![index!][2] = "1"
+                let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+                dynamoDbObjectMapper.save(user!, completionHandler: {
+                    (error: Error?) -> Void in
+                    
+                    if let error = error {
+                        print("Amazon DynamoDB Save Error: \(error)")
+                        return
+                    }
+                    print("An item was saved.")
+                })
+                
+                return true
+                
+            }
+            
+        }
+        else{
+            print("This user has no events")
+            return false
+        }
+      
+    }
     /// function for getting current's user email
     ///
     
