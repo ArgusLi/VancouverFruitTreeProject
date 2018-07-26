@@ -479,7 +479,24 @@ class DatabaseInterface: NSObject {
         
     }
 
-    
+    func getVolunteers(pickItem: PickEvents) -> [Users]{
+        var users = [Users]()
+        if let userNames = pickItem._volunteers{
+            for user in userNames{
+                if let us = queryUserInfo(userId: user){
+                    users.append(us)
+                    
+                }
+                else{
+                    print("Did not find a user with username \(user)")
+                }
+            }
+        }
+        else{
+            print("No volunteers for this event")
+        }
+        return users
+    }
    
     //MARK: Team Methods
     

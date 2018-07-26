@@ -47,6 +47,7 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
         self.refreshControl!.addTarget(self, action:
             #selector(self.handleRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
+        
         self.tableView.insertSubview(self.refreshControl!, at: 0)
         let controllers = navigationController?.viewControllers
         for controller in controllers!{
