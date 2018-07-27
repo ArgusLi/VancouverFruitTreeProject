@@ -23,6 +23,7 @@ class Users: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     //var _pickEvents: [String]?
     var _pickEvents: [[String]]?
     var _role: String?
+    var _yield: NSNumber?
     
 
     class func dynamoDBTableName() -> String {

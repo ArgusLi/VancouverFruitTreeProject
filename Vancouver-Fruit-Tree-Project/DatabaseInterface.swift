@@ -817,6 +817,7 @@ class DatabaseInterface: NSObject {
         
     }
     
+    //Author: Cameron
     //MARK: Search for pickEvents by date and time
     /// Queries pick events by date and time using FindPick index.
     /// Returns all pick events that are **on** the date AND at or before the time.
@@ -963,14 +964,7 @@ class DatabaseInterface: NSObject {
         queryExpression.keyConditionExpression = "#userId = :userId AND #creationTime = :creationTime";
         queryExpression.expressionAttributeNames = ["#userId": "userId", "#creationTime": "creationTime"]
         queryExpression.expressionAttributeValues = [":userId": userId, ":creationTime": creationTime]
-        
-        
-        
-        
-        
-        
-        
-        
+
             dynamoDBObjectMapper.query(PickEvents.self, expression: queryExpression)
             { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
                 if error != nil {
