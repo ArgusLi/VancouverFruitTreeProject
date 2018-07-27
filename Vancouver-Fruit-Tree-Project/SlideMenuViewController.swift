@@ -30,9 +30,9 @@ class SlideMenuViewController: UITableViewController{
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        if indexPath.row == 0{
+        
             self.view.isUserInteractionEnabled = false
-        }
+        
        /* if indexPath.row != 0{
             let alert = UIAlertController(title: "This functionality is unavailable", message: "We are currently working on this, check back later.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

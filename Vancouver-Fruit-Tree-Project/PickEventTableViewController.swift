@@ -8,15 +8,17 @@
 
 import UIKit
 import MapKit
-class PickEventTableViewController: UITableViewController {
-    
+class PickEventTableViewController: UITableViewController, CLLocationManagerDelegate {
+    let locationManager = CLLocationManager()
     // TODO: Insert an array declaration here
     //TODO: placeholder for a pick event class
-    
+    let gr =  DispatchGroup()
     @IBOutlet weak var addButton: UIBarButtonItem!
     var picks=[PickEvents]()
+    private var myLocation: CLLocation?
    private func loadavailablepicks()
    {
+    //loads available picks 6 months from today, and puts them into picks array
     let date = Date()
     let calendar = Calendar.current
     let year = calendar.component(.year, from: date)
@@ -27,14 +29,28 @@ class PickEventTableViewController: UITableViewController {
     picks =  interface.scanPickEvents(itemLimit: 100, maxDate: maxDate)
     
     }
+    private func setTheDistance(location: CLLocation){
+        for pick in picks{
+            if (pick._latitude != nil && pick._longitude != nil){
+            let destination = CLLocation(latitude: Double(truncating: pick._latitude!), longitude: Double(truncating: pick._longitude!))
+            let distance = location.distance(from:destination)
+                pick._distanceFrom = NSNumber(value: distance)
+            }
+            
+        }
+    }
    
     override func viewDidLoad() {
+        let DBIT = DatabaseInterface()
+        let user = DBIT.queryUserInfo(userId: DBIT.getUsername()!)
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.tintColor = UIColor.green
         self.refreshControl!.addTarget(self, action:
             #selector(self.handleRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
-        self.tableView.addSubview(self.refreshControl!)
+        
+        self.tableView.insertSubview(self.refreshControl!, at: 0)
+        if(user?._role == Roles.admin.rawValue){
         let controllers = navigationController?.viewControllers
         for controller in controllers!{
             if controller is UITabBarController
@@ -42,14 +58,41 @@ class PickEventTableViewController: UITableViewController {
                 controller.navigationItem.rightBarButtonItem = addButton
             }
         }
-        
+        }
         super.viewDidLoad()
         
-        
-        
         loadavailablepicks()
-        
+        //delete all the events without team lead for volunteers
+        if (user?._role == Roles.volunteer.rawValue){
+            var items = [PickEvents]()
+            for pick in picks{
+                if pick._teamLead == nil{
+                    items.append(pick)
+                }
+            }
+            for i in items{
+                picks.remove(at: picks.index(of: i)!)
+            }
+        }
         super.view.isUserInteractionEnabled = true
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
+        gr.enter()
+        DispatchQueue.main.async{
+           self.locationManager.requestLocation()
+        }
+        gr.notify(queue: .main){
+            if self.myLocation != nil{
+             self.setTheDistance(location: self.myLocation!)
+                self.tableView.reloadData()
+            }
+            else{
+                print("Location is nil")
+            }
+        }
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -92,15 +135,48 @@ class PickEventTableViewController: UITableViewController {
         }
         let pick = picks[indexPath.row]
         cell.Time.text="Time: " + pick._eventTime!
-        cell.Date.text = "Date: " + pick._eventDate!
-        cell.TeamLead.text = "Team lead: none"
-        if (indexPath.row % 2 == 0){
-            cell.sideImage.image = UIImage(named: "Green alert")}
-        else if(indexPath.row % 5 == 0){
-            cell.sideImage.image = UIImage(named: "Red Alert")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        let date = dateFormatter.date(from: pick._eventDate!)
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
+        
+        let time = timeFormatter.date(from: "\(pick._eventDate!) \(pick._eventTime!)")
+        timeFormatter.timeStyle = .short
+        timeFormatter.dateStyle = .none
+        timeFormatter.locale = Locale(identifier: "en_US")
+        
+        cell.Time.text="Time: " + timeFormatter.string(from: time!)
+        // US English Locale (en_US)
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        cell.Date.text = "Date: " + dateFormatter.string(from: date!)
+        
+        if pick._distanceFrom != nil{
+            if (Int(truncating: pick._distanceFrom!) > 500){
+                cell.DistanceFrom.text = "\(Int(truncating: pick._distanceFrom!)/1000) km away"
+            }
+            else{
+                cell.DistanceFrom.text = "\(pick._distanceFrom!.intValue) m away"}
         }
         else{
+            cell.DistanceFrom.text = ""
+        }
+        if let lead = pick._teamLead{
+            cell.TeamLead.text = "Team lead: \(lead)"
+        }
+        else{
+            cell.TeamLead.text = "Team lead: none"}
+        if (pick._teamLead == nil){
+            cell.sideImage.image = UIImage(named: "Red Alert")}
+        else if(!pick.isFull()){
             cell.sideImage.image = UIImage(named: "Amber Alert")
+        }
+        else{
+            cell.sideImage.image = UIImage(named: "Green alert")
         }
 
         // Configure the cell...
@@ -119,6 +195,11 @@ class PickEventTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
+        let DBIT = DatabaseInterface()
+        let user = DBIT.queryUserInfo(userId: DBIT.getUsername()!)
+        if (user?._role == Roles.admin.rawValue){
+            
+        
         if editingStyle == UITableViewCellEditingStyle.delete
         {
             let pick = picks[indexPath.row]
@@ -126,20 +207,47 @@ class PickEventTableViewController: UITableViewController {
             picks.remove(at: indexPath.row)
             
             let DBINT = DatabaseInterface()
-            var result = DBINT.deletePickEvent(itemToDelete: pick)
-            
+            let result = DBINT.deletePickEvent(itemToDelete: pick)
+            if result == 1{
             
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
+            }
+            else{
+                print("The event was not deleted")
+            }
             
           /*
-            tableView.reloadData()
+            
             loadavailablepicks()
             self.viewDidLoad()
             */
         }
+        }
+        
     }
-    
+    private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+        if (status == .denied || status == .restricted)
+        {
+            print("Location services is not enabled")
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+      
+        if let location = locations.first {
+            
+            myLocation = location
+            gr.leave()
+            
+        }
+        else{
+            gr.leave()}
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error:: (error)")
+    }
 
     /*
     // Override to support conditional editing of the table view.

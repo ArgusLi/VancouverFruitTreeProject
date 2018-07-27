@@ -23,18 +23,7 @@ class MyPickMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
     }
     
     var myPicks=[PickEvents]()
-    private func loadMyPicks()
-    {
-        let date = Date()
-        let calendar = Calendar.current
-        let year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        let interface = DatabaseInterface()
-        let maxDate = String(year)+"/" + String(month)+"/"+String(day + 4)
-        myPicks =  interface.scanPickEvents(itemLimit: 3, maxDate: maxDate)
-        
-    }
+    
     
     func addPins(Events:[PickEvents])
     {
@@ -69,7 +58,6 @@ class MyPickMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
     override func viewDidLoad() {
         super.viewDidLoad()
         reset()
-        loadMyPicks()
         addPins(Events: myPicks)
         
         // Do any additional setup after loading the view.
@@ -79,7 +67,11 @@ class MyPickMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        let mpTVC = storyboard?.instantiateViewController(withIdentifier: "MyPicksTableViewController") as! MyPicksTableViewController
+        myPicks = mpTVC.loadMyPicks()!
+        addPins(Events: myPicks)
+    }
 
     /*
     // MARK: - Navigation

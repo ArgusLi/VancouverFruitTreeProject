@@ -16,28 +16,25 @@ class MyPicksTableViewController: UITableViewController {
     var myPicks=[PickEvents]()
     
     //
-    private func loadMyPicks()
+    func loadMyPicks() -> [PickEvents]?
     {
         
         //Temprorary func until we get database to load myPicks
+        let DBINT = DatabaseInterface()
         
-        let date = Date()
-        let calendar = Calendar.current
-        let year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        let interface = DatabaseInterface()
-        let maxDate = String(year)+"/" + String(month)+"/"+String(day + 4)
-        myPicks = interface.scanPickEvents(itemLimit: 3, maxDate: maxDate)
-        
-        
+        guard let temp = DBINT.getMyPickEvents() else {
+            return nil
+        }
+        myPicks = temp
+        return temp
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let mapVC = storyboard?.instantiateViewController(withIdentifier: "MyPickMapViewController") as! MyPickMapViewController
        loadMyPicks()
-        
+        mapVC.myPicks = myPicks
+    self.view.isUserInteractionEnabled = true
         //tableView.register(MyPickEventTableViewCell.self, forCellReuseIdentifier: "MyPickEventTableViewCell")
 
         // Uncomment the following line to preserve selection between presentations
@@ -67,7 +64,10 @@ class MyPicksTableViewController: UITableViewController {
         return myPicks.count
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        loadMyPicks()
+        tableView.reloadData()
+    }
 
     
     /// <#Description#>
@@ -84,10 +84,32 @@ class MyPicksTableViewController: UITableViewController {
         }
         
         let myPick = myPicks[indexPath.row]
+        cell.Time.text="Time: " + myPick._eventTime!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        let date = dateFormatter.date(from: myPick._eventDate!)
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
         
-            cell.Time.text = "Time: " + myPick._eventTime!
-            cell.Date.text = "Date: " + myPick._eventDate!
-            cell.TeamLead.text = "Team lead: N/A"
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
+        
+        let time = timeFormatter.date(from: "\(myPick._eventDate!) \(myPick._eventTime!)")
+        timeFormatter.timeStyle = .short
+        timeFormatter.dateStyle = .none
+        timeFormatter.locale = Locale(identifier: "en_US")
+        
+        cell.Time.text="Time: " + timeFormatter.string(from: time!)
+        // US English Locale (en_US)
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        cell.Date.text = "Date: " + dateFormatter.string(from: date!)
+        if let lead = myPick._teamLead{
+            cell.TeamLead.text = "Team lead: \(lead)"
+        }
+        else{
+            cell.TeamLead.text = "Team lead: none"}
+        
         
         
         // Configure the cell...
@@ -122,7 +144,6 @@ class MyPicksTableViewController: UITableViewController {
     
     
     
-
 
     /*
     // Override to support conditional editing of the table view.

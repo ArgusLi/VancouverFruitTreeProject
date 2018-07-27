@@ -27,9 +27,6 @@ class ViewController: UIViewController {
     
     
     
-   
-    
-    
     @IBAction func hamburgerButton(_ sender: Any) {
         if !hamburgerMenuIsVisible{
             present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
@@ -56,6 +53,7 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = signOutButton
+        //check if the user is signed in
         if !AWSSignInManager.sharedInstance().isLoggedIn {
             presentAuthUIViewController()
             
