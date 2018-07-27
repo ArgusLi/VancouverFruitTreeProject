@@ -389,7 +389,50 @@ class DatabaseInterface: NSObject {
         
         
     }
+    
+    //Author: Cameron
+    ///Updates the info stored in Dynamo for the user that calls it
+    ///
+    /// - Parameter UserInfo: the Users() object that contains the user info
+    /// - Returns: returns "success" on upload, error message otherwise
+    func UpdateOwnUserInfo(UserInfo: Users) -> String{
+        let group = DispatchGroup()
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        var response: String = "incomplete"
+        
+        group.enter()
+        
+        //auth user to only access own info
+        if UserInfo._userId != self.getUsername(){
 
+            return "user attempting to update info of other user"
+        }
+        
+        //Save a new item
+        dynamoDbObjectMapper.save(UserInfo, completionHandler: {
+            (error: Error?) -> Void in
+            
+            DispatchQueue.global(qos: .userInitiated).async{
+                
+                if let error = error {
+                    print("Amazon DynamoDB Save Error: \(error)")
+                    response = "Error: " + error.localizedDescription
+                    group.leave()
+                    return
+                }
+                print("An item was saved.")
+                response = "success"
+                group.leave()
+            }
+            
+        })
+        
+        group.wait()
+        return response
+        
+    }
+    
+    
     //Author: Cameron
     ///Updates the info stored in Dynamo for a user
     ///
@@ -399,6 +442,20 @@ class DatabaseInterface: NSObject {
         let group = DispatchGroup()
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
         var response: String = "incomplete"
+        
+        //authenticate admin user
+        let auth: Users? = self.queryUserInfo(userId: self.getUsername()!)
+        if auth != nil {
+            
+            if auth?._role != "Administrator"{
+                return "Error: user is not Administrator"
+            }
+        }
+            
+        else if auth == nil {
+            return "Error: user doesn't have a role in database"
+        }
+        
         
         group.enter()
         

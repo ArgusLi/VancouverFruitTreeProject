@@ -124,6 +124,21 @@ class ViewController: UIViewController {
                     print (AWSIdentityManager.default().identityId!)
                     // SignIn succeeded.
                     print("SignIn Succeeded")
+                    
+                    //check if the user has an entry in the Users() table with default role
+                    //if not, make them a volunteer by default, can be changed later by an admin
+                    let DBINT = DatabaseInterface()
+                    let username = DBINT.getUsername()!
+                    var UserInfo: Users? = DBINT.queryUserInfo(userId: username)
+                    
+                    if UserInfo == nil {
+                        UserInfo = Users()
+                        UserInfo!._userId = username
+                        UserInfo!._role = "Volunteer"
+                        
+                        DBINT.UpdateOwnUserInfo(UserInfo: UserInfo!)
+                    }
+                    
                 } else {
                     // end user faced error while loggin in, take any required action here.
                 }
