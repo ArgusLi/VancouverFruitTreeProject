@@ -29,15 +29,34 @@ class ViewController: UIViewController {
         
         let DBINT = DatabaseInterface()
         
-        let result = DBINT.adminGetUsersTable(itemLimit: 50)
+        var result = DBINT.adminGetUsersTable(itemLimit: 50)
         
-        let count = result.0.count
+        var count = result.0.count
+        print ("# of users returned: " + String(count))
+        var loc: Users?
+        for i in result.0 {
+            print(i._userId! + ", " + i._role!)
+            if i._userId! == "Jeff" {
+                loc = i
+            }
+        }
+        
+        print("change info of user Jeff")
+        
+        let UserInfo: Users = loc!
+        UserInfo._role = "Administrator"
+        
+        print(DBINT.adminUpdateUserInfo(UserInfo: UserInfo))
+        
+        result = DBINT.adminGetUsersTable(itemLimit: 50)
+        
+        count = result.0.count
         print ("# of users returned: " + String(count))
         
         for i in result.0 {
             print(i._userId! + ", " + i._role!)
         }
-    
+        
     }
     
     

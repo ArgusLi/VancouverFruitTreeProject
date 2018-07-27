@@ -316,6 +316,7 @@ class DatabaseInterface: NSObject {
         
         //removeSignUpForPickEvent(pickItem: pickItem, userId: userId)
     }
+    
     //Author: Cameron
     /// removes a pick event from the user's personal database entry
     ///
@@ -389,6 +390,42 @@ class DatabaseInterface: NSObject {
         
     }
 
+    //Author: Cameron
+    ///Updates the info stored in Dynamo for a user
+    ///
+    /// - Parameter UserInfo: the Users() object that contains the user info
+    /// - Returns: returns "success" on upload, error message otherwise
+    func adminUpdateUserInfo(UserInfo: Users) -> String{
+        let group = DispatchGroup()
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        var response: String = "incomplete"
+        
+        group.enter()
+        
+        //Save a new item
+        dynamoDbObjectMapper.save(UserInfo, completionHandler: {
+            (error: Error?) -> Void in
+            
+            DispatchQueue.global(qos: .userInitiated).async{
+                
+                if let error = error {
+                    print("Amazon DynamoDB Save Error: \(error)")
+                    response = "Error: " + error.localizedDescription
+                    group.leave()
+                    return
+                }
+                print("An item was saved.")
+                response = "success"
+                group.leave()
+            }
+            
+        })
+        
+        group.wait()
+        return response
+        
+    }
+    
     //MARK: User query methods
     
     //Author: Cameron
@@ -443,7 +480,6 @@ class DatabaseInterface: NSObject {
             
         }
         
-
         group.wait()
         return (UsersArray, 1)
         
@@ -456,8 +492,8 @@ class DatabaseInterface: NSObject {
     /// - Parameters:
     ///   - username: username of the user to be modified
     ///   - roleToChangeTo: role to change the user to; Volunteer, Leader, Administrator
-    /// - Returns: <#return value description#>
-    func adminChangeUserRole(username: String, roleToChangeTo: String) -> Int {
+    /// - Returns: "success" for successful, error message otherwise
+    func adminChangeUserRole(username: String, roleToChangeTo: String) -> String {
         
         let group = DispatchGroup()
         group.enter()
@@ -467,24 +503,38 @@ class DatabaseInterface: NSObject {
             
             if auth?._role != "Administrator"{
                 group.leave()
-                return 0
+                return "Error: you are not an administrator"
             }
         }
             
         else if auth == nil {
             group.leave()
-            return 0
+            return "Error: no entry in table for current user"
         }
-        
-        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         
         
         let UserInfo = self.queryUserInfo(userId: username)
         
         
+        if UserInfo != nil {
+            UserInfo!._role! = roleToChangeTo
+            
+        }
         
-        group.wait()
-        return 1
+        else {
+            
+            let UserInfo = Users()
+            UserInfo!._userId = username
+            UserInfo!._role = roleToChangeTo
+            UserInfo!._pickEvents = nil
+            
+        }
+        
+        //update user info
+        let response = self.adminUpdateUserInfo(UserInfo: UserInfo!)
+        
+        //group.wait()
+        return response
         
         
     }
@@ -566,7 +616,7 @@ class DatabaseInterface: NSObject {
         pickEventItem._eventTime = eventTime
         pickEventItem._eventDate = eventDate
         
-        pickEventItem._assignedTeamID = teamID
+        //pickEventItem._assignedTeamID = teamID
         
         pickEventItem._latitude = latitude
         pickEventItem._longitude = longitude
@@ -625,6 +675,8 @@ class DatabaseInterface: NSObject {
         //this isn't really a necessary attribute, since creationTime stores both anyway
         pickEventItem._creationDate = String(year) + "/" + String(month) + "/" + String(day)
         
+        //pickEventItem._teamLead = nil
+        //pickEventItem._volunteers = nil
         //Save a new item
         dynamoDbObjectMapper.save(pickEventItem, completionHandler: {
             (error: Error?) -> Void in
