@@ -596,6 +596,54 @@ class DatabaseInterface: NSObject {
         
     }
    
+    /// Get list of users who have a specific role
+    ///
+    /// - Parameters:
+    ///   - role: either "Volunteer", "Leader", or "Administrator"
+    ///   - itemLimit: max number of users to be returned
+    /// - Returns: optional array of Users objects
+    func queryUserByRoles(userRole: String, itemLimit: NSNumber) -> [Users]? {
+        
+        
+        let group = DispatchGroup()
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        let queryExpression = AWSDynamoDBQueryExpression()
+        queryExpression.indexName = "role"
+        queryExpression.keyConditionExpression = "#r = :role";
+        queryExpression.expressionAttributeNames = ["#r": "role"]
+        queryExpression.expressionAttributeValues = [":role": userRole]
+        
+        var userArray = [Users]()
+        
+        group.enter()
+        dynamoDBObjectMapper.query(Users.self, expression: queryExpression)
+        { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            if error != nil {
+                print("The request failed. Error: \(String(describing: error))")
+            }
+            
+            if output != nil {
+                for user in output!.items {
+                    let userItem = user as? Users
+                    //print("\(pickItem!._eventDate!)")
+                    userArray.append(userItem!)
+                }
+            }
+            group.leave()
+        }
+        
+        
+        group.wait()
+        return userArray
+        
+        
+        
+        
+    }
+    
+    
+    
     //MARK: Team Methods
     
     /*func createTeam(teamItem: team, pickItem: PickEvents ){
