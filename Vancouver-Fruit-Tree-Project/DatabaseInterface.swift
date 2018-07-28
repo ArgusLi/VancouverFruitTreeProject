@@ -440,7 +440,8 @@ class DatabaseInterface: NSObject {
     ///   - Leader: Users() object for the team leader of the pick event
     ///   - totalYield: the total yield collected from all fruit combined, saved to Leader parameter
     ///   - fruitYield: [String:String] map, stores yields for each type of fruit in the event
-    func UpdateYield(pickItem: PickEvents, Leader: Users, totalYield: Int, fruitYield: [String : String]){
+    /// - Returns: tuple of strings (String, String), 0 = error for PickEvent upload, 1 = error for Users() upload
+    func UpdateYield(pickItem: PickEvents, Leader: Users, totalYield: Int, fruitYield: [String : String]) -> (String, String){
         
         // check if yield parameter is empty, add to it if it isn't, overwrite if it is
         if Leader._yield != nil {
@@ -458,8 +459,10 @@ class DatabaseInterface: NSObject {
         pickItem._yield = fruitYield
         
         //save new values in database
-        self.modifyPickEventsWithHash(pickEventItem: pickItem)
-        self.UpdateOwnUserInfo(UserInfo: Leader)
+        let pickReturn = self.modifyPickEventsWithHash(pickEventItem: pickItem)
+        let userReturn = self.UpdateOwnUserInfo(UserInfo: Leader)
+        
+        return (pickReturn, userReturn)
         
     }
     
@@ -794,9 +797,13 @@ class DatabaseInterface: NSObject {
     ///Call this when wanting to push changes to the database on an existing event
     ///
     /// - Parameter pickEventItem: event that is to be uploaded, with modified attributes, but with _userId and creationTime unmodified
-    func modifyPickEventsWithHash(pickEventItem: PickEvents){
-        
+    /// - Returns: error message
+    func modifyPickEventsWithHash(pickEventItem: PickEvents) -> String {
+
+        let group = DispatchGroup()
+        var result = "success"
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        group.enter()
         print("in DatabaseInterface -> modifyPickEvent...")
 
         //re-save a new item
@@ -805,15 +812,19 @@ class DatabaseInterface: NSObject {
             
             if let error = error {
                 print("Amazon DynamoDB Save Error: \(error)")
+                result = error.localizedDescription
+                group.leave()
                 return
             }
             print("An item was overwritten.")
+            group.leave()
         })
         
+        group.wait()
+        return result
     }
     
     //Author: Cameron
-    //MARK: Search for pickEvents by date and time
     /// Queries pick events by date and time using FindPick index.
     /// Returns all pick events that are **on** the date AND at or before the time.
     ///
