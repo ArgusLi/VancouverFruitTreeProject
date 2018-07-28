@@ -31,6 +31,7 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _teamLead: String?
     var _treeMap: [String: String]?
     var _volunteers: [String]?
+    var _yield: [String: String]?
     
     class func dynamoDBTableName() -> String {
         

@@ -432,6 +432,36 @@ class DatabaseInterface: NSObject {
         
     }
     
+    //Author: Cameron
+    /// saves yield into team leader user info and the pick event
+    ///
+    /// - Parameters:
+    ///   - pickItem: pick event
+    ///   - Leader: Users() object for the team leader of the pick event
+    ///   - totalYield: the total yield collected from all fruit combined, saved to Leader parameter
+    ///   - fruitYield: [String:String] map, stores yields for each type of fruit in the event
+    func UpdateYield(pickItem: PickEvents, Leader: Users, totalYield: Int, fruitYield: [String : String]){
+        
+        // check if yield parameter is empty, add to it if it isn't, overwrite if it is
+        if Leader._yield != nil {
+            var currentYield: Int = Leader._yield!.intValue
+            
+            currentYield += totalYield
+            Leader._yield! = NSNumber(value: Int32(currentYield))
+        }
+        
+        else {
+            Leader._yield = NSNumber(value: Int32(totalYield))
+        }
+        
+        //overwrite yield parameter
+        pickItem._yield = fruitYield
+        
+        //save new values in database
+        self.modifyPickEventsWithHash(pickEventItem: pickItem)
+        self.UpdateOwnUserInfo(UserInfo: Leader)
+        
+    }
     
     //Author: Cameron
     ///Updates the info stored in Dynamo for a user
@@ -642,44 +672,9 @@ class DatabaseInterface: NSObject {
         
     }
     
-    
-    
-    //MARK: Team Methods
-    
-    /*func createTeam(teamItem: team, pickItem: PickEvents ){
-        
-        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
-        print("in DatabaseInterface -> createPickEvent...")
-        // Create data object using data models you downloaded from Mobile Hub
-        
-        teamItem._teamLeader = "test"
-        teamItem._members = ["one" : ["two" : "three"] ]
-        teamItem._pickEventHashKey = pickItem._userId
-        teamItem._pickEventRangeKey = pickItem._creationTime
-        teamItem._teamNumber = "1"
-        
-        //Save a new item
-        dynamoDbObjectMapper.save(teamItem, completionHandler: {
-            (error: Error?) -> Void in
-            
-            if let error = error {
-                print("Amazon DynamoDB Save Error: \(error)")
-                return
-            }
-            print("An item was saved.")
-        })
-        
-        //let request = AWSCognitoIdentityProvider()
-        
-        //request.List
-        
-        //AWSCognitoIdentityProvider.adminAddUser(<#T##AWSCognitoIdentityProvider#>)
-        
-    }*/
-    
     //MARK: PickEvent Methods
     
-    //MARK: create pick event (V1)
+    //create pick event (V1)
     //Author: Cameron
     /// Creates and uploads a new pick event to the database
     ///
@@ -748,7 +743,7 @@ class DatabaseInterface: NSObject {
     }
     
     
-    // MARK: create pick event (V2) - same as V1, except strips attributes from
+    // create pick event (V2) - same as V1, except strips attributes from
     ///Creates and uploads a new pick event to the database
     ///
     /// - Parameter pickEventItem: event that is to be uploaded, with all relevant parameters except for creationTime, which is set in this function
@@ -795,7 +790,7 @@ class DatabaseInterface: NSObject {
         
     }
     
-    // MARK: create pick event (V3) - uses primary hash
+    // create pick event (V3) - uses primary hash
     ///Call this when wanting to push changes to the database on an existing event
     ///
     /// - Parameter pickEventItem: event that is to be uploaded, with modified attributes, but with _userId and creationTime unmodified
@@ -873,8 +868,8 @@ class DatabaseInterface: NSObject {
         //return self._pickArray
     }
     
-    //MARK: Scan table based on date range
-    /// Scans the whole table and returns all items that are equal to or earlier than the maxDate parameter
+    // can table based on date range
+    /// Scans the whole table and returns all items that are **equal to or earlier than** the maxDate parameter
     ///
     /// - Parameters:
     ///   - itemLimit: max number of items returned in the [PickEvents] array
@@ -920,6 +915,8 @@ class DatabaseInterface: NSObject {
         
 
     }
+    
+    //Author: Artem
     func getMyPickEvents() -> [PickEvents]?{
         let DBIN = DatabaseInterface()
         var events = [PickEvents]()
@@ -946,7 +943,6 @@ class DatabaseInterface: NSObject {
         return events
     }
     
-    //MARK: Query database for a specific pickEvent using hash criteria
     /// Query database for a specific pickEvent using hash criteria - userId and creationTime
     ///
     /// - Parameters:
@@ -994,7 +990,6 @@ class DatabaseInterface: NSObject {
         return received //so Xcode stops complaining
     }
     
-    //MARK: Delete individual Pick Event
     /// removes a pick event from the database
     ///
     /// - Parameter PickEvents: the PickEvents object that is to be removed from the table
@@ -1087,10 +1082,6 @@ class DatabaseInterface: NSObject {
  print("creationTime: " + unwrappedPick._creationTime!)
  
  }
- 
- 
- 
-
  
 */
 
