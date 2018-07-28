@@ -27,9 +27,6 @@ class ViewController: UIViewController {
     
     
     
-   
-    
-    
     @IBAction func hamburgerButton(_ sender: Any) {
         if !hamburgerMenuIsVisible{
             present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
