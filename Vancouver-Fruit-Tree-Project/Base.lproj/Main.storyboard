@@ -753,25 +753,6 @@
         <scene sceneID="Xvb-bK-XzS">
             <objects>
                 <tableViewController id="gPm-8U-NTI" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3FY-Y8-dz7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="g5K-fK-maL">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g5K-fK-maL" id="Zzy-Dh-nU2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="gPm-8U-NTI" id="NVx-hR-j3Z"/>
-                            <outlet property="delegate" destination="gPm-8U-NTI" id="1WO-qf-Haw"/>
-                        </connections>
-                    </tableView>
                     <tabBarItem key="tabBarItem" title="Team Members" id="Mpg-UQ-mCR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKQ-l1-H1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -785,6 +766,17 @@
                     <view key="view" contentMode="scaleToFill" id="5MA-5E-0i7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYg-Cf-rb6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="ObL-po-Cyg">
+                                        <barButtonItem key="backBarButtonItem" title="Back" id="alw-jC-Z9P"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Xva-zI-0W1"/>
                     </view>
@@ -1478,7 +1470,6 @@
         <image name="VFTP_LOGO_CS3-167x300" width="167" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GmD-KR-qAF"/>
         <segue reference="x9M-b0-inh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
