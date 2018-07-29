@@ -500,7 +500,32 @@ class DatabaseInterface: NSObject {
         }
         return users
     }
+    /// logs a yeild for a specific pick event
+    ///
+    /// - Parameters:
+    ///   - pickItem: the PickEvent to log the yeild for
+    ///   - dict: Dictonary that has type of the tree as a key and list of yield measurments with grade a measurments at position 0 and grade b in the position 1
    
+    func logYield(pickItem: PickEvents?, dict: [String : [String]]){
+        if( pickItem == nil){
+            return
+        }
+        if (dict.count == 0){
+            return
+        }
+        pickItem!._yield = dict
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        dynamoDbObjectMapper.save(pickItem!, completionHandler: {
+            (error: Error?) -> Void in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            print("An item was saved.")
+        })
+        
+    }
     //MARK: Team Methods
     
     /*func createTeam(teamItem: team, pickItem: PickEvents ){

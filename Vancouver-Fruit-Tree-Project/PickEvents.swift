@@ -30,7 +30,7 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _teamLead: String?
     var _treeMap: [String: String]?
     var _volunteers: [String]?
-    
+    var _yield: [String : [String]]?
     class func dynamoDBTableName() -> String {
         
         return "vancouverfruittreepr-mobilehub-79870386-PickEvents"
@@ -90,6 +90,7 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
             "_teamLead" : "teamLead",
             "_treeMap" : "treeMap",
             "_volunteers" : "volunteers",
+            "_yield" : "yield",
         ]
     }
 }
