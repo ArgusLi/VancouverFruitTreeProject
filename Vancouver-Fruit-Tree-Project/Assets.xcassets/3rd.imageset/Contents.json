@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "trophy (1).png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "iphone_8.11(new).jpg",
       "scale" : "2x"
     },
     {

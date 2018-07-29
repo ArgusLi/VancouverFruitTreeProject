@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     @IBOutlet var hamburgerView: UIView!
     var hamburgerMenuIsVisible = false
     
+    
+    
+    
     @IBAction func hamburgerButton(_ sender: Any) {
         if !hamburgerMenuIsVisible{
             present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
@@ -44,6 +47,9 @@ class ViewController: UIViewController {
     }
     
     //main
+    
+   
+    
     
     @IBOutlet weak var signOutButton: UIBarButtonItem!
     override func viewDidLoad() {

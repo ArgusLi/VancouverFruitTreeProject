@@ -29,7 +29,7 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBAction func signup(_ sender: Any) {
         let DBINT = DatabaseInterface()
         let userName = DBINT.getUsername()
-        if signupbotton.title(for: .normal) == "Sign-up" {
+        if signupbotton.title(for: .normal) == ButtonStates.signup.rawValue {
             
             
             if (userName != nil && event != nil){
@@ -44,7 +44,7 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
                 print("There has been some problem, userName or event is nil")
             }
         }
-        if signupbotton.title(for: .normal) == "Cancel"{
+        if signupbotton.title(for: .normal) == ButtonStates.cancel.rawValue{
             if (userName != nil && event != nil){
                 DBINT.removeSignUpForPickEvent(pickItem: event!, userId: userName!)
                 let alert = UIAlertController(title: "Cancelation successful", message: "You cancelled your partipication in the event", preferredStyle: .alert)
@@ -61,6 +61,24 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let DBINT = DatabaseInterface()
+        let volunteers = DBINT.getVolunteers(pickItem: event!)
+        let userName = DBINT.getUsername()
+        if let users = DBINT.queryUserInfo(userId: userName!){
+            //Checks if the current user has signed up for this event already, and set the button to cancel is yes
+            if (volunteers.index(of: users) != nil || event?._teamLead == userName){
+                buttonTitle = ButtonStates.cancel.rawValue
+                buttonColour = UIColor.red
+            }
+            else{
+                buttonTitle = nil
+                buttonColour = nil
+            }
+        }
+        
+            
+        
+        
         
         signupbotton.layer.cornerRadius = 8
         if (event!._eventDate != nil && event!._eventTime != nil) {
@@ -69,6 +87,14 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
             let dt = dateFormatter.date(from: (event!._eventDate!))
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .none
+            let timeFormatter = DateFormatter()
+            timeFormatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
+            
+            let tm = timeFormatter.date(from: "\(event!._eventDate!) \(event!._eventTime!)")
+            timeFormatter.timeStyle = .short
+            timeFormatter.dateStyle = .none
+            timeFormatter.locale = Locale(identifier: "en_US")
+            
             
             
             
@@ -78,13 +104,11 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
             dateFormatter.locale = Locale(identifier: "en_US")
             date.setTitle("Date:  \(dateFormatter.string(from: dt!))", for: .normal)
             
-            time.setTitle("Time: \(event!._eventTime!)", for: .normal)
-//            if event!._assignedTeamID != nil {
-//                teamlead.setTitle( "Team Lead: \(event!._assignedTeamID!)", for: .normal)
-//            }
+            time.setTitle("Time: \(timeFormatter.string(from: tm!))", for: .normal)
+            
             
             if event!._treeMap != nil {
-                typeOfTrees.setTitle("Type of trees: \(event!._treeMap!["type-of-trees"]!)", for: .normal)
+                typeOfTrees.setTitle("Type of trees: \(event!._treeMap![TreeProperties.type.rawValue]!)", for: .normal)
             }
             
             if((event!._latitude!.floatValue > -90  && event!._latitude!.floatValue < 90) && ( event!._longitude!.floatValue > -180 && event!._longitude!.floatValue  < 180 ))
@@ -92,6 +116,9 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
                 
                 
                 getCoordinates = CLLocationCoordinate2D(latitude: Double(event!._latitude!.floatValue) as CLLocationDegrees, longitude: Double(event!._longitude!.floatValue) as CLLocationDegrees)
+            }
+            if(event?._teamLead != nil){
+                teamlead.setTitle("Team lead: \(event!._teamLead!)", for: .normal)
             }
         }
         if (buttonTitle != nil && buttonColour != nil) {

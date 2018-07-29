@@ -1,4 +1,3 @@
-//
 //  PickEvents.swift
 //  MySampleApp
 //
@@ -15,7 +14,7 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
-@objcMembers // <-- don't remove this, it will break uploading
+@objcMembers
 class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: String?
@@ -31,8 +30,7 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _teamLead: String?
     var _treeMap: [String: String]?
     var _volunteers: [String]?
-    var _yield: [String: String]?
-    
+    var _yield: [String : [String]]?
     class func dynamoDBTableName() -> String {
         
         return "vancouverfruittreepr-mobilehub-79870386-PickEvents"
@@ -47,7 +45,36 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
         
         return "_creationTime"
     }
-    
+    func isFull() -> Bool{
+        if _volunteers != nil{
+            if let map = _treeMap {
+                if let capacity = map[TreeProperties.numofV.rawValue]{
+                    if(_volunteers!.count >= Int(capacity)!){
+                        return true
+                    }
+                    else {
+                        return false
+                    }
+                }
+                fatalError("This event has no capacity property")
+            }
+            else {
+                fatalError("This event has no properties in the map")
+            }
+        }
+        else {
+            return false
+        }
+        return false
+    }
+    func hasTeamLead() -> Bool{
+        if _teamLead != nil{
+            return true
+        }
+        else {
+            return false
+        }
+    }
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [
             "_userId" : "userId",
@@ -63,6 +90,7 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
             "_teamLead" : "teamLead",
             "_treeMap" : "treeMap",
             "_volunteers" : "volunteers",
+            "_yield" : "yield",
         ]
     }
 }

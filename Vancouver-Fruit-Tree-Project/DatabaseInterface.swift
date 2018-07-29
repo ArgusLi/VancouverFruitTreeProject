@@ -91,6 +91,7 @@ class DatabaseInterface: NSObject {
         return users
         
     }
+    
     //MARK: User info methods
     
     //Author: Artem
@@ -127,6 +128,57 @@ class DatabaseInterface: NSObject {
         }
         return nil
     }
+
+    //Author: Artem
+    /// Marks a user with a given username as present for a pick passed in pickItem
+    ///
+    /// - Parameter userId: the user's userID
+    /// - Parameter pickeItem: Pick event
+    /// - Returns: returns true if the operation succeded, false otherwise
+    func markPresent(pickItem: PickEvents, userID: String) -> Bool{
+        var user = queryUserInfo(userId: userID)
+        if (user == nil){
+            print("user is nil")
+            return false
+        }
+        if let events = user?._pickEvents{
+            var index: Int?
+            for event in events{
+                if (event[0] == pickItem._userId! && event[1] == pickItem._creationTime!)
+                {
+                    index = events.index(of: event)
+                }
+            }
+            if (index == nil){
+                print("No mathing event found in user records")
+                return false
+            }
+            else{
+                //Mark this person as present for this event
+                user?._pickEvents![index!][2] = "1"
+                let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+                dynamoDbObjectMapper.save(user!, completionHandler: {
+                    (error: Error?) -> Void in
+                    
+                    if let error = error {
+                        print("Amazon DynamoDB Save Error: \(error)")
+                        return
+                    }
+                    print("An item was saved.")
+                })
+                
+                return true
+                
+            }
+            
+        }
+        else{
+            print("This user has no events")
+            return false
+        }
+      
+    }
+    
     //Author: Artem
     /// function for getting current's user email
     ///
@@ -300,11 +352,32 @@ class DatabaseInterface: NSObject {
         }
         
         if UserItem._role == nil {
-            UserItem._role = "Volunteer"
+            UserItem._role = Roles.volunteer.rawValue
         }
         
         //Save a new item
         dynamoDbObjectMapper.save(UserItem, completionHandler: {
+            (error: Error?) -> Void in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            print("An item was saved.")
+        })
+        if (UserItem._role == Roles.volunteer.rawValue) {
+       
+                     if( pickItem._volunteers?.append(userId) == nil)
+                     {
+                        pickItem._volunteers = [userId]
+            }
+            print("Appended user id")
+        }
+        if (UserItem._role == Roles.lead.rawValue || UserItem._role == Roles.admin.rawValue){
+            pickItem._teamLead = userId
+        }
+        pickItem._distanceFrom = nil
+        dynamoDbObjectMapper.save(pickItem, completionHandler: {
             (error: Error?) -> Void in
             
             if let error = error {
@@ -373,11 +446,36 @@ class DatabaseInterface: NSObject {
         }
         
         if UserItem._role == nil {
-            UserItem._role = "Volunteer"
+            UserItem._role = Roles.volunteer.rawValue
         }
-        
+        if (UserItem._role == Roles.volunteer.rawValue){
+            if let i = pickItem._volunteers?.index(of: userId){
+                pickItem._volunteers?.remove(at: i)
+            }
+            else{
+                print("User is not signed up for this event")
+            }
+        }
+        else if (UserItem._role == Roles.lead.rawValue){
+            if pickItem._teamLead != nil{
+                pickItem._teamLead = nil
+                
+            }
+            else {
+                print("Team lead does not exist ")
+            }
+        }
         //Save a new item
         dynamoDbObjectMapper.save(UserItem, completionHandler: {
+            (error: Error?) -> Void in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            print("An item was saved.")
+        })
+        dynamoDbObjectMapper.save(pickItem, completionHandler: {
             (error: Error?) -> Void in
             
             if let error = error {
@@ -465,6 +563,58 @@ class DatabaseInterface: NSObject {
 //        return (pickReturn, userReturn)
 //
 //    }
+
+    //Author: Artem
+    /// Gets a list of users signed-up for a specific event
+    ///
+    /// - Parameter pickeItem: Pick event
+    /// - Returns: list of Users objects if the username in the users table matches usernames in the pick event volunters
+    func getVolunteers(pickItem: PickEvents) -> [Users]{
+        var users = [Users]()
+        if let userNames = pickItem._volunteers{
+            for user in userNames{
+                if let us = queryUserInfo(userId: user){
+                    users.append(us)
+                    
+                }
+                else{
+                    print("Did not find a user with username \(user)")
+                }
+            }
+        }
+        else{
+            print("No volunteers for this event")
+        }
+        return users
+    }
+    
+    //Author: Artem
+    /// logs a yield for a specific pick event
+    ///
+    /// - Parameters:
+    ///   - pickItem: the PickEvent to log the yield for
+    ///   - dict: Dictonary that has type of the tree as a key and list of yield measurments with grade a measurments at position 0 and grade b in the position 1
+   
+    func logYield(pickItem: PickEvents?, dict: [String : [String]]){
+        if( pickItem == nil){
+            return
+        }
+        if (dict.count == 0){
+            return
+        }
+        pickItem!._yield = dict
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        dynamoDbObjectMapper.save(pickItem!, completionHandler: {
+            (error: Error?) -> Void in
+            
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            print("An item was saved.")
+        })
+        
+    }
     
     //Author: Cameron
     ///Updates the info stored in Dynamo for a user
@@ -714,8 +864,6 @@ class DatabaseInterface: NSObject {
         pickEventItem._eventTime = eventTime
         pickEventItem._eventDate = eventDate
         
-        //pickEventItem._assignedTeamID = teamID
-        
         pickEventItem._latitude = latitude
         pickEventItem._longitude = longitude
         pickEventItem._address = address
@@ -745,14 +893,15 @@ class DatabaseInterface: NSObject {
     ///Creates and uploads a new pick event to the database
     ///
     /// - Parameter pickEventItem: event that is to be uploaded, with all relevant parameters except for creationTime, which is set in this function
-    func createPickEvents(pickEventItem: PickEvents){
+    ///  - Returns: true if the operation was successful and false otherwise
+    func createPickEvents(pickEventItem: PickEvents)-> Bool{
         
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
         print("in DatabaseInterface -> createPickEvent...")
         // Create data object using data models you downloaded from Mobile Hub
         
         pickEventItem._userId = AWSIdentityManager.default().identityId
-        
+        var result = false
         //get time
         let date = Date()
         let calendar = Calendar.current
@@ -773,19 +922,29 @@ class DatabaseInterface: NSObject {
         //this isn't really a necessary attribute, since creationTime stores both anyway
         pickEventItem._creationDate = String(year) + "/" + String(month) + "/" + String(day)
         
-        //pickEventItem._teamLead = nil
-        //pickEventItem._volunteers = nil
+        pickEventItem._distanceFrom = nil
+        pickEventItem._volunteers = nil
+        pickEventItem._teamLead = nil
+        let group = DispatchGroup()
+        group.enter()
+
         //Save a new item
-        dynamoDbObjectMapper.save(pickEventItem, completionHandler: {
-            (error: Error?) -> Void in
-            
-            if let error = error {
-                print("Amazon DynamoDB Save Error: \(error)")
-                return
-            }
-            print("An item was saved.")
-        })
-        
+        DispatchQueue.global(qos: .userInitiated).async {
+            dynamoDbObjectMapper.save(pickEventItem, completionHandler: {
+                (error: Error?) -> Void in
+                
+                if let error = error {
+                    print("Amazon DynamoDB Save Error: \(error)")
+                    group.leave()
+                    return
+                }
+                group.leave()
+                result = true
+                print("An item was saved.")
+            })
+        }
+       group.wait()
+      return result
     }
     
     // create pick event (V3) - uses primary hash
@@ -921,8 +1080,13 @@ class DatabaseInterface: NSObject {
         
 
     }
+
     
     //Author: Artem
+    //MARK: Search for all events user signed-up for
+    ///
+    /// returns all pick events a current user is signedup for
+    /// - Returns: [PickEvents]
     func getMyPickEvents() -> [PickEvents]?{
         let DBIN = DatabaseInterface()
         var events = [PickEvents]()

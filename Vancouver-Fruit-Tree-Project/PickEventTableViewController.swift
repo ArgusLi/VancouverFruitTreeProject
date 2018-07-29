@@ -34,20 +34,23 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
             if (pick._latitude != nil && pick._longitude != nil){
             let destination = CLLocation(latitude: Double(truncating: pick._latitude!), longitude: Double(truncating: pick._longitude!))
             let distance = location.distance(from:destination)
-                pick._distanceFrom = distance as NSNumber
+                pick._distanceFrom = NSNumber(value: distance)
             }
             
         }
     }
    
     override func viewDidLoad() {
-        
+        let DBIT = DatabaseInterface()
+        let user = DBIT.queryUserInfo(userId: DBIT.getUsername()!)
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.tintColor = UIColor.green
         self.refreshControl!.addTarget(self, action:
             #selector(self.handleRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
+        
         self.tableView.insertSubview(self.refreshControl!, at: 0)
+        if(user?._role == Roles.admin.rawValue){
         let controllers = navigationController?.viewControllers
         for controller in controllers!{
             if controller is UITabBarController
@@ -55,10 +58,22 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
                 controller.navigationItem.rightBarButtonItem = addButton
             }
         }
-        
+        }
         super.viewDidLoad()
         
         loadavailablepicks()
+        //delete all the events without team lead for volunteers
+        if (user?._role == Roles.volunteer.rawValue){
+            var items = [PickEvents]()
+            for pick in picks{
+                if pick._teamLead == nil{
+                    items.append(pick)
+                }
+            }
+            for i in items{
+                picks.remove(at: picks.index(of: i)!)
+            }
+        }
         super.view.isUserInteractionEnabled = true
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
@@ -126,33 +141,42 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
         
+        let time = timeFormatter.date(from: "\(pick._eventDate!) \(pick._eventTime!)")
+        timeFormatter.timeStyle = .short
+        timeFormatter.dateStyle = .none
+        timeFormatter.locale = Locale(identifier: "en_US")
         
-        
-        
+        cell.Time.text="Time: " + timeFormatter.string(from: time!)
         // US English Locale (en_US)
         dateFormatter.locale = Locale(identifier: "en_US")
         
         cell.Date.text = "Date: " + dateFormatter.string(from: date!)
         
         if pick._distanceFrom != nil{
-            if (pick._distanceFrom!.intValue > 500){
-                cell.DistanceFrom.text = "\(pick._distanceFrom!.floatValue/1000) km away"
+            if (Int(truncating: pick._distanceFrom!) > 500){
+                cell.DistanceFrom.text = "\(Int(truncating: pick._distanceFrom!)/1000) km away"
             }
             else{
-                cell.DistanceFrom.text = "\(pick._distanceFrom!) m away"}
+                cell.DistanceFrom.text = "\(pick._distanceFrom!.intValue) m away"}
         }
         else{
             cell.DistanceFrom.text = ""
         }
-        cell.TeamLead.text = "Team lead: none"
-        if (indexPath.row % 2 == 0){
-            cell.sideImage.image = UIImage(named: "Green alert")}
-        else if(indexPath.row % 5 == 0){
-            cell.sideImage.image = UIImage(named: "Red Alert")
+        if let lead = pick._teamLead{
+            cell.TeamLead.text = "Team lead: \(lead)"
         }
         else{
+            cell.TeamLead.text = "Team lead: none"}
+        if (pick._teamLead == nil){
+            cell.sideImage.image = UIImage(named: "Red Alert")}
+        else if(!pick.isFull()){
             cell.sideImage.image = UIImage(named: "Amber Alert")
+        }
+        else{
+            cell.sideImage.image = UIImage(named: "Green alert")
         }
 
         // Configure the cell...
@@ -171,6 +195,11 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
+        let DBIT = DatabaseInterface()
+        let user = DBIT.queryUserInfo(userId: DBIT.getUsername()!)
+        if (user?._role == Roles.admin.rawValue){
+            
+        
         if editingStyle == UITableViewCellEditingStyle.delete
         {
             let pick = picks[indexPath.row]
@@ -178,18 +207,23 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
             picks.remove(at: indexPath.row)
             
             let DBINT = DatabaseInterface()
-            var result = DBINT.deletePickEvent(itemToDelete: pick)
-            
+            let result = DBINT.deletePickEvent(itemToDelete: pick)
+            if result == 1{
             
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
+            }
+            else{
+                print("The event was not deleted")
+            }
             
           /*
-            tableView.reloadData()
+            
             loadavailablepicks()
             self.viewDidLoad()
             */
         }
+        }
+        
     }
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
