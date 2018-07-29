@@ -36,14 +36,6 @@ class MyAccountViewController: UIViewController {
             myAccEmail.text = "none"
         }
         
-           
-        
-        
-        
-       
-        
-    
-        
         self.view.isUserInteractionEnabled = true
         }
 
