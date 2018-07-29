@@ -441,30 +441,30 @@ class DatabaseInterface: NSObject {
     ///   - totalYield: the total yield collected from all fruit combined, saved to Leader parameter
     ///   - fruitYield: [String:String] map, stores yields for each type of fruit in the event
     /// - Returns: tuple of strings (String, String), 0 = error for PickEvent upload, 1 = error for Users() upload
-    func UpdateYield(pickItem: PickEvents, Leader: Users, totalYield: Int, fruitYield: [String : String]) -> (String, String){
-        
-        // check if yield parameter is empty, add to it if it isn't, overwrite if it is
-        if Leader._yield != nil {
-            var currentYield: Int = Leader._yield!.intValue
-            
-            currentYield += totalYield
-            Leader._yield! = NSNumber(value: Int32(currentYield))
-        }
-        
-        else {
-            Leader._yield = NSNumber(value: Int32(totalYield))
-        }
-        
-        //overwrite yield parameter
-        pickItem._yield = fruitYield
-        
-        //save new values in database
-        let pickReturn = self.modifyPickEventsWithHash(pickEventItem: pickItem)
-        let userReturn = self.UpdateOwnUserInfo(UserInfo: Leader)
-        
-        return (pickReturn, userReturn) 
-        
-    }
+//    func UpdateYield(pickItem: PickEvents, Leader: Users, totalYield: Int, fruitYield: [String : String]) -> (String, String){
+//
+//        // check if yield parameter is empty, add to it if it isn't, overwrite if it is
+//        if Leader._yield != nil {
+//            var currentYield: Int = Leader._yield!.intValue
+//
+//            currentYield += totalYield
+//            Leader._yield! = NSNumber(value: Int32(currentYield))
+//        }
+//
+//        else {
+//            Leader._yield = NSNumber(value: Int32(totalYield))
+//        }
+//
+//        //overwrite yield parameter
+//        pickItem._yield = fruitYield
+//
+//        //save new values in database
+//        let pickReturn = self.modifyPickEventsWithHash(pickEventItem: pickItem)
+//        let userReturn = self.UpdateOwnUserInfo(UserInfo: Leader)
+//
+//        return (pickReturn, userReturn)
+//
+//    }
     
     //Author: Cameron
     ///Updates the info stored in Dynamo for a user
