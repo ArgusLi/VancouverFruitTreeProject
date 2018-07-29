@@ -1547,13 +1547,13 @@ We are happy to answer any questions at 276harvest8@gmail.com
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ke7-nL-r9I">
                                 <rect key="frame" x="0.0" y="308" width="375" height="54"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Food Bank:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiE-T0-9f5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Bank:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiE-T0-9f5">
                                         <rect key="frame" x="8" y="17" width="86" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Simon Fraser University" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0t-Kl-bG5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Simon Fraser University" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0t-Kl-bG5">
                                         <rect key="frame" x="102" y="17" width="265" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1591,14 +1591,16 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OX-tQ-BgP">
-                                <rect key="frame" x="124" y="596" width="126" height="30"/>
+                                <rect key="frame" x="116" y="597" width="143" height="30"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.4941176471" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="975-p8-e3g"/>
-                                </constraints>
                                 <state key="normal" title="Directions">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="directionClicked:" destination="dph-ia-zbx" eventType="touchUpInside" id="aU7-cR-PMf"/>
                                     <action selector="directions:" destination="Gxv-8E-Hcn" eventType="touchUpInside" id="VLW-Md-2Uq"/>
@@ -1607,29 +1609,34 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="4OX-tQ-BgP" secondAttribute="trailing" constant="125" id="6lQ-Sj-edf"/>
+                            <constraint firstItem="nQP-Hs-ud3" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" constant="8" id="6UQ-eY-y0L"/>
+                            <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="4OX-tQ-BgP" secondAttribute="trailing" constant="116" id="6lQ-Sj-edf"/>
+                            <constraint firstItem="4OX-tQ-BgP" firstAttribute="top" secondItem="loh-L5-Q8x" secondAttribute="bottom" constant="49" id="8fP-FD-W7A"/>
                             <constraint firstItem="zM4-bf-1fm" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" id="BgY-7E-J1x"/>
-                            <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="yoh-9s-1Jf" secondAttribute="trailing" id="C7E-U9-bP3"/>
                             <constraint firstItem="qEy-3d-kKh" firstAttribute="top" secondItem="ke7-nL-r9I" secondAttribute="bottom" constant="8" id="CXB-yb-LHr"/>
-                            <constraint firstItem="4OX-tQ-BgP" firstAttribute="top" secondItem="loh-L5-Q8x" secondAttribute="bottom" constant="48" id="GIi-2h-3DB"/>
+                            <constraint firstItem="mfd-K5-a2Z" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" constant="8" id="MjV-wE-GhI"/>
                             <constraint firstItem="yoh-9s-1Jf" firstAttribute="top" secondItem="Fid-mP-JeV" secondAttribute="top" constant="13" id="QHy-SN-9f1"/>
-                            <constraint firstItem="Fid-mP-JeV" firstAttribute="bottom" secondItem="4OX-tQ-BgP" secondAttribute="bottom" constant="41" id="UyP-f5-A4X"/>
+                            <constraint firstItem="Qwn-Il-xNa" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" constant="8" id="TuX-xL-2Oj"/>
+                            <constraint firstItem="Fid-mP-JeV" firstAttribute="bottom" secondItem="4OX-tQ-BgP" secondAttribute="bottom" constant="40" id="UyP-f5-A4X"/>
                             <constraint firstItem="ke7-nL-r9I" firstAttribute="top" secondItem="yoh-9s-1Jf" secondAttribute="bottom" constant="19" id="VGo-vq-rVU"/>
                             <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="qEy-3d-kKh" secondAttribute="trailing" id="XWT-DI-jQz"/>
                             <constraint firstItem="yoh-9s-1Jf" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" id="acy-93-bE2"/>
                             <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="loh-L5-Q8x" secondAttribute="trailing" id="d58-U2-N1w"/>
                             <constraint firstItem="ke7-nL-r9I" firstAttribute="leading" secondItem="qEy-3d-kKh" secondAttribute="leading" id="fu7-Xc-4ML"/>
+                            <constraint firstItem="JiE-T0-9f5" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" constant="8" id="i2r-Uk-JsQ"/>
                             <constraint firstItem="loh-L5-Q8x" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" id="kiB-Gl-O9y"/>
                             <constraint firstItem="zM4-bf-1fm" firstAttribute="top" secondItem="qEy-3d-kKh" secondAttribute="bottom" constant="8" id="lsG-Ws-Tmv"/>
+                            <constraint firstItem="yoh-9s-1Jf" firstAttribute="trailing" secondItem="ke7-nL-r9I" secondAttribute="trailing" id="nAG-c2-Elh"/>
                             <constraint firstItem="qEy-3d-kKh" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" id="q1i-VB-Ohz"/>
                             <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="ke7-nL-r9I" secondAttribute="trailing" id="rPM-hu-cKC"/>
                             <constraint firstItem="loh-L5-Q8x" firstAttribute="top" secondItem="zM4-bf-1fm" secondAttribute="bottom" constant="8" id="sTs-xP-cgl"/>
-                            <constraint firstItem="4OX-tQ-BgP" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" constant="124" id="xzf-Nq-xJc"/>
+                            <constraint firstItem="4OX-tQ-BgP" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" constant="116" id="xzf-Nq-xJc"/>
                             <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="zM4-bf-1fm" secondAttribute="trailing" id="yaH-hI-8vu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fid-mP-JeV"/>
                     </view>
                     <connections>
+                        <outlet property="FBMapView" destination="yoh-9s-1Jf" id="s0m-FX-Jcf"/>
                         <outlet property="InstitutionName" destination="fxx-1b-SBA" id="qey-6M-o0D"/>
                         <outlet property="institutionName" destination="C0t-Kl-bG5" id="IFg-PT-xA8"/>
                         <outlet property="theAddress" destination="fxx-1b-SBA" id="3UH-MJ-XGB"/>
@@ -1639,21 +1646,6 @@ We are happy to answer any questions at 276harvest8@gmail.com
                 <exit id="Gxv-8E-Hcn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1186.4000000000001" y="1951.5742128935533"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="c7u-5s-BV4">
-            <objects>
-                <viewController id="KKs-tD-bbN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hlr-74-C74">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="vSZ-77-eZ7"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p2B-ZP-Tbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-450" y="1952"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RFH-y5-1D1">
