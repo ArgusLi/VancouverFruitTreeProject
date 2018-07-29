@@ -24,57 +24,6 @@ class ViewController: UIViewController {
     @IBOutlet var hamburgerView: UIView!
     var hamburgerMenuIsVisible = false
     
-    
-    @IBAction func TestUserTableQuery(_ sender: Any) {
-        
-        let DBINT = DatabaseInterface()
-        
-        let result = DBINT.queryUserByRoles(userRole: "Administrator", itemLimit: 50)
-        
-        if result != nil {
-        
-            for i in result! {
-                print(i._userId! + ", " + i._role!)
-            }
-            
-        }
-        
-//        var result = DBINT.adminGetUsersTable(itemLimit: 50)
-//
-//        var count = result.0.count
-//        print ("# of users returned: " + String(count))
-//        var loc: Users?
-//        for i in result.0 {
-//            print(i._userId! + ", " + i._role!)
-//            if i._userId! == "Jeff" {
-//                loc = i
-//            }
-//        }
-//
-//        print("change info of user Jeff")
-//
-//        let UserInfo: Users = loc!
-//        UserInfo._role = "Administrator"
-//
-//        print(DBINT.adminUpdateUserInfo(UserInfo: UserInfo))
-//
-//        result = DBINT.adminGetUsersTable(itemLimit: 50)
-//
-//        count = result.0.count
-//        print ("# of users returned: " + String(count))
-//
-//        for i in result.0 {
-//            print(i._userId! + ", " + i._role!)
-//        }
-        
-    }
-    
-    
-    
-    
-   
-    
-    
     @IBAction func hamburgerButton(_ sender: Any) {
         if !hamburgerMenuIsVisible{
             present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
