@@ -18,7 +18,8 @@ import AWSCore
 class DatabaseInterface: NSObject {
     
     //MARK: User Methods
-   
+    
+    // Author: Artem
     func queryUsers() -> [AWSCognitoIdentityProviderUserType]?{
         var users = [AWSCognitoIdentityProviderUserType]()
         var test = [Dictionary<String, String>]()
@@ -92,6 +93,8 @@ class DatabaseInterface: NSObject {
     }
     
     //MARK: User info methods
+    
+    //Author: Artem
     /// returns username of a current user
     ///
     /// - Returns: returns optional String if the userName is found in the user pool, nil otherwise
@@ -125,6 +128,8 @@ class DatabaseInterface: NSObject {
         }
         return nil
     }
+
+    //Author: Artem
     /// Marks a user with a given username as present for a pick passed in pickItem
     ///
     /// - Parameter userId: the user's userID
@@ -173,9 +178,10 @@ class DatabaseInterface: NSObject {
         }
       
     }
+    
+    //Author: Artem
     /// function for getting current's user email
     ///
-    
     /// - Returns: returns optional string that contains current user email or nil otherwise. The function will return only after the task is finished.
     func getEmail() -> String? {
         let identityManager = AWSIdentityManager.default()
@@ -226,6 +232,7 @@ class DatabaseInterface: NSObject {
         
     }
     
+    //Author: Cameron
     /// returns hashes for all pick events that a user is signed up for
     ///
     /// - Parameter userId: the user's userID
@@ -278,6 +285,7 @@ class DatabaseInterface: NSObject {
         
     }
     
+    //Author: Cameron
     /// Saves a pick event to the user's personal database entry
     ///
     /// - Parameters:
@@ -382,6 +390,7 @@ class DatabaseInterface: NSObject {
         //removeSignUpForPickEvent(pickItem: pickItem, userId: userId)
     }
     
+    //Author: Cameron
     /// removes a pick event from the user's personal database entry
     ///
     /// - Parameters:
@@ -478,6 +487,84 @@ class DatabaseInterface: NSObject {
         
         
     }
+    
+    //Author: Cameron
+    ///Updates the info stored in Dynamo for the user that calls it
+    ///
+    /// - Parameter UserInfo: the Users() object that contains the user info
+    /// - Returns: returns "success" on upload, error message otherwise
+    func UpdateOwnUserInfo(UserInfo: Users) -> String{
+        let group = DispatchGroup()
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        var response: String = "incomplete"
+        
+        group.enter()
+        
+        //auth user to only access own info
+        if UserInfo._userId != self.getUsername(){
+
+            return "user attempting to update info of other user"
+        }
+        
+        //Save a new item
+        dynamoDbObjectMapper.save(UserInfo, completionHandler: {
+            (error: Error?) -> Void in
+            
+            DispatchQueue.global(qos: .userInitiated).async{
+                
+                if let error = error {
+                    print("Amazon DynamoDB Save Error: \(error)")
+                    response = "Error: " + error.localizedDescription
+                    group.leave()
+                    return
+                }
+                print("An item was saved.")
+                response = "success"
+                group.leave()
+            }
+            
+        })
+        
+        group.wait()
+        return response
+        
+    }
+    
+    //Author: Cameron
+    /// saves yield into team leader user info and the pick event
+    ///
+    /// - Parameters:
+    ///   - pickItem: pick event
+    ///   - Leader: Users() object for the team leader of the pick event
+    ///   - totalYield: the total yield collected from all fruit combined, saved to Leader parameter
+    ///   - fruitYield: [String:String] map, stores yields for each type of fruit in the event
+    /// - Returns: tuple of strings (String, String), 0 = error for PickEvent upload, 1 = error for Users() upload
+//    func UpdateYield(pickItem: PickEvents, Leader: Users, totalYield: Int, fruitYield: [String : String]) -> (String, String){
+//
+//        // check if yield parameter is empty, add to it if it isn't, overwrite if it is
+//        if Leader._yield != nil {
+//            var currentYield: Int = Leader._yield!.intValue
+//
+//            currentYield += totalYield
+//            Leader._yield! = NSNumber(value: Int32(currentYield))
+//        }
+//
+//        else {
+//            Leader._yield = NSNumber(value: Int32(totalYield))
+//        }
+//
+//        //overwrite yield parameter
+//        pickItem._yield = fruitYield
+//
+//        //save new values in database
+//        let pickReturn = self.modifyPickEventsWithHash(pickEventItem: pickItem)
+//        let userReturn = self.UpdateOwnUserInfo(UserInfo: Leader)
+//
+//        return (pickReturn, userReturn)
+//
+//    }
+
+    //Author: Artem
     /// Gets a list of users signed-up for a specific event
     ///
     /// - Parameter pickeItem: Pick event
@@ -500,10 +587,12 @@ class DatabaseInterface: NSObject {
         }
         return users
     }
-    /// logs a yeild for a specific pick event
+    
+    //Author: Artem
+    /// logs a yield for a specific pick event
     ///
     /// - Parameters:
-    ///   - pickItem: the PickEvent to log the yeild for
+    ///   - pickItem: the PickEvent to log the yield for
     ///   - dict: Dictonary that has type of the tree as a key and list of yield measurments with grade a measurments at position 0 and grade b in the position 1
    
     func logYield(pickItem: PickEvents?, dict: [String : [String]]){
@@ -526,42 +615,215 @@ class DatabaseInterface: NSObject {
         })
         
     }
-    //MARK: Team Methods
     
-    /*func createTeam(teamItem: team, pickItem: PickEvents ){
-        
+    //Author: Cameron
+    ///Updates the info stored in Dynamo for a user
+    ///
+    /// - Parameter UserInfo: the Users() object that contains the user info
+    /// - Returns: returns "success" on upload, error message otherwise
+    func adminUpdateUserInfo(UserInfo: Users) -> String{
+        let group = DispatchGroup()
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
-        print("in DatabaseInterface -> createPickEvent...")
-        // Create data object using data models you downloaded from Mobile Hub
+        var response: String = "incomplete"
         
-        teamItem._teamLeader = "test"
-        teamItem._members = ["one" : ["two" : "three"] ]
-        teamItem._pickEventHashKey = pickItem._userId
-        teamItem._pickEventRangeKey = pickItem._creationTime
-        teamItem._teamNumber = "1"
+        //authenticate admin user
+        let auth: Users? = self.queryUserInfo(userId: self.getUsername()!)
+        if auth != nil {
+            
+            if auth?._role != "Administrator"{
+                return "Error: user is not Administrator"
+            }
+        }
+            
+        else if auth == nil {
+            return "Error: user doesn't have a role in database"
+        }
+        
+        
+        group.enter()
         
         //Save a new item
-        dynamoDbObjectMapper.save(teamItem, completionHandler: {
+        dynamoDbObjectMapper.save(UserInfo, completionHandler: {
             (error: Error?) -> Void in
             
-            if let error = error {
-                print("Amazon DynamoDB Save Error: \(error)")
-                return
+            DispatchQueue.global(qos: .userInitiated).async{
+                
+                if let error = error {
+                    print("Amazon DynamoDB Save Error: \(error)")
+                    response = "Error: " + error.localizedDescription
+                    group.leave()
+                    return
+                }
+                print("An item was saved.")
+                response = "success"
+                group.leave()
             }
-            print("An item was saved.")
+            
         })
         
-        //let request = AWSCognitoIdentityProvider()
+        group.wait()
+        return response
         
-        //request.List
+    }
+    
+    //MARK: User query methods
+    
+    //Author: Cameron
+    /// For admins / coordinators: returns a list of all users who have entries in Users() table
+    ///
+    /// - Parameter itemLimit: max number of users to be returned
+    /// - Returns: tuple of [Users] and int; if user authentication fails, or an entry for the user in the Users table doesn't exist, will return ([], 0)
+    func adminGetUsersTable(itemLimit: NSNumber) -> ([Users], Int) {
+       
+        let group = DispatchGroup()
         
-        //AWSCognitoIdentityProvider.adminAddUser(<#T##AWSCognitoIdentityProvider#>)
+        var UsersArray: [Users] = [Users]()
         
-    }*/
+        //authenticate admin user
+        let auth: Users? = self.queryUserInfo(userId: self.getUsername()!)
+        if auth != nil {
+            
+            if auth?._role != "Administrator"{
+                return (UsersArray, 0)
+            }
+        }
+        
+        else if auth == nil {
+            return (UsersArray, 0)
+        }
+        
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let scanExpression = AWSDynamoDBScanExpression()
+        
+        
+        scanExpression.limit = itemLimit
+        
+        group.enter()
+        dynamoDBObjectMapper.scan(Users.self, expression: scanExpression)  { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            
+            DispatchQueue.global(qos: .userInitiated).async {
+                
+                if error != nil {
+                    print("The request failed. Error: \(String(describing: error))")
+                    group.leave()
+                }
+            
+                if output != nil {
+                    for user in output!.items {
+                        let UserItem = user as? Users
+                        print("\(UserItem!._userId!)")
+                        UsersArray.append(UserItem!)
+                    }
+                }
+                group.leave()
+            }
+            
+        }
+        
+        group.wait()
+        return (UsersArray, 1)
+    }
+    
+    // Author: Cameron
+    /// For admins: change the user role of another user
+    ///
+    /// - Parameters:
+    ///   - username: username of the user to be modified
+    ///   - roleToChangeTo: role to change the user to; Volunteer, Leader, Administrator
+    /// - Returns: "success" for successful, error message otherwise
+    func adminChangeUserRole(username: String, roleToChangeTo: String) -> String {
+        
+        let group = DispatchGroup()
+        group.enter()
+        //authenticate admin user
+        let auth: Users? = self.queryUserInfo(userId: self.getUsername()!)
+        if auth != nil {
+            
+            if auth?._role != "Administrator"{
+                group.leave()
+                return "Error: you are not an administrator"
+            }
+        }
+            
+        else if auth == nil {
+            group.leave()
+            return "Error: no entry in table for current user"
+        }
+        
+        
+        let UserInfo = self.queryUserInfo(userId: username)
+        
+        
+        if UserInfo != nil {
+            UserInfo!._role! = roleToChangeTo
+            
+        }
+        
+        else {
+            
+            let UserInfo = Users()
+            UserInfo!._userId = username
+            UserInfo!._role = roleToChangeTo
+            UserInfo!._pickEvents = nil
+            
+        }
+        
+        //update user info
+        let response = self.adminUpdateUserInfo(UserInfo: UserInfo!)
+        
+        //group.wait()
+        return response
+        
+        
+    }
+   
+    /// Get list of users who have a specific role
+    ///
+    /// - Parameters:
+    ///   - role: either "Volunteer", "Leader", or "Administrator"
+    ///   - itemLimit: max number of users to be returned
+    /// - Returns: optional array of Users objects
+    func queryUserByRoles(userRole: String, itemLimit: NSNumber) -> [Users]? {
+        
+        
+        let group = DispatchGroup()
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        let queryExpression = AWSDynamoDBQueryExpression()
+        queryExpression.indexName = "role"
+        queryExpression.keyConditionExpression = "#r = :role";
+        queryExpression.expressionAttributeNames = ["#r": "role"]
+        queryExpression.expressionAttributeValues = [":role": userRole]
+        
+        var userArray = [Users]()
+        
+        group.enter()
+        dynamoDBObjectMapper.query(Users.self, expression: queryExpression)
+        { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            if error != nil {
+                print("The request failed. Error: \(String(describing: error))")
+            }
+            
+            if output != nil {
+                for user in output!.items {
+                    let userItem = user as? Users
+                    //print("\(pickItem!._eventDate!)")
+                    userArray.append(userItem!)
+                }
+            }
+            group.leave()
+        }
+        
+        
+        group.wait()
+        return userArray
+ 
+    }
     
     //MARK: PickEvent Methods
     
-    //MARK: create pick event (V1)
+    //create pick event (V1)
+    //Author: Cameron
     /// Creates and uploads a new pick event to the database
     ///
     /// - Parameters:
@@ -602,8 +864,6 @@ class DatabaseInterface: NSObject {
         pickEventItem._eventTime = eventTime
         pickEventItem._eventDate = eventDate
         
-        
-        
         pickEventItem._latitude = latitude
         pickEventItem._longitude = longitude
         pickEventItem._address = address
@@ -629,7 +889,7 @@ class DatabaseInterface: NSObject {
     }
     
     
-    // MARK: create pick event (V2) - same as V1, except strips attributes from
+    // create pick event (V2) - same as V1, except strips attributes from
     ///Creates and uploads a new pick event to the database
     ///
     /// - Parameter pickEventItem: event that is to be uploaded, with all relevant parameters except for creationTime, which is set in this function
@@ -667,6 +927,7 @@ class DatabaseInterface: NSObject {
         pickEventItem._teamLead = nil
         let group = DispatchGroup()
         group.enter()
+
         //Save a new item
         DispatchQueue.global(qos: .userInitiated).async {
             dynamoDbObjectMapper.save(pickEventItem, completionHandler: {
@@ -686,13 +947,17 @@ class DatabaseInterface: NSObject {
       return result
     }
     
-    // MARK: create pick event (V3) - uses primary hash
+    // create pick event (V3) - uses primary hash
     ///Call this when wanting to push changes to the database on an existing event
     ///
     /// - Parameter pickEventItem: event that is to be uploaded, with modified attributes, but with _userId and creationTime unmodified
-    func modifyPickEventsWithHash(pickEventItem: PickEvents){
-        
+    /// - Returns: error message
+    func modifyPickEventsWithHash(pickEventItem: PickEvents) -> String {
+
+        let group = DispatchGroup()
+        var result = "success"
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        group.enter()
         print("in DatabaseInterface -> modifyPickEvent...")
 
         //re-save a new item
@@ -701,25 +966,19 @@ class DatabaseInterface: NSObject {
             
             if let error = error {
                 print("Amazon DynamoDB Save Error: \(error)")
+                result = error.localizedDescription
+                group.leave()
                 return
             }
             print("An item was overwritten.")
+            group.leave()
         })
         
+        group.wait()
+        return result
     }
-    //MARK: Search for pickEvents by ID hash
-    /// Queries pick events by date and time using FindPick index.
-    /// Returns all pick events that are **on** the date AND at or before the time.
-    ///
-    /// - Parameters:
-    ///   - date: Search criteria for Pick Event, format: "YYYY/MM/DD"
-    ///             **NOTE** Do not use leading 0s
-    ///             **Example** "1970/1/1"
-    ///   - time: Search criteria for Pick Event in 24HR format, format: "HH:MM:SS"
-    ///             **NOTE** Do not use leading 0s
-    /// - Returns: [PickEvents]
     
-    //MARK: Search for pickEvents by date and time
+    //Author: Cameron
     /// Queries pick events by date and time using FindPick index.
     /// Returns all pick events that are **on** the date AND at or before the time.
     ///
@@ -774,8 +1033,8 @@ class DatabaseInterface: NSObject {
         //return self._pickArray
     }
     
-    //MARK: Scan table based on date range
-    /// Scans the whole table and returns all items that are equal to or earlier than the maxDate parameter
+    // can table based on date range
+    /// Scans the whole table and returns all items that are **equal to or earlier than** the maxDate parameter
     ///
     /// - Parameters:
     ///   - itemLimit: max number of items returned in the [PickEvents] array
@@ -821,6 +1080,9 @@ class DatabaseInterface: NSObject {
         
 
     }
+
+    
+    //Author: Artem
     //MARK: Search for all events user signed-up for
     ///
     /// returns all pick events a current user is signedup for
@@ -851,7 +1113,6 @@ class DatabaseInterface: NSObject {
         return events
     }
     
-    //MARK: Query database for a specific pickEvent using hash criteria
     /// Query database for a specific pickEvent using hash criteria - userId and creationTime
     ///
     /// - Parameters:
@@ -869,14 +1130,7 @@ class DatabaseInterface: NSObject {
         queryExpression.keyConditionExpression = "#userId = :userId AND #creationTime = :creationTime";
         queryExpression.expressionAttributeNames = ["#userId": "userId", "#creationTime": "creationTime"]
         queryExpression.expressionAttributeValues = [":userId": userId, ":creationTime": creationTime]
-        
-        
-        
-        
-        
-        
-        
-        
+
             dynamoDBObjectMapper.query(PickEvents.self, expression: queryExpression)
             { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
                 if error != nil {
@@ -906,7 +1160,6 @@ class DatabaseInterface: NSObject {
         return received //so Xcode stops complaining
     }
     
-    //MARK: Delete individual Pick Event
     /// removes a pick event from the database
     ///
     /// - Parameter PickEvents: the PickEvents object that is to be removed from the table
@@ -999,10 +1252,6 @@ class DatabaseInterface: NSObject {
  print("creationTime: " + unwrappedPick._creationTime!)
  
  }
- 
- 
- 
-
  
 */
 
