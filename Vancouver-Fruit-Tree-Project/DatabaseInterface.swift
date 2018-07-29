@@ -462,7 +462,7 @@ class DatabaseInterface: NSObject {
         let pickReturn = self.modifyPickEventsWithHash(pickEventItem: pickItem)
         let userReturn = self.UpdateOwnUserInfo(UserInfo: Leader)
         
-        return (pickReturn, userReturn)
+        return (pickReturn, userReturn) 
         
     }
     
@@ -572,8 +572,6 @@ class DatabaseInterface: NSObject {
         
         group.wait()
         return (UsersArray, 1)
-        
-        
     }
     
     // Author: Cameron
@@ -669,10 +667,7 @@ class DatabaseInterface: NSObject {
         
         group.wait()
         return userArray
-        
-        
-        
-        
+ 
     }
     
     //MARK: PickEvent Methods
