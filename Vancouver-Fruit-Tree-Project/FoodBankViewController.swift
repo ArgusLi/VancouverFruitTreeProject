@@ -9,47 +9,24 @@
 import UIKit
 import MapKit
 
-class FoodBankViewController: UIViewController {
-    
-    func openMapForPlace(lat:Double = 0, long:Double = 0, placeName:String = "SFU") {
-        let latitude: CLLocationDegrees = lat
-        let longitude: CLLocationDegrees = long
-        
-        let regionDistance:CLLocationDistance = 100
-        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
-        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
-        let options = [
-            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
-            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
-        ]
-        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
-        let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = placeName
-        mapItem.openInMaps(launchOptions: options)
-    }
 
-    func coordinates(forAddress address: String, completion: @escaping (CLLocationCoordinate2D?) -> Void) {
-        let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(address) {
-            (placemarks, error) in
-            guard error == nil else {
-                print("Geocoding error: \(error!)")
-                completion(nil)
-                return
-            }
-            completion(placemarks?.first?.location?.coordinate)
-        }
-    }
+class FoodBankViewController: UIViewController {
     
     @IBOutlet weak var theAddress: UILabel!
     
-    @IBAction func directions(_ sender: UIButton) {
-        openMapForPlace()
+    //opens map app when clicked
+    @IBAction func directionClicked(_ sender: UIButton) {
+        
+        //remove all whitespaces in the string
+        let destination = theAddress.text?.replacingOccurrences(of: " ", with: "")
+        
+        let urlDirection = URL(string: "http://maps.apple.com/?daddr="+destination!)
+        UIApplication.shared.open(urlDirection!, options: [:], completionHandler: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+ 
         // Do any additional setup after loading the view.
     }
 

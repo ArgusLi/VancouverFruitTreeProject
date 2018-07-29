@@ -524,15 +524,13 @@ We are happy to answer any questions at 276harvest8@gmail.com
                             <constraint firstItem="6zy-Tg-aan" firstAttribute="trailing" secondItem="SYA-Xz-jhc" secondAttribute="trailing" id="566-fa-gQg"/>
                             <constraint firstItem="6zy-Tg-aan" firstAttribute="trailing" secondItem="Zo1-g0-rGN" secondAttribute="trailing" id="Ctl-ia-eOg"/>
                             <constraint firstItem="O3A-ll-eeU" firstAttribute="top" secondItem="SYA-Xz-jhc" secondAttribute="bottom" constant="65" id="Dbx-1Y-ZGB"/>
-                            <constraint firstItem="6zy-Tg-aan" firstAttribute="bottom" secondItem="wyR-Be-qT2" secondAttribute="bottom" id="F1O-8P-ajz"/>
                             <constraint firstItem="O3A-ll-eeU" firstAttribute="leading" secondItem="6zy-Tg-aan" secondAttribute="leading" constant="87" id="FuW-ft-w2i"/>
                             <constraint firstItem="6zy-Tg-aan" firstAttribute="trailing" secondItem="O3A-ll-eeU" secondAttribute="trailing" constant="88" id="Gkx-B7-IjB"/>
                             <constraint firstItem="6zy-Tg-aan" firstAttribute="trailing" secondItem="QGt-JN-Kbg" secondAttribute="trailing" constant="88" id="UaX-uc-JsE"/>
                             <constraint firstItem="QGt-JN-Kbg" firstAttribute="leading" secondItem="6zy-Tg-aan" secondAttribute="leading" constant="87" id="aNP-id-xMs"/>
                             <constraint firstItem="SYA-Xz-jhc" firstAttribute="leading" secondItem="6zy-Tg-aan" secondAttribute="leading" id="eQh-9i-ff6"/>
-                            <constraint firstItem="wyR-Be-qT2" firstAttribute="leading" secondItem="6zy-Tg-aan" secondAttribute="leading" id="j4J-bc-vvh"/>
+                            <constraint firstAttribute="leading" secondItem="6zy-Tg-aan" secondAttribute="leading" id="j4J-bc-vvh"/>
                             <constraint firstItem="6zy-Tg-aan" firstAttribute="bottom" secondItem="QGt-JN-Kbg" secondAttribute="bottom" constant="106" id="m6K-lU-B81"/>
-                            <constraint firstItem="6zy-Tg-aan" firstAttribute="trailing" secondItem="wyR-Be-qT2" secondAttribute="trailing" id="ttL-BR-xyx"/>
                             <constraint firstItem="SYA-Xz-jhc" firstAttribute="top" secondItem="Zo1-g0-rGN" secondAttribute="bottom" constant="8" id="uUR-yu-efV"/>
                             <constraint firstItem="Zo1-g0-rGN" firstAttribute="top" secondItem="6zy-Tg-aan" secondAttribute="top" constant="41" id="uWQ-Np-yOa"/>
                         </constraints>
@@ -1549,8 +1547,14 @@ We are happy to answer any questions at 276harvest8@gmail.com
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ke7-nL-r9I">
                                 <rect key="frame" x="0.0" y="308" width="375" height="54"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Bank:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiE-T0-9f5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Food Bank:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiE-T0-9f5">
                                         <rect key="frame" x="8" y="17" width="86" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Simon Fraser University" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0t-Kl-bG5">
+                                        <rect key="frame" x="102" y="17" width="265" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1561,7 +1565,11 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                     <constraint firstItem="JiE-T0-9f5" firstAttribute="leading" secondItem="ke7-nL-r9I" secondAttribute="leading" constant="8" id="Drx-Hn-Ab5"/>
                                     <constraint firstAttribute="bottom" secondItem="JiE-T0-9f5" secondAttribute="bottom" constant="16" id="EBb-8I-bv4"/>
                                     <constraint firstItem="JiE-T0-9f5" firstAttribute="top" secondItem="ke7-nL-r9I" secondAttribute="top" constant="17" id="IDU-kR-u8Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="C0t-Kl-bG5" secondAttribute="trailing" constant="8" id="PNJ-78-v2e"/>
+                                    <constraint firstItem="C0t-Kl-bG5" firstAttribute="top" secondItem="ke7-nL-r9I" secondAttribute="top" constant="17" id="bnl-u8-cL9"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JiE-T0-9f5" secondAttribute="trailing" id="cQF-DL-u25"/>
+                                    <constraint firstItem="C0t-Kl-bG5" firstAttribute="leading" secondItem="JiE-T0-9f5" secondAttribute="trailing" constant="8" id="j8T-i6-RHJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="C0t-Kl-bG5" secondAttribute="bottom" constant="16" id="w0o-Fa-2z1"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zM4-bf-1fm">
@@ -1592,6 +1600,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="directionClicked:" destination="dph-ia-zbx" eventType="touchUpInside" id="aU7-cR-PMf"/>
                                     <action selector="directions:" destination="Gxv-8E-Hcn" eventType="touchUpInside" id="VLW-Md-2Uq"/>
                                 </connections>
                             </button>
@@ -1621,6 +1630,8 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         <viewLayoutGuide key="safeArea" id="Fid-mP-JeV"/>
                     </view>
                     <connections>
+                        <outlet property="InstitutionName" destination="fxx-1b-SBA" id="qey-6M-o0D"/>
+                        <outlet property="institutionName" destination="C0t-Kl-bG5" id="IFg-PT-xA8"/>
                         <outlet property="theAddress" destination="fxx-1b-SBA" id="3UH-MJ-XGB"/>
                     </connections>
                 </viewController>
