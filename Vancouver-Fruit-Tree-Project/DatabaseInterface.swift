@@ -91,7 +91,18 @@ class DatabaseInterface: NSObject {
         return users
         
     }
-    
+    //Author Artem
+    /// Returns a user object of a currently logged in user
+    ///
+    /// - Returns: User object
+    func getCurrentUser() -> Users?{
+        let name = getUsername()
+        if name != nil {
+            let user = queryUserInfo(userId: name!)
+            return user
+        }
+        return nil
+    }
     //MARK: User info methods
     
     //Author: Artem

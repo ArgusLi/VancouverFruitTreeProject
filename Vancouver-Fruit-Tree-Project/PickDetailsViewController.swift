@@ -62,19 +62,9 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     override func viewDidLoad() {
         super.viewDidLoad()
         let DBINT = DatabaseInterface()
-        let volunteers = DBINT.getVolunteers(pickItem: event!)
-        let userName = DBINT.getUsername()
-        if let users = DBINT.queryUserInfo(userId: userName!){
-            //Checks if the current user has signed up for this event already, and set the button to cancel is yes
-            if (volunteers.index(of: users) != nil || event?._teamLead == userName){
-                buttonTitle = ButtonStates.cancel.rawValue
-                buttonColour = UIColor.red
-            }
-            else{
-                buttonTitle = nil
-                buttonColour = nil
-            }
-        }
+        
+        let user = DBINT.getCurrentUser()
+        
         
             
         
@@ -136,9 +126,23 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
         let mapregion = MKCoordinateRegionMake(getCoordinates!, mapspan)
         
         self.mapView.setRegion(mapregion, animated: true)
-        //let annontation = MapAnnotation(coor: getCoordinates, title: "Test Title")
-        //mapView.addAnnotation(annontation)
-        addRadius(location: getCoordinates!)
+            if (user != nil) {
+                //Checks if the current user has signed up for this event already, and set the button to cancel if yes, reveal the location
+                if (event?.isSignedUpFor(user: user!))!{
+                    buttonTitle = ButtonStates.cancel.rawValue
+                    buttonColour = UIColor.red
+                    let annontation = MapAnnotation(coor: getCoordinates!, title: event?._address)
+                    mapView.addAnnotation(annontation)
+                }
+                else{
+                    buttonTitle = nil
+                    buttonColour = nil
+                    addRadius(location: getCoordinates!)
+                }
+            }
+        
+        
+        
         
         }
         

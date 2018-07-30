@@ -75,6 +75,26 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
             return false
         }
     }
+    func isSignedUpFor(user: Users) -> Bool{
+        if ((_volunteers == nil ||  _volunteers?.count == 0) && _teamLead == nil){
+            //no one signed up for the event
+            return false
+        }
+        if (_teamLead != nil){
+            if (user._userId == _teamLead){
+                //user is a leader of the event
+                return true
+            }
+            
+        }
+        if( _volunteers != nil){
+            if (_volunteers?.index(of: user._userId!) != nil)
+            {
+                return true
+            }
+        }
+        return false
+    }
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [
             "_userId" : "userId",
