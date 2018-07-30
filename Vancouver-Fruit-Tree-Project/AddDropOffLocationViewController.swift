@@ -29,13 +29,20 @@ class AddDropOffLocationViewController: UIViewController , setLocation{
     @IBOutlet weak var notes: UITextView!
     
     @IBAction func complete(_ sender: Any) {
-        
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         if(partner.index(forKey: dropOffFields.location.rawValue) == nil ){
-            print("Missing location")
+            
+            alert.title = "Validation error"
+            alert.message = "You need to provide an adress for the drop off location"
+            self.present(alert, animated: true)
             return
         }
         if(closingTime.date < openingTime.date){
-            print("cannot set closing time before the openning time")
+            
+            alert.title = "Validation error"
+            alert.message = "Cannot set closing time before the openning time"
+            self.present(alert, animated: true)
             return
         }
         let formatter = DateFormatter()
