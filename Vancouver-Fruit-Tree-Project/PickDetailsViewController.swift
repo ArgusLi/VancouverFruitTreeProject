@@ -26,6 +26,12 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     
     @IBOutlet weak var typeOfTrees: UIButton!
     @IBOutlet weak var signupbotton: UIButton!
+   
+    @IBAction func donationCenter(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "FoodBankViewController") as! FoodBankViewController
+        vc.pick = event
+        navigationController?.pushViewController(vc, animated: true)
+    }
     @IBAction func signup(_ sender: Any) {
         let DBINT = DatabaseInterface()
         let userName = DBINT.getUsername()

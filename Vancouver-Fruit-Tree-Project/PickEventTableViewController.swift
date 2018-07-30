@@ -13,6 +13,7 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
     // TODO: Insert an array declaration here
     //TODO: placeholder for a pick event class
     let gr =  DispatchGroup()
+    var user : Users?
     @IBOutlet weak var addButton: UIBarButtonItem!
     var picks=[PickEvents]()
     private var myLocation: CLLocation?
@@ -27,7 +28,31 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
     let interface = DatabaseInterface()
     let maxDate = String(year)+"/" + String(month + 6)+"/"+String(day)
     picks =  interface.scanPickEvents(itemLimit: 100, maxDate: maxDate)
-    
+    picks = picks.sorted(by: {$0.getDate()! < $1.getDate()!})
+    //delete all the events without team lead for volunteers
+    if (user?._role == Roles.volunteer.rawValue){
+        var items = [PickEvents]()
+        for pick in picks{
+            if pick._teamLead == nil{
+                items.append(pick)
+            }
+        }
+        for i in items{
+            picks.remove(at: picks.index(of: i)!)
+        }
+    }
+    //remove all the events that have leaders
+    if (user?._role == Roles.lead.rawValue){
+        var items = [PickEvents]()
+        for pick in picks{
+            if pick._teamLead != nil{
+                items.append(pick)
+            }
+        }
+        for i in items{
+            picks.remove(at: picks.index(of: i)!)
+        }
+    }
     }
     private func setTheDistance(location: CLLocation){
         for pick in picks{
@@ -42,7 +67,7 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
    
     override func viewDidLoad() {
         let DBIT = DatabaseInterface()
-        let user = DBIT.queryUserInfo(userId: DBIT.getUsername()!)
+        user = DBIT.queryUserInfo(userId: DBIT.getUsername()!)
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.tintColor = UIColor.green
         self.refreshControl!.addTarget(self, action:
@@ -62,18 +87,7 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
         super.viewDidLoad()
         
         loadavailablepicks()
-        //delete all the events without team lead for volunteers
-        if (user?._role == Roles.volunteer.rawValue){
-            var items = [PickEvents]()
-            for pick in picks{
-                if pick._teamLead == nil{
-                    items.append(pick)
-                }
-            }
-            for i in items{
-                picks.remove(at: picks.index(of: i)!)
-            }
-        }
+        
         super.view.isUserInteractionEnabled = true
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
@@ -192,12 +206,14 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
         
         
     }
-    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        
+        return user?._role == Roles.admin.rawValue
+    }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        let DBIT = DatabaseInterface()
-        let user = DBIT.queryUserInfo(userId: DBIT.getUsername()!)
-        if (user?._role == Roles.admin.rawValue){
+        
             
         
         if editingStyle == UITableViewCellEditingStyle.delete
@@ -222,7 +238,8 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
             self.viewDidLoad()
             */
         }
-        }
+            
+        
         
     }
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {

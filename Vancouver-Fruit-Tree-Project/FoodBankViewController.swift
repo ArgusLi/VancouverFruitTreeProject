@@ -11,28 +11,54 @@ import MapKit
 
 
 class FoodBankViewController: UIViewController {
-    
+    var pick: PickEvents?
 
     
+    @IBOutlet weak var notes: UITextView!
     @IBOutlet weak var FBMapView: MKMapView!
     @IBOutlet weak var theAddress: UILabel!
     @IBOutlet weak var institutionName: UILabel!
     
+    @IBOutlet weak var hours: UILabel!
     //opens map app when clicked
     @IBAction func directionClicked(_ sender: UIButton) {
         //remove all whitespaces in the string
-        let destination = theAddress.text?.replacingOccurrences(of: " ", with: "")
+        if (theAddress.text != "-" || pick?._dropOffLocation?.index(forKey: dropOffFields.location.rawValue) != nil){
+            let destination = theAddress.text?.replacingOccurrences(of: " ", with: "")
+            
+            //opens Apple map app and navigate to the address
+            let urlDirection = URL(string: "http://maps.apple.com/?daddr="+destination!)
+            UIApplication.shared.open(urlDirection!, options: [:], completionHandler: nil)
+        }
         
-        //opens Apple map app and navigate to the address
-        let urlDirection = URL(string: "http://maps.apple.com/?daddr="+destination!)
-        UIApplication.shared.open(urlDirection!, options: [:], completionHandler: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if pick == nil{
+            print("Pick is nil")
+        }
+        else if(pick?._dropOffLocation == nil){
+            print("No food bank information")
+        }
+        else {
+            if(pick?._dropOffLocation?.index(forKey: dropOffFields.name.rawValue) != nil){
+                institutionName.text = pick?._dropOffLocation![dropOffFields.name.rawValue]
+            }
+            if(pick?._dropOffLocation?.index(forKey: dropOffFields.location.rawValue) != nil){
+                theAddress.text = pick?._dropOffLocation![dropOffFields.location.rawValue]
+            }
+            if(pick?._dropOffLocation?.index(forKey: dropOffFields.opentime.rawValue) != nil){
+                hours.text = pick?._dropOffLocation![dropOffFields.opentime.rawValue]
+            }
+            if(pick?._dropOffLocation?.index(forKey: dropOffFields.notes.rawValue) != nil){
+                notes.text = pick?._dropOffLocation![dropOffFields.notes.rawValue]
+            }
+        }
         let location = theAddress.text
+        
         let geocoder = CLGeocoder()
+        
         geocoder.geocodeAddressString(location!) { [weak self] placemarks, error in
             if let placemark = placemarks?.first, let location = placemark.location {
                 let mark = MKPlacemark(placemark: placemark)
