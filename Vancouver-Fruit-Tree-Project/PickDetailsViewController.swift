@@ -117,10 +117,7 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
                 teamlead.setTitle("Team lead: \(event!._teamLead!)", for: .normal)
             }
         }
-        if (buttonTitle != nil && buttonColour != nil) {
-            signupbotton.setTitle(buttonTitle!, for: .normal)
-            signupbotton.backgroundColor = buttonColour!
-        }
+        
         self.tabBarController?.tabBar.isHidden = true
         
         if getCoordinates != nil{
@@ -146,7 +143,10 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
                     addRadius(location: getCoordinates!)
                 }
             }
-        
+            if (buttonTitle != nil && buttonColour != nil) {
+                signupbotton.setTitle(buttonTitle!, for: .normal)
+                signupbotton.backgroundColor = buttonColour!
+            }
         
         
         
