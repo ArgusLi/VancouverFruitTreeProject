@@ -14,6 +14,7 @@ target 'Vancouver-Fruit-Tree-Project' do
   pod 'GoogleSignIn', '~> 4.0'
   pod 'AWSDynamoDB', '~> 2.6.13'
   pod 'SideMenu' , '~> 4.0'
+  pod 'Charts' , '~> 3.1.1'
 
   target 'Vancouver-Fruit-Tree-ProjectTests' do
     inherit! :search_paths
@@ -29,7 +30,8 @@ target 'Vancouver-Fruit-Tree-Project' do
     pod 'AWSGoogleSignIn', '~> 2.6.13'
     pod 'GoogleSignIn', '~> 4.0'
     pod 'AWSDynamoDB', '~> 2.6.13'
-    pod 'SideMenu' , '~> 4.0'   
+    pod 'SideMenu' , '~> 4.0'
+    pod 'Charts' , '~> 3.1.1'
 end
 
 end
