@@ -41,6 +41,7 @@ class Users: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
             "_userId" : "userId",
             "_pickEvents" : "PickEvents",
             "_role" : "role",
+            "_yield" : "yield"
         ]
     }
 }
