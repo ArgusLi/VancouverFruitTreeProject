@@ -68,6 +68,9 @@
 		ACAB91F920E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
 		ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
 		ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */; };
+		ACC6BF01210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6BF00210E77180038F179 /* AddDropOffLocationViewController.swift */; };
+		ACC6BF02210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6BF00210E77180038F179 /* AddDropOffLocationViewController.swift */; };
+		ACC6BF03210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6BF00210E77180038F179 /* AddDropOffLocationViewController.swift */; };
 		ACE8543620FFBFA900C2FADE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8543520FFBFA900C2FADE /* Team.swift */; };
 		ACE8543720FFBFA900C2FADE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8543520FFBFA900C2FADE /* Team.swift */; };
 		ACE8543820FFBFA900C2FADE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8543520FFBFA900C2FADE /* Team.swift */; };
@@ -131,6 +134,7 @@
 		ACA7FD6E20EB4EB50040EEE0 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		ACA7FD7220EB4EC30040EEE0 /* PickEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickEventTableViewCell.swift; sourceTree = "<group>"; };
 		ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickEventTableViewController.swift; sourceTree = "<group>"; };
+		ACC6BF00210E77180038F179 /* AddDropOffLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDropOffLocationViewController.swift; sourceTree = "<group>"; };
 		ACE8543520FFBFA900C2FADE /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		CDBCAF1C044F604802460E97 /* Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vancouver-Fruit-Tree-Project/Pods-Vancouver-Fruit-Tree-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +217,7 @@
 				7EC8776C20E81EAC00F860C9 /* DatabaseInterface.swift */,
 				AC8EB70320D03A91007E6CAA /* AppDelegate.swift */,
 				ACE8543520FFBFA900C2FADE /* Team.swift */,
+				ACC6BF00210E77180038F179 /* AddDropOffLocationViewController.swift */,
 				AC8EB70520D03A91007E6CAA /* ViewController.swift */,
 				ACAB91F820E81E7E00EEE7A7 /* PickEventTableViewController.swift */,
 				ACA7FD7220EB4EC30040EEE0 /* PickEventTableViewCell.swift */,
@@ -617,6 +622,7 @@
 				7A78B94520FF6012005569E2 /* FoodBankViewController.swift in Sources */,
 				ACA7FD5520E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
 				AC5CD3CD20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
+				ACC6BF01210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */,
 				7A78B95420FFE358005569E2 /* MyPickEventTableViewCell.swift in Sources */,
 				7A78B95220FFE358005569E2 /* MyPickMapViewController.swift in Sources */,
 				ACA7FD4B20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
@@ -637,6 +643,7 @@
 				ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				ACA7FD7B20EC2ED10040EEE0 /* Users.swift in Sources */,
 				AC22283421092A9D00C5AF01 /* Constants.swift in Sources */,
+				ACC6BF02210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */,
 				ACA7FD7420EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
 				ACA7FD7920EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
 				ACA7FD7F20EC2ED80040EEE0 /* ViewController.swift in Sources */,
@@ -660,6 +667,7 @@
 				ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				ACA7FD7C20EC2ED10040EEE0 /* Users.swift in Sources */,
 				AC22283521092A9D00C5AF01 /* Constants.swift in Sources */,
+				ACC6BF03210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */,
 				ACA7FD7520EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
 				ACA7FD7A20EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
 				ACA7FD8020EC2ED80040EEE0 /* ViewController.swift in Sources */,
