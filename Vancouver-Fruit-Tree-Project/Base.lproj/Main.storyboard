@@ -321,7 +321,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Picks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjv-Jt-K1J">
-                                                    <rect key="frame" x="131" y="11" width="112.66666666666669" height="21"/>
+                                                    <rect key="frame" x="131.33333333333334" y="11" width="112.66666666666666" height="21"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -347,7 +347,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Picks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoA-rs-ybA">
-                                                    <rect key="frame" x="153" y="11" width="68.666666666666686" height="21"/>
+                                                    <rect key="frame" x="153.33333333333334" y="11" width="68.666666666666657" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -373,7 +373,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxX-MH-e5J">
-                                                    <rect key="frame" x="141.66666666666666" y="11" width="91.333333333333343" height="21"/>
+                                                    <rect key="frame" x="142" y="11" width="91.333333333333314" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -397,7 +397,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leaderboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbU-cW-nEk">
-                                                    <rect key="frame" x="138.66666666666666" y="11" width="97.333333333333343" height="21"/>
+                                                    <rect key="frame" x="139" y="11" width="97.333333333333314" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -747,7 +747,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LZu-1A-2EQ">
-                                <rect key="frame" x="0.0" y="128.33333333333334" width="375" height="103"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="103"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LZu-1A-2EQ" secondAttribute="height" multiplier="375:103" id="7kj-Hb-GmW"/>
                                 </constraints>
@@ -759,7 +759,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYA-JM-bdR">
-                                <rect key="frame" x="5" y="100" width="112" height="20.333333333333329"/>
+                                <rect key="frame" x="5" y="100" width="111.33333333333333" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZYA-JM-bdR" secondAttribute="height" multiplier="111:20" id="Vr8-Xv-jVp"/>
                                 </constraints>
@@ -768,7 +768,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCB-ho-UxM">
-                                <rect key="frame" x="100" y="506.33333333333337" width="175" height="32"/>
+                                <rect key="frame" x="100" y="505.33333333333337" width="175" height="32"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UCB-ho-UxM" secondAttribute="height" multiplier="83:15" constant="-2.0666666666666629" id="isE-LW-c0N"/>
@@ -781,7 +781,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of trees:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miT-Io-5qO">
-                                <rect key="frame" x="16" y="321" width="106" height="20.333333333333314"/>
+                                <rect key="frame" x="15.999999999999993" y="320.33333333333331" width="105.33333333333331" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="miT-Io-5qO" secondAttribute="height" multiplier="21:4" id="c4e-Ul-GpP"/>
                                 </constraints>
@@ -790,7 +790,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="xnR-zo-X0m">
-                                <rect key="frame" x="5" y="231.33333333333334" width="370" height="57.333333333333343"/>
+                                <rect key="frame" x="5" y="231.00000000000003" width="370" height="57.333333333333343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ibO-RW-i0V">
                                         <rect key="frame" x="0.0" y="0.0" width="173" height="57.333333333333336"/>
@@ -802,7 +802,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ySF-gJ-hqP">
-                                                <rect key="frame" x="0.0" y="28.333333333333371" width="94" height="29"/>
+                                                <rect key="frame" x="0.0" y="28.333333333333314" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="treeChanged:" destination="wct-IT-gMI" eventType="valueChanged" id="tKq-da-iH5"/>
                                                 </connections>
@@ -819,7 +819,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="YKb-bk-hpb">
-                                                <rect key="frame" x="0.0" y="28.333333333333371" width="94" height="29"/>
+                                                <rect key="frame" x="0.0" y="28.333333333333314" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="volunteersChanged:" destination="wct-IT-gMI" eventType="valueChanged" id="0ZZ-Rc-XJu"/>
                                                 </connections>
@@ -829,7 +829,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </subviews>
                             </stackView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G35-LR-ZrG">
-                                <rect key="frame" x="0.0" y="351.33333333333331" width="375" height="78"/>
+                                <rect key="frame" x="0.0" y="350.33333333333331" width="375" height="78"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="G35-LR-ZrG" secondAttribute="height" multiplier="125:26" id="PqH-aB-YPX"/>
                                 </constraints>
@@ -849,7 +849,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoO-Sf-rXE">
-                                <rect key="frame" x="23" y="437.33333333333337" width="329" height="45"/>
+                                <rect key="frame" x="23" y="436.33333333333337" width="329" height="45"/>
                                 <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yoO-Sf-rXE" secondAttribute="height" multiplier="343:48" constant="7.4375" id="z4Z-Dc-Hh8"/>
@@ -897,6 +897,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         <outlet property="dateandtimeSelector" destination="LZu-1A-2EQ" id="RDp-hm-x7I"/>
                         <outlet property="numberofTrees" destination="cLH-UP-0tf" id="Tcw-xs-UOa"/>
                         <outlet property="numberofVolunteers" destination="bl1-wx-GqR" id="e5H-w4-2yq"/>
+                        <outlet property="partnerButton" destination="yoO-Sf-rXE" id="Adv-qq-8VD"/>
                         <outlet property="save" destination="UCB-ho-UxM" id="mjD-KQ-2MN"/>
                         <outlet property="searchDisplayController" destination="9De-xa-brI" id="2vB-9I-ruA"/>
                         <outlet property="treeStepper" destination="ySF-gJ-hqP" id="ylW-zZ-PDs"/>
@@ -976,8 +977,8 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8qU-18-rf2">
-                                <rect key="frame" x="16" y="161" width="343" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of the partner (Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8qU-18-rf2">
+                                <rect key="frame" x="16" y="161" width="342.33333333333331" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -989,7 +990,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Closing time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrq-z8-3f0">
-                                <rect key="frame" x="223.33333333333334" y="226.66666666666666" width="95.666666666666657" height="20.333333333333343"/>
+                                <rect key="frame" x="223.33333333333337" y="226.66666666666666" width="95" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1015,19 +1016,19 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lim-jB-nAt">
-                                <rect key="frame" x="16" y="419.33333333333326" width="343" height="259.66666666666674"/>
+                                <rect key="frame" x="16" y="419.33333333333326" width="342.33333333333331" height="259.66666666666674"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ay-0M-hj6">
-                                <rect key="frame" x="16.333333333333332" y="391" width="50.333333333333343" height="20.333333333333314"/>
+                                <rect key="frame" x="15.666666666666668" y="391" width="50.333333333333329" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSc-KP-hNZ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="64" width="374.33333333333331" height="60"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="8ll-vL-w6y"/>
@@ -1154,7 +1155,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="dph-ia-zbx" kind="show" id="Zdj-ef-jBg"/>
+                                                    <action selector="donationCenter:" destination="slh-jt-ZCp" eventType="touchUpInside" id="sn8-ey-KOy"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xq-WJ-j1W">
@@ -1636,7 +1637,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
         <!--Food Bank Details -->
         <scene sceneID="1Us-Xf-gqn">
             <objects>
-                <viewController title="Food Bank Details " id="dph-ia-zbx" customClass="FoodBankViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FoodBankViewController" title="Food Bank Details " id="dph-ia-zbx" customClass="FoodBankViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Xr-IW-Vzn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1650,7 +1651,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=" 8888 University Dr, Burnaby, BC" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxx-1b-SBA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxx-1b-SBA">
                                         <rect key="frame" x="115" y="6" width="252" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1659,7 +1660,6 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </subviews>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.69411764710000001" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="MtR-df-o0c"/>
                                     <constraint firstAttribute="bottom" secondItem="Qwn-Il-xNa" secondAttribute="bottom" constant="16" id="Nji-gv-smS"/>
                                     <constraint firstItem="Qwn-Il-xNa" firstAttribute="top" secondItem="qEy-3d-kKh" secondAttribute="top" constant="17" id="WPL-LO-Y7o"/>
                                     <constraint firstItem="fxx-1b-SBA" firstAttribute="leading" secondItem="Qwn-Il-xNa" secondAttribute="trailing" constant="39" id="Wh2-pA-Uh1"/>
@@ -1667,24 +1667,6 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                     <constraint firstAttribute="bottom" secondItem="fxx-1b-SBA" secondAttribute="bottom" constant="6" id="akd-ul-Nlx"/>
                                     <constraint firstItem="fxx-1b-SBA" firstAttribute="top" secondItem="qEy-3d-kKh" secondAttribute="top" constant="6" id="n4t-xU-aAz"/>
                                     <constraint firstAttribute="trailing" secondItem="fxx-1b-SBA" secondAttribute="trailing" constant="8.5" id="okV-gP-cmW"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="loh-L5-Q8x">
-                                <rect key="frame" x="0.0" y="605" width="375" height="54"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQP-Hs-ud3">
-                                        <rect key="frame" x="8" y="17" width="105" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.58039215690000001" green="0.69411764710000001" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nQP-Hs-ud3" secondAttribute="trailing" id="EOY-xn-7cH"/>
-                                    <constraint firstAttribute="bottom" secondItem="nQP-Hs-ud3" secondAttribute="bottom" constant="16" id="F9O-J2-Ygr"/>
-                                    <constraint firstItem="nQP-Hs-ud3" firstAttribute="leading" secondItem="loh-L5-Q8x" secondAttribute="leading" constant="8" id="Ll7-VW-BPp"/>
-                                    <constraint firstItem="nQP-Hs-ud3" firstAttribute="top" secondItem="loh-L5-Q8x" secondAttribute="top" constant="17" id="uzD-dM-mj4"/>
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-9s-1Jf">
@@ -1699,7 +1681,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Simon Fraser University" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0t-Kl-bG5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0t-Kl-bG5">
                                         <rect key="frame" x="102" y="17" width="265" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1727,12 +1709,25 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWD-Ms-Cky">
+                                        <rect key="frame" x="188" y="17" width="179" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="179" id="MHy-px-Ijz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.69411764710000001" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="mfd-K5-a2Z" firstAttribute="leading" secondItem="zM4-bf-1fm" secondAttribute="leading" constant="8" id="8oo-Rg-TQg"/>
+                                    <constraint firstAttribute="bottom" secondItem="xWD-Ms-Cky" secondAttribute="bottom" constant="16" id="BHv-FQ-qtN"/>
                                     <constraint firstItem="mfd-K5-a2Z" firstAttribute="top" secondItem="zM4-bf-1fm" secondAttribute="top" constant="17" id="Ghi-ki-y1E"/>
+                                    <constraint firstAttribute="trailing" secondItem="xWD-Ms-Cky" secondAttribute="trailing" constant="8" id="Hr2-n2-gSP"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mfd-K5-a2Z" secondAttribute="trailing" id="IF1-oW-3c1"/>
+                                    <constraint firstItem="xWD-Ms-Cky" firstAttribute="top" secondItem="zM4-bf-1fm" secondAttribute="top" constant="17" id="VZZ-m8-kxe"/>
+                                    <constraint firstItem="xWD-Ms-Cky" firstAttribute="leading" secondItem="mfd-K5-a2Z" secondAttribute="trailing" constant="62" id="WAi-gb-Oq0"/>
                                     <constraint firstAttribute="bottom" secondItem="mfd-K5-a2Z" secondAttribute="bottom" constant="16" id="hj4-jh-mLl"/>
                                 </constraints>
                             </view>
@@ -1752,14 +1747,30 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                     <action selector="directions:" destination="Gxv-8E-Hcn" eventType="touchUpInside" id="VLW-Md-2Uq"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x9q-1o-s01">
+                                <rect key="frame" x="25" y="631" width="324" height="69"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="uSb-uj-KOK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9q9-Xj-PAJ">
+                                <rect key="frame" x="20.666666666666668" y="605" width="50.333333333333329" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nQP-Hs-ud3" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" constant="8" id="6UQ-eY-y0L"/>
                             <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="4OX-tQ-BgP" secondAttribute="trailing" constant="116" id="6lQ-Sj-edf"/>
-                            <constraint firstItem="4OX-tQ-BgP" firstAttribute="top" secondItem="loh-L5-Q8x" secondAttribute="bottom" constant="49" id="8fP-FD-W7A"/>
+                            <constraint firstItem="4OX-tQ-BgP" firstAttribute="top" secondItem="x9q-1o-s01" secondAttribute="bottom" constant="8" id="9sL-pb-vwN"/>
                             <constraint firstItem="zM4-bf-1fm" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" id="BgY-7E-J1x"/>
                             <constraint firstItem="qEy-3d-kKh" firstAttribute="top" secondItem="ke7-nL-r9I" secondAttribute="bottom" constant="8" id="CXB-yb-LHr"/>
+                            <constraint firstItem="x9q-1o-s01" firstAttribute="top" secondItem="zM4-bf-1fm" secondAttribute="bottom" constant="34" id="DIW-Hj-L6l"/>
+                            <constraint firstItem="x9q-1o-s01" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" constant="25" id="MSe-Aa-K3R"/>
                             <constraint firstItem="mfd-K5-a2Z" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" constant="8" id="MjV-wE-GhI"/>
                             <constraint firstItem="yoh-9s-1Jf" firstAttribute="top" secondItem="Fid-mP-JeV" secondAttribute="top" constant="13" id="QHy-SN-9f1"/>
                             <constraint firstItem="Qwn-Il-xNa" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" constant="8" id="TuX-xL-2Oj"/>
@@ -1767,15 +1778,16 @@ We are happy to answer any questions at 276harvest8@gmail.com
                             <constraint firstItem="ke7-nL-r9I" firstAttribute="top" secondItem="yoh-9s-1Jf" secondAttribute="bottom" constant="19" id="VGo-vq-rVU"/>
                             <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="qEy-3d-kKh" secondAttribute="trailing" id="XWT-DI-jQz"/>
                             <constraint firstItem="yoh-9s-1Jf" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" id="acy-93-bE2"/>
-                            <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="loh-L5-Q8x" secondAttribute="trailing" id="d58-U2-N1w"/>
+                            <constraint firstAttribute="trailing" secondItem="9q9-Xj-PAJ" secondAttribute="trailing" constant="304" id="awU-mk-doN"/>
                             <constraint firstItem="ke7-nL-r9I" firstAttribute="leading" secondItem="qEy-3d-kKh" secondAttribute="leading" id="fu7-Xc-4ML"/>
                             <constraint firstItem="JiE-T0-9f5" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" constant="8" id="i2r-Uk-JsQ"/>
-                            <constraint firstItem="loh-L5-Q8x" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" id="kiB-Gl-O9y"/>
+                            <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="x9q-1o-s01" secondAttribute="trailing" constant="26" id="i2t-Vp-o9b"/>
                             <constraint firstItem="zM4-bf-1fm" firstAttribute="top" secondItem="qEy-3d-kKh" secondAttribute="bottom" constant="8" id="lsG-Ws-Tmv"/>
                             <constraint firstItem="yoh-9s-1Jf" firstAttribute="trailing" secondItem="ke7-nL-r9I" secondAttribute="trailing" id="nAG-c2-Elh"/>
+                            <constraint firstItem="x9q-1o-s01" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9q9-Xj-PAJ" secondAttribute="leading" id="njP-J7-hgu"/>
+                            <constraint firstItem="9q9-Xj-PAJ" firstAttribute="top" secondItem="zM4-bf-1fm" secondAttribute="bottom" constant="8" symbolic="YES" id="oNM-v4-T77"/>
                             <constraint firstItem="qEy-3d-kKh" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" id="q1i-VB-Ohz"/>
                             <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="ke7-nL-r9I" secondAttribute="trailing" id="rPM-hu-cKC"/>
-                            <constraint firstItem="loh-L5-Q8x" firstAttribute="top" secondItem="zM4-bf-1fm" secondAttribute="bottom" constant="8" id="sTs-xP-cgl"/>
                             <constraint firstItem="4OX-tQ-BgP" firstAttribute="leading" secondItem="Fid-mP-JeV" secondAttribute="leading" constant="116" id="xzf-Nq-xJc"/>
                             <constraint firstItem="Fid-mP-JeV" firstAttribute="trailing" secondItem="zM4-bf-1fm" secondAttribute="trailing" id="yaH-hI-8vu"/>
                         </constraints>
@@ -1784,14 +1796,16 @@ We are happy to answer any questions at 276harvest8@gmail.com
                     <connections>
                         <outlet property="FBMapView" destination="yoh-9s-1Jf" id="s0m-FX-Jcf"/>
                         <outlet property="InstitutionName" destination="fxx-1b-SBA" id="qey-6M-o0D"/>
+                        <outlet property="hours" destination="xWD-Ms-Cky" id="963-xM-Me9"/>
                         <outlet property="institutionName" destination="C0t-Kl-bG5" id="IFg-PT-xA8"/>
+                        <outlet property="notes" destination="x9q-1o-s01" id="XN8-Pj-amc"/>
                         <outlet property="theAddress" destination="fxx-1b-SBA" id="3UH-MJ-XGB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeV-bH-Zvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Gxv-8E-Hcn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1186.4000000000001" y="1951.5742128935533"/>
+            <point key="canvasLocation" x="-1186.4000000000001" y="1951.4778325123154"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RFH-y5-1D1">

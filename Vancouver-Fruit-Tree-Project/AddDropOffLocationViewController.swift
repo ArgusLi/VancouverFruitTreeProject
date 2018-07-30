@@ -42,9 +42,11 @@ class AddDropOffLocationViewController: UIViewController , setLocation{
         formatter.dateStyle = .none
         formatter.timeStyle = .short
         
-        print(formatter.string(from: closingTime.date))
-        partner[dropOffFields.opentime.rawValue] = "\(formatter.string(from: openingTime.date)) \(formatter.string(from: closingTime.date))"
-        if notes.text != nil{
+        if(name.text != nil || name.text != ""){
+            partner[dropOffFields.name.rawValue] = name.text
+        }
+        partner[dropOffFields.opentime.rawValue] = "\(formatter.string(from: openingTime.date)) - \(formatter.string(from: closingTime.date))"
+        if notes.text != ""{
             partner[dropOffFields.notes.rawValue] = notes.text!
         }
         //pass data back to the add pick event view controller

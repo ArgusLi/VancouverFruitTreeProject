@@ -27,7 +27,7 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
     let interface = DatabaseInterface()
     let maxDate = String(year)+"/" + String(month + 6)+"/"+String(day)
     picks =  interface.scanPickEvents(itemLimit: 100, maxDate: maxDate)
-    
+    picks = picks.sorted(by: {$0.getDate()! < $1.getDate()!})
     }
     private func setTheDistance(location: CLLocation){
         for pick in picks{
@@ -67,6 +67,18 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
             var items = [PickEvents]()
             for pick in picks{
                 if pick._teamLead == nil{
+                    items.append(pick)
+                }
+            }
+            for i in items{
+                picks.remove(at: picks.index(of: i)!)
+            }
+        }
+        //remove all the events that have leaders
+        if (user?._role == Roles.lead.rawValue){
+            var items = [PickEvents]()
+            for pick in picks{
+                if pick._teamLead != nil{
                     items.append(pick)
                 }
             }
@@ -192,12 +204,14 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
         
         
     }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
-    {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         let DBIT = DatabaseInterface()
         let user = DBIT.queryUserInfo(userId: DBIT.getUsername()!)
-        if (user?._role == Roles.admin.rawValue){
+        return user?._role == Roles.admin.rawValue
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        
             
         
         if editingStyle == UITableViewCellEditingStyle.delete
@@ -222,7 +236,8 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
             self.viewDidLoad()
             */
         }
-        }
+            
+        
         
     }
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {

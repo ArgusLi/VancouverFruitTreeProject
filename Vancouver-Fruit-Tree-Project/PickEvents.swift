@@ -20,7 +20,7 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _userId: String?
     var _creationTime: String?
     var _address: String?
-    var _completed: NSNumber?
+    var _completed: String?
     var _creationDate: String?
     var _distanceFrom: NSNumber?
     var _dropOffLocation: [String: String]?
@@ -76,6 +76,16 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
         else {
             return false
         }
+    }
+    func getDate() -> Date?{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY/MM/dd"
+        if let d = _eventDate{
+            return formatter.date(from: d)
+            
+        }
+        
+        fatalError("Event with no date")
     }
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [

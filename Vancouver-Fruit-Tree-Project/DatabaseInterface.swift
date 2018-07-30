@@ -1170,7 +1170,14 @@ class DatabaseInterface: NSObject {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         var ret: Int = 1
         var queryComplete = false
-        
+        if itemToDelete._teamLead != nil{
+            removeSignUpForPickEvent(pickItem: itemToDelete, userId: itemToDelete._teamLead!)
+        }
+        if (itemToDelete._volunteers != nil && itemToDelete._volunteers?.count != 0){
+            for user in itemToDelete._volunteers! {
+                removeSignUpForPickEvent(pickItem: itemToDelete, userId: user)
+            }
+        }
         dynamoDBObjectMapper.remove(itemToDelete, completionHandler: {(error: Error?) -> Void in
             if let error = error {
                 print(" Amazon DynamoDB Save Error: \(error)")

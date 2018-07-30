@@ -11,10 +11,18 @@ import MapKit
 class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, setLocation, getDropOff {
     func setDropOff(partner: communityPartner) {
         event?._dropOffLocation = partner
-        print("Set drop off")
+        //Sets the partner button text to the name of the community organization if provided
+        // sets the address of the location otherwise
+        if (event?._dropOffLocation?.index(forKey: dropOffFields.name.rawValue) != nil){
+            partnerButton.setTitle(event?._dropOffLocation![dropOffFields.name.rawValue], for: .normal)
+        }
+        else if(event?._dropOffLocation?.index(forKey: dropOffFields.location.rawValue) != nil){
+            partnerButton.setTitle(event?._dropOffLocation![dropOffFields.location.rawValue], for: .normal)
+        }
     }
     
     
+    @IBOutlet weak var partnerButton: UIButton!
     @IBAction func addCommunityPartner(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "AddDropOffLocationViewController") as! AddDropOffLocationViewController
         vc.delegate = self
@@ -78,13 +86,16 @@ class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         else{
             
-            
+           
             let database = DatabaseInterface()
-            let result = database.createPickEvents(pickEventItem: event!)
-            alert.title = "Event Saved Successfully"
-            alert.message = "The event has been successfully saved"
+                let result = database.createPickEvents(pickEventItem: self.event!)
+                
+                alert.title = "Event Saved Successfully"
+                alert.message = "The event has been successfully saved"
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in self.navigationController?.popViewController(animated: true) }))
             
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in self.navigationController?.popViewController(animated: true) }))
+            
             if (!result){
                 alert.title = "Error"
                 alert.message = "There has been some problem saving the event"
