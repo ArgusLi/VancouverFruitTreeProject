@@ -753,7 +753,7 @@
         <scene sceneID="Xvb-bK-XzS">
             <objects>
                 <tableViewController id="gPm-8U-NTI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Team Members" id="Mpg-UQ-mCR"/>
+                    <tabBarItem key="tabBarItem" title="Team Members" image="attendance-1" id="Mpg-UQ-mCR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKQ-l1-H1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -780,7 +780,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Xva-zI-0W1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Drop Off" id="2gH-RJ-JrL"/>
+                    <tabBarItem key="tabBarItem" title="Drop Off" image="DropOff" id="2gH-RJ-JrL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGo-Qd-w8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -870,17 +870,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UtW-qe-RkE"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Yield" id="6sl-AF-op3"/>
+                    <tabBarItem key="tabBarItem" title="Yield" image="yield" id="6sl-AF-op3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJp-PG-NWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3725.5999999999999" y="1770.7646176911546"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Yield View Controller-->
         <scene sceneID="dSo-bS-Rdw">
             <objects>
-                <viewController id="WTO-fQ-EhE" sceneMemberID="viewController">
+                <viewController id="WTO-fQ-EhE" customClass="AddYieldViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ebU-yv-vWb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -889,7 +889,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="oZV-ei-1IN">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="S6s-nZ-DKl">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rrO-iv-QfP"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="S6s-nZ-DKl">
                                             <connections>
                                                 <segue destination="sIY-p9-nm9" kind="show" id="x9M-b0-inh"/>
                                             </connections>
@@ -945,6 +946,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Z7-09-dI0"/>
                     </view>
+                    <connections>
+                        <outlet property="gradeAField" destination="n0R-TW-XeE" id="1rP-nU-ORY"/>
+                        <outlet property="gradeBField" destination="PGq-Xg-19u" id="IiI-ZQ-PtC"/>
+                        <outlet property="picker" destination="1vi-il-WiZ" id="V6T-bF-bDO"/>
+                        <outlet property="saveButton" destination="S6s-nZ-DKl" id="c6V-ZX-LQw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdM-bq-3Gr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1462,12 +1469,15 @@
     </scenes>
     <resources>
         <image name="Background-1" width="375" height="667"/>
+        <image name="DropOff" width="30" height="30"/>
         <image name="Green alert" width="64" height="64"/>
         <image name="Icons" width="25" height="25"/>
         <image name="Map view" width="25" height="25"/>
         <image name="ProfileIcon" width="72" height="72"/>
         <image name="Under Construction" width="250" height="132"/>
         <image name="VFTP_LOGO_CS3-167x300" width="167" height="300"/>
+        <image name="attendance-1" width="30" height="30"/>
+        <image name="yield" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="x9M-b0-inh"/>
