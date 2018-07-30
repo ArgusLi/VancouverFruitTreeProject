@@ -8,8 +8,18 @@
 
 import UIKit
 import MapKit
-class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, setLocation {
+class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, setLocation, getDropOff {
+    func setDropOff(partner: communityPartner) {
+        event?._dropOffLocation = partner
+        print("Set drop off")
+    }
     
+    
+    @IBAction func addCommunityPartner(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "AddDropOffLocationViewController") as! AddDropOffLocationViewController
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     var TreeMap = Dictionary<String, String>()
 
     var event = PickEvents()

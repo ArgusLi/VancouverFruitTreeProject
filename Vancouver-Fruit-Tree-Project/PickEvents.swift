@@ -20,8 +20,10 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _userId: String?
     var _creationTime: String?
     var _address: String?
+    var _completed: NSNumber?
     var _creationDate: String?
     var _distanceFrom: NSNumber?
+    var _dropOffLocation: [String: String]?
     var _eventDate: String?
     var _eventTime: String?
     var _latitude: NSNumber?
@@ -80,8 +82,10 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
             "_userId" : "userId",
             "_creationTime" : "creationTime",
             "_address" : "address",
+            "_completed" : "completed",
             "_creationDate" : "creationDate",
             "_distanceFrom" : "distanceFrom",
+            "_dropOffLocation" : "dropOffLocation",
             "_eventDate" : "eventDate",
             "_eventTime" : "eventTime",
             "_latitude" : "latitude",
