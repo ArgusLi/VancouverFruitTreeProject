@@ -13,7 +13,9 @@ class PickEventMapViewController: UIViewController , CLLocationManagerDelegate, 
     @IBOutlet weak var mapView: MKMapView!
     let vancouverlocation = CLLocationCoordinate2DMake(  49.246292, -123.116226)
     let mapspan = MKCoordinateSpanMake(0.5, 0.5)
-
+    var user: Users?
+    
+    var volunteers: [Users]?
     func reset(){
         let location = MKCoordinateRegion(center: vancouverlocation, span:mapspan)
         mapView.setRegion(location, animated: true)
@@ -40,8 +42,15 @@ class PickEventMapViewController: UIViewController , CLLocationManagerDelegate, 
             if((event._latitude!.floatValue > -90  && event._latitude!.floatValue < 90) && ( event._longitude!.floatValue > -180 && event._longitude!.floatValue  < 180 ))
             {
             let location = CLLocationCoordinate2DMake(Double(event._latitude!.floatValue) as CLLocationDegrees, Double(event._longitude!.floatValue) as CLLocationDegrees)
-            let circle = MKCircle(center: location, radius: 1000)
-             mapView.add(circle)
+                if event.isSignedUpFor(user: user!){
+                    let annontation = MapAnnotation(coor: location, title: event._address)
+                    mapView.addAnnotation(annontation)
+                }
+                else{
+                    let circle = MKCircle(center: location, radius: 1000)
+                    mapView.add(circle)
+                }
+            
             }
             
 
@@ -63,6 +72,9 @@ class PickEventMapViewController: UIViewController , CLLocationManagerDelegate, 
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let DBIT = DatabaseInterface()
+        
+        user = DBIT.getCurrentUser()
         reset()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
