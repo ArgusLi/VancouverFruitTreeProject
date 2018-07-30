@@ -1053,6 +1053,7 @@ class DatabaseInterface: NSObject {
         //scanExpression.expressionAttributeNames =
         scanExpression.expressionAttributeValues = [":maxDate" : maxDate]
         
+        
         dynamoDBObjectMapper.scan(PickEvents.self, expression: scanExpression)  { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
             if error != nil {
                 print("The request failed. Error: \(String(describing: error))")
@@ -1193,9 +1194,68 @@ class DatabaseInterface: NSObject {
         return ret
         
     }
-    
-}
 
+// MARK: yield data query
+
+/// scans PickEvents table for events within the passed month that are completed, gets a total of their yields
+///
+/// - Parameters:
+///   - year: year as a string, i.e. "2018"
+///   - month: month as a two-digit number, i.e. "05", "12"
+/// - Returns: an int tuple; position 0: total yield of grade A fruit; position 1: grade B
+    func getYieldDataByMonth(year: String, month: String) -> (Int, Int) {
+        let group = DispatchGroup()
+        
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        print("in DatabaseInterface -> queryPickEventsByDate")
+        var yieldA: Int = 0
+        var yieldB: Int = 0
+        
+        let monthStart: String = year + "/" + month + "/" + "01"
+        let monthEnd: String = year + "/" + month + "/" + "31"
+        
+        let queryExpression = AWSDynamoDBQueryExpression()
+        queryExpression.indexName = "FindYield"
+        //queryExpression.keyConditionExpression = "#eventDate >= :monthStart AND #eventDate <= :monthEnd";
+        //queryExpression.keyConditionExpression = "#completed = :complete AND #eventDate BETWEEN :monthStart AND :monthEnd";
+        queryExpression.keyConditionExpression = "#completed = :complete AND (#eventDate BETWEEN :monthStart AND :monthEnd)";
+        queryExpression.expressionAttributeNames = ["#eventDate": "eventDate", "#completed": "completed"]
+        queryExpression.expressionAttributeValues = [":monthStart": monthStart, ":monthEnd": monthEnd, ":complete": "1" ]
+        
+        group.enter()
+        dynamoDBObjectMapper.query(PickEvents.self, expression: queryExpression)
+        { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            if error != nil {
+                print("The request failed. Error: \(String(describing: error))")
+            }
+            
+            if output != nil {
+                for pick in output!.items {
+                    let pickItem = pick as? PickEvents
+                    //print("\(pickItem!._eventDate!)")
+                    print("# of items returned: " + String(output!.items.count))
+                    
+                    //all completed events should have values in yield, so unwrapping should never fail
+                    
+                    for (_, fruit) in pickItem!._yield! {
+                        
+                        yieldA += Int(fruit[0])!
+                        yieldB += Int(fruit[1])!
+                        
+                    }
+                }
+            }
+            
+            //print("After appeding inside of function: ", pickArray.count)
+            group.leave()
+        }
+        
+        group.wait()
+        return (yieldA, yieldB)
+        
+    }
+
+} //end of DatabaseInterface class
 
 /*
  Previous test cases from ViewController:

@@ -14,12 +14,13 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
-@objcMembers
+@objcMembers // <- don't remove this, it will break uploading new events
 class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: String?
     var _creationTime: String?
     var _address: String?
+    var _completed: String?
     var _creationDate: String?
     var _distanceFrom: NSNumber?
     var _eventDate: String?
@@ -79,6 +80,7 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
         return [
             "_userId" : "userId",
             "_creationTime" : "creationTime",
+            "_completed" : "completed",
             "_address" : "address",
             "_creationDate" : "creationDate",
             "_distanceFrom" : "distanceFrom",

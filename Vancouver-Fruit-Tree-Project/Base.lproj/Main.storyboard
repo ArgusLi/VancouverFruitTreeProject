@@ -195,6 +195,14 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                                     <constraint firstAttribute="height" constant="27" id="grL-s3-c1q"/>
                                                 </constraints>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3J-15-v45">
+                                                <rect key="frame" x="135" y="179" width="129" height="70"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="TestYieldQuery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ce6-Gt-pp0"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
