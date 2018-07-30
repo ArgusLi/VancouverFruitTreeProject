@@ -93,7 +93,6 @@ class PickEvents: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
             "_creationTime" : "creationTime",
             "_completed" : "completed",
             "_address" : "address",
-            "_completed" : "completed",
             "_creationDate" : "creationDate",
             "_distanceFrom" : "distanceFrom",
             "_dropOffLocation" : "dropOffLocation",
