@@ -344,7 +344,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JER-EP-oHd" userLabel="MinDate">
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JER-EP-oHd" userLabel="MinDate">
                                 <rect key="frame" x="42" y="158" width="95" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="CNw-zr-u7V"/>
@@ -354,7 +354,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5bR-BS-WeA" userLabel="MaxDate">
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5bR-BS-WeA" userLabel="MaxDate">
                                 <rect key="frame" x="238" y="158" width="95" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5jZ-H1-zrH"/>
