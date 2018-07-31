@@ -8,11 +8,12 @@
 
 import UIKit
 import MapKit
-class PickEventTableViewController: UITableViewController, CLLocationManagerDelegate {
+class PickEventTableViewController: UITableViewController, CLLocationManagerDelegate , MKMapViewDelegate{
     let locationManager = CLLocationManager()
     // TODO: Insert an array declaration here
     //TODO: placeholder for a pick event class
-    let gr =  DispatchGroup()
+    
+    
     var user : Users?
     @IBOutlet weak var addButton: UIBarButtonItem!
     var picks=[PickEvents]()
@@ -29,11 +30,11 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
     let maxDate = String(year)+"/" + String(month + 6)+"/"+String(day)
     picks =  interface.scanPickEvents(itemLimit: 100, maxDate: maxDate)
     picks = picks.sorted(by: {$0.getDate()! < $1.getDate()!})
-    //delete all the events without team lead for volunteers
+    //delete all the events without team lead for volunteers or the ones that are full
     if (user?._role == Roles.volunteer.rawValue){
         var items = [PickEvents]()
         for pick in picks{
-            if pick._teamLead == nil{
+            if pick._teamLead == nil || pick.isFull(){
                 items.append(pick)
             }
         }
@@ -92,19 +93,13 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
-        gr.enter()
-        DispatchQueue.main.async{
+        
+        
            self.locationManager.requestLocation()
-        }
-        gr.notify(queue: .main){
-            if self.myLocation != nil{
-             self.setTheDistance(location: self.myLocation!)
-                self.tableView.reloadData()
-            }
-            else{
-                print("Location is nil")
-            }
-        }
+        
+        
+        
+        
         
         
 
@@ -116,7 +111,9 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
     }
 
     
-   
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -126,7 +123,10 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         
         loadavailablepicks()
-        
+        if (self.myLocation != nil)
+        {
+            self.setTheDistance(location: myLocation!)
+        }
         self.tableView.reloadData()
         refreshControl.endRefreshing()
     }
@@ -164,11 +164,13 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
         timeFormatter.locale = Locale(identifier: "en_US")
         
         cell.Time.text="Time: " + timeFormatter.string(from: time!)
-        // US English Locale (en_US)
-        dateFormatter.locale = Locale(identifier: "en_US")
-        
         cell.Date.text = "Date: " + dateFormatter.string(from: date!)
-        
+        if pick.isFull(){
+            cell.isFull.text = "Full"
+        }
+        else{
+            cell.isFull.text = nil
+        }
         if pick._distanceFrom != nil{
             if (Int(truncating: pick._distanceFrom!) > 500){
                 cell.DistanceFrom.text = "\(Int(truncating: pick._distanceFrom!)/1000) km away"
@@ -256,11 +258,11 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
         if let location = locations.first {
             
             myLocation = location
-            gr.leave()
+            self.setTheDistance(location: myLocation!)
+            self.tableView.reloadData()
             
         }
-        else{
-            gr.leave()}
+        
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("error:: (error)")

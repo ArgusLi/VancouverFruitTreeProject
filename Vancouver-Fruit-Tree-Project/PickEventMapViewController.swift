@@ -33,7 +33,29 @@ class PickEventMapViewController: UIViewController , CLLocationManagerDelegate, 
         let interface = DatabaseInterface()
         let maxDate = String(year)+"/" + String(month + 6)+"/"+String(day)
         picks =  interface.scanPickEvents(itemLimit: 100, maxDate: maxDate)
-        
+        if (user?._role == Roles.volunteer.rawValue){
+            var items = [PickEvents]()
+            for pick in picks{
+                if pick._teamLead == nil || pick.isFull(){
+                    items.append(pick)
+                }
+            }
+            for i in items{
+                picks.remove(at: picks.index(of: i)!)
+            }
+        }
+        //remove all the events that have leaders
+        if (user?._role == Roles.lead.rawValue){
+            var items = [PickEvents]()
+            for pick in picks{
+                if pick._teamLead != nil{
+                    items.append(pick)
+                }
+            }
+            for i in items{
+                picks.remove(at: picks.index(of: i)!)
+            }
+        }
     }
     func addCircles(Events:[PickEvents]){
         mapView.delegate = self

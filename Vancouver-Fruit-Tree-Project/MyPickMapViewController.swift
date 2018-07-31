@@ -12,7 +12,7 @@ import MapKit
 class MyPickMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    
+    let locationManager = CLLocationManager()
     let vancouverlocation = CLLocationCoordinate2DMake(  49.246292, -123.116226)
     let mapspan = MKCoordinateSpanMake(0.5, 0.5)
     
@@ -33,8 +33,9 @@ class MyPickMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         if((event._latitude!.floatValue > -90  && event._latitude!.floatValue < 90) && ( event._longitude!.floatValue > -180 && event._longitude!.floatValue  < 180 ))
         {
             let location = CLLocationCoordinate2DMake(Double(event._latitude!.floatValue) as CLLocationDegrees, Double(event._longitude!.floatValue) as CLLocationDegrees)
-            let circle = MKCircle(center: location, radius: 1000)
-            mapView.add(circle)
+            let annontation = MapAnnotation(coor: location, title: event._address)
+            mapView.addAnnotation(annontation)
+            
         }
         
         }
@@ -58,6 +59,11 @@ class MyPickMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
     override func viewDidLoad() {
         super.viewDidLoad()
         reset()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        mapView.showsUserLocation = true
         addPins(Events: myPicks)
         
         // Do any additional setup after loading the view.
@@ -71,8 +77,29 @@ class MyPickMapViewController: UIViewController, CLLocationManagerDelegate, MKMa
         let mpTVC = storyboard?.instantiateViewController(withIdentifier: "MyPicksTableViewController") as! MyPicksTableViewController
         myPicks = mpTVC.loadMyPicks()!
         addPins(Events: myPicks)
+        locationManager.requestLocation()
     }
-
+    private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+            
+        }
+        if (status == .denied || status == .restricted)
+        {
+            reset()
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let region = MKCoordinateRegion(center: location.coordinate, span: span)
+            mapView.setRegion(region, animated: true)
+            
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error:: (error)")
+    }
     /*
     // MARK: - Navigation
 
