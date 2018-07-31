@@ -19,6 +19,8 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet weak var date: UIButton!
     
     
+
+    @IBOutlet weak var directionButton: UIButton!
     @IBOutlet weak var time: UIButton!
     
     @IBOutlet weak var teamlead: UIButton!
@@ -27,6 +29,15 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet weak var typeOfTrees: UIButton!
     @IBOutlet weak var signupbotton: UIButton!
    
+    @IBAction func directionButttonClicked(_ sender: UIButton) {
+        if(getCoordinates != nil) {
+            let lat = String(format: "%f", (getCoordinates?.latitude)!)
+            let long = String(format: "%f", (getCoordinates?.longitude)!)
+            let urlDirection = URL(string: "http://maps.apple.com/?q="+lat+","+long)
+            UIApplication.shared.open(urlDirection!, options: [:], completionHandler: nil)
+        }
+    }
+    
     @IBAction func donationCenter(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "FoodBankViewController") as! FoodBankViewController
         vc.pick = event

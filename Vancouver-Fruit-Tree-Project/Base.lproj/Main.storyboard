@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jot-06-mYK">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4m5-gs-cW3">
-                                <rect key="frame" x="0.0" y="88" width="375" height="1878"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="1936"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KiT-BD-gjk" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1935.6666666666667"/>
@@ -307,21 +307,21 @@ We are happy to answer any questions at 276harvest8@gmail.com
             <objects>
                 <tableViewController storyboardIdentifier="SlideMenuViewController" id="PGS-pQ-mkv" customClass="SlideMenuViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fdZ-d3-jeu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.59215686270000001" green="0.83529411760000005" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="9Xc-HT-JlS">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mQ7-Sy-fSR">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mQ7-Sy-fSR" id="vJo-IO-zz3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Picks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjv-Jt-K1J">
-                                                    <rect key="frame" x="131.33333333333334" y="11" width="112.66666666666666" height="21"/>
+                                                    <rect key="frame" x="150.66666666666666" y="11" width="112.66666666666666" height="21"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -340,14 +340,14 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WXE-vP-cyn">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WXE-vP-cyn" id="eDG-pe-jb3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Picks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoA-rs-ybA">
-                                                    <rect key="frame" x="153.33333333333334" y="11" width="68.666666666666657" height="21"/>
+                                                    <rect key="frame" x="172.66666666666666" y="11" width="68.666666666666657" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -366,14 +366,14 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TfN-Jd-8Um">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TfN-Jd-8Um" id="0UM-gO-ih9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxX-MH-e5J">
-                                                    <rect key="frame" x="142" y="11" width="91.333333333333314" height="21"/>
+                                                    <rect key="frame" x="161.33333333333334" y="11" width="91.333333333333343" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -390,14 +390,14 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sad-JV-VBx">
-                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="132" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sad-JV-VBx" id="uUA-bZ-57U">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leaderboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbU-cW-nEk">
-                                                    <rect key="frame" x="139" y="11" width="97.333333333333314" height="21"/>
+                                                    <rect key="frame" x="158.33333333333334" y="11" width="97.333333333333343" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -437,11 +437,11 @@ We are happy to answer any questions at 276harvest8@gmail.com
             <objects>
                 <viewController title="My Account" id="Kji-Zd-phN" customClass="MyAccountViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Obc-E3-JaD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYA-Xz-jhc">
-                                <rect key="frame" x="0.0" y="338" width="375" height="54"/>
+                                <rect key="frame" x="0.0" y="314" width="414" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIX-Hz-12g">
                                         <rect key="frame" x="8" y="17" width="46" height="21"/>
@@ -450,7 +450,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drA-kU-GDm">
-                                        <rect key="frame" x="62" y="16" width="305" height="21"/>
+                                        <rect key="frame" x="62" y="16" width="344" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -468,7 +468,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zo1-g0-rGN">
-                                <rect key="frame" x="0.0" y="276" width="375" height="54"/>
+                                <rect key="frame" x="0.0" y="252" width="414" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrq-Ti-5aW">
                                         <rect key="frame" x="8" y="17" width="91" height="21"/>
@@ -477,7 +477,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHh-8J-2Vi">
-                                        <rect key="frame" x="107" y="17" width="260" height="21"/>
+                                        <rect key="frame" x="107" y="17" width="299" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -495,7 +495,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="nzx-as-UBf">
-                                <rect key="frame" x="126.66666666666669" y="119" width="123" height="124"/>
+                                <rect key="frame" x="146.33333333333334" y="95" width="123.00000000000003" height="124"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nzx-as-UBf" secondAttribute="height" multiplier="123:124" id="O6w-Oe-3Ld"/>
                                 </constraints>
@@ -530,7 +530,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
             <objects>
                 <navigationController id="JXB-ic-mq4" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ga4-Dn-6qt">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <userDefinedRuntimeAttributes>
@@ -549,11 +549,11 @@ We are happy to answer any questions at 276harvest8@gmail.com
             <objects>
                 <viewController storyboardIdentifier="PickEventMapViewController" id="7Hj-oU-92h" customClass="PickEventMapViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="taa-7Q-BL2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="et5-Om-T71">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -598,15 +598,15 @@ We are happy to answer any questions at 276harvest8@gmail.com
             <objects>
                 <tableViewController storyboardIdentifier="PickEventTableViewController" title="List view" id="OwM-E3-k80" customClass="PickEventTableViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="x5I-kI-bIZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickEventTableViewCell" rowHeight="102" id="YMp-Hg-gFd" customClass="PickEventTableViewCell" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="102"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YMp-Hg-gFd" id="WET-Ga-3cf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="101.66666666666667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.66666666666667"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="amW-PW-M5Q">
@@ -640,7 +640,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dts-KK-y3f">
-                                            <rect key="frame" x="313.33333333333331" y="70.666666666666671" width="41.666666666666686" height="20.333333333333329"/>
+                                            <rect key="frame" x="352.33333333333331" y="70.666666666666671" width="41.666666666666686" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -702,11 +702,11 @@ We are happy to answer any questions at 276harvest8@gmail.com
             <objects>
                 <viewController id="wct-IT-gMI" customClass="AddPickEventViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tnr-j5-nNy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LZu-1A-2EQ">
-                                <rect key="frame" x="0.0" y="128" width="375" height="103"/>
+                                <rect key="frame" x="0.0" y="140.33333333333334" width="414" height="113.66666666666666"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LZu-1A-2EQ" secondAttribute="height" multiplier="375:103" id="7kj-Hb-GmW"/>
                                 </constraints>
@@ -718,7 +718,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYA-JM-bdR">
-                                <rect key="frame" x="5" y="100" width="111.33333333333333" height="20"/>
+                                <rect key="frame" x="5" y="105.33333333333334" width="150.33333333333334" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZYA-JM-bdR" secondAttribute="height" multiplier="111:20" id="Vr8-Xv-jVp"/>
                                 </constraints>
@@ -727,7 +727,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCB-ho-UxM">
-                                <rect key="frame" x="100" y="505.33333333333337" width="175" height="32"/>
+                                <rect key="frame" x="100" y="549" width="214" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UCB-ho-UxM" secondAttribute="height" multiplier="83:15" constant="-2.0666666666666629" id="isE-LW-c0N"/>
@@ -740,7 +740,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of trees:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miT-Io-5qO">
-                                <rect key="frame" x="15.999999999999993" y="320.33333333333331" width="105.33333333333331" height="20"/>
+                                <rect key="frame" x="16" y="343.33333333333331" width="144.33333333333334" height="27.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="miT-Io-5qO" secondAttribute="height" multiplier="21:4" id="c4e-Ul-GpP"/>
                                 </constraints>
@@ -749,13 +749,13 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="xnR-zo-X0m">
-                                <rect key="frame" x="5" y="231.00000000000003" width="370" height="57.333333333333343"/>
+                                <rect key="frame" x="5" y="254.00000000000003" width="409" height="57.333333333333343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ibO-RW-i0V">
-                                        <rect key="frame" x="0.0" y="0.0" width="173" height="57.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="192.66666666666666" height="57.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trees: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLH-UP-0tf">
-                                                <rect key="frame" x="0.0" y="0.0" width="173" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="192.66666666666666" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -769,10 +769,10 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RMX-qP-RcI">
-                                        <rect key="frame" x="197" y="0.0" width="173" height="57.333333333333336"/>
+                                        <rect key="frame" x="216.66666666666663" y="0.0" width="192.33333333333337" height="57.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volunteers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bl1-wx-GqR">
-                                                <rect key="frame" x="0.0" y="0.0" width="173" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="192.33333333333334" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -788,13 +788,13 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </subviews>
                             </stackView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G35-LR-ZrG">
-                                <rect key="frame" x="0.0" y="350.33333333333331" width="375" height="78"/>
+                                <rect key="frame" x="0.0" y="380.66666666666669" width="414" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="G35-LR-ZrG" secondAttribute="height" multiplier="125:26" id="PqH-aB-YPX"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ba5-5f-Hm3">
-                                <rect key="frame" x="16" y="20" width="343" height="48"/>
+                                <rect key="frame" x="16" y="20.000000000000004" width="382" height="53.333333333333343"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ba5-5f-Hm3" secondAttribute="height" multiplier="343:48" id="ISE-ud-5hS"/>
@@ -808,7 +808,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoO-Sf-rXE">
-                                <rect key="frame" x="23" y="436.33333333333337" width="329" height="45"/>
+                                <rect key="frame" x="23" y="474.66666666666663" width="368" height="50.333333333333371"/>
                                 <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yoO-Sf-rXE" secondAttribute="height" multiplier="343:48" constant="7.4375" id="z4Z-Dc-Hh8"/>
@@ -889,26 +889,26 @@ We are happy to answer any questions at 276harvest8@gmail.com
             <objects>
                 <tableViewController storyboardIdentifier="SearchLocationTableViewController" id="mOe-HX-tS7" customClass="SearchLocationTableViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fwD-OI-TKM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="location" textLabel="jko-Gh-mvQ" detailTextLabel="yYj-aY-YSV" style="IBUITableViewCellStyleSubtitle" id="Jzo-Sb-yMU">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jzo-Sb-yMU" id="bJe-C1-Hgf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jko-Gh-mvQ">
-                                            <rect key="frame" x="16.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="20.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yYj-aY-YSV">
-                                            <rect key="frame" x="15.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="19.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -933,38 +933,38 @@ We are happy to answer any questions at 276harvest8@gmail.com
             <objects>
                 <viewController storyboardIdentifier="AddDropOffLocationViewController" id="svm-eT-XAZ" customClass="AddDropOffLocationViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mup-2w-jZD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of the partner (Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8qU-18-rf2">
-                                <rect key="frame" x="16" y="161" width="342.33333333333331" height="30"/>
+                                <rect key="frame" x="16" y="137" width="342.33333333333331" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opening time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPE-cw-dw7">
-                                <rect key="frame" x="15.999999999999993" y="226.66666666666666" width="107.33333333333331" height="20.333333333333343"/>
+                                <rect key="frame" x="15.999999999999993" y="202.66666666666666" width="107.33333333333331" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Closing time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrq-z8-3f0">
-                                <rect key="frame" x="223.33333333333337" y="226.66666666666666" width="95" height="20.333333333333343"/>
+                                <rect key="frame" x="223.33333333333337" y="202.66666666666666" width="95" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fdy-we-DGK">
-                                <rect key="frame" x="0.0" y="271" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="247" width="375" height="120"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bn6-N3-LbS">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.33333333333334" height="120"/>
                                         <date key="date" timeIntervalSinceReferenceDate="554596547.50250101">
                                             <!--2018-07-29 22:35:47 +0000-->
                                         </date>
                                     </datePicker>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hFZ-Ft-aw3">
-                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="120"/>
+                                        <rect key="frame" x="187.33333333333337" y="0.0" width="187.66666666666663" height="120"/>
                                         <date key="date" timeIntervalSinceReferenceDate="554596547.50250101">
                                             <!--2018-07-29 22:35:47 +0000-->
                                         </date>
@@ -975,19 +975,19 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lim-jB-nAt">
-                                <rect key="frame" x="16" y="419.33333333333326" width="342.33333333333331" height="259.66666666666674"/>
+                                <rect key="frame" x="16" y="395.33333333333331" width="342.33333333333331" height="246.66666666666669"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ay-0M-hj6">
-                                <rect key="frame" x="15.333333333333332" y="391" width="50.333333333333343" height="20.333333333333314"/>
+                                <rect key="frame" x="15.333333333333332" y="367" width="50.333333333333343" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSc-KP-hNZ">
-                                <rect key="frame" x="0.0" y="64" width="374.33333333333331" height="60"/>
+                                <rect key="frame" x="0.0" y="40" width="374.33333333333331" height="60"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="8ll-vL-w6y"/>
@@ -1001,7 +1001,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NlV-7c-hmo">
-                                <rect key="frame" x="0.0" y="-24" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="-24" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="fkM-Qb-rx4">
@@ -1065,7 +1065,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SO8-P4-exX">
-                                <rect key="frame" x="0.0" y="44" width="375" height="780"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="838"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzb-mI-p8G" userLabel="Content  view">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="858"/>
@@ -1123,9 +1123,12 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54" id="cMk-Bi-pHO"/>
                                                 </constraints>
-                                                <state key="normal" title="Equipment Location">
+                                                <state key="normal" title="Navigate to Picking Location">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="directionButttonClicked:" destination="slh-jt-ZCp" eventType="touchUpInside" id="Sgh-FZ-AsX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehf-Iv-j9u">
                                                 <rect key="frame" x="0.0" y="665" width="375" height="54"/>
@@ -1150,10 +1153,25 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                                     <action selector="signup:" destination="slh-jt-ZCp" eventType="touchUpInside" id="rmo-Z4-Xfl"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Yko-4g-WZi">
+                                                <rect key="frame" x="330" y="533" width="37" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Yko-4g-WZi" secondAttribute="height" multiplier="37:34" id="nNM-3G-RLd"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="9Xw-he-nZB">
+                                                <rect key="frame" x="330" y="604" width="37" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="9Xw-he-nZB" secondAttribute="height" multiplier="37:34" id="MUk-sV-4Be"/>
+                                                    <constraint firstAttribute="width" secondItem="9Xw-he-nZB" secondAttribute="height" multiplier="37:34" id="pKq-Pa-yeu"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="2mO-xc-PBE" firstAttribute="width" secondItem="Yzb-mI-p8G" secondAttribute="height" multiplier="47:286" id="0hP-aQ-buw"/>
+                                            <constraint firstItem="9Xw-he-nZB" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" constant="330" id="0oI-qR-JuG"/>
+                                            <constraint firstItem="Yko-4g-WZi" firstAttribute="top" secondItem="SeX-fA-27W" secondAttribute="bottom" constant="27" id="1fY-7O-h43"/>
                                             <constraint firstItem="EVo-Eb-IHq" firstAttribute="top" secondItem="Yzb-mI-p8G" secondAttribute="top" id="2nM-Vx-8nn"/>
                                             <constraint firstItem="yPJ-0J-Nb8" firstAttribute="leading" secondItem="SeX-fA-27W" secondAttribute="leading" id="2tk-04-dbr"/>
                                             <constraint firstItem="yPJ-0J-Nb8" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" id="5Dw-Nn-DXv"/>
@@ -1162,20 +1180,27 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <constraint firstItem="WSP-95-OwA" firstAttribute="top" secondItem="EVo-Eb-IHq" secondAttribute="bottom" constant="17" id="AWu-mJ-EdQ"/>
                                             <constraint firstItem="8Xq-WJ-j1W" firstAttribute="top" secondItem="yPJ-0J-Nb8" secondAttribute="bottom" constant="17" id="Aji-Ni-NZh"/>
                                             <constraint firstItem="ehf-Iv-j9u" firstAttribute="top" secondItem="8Xq-WJ-j1W" secondAttribute="bottom" constant="17" id="EWk-vc-v41"/>
+                                            <constraint firstItem="9Xw-he-nZB" firstAttribute="top" secondItem="yPJ-0J-Nb8" secondAttribute="bottom" constant="27" id="FfT-9Z-Gij"/>
                                             <constraint firstItem="ehf-Iv-j9u" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" id="Jed-Tw-Zx3"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yko-4g-WZi" secondAttribute="trailing" constant="8" id="Jyq-Ga-TwI"/>
                                             <constraint firstAttribute="trailing" secondItem="WSP-95-OwA" secondAttribute="trailing" id="RZy-Aw-OMT"/>
                                             <constraint firstItem="8Xq-WJ-j1W" firstAttribute="width" secondItem="8Xq-WJ-j1W" secondAttribute="height" multiplier="125:18" id="Ta7-kq-oL1"/>
                                             <constraint firstItem="2mO-xc-PBE" firstAttribute="top" secondItem="ehf-Iv-j9u" secondAttribute="bottom" constant="50" id="Uyz-x8-NiB"/>
+                                            <constraint firstItem="ehf-Iv-j9u" firstAttribute="top" secondItem="9Xw-he-nZB" secondAttribute="bottom" constant="27" id="VYg-PV-9J6"/>
+                                            <constraint firstItem="Yko-4g-WZi" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" constant="330" id="Yd1-C3-yQv"/>
                                             <constraint firstItem="yPJ-0J-Nb8" firstAttribute="leading" secondItem="Lgc-OQ-sFg" secondAttribute="leading" id="b1S-Kr-ePi"/>
                                             <constraint firstItem="WSP-95-OwA" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" id="evH-cK-Im6"/>
                                             <constraint firstAttribute="height" constant="858" id="faF-kB-jjC"/>
                                             <constraint firstItem="yPJ-0J-Nb8" firstAttribute="top" secondItem="SeX-fA-27W" secondAttribute="bottom" constant="17" id="h0d-jm-TE2"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Xw-he-nZB" secondAttribute="trailing" constant="8" id="hyw-CI-ebe"/>
                                             <constraint firstItem="8Xq-WJ-j1W" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" id="j2p-tg-5mh"/>
                                             <constraint firstAttribute="width" constant="375" id="sGE-Uu-00z"/>
                                             <constraint firstItem="yPJ-0J-Nb8" firstAttribute="width" secondItem="yPJ-0J-Nb8" secondAttribute="height" multiplier="125:18" id="sfu-BQ-naV"/>
                                             <constraint firstAttribute="trailing" secondItem="8Xq-WJ-j1W" secondAttribute="trailing" id="uMc-Bk-RrB"/>
+                                            <constraint firstItem="8Xq-WJ-j1W" firstAttribute="top" secondItem="Yko-4g-WZi" secondAttribute="bottom" constant="27" id="whr-5T-43z"/>
                                             <constraint firstItem="Lgc-OQ-sFg" firstAttribute="top" secondItem="WSP-95-OwA" secondAttribute="bottom" constant="17" id="xJk-Ds-Fam"/>
                                             <constraint firstItem="EVo-Eb-IHq" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" id="y1R-Ut-mpI"/>
+                                            <constraint firstItem="9Xw-he-nZB" firstAttribute="width" secondItem="9Xw-he-nZB" secondAttribute="height" multiplier="37:34" id="yOk-PD-E8B"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1208,6 +1233,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                     <size key="freeformSize" width="375" height="858"/>
                     <connections>
                         <outlet property="date" destination="WSP-95-OwA" id="9y9-5U-27U"/>
+                        <outlet property="directionButton" destination="8Xq-WJ-j1W" id="urf-vR-w5u"/>
                         <outlet property="mapView" destination="EVo-Eb-IHq" id="TZr-17-Lbx"/>
                         <outlet property="signupbotton" destination="2mO-xc-PBE" id="FT6-GI-JRi"/>
                         <outlet property="teamlead" destination="SeX-fA-27W" id="oz9-9s-ecY"/>
@@ -1217,18 +1243,18 @@ We are happy to answer any questions at 276harvest8@gmail.com
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDG-lR-OOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1932" y="2024"/>
+            <point key="canvasLocation" x="-1932.608695652174" y="2023.3695652173915"/>
         </scene>
         <!--My Picks Map View-->
         <scene sceneID="xgH-m2-01K">
             <objects>
                 <viewController storyboardIdentifier="MyPickMapViewController" title="My Picks Map View" id="QtD-1E-h5M" customClass="MyPickMapViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JXF-u4-AEI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JOS-kb-SbP">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1254,15 +1280,15 @@ We are happy to answer any questions at 276harvest8@gmail.com
             <objects>
                 <tableViewController storyboardIdentifier="MyPicksTableViewController" id="78m-cM-qfT" userLabel="List View" customClass="MyPicksTableViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="102" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pR3-s6-XQ9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPickEventTableViewCell" rowHeight="102" id="KO9-yJ-AEC" customClass="MyPickEventTableViewCell" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="102"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KO9-yJ-AEC" id="Lii-lB-44b" customClass="MyPickEventTableViewCell" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="101.66666666666667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.66666666666667"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ebn-KX-bqP">
@@ -1337,103 +1363,58 @@ We are happy to answer any questions at 276harvest8@gmail.com
             </objects>
             <point key="canvasLocation" x="967" y="211"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="4tN-Nl-hl6">
-            <objects>
-                <viewController id="M9b-qj-POe" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HjQ-z4-5Fl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ubm-9s-AsK">
-                                <rect key="frame" x="153" y="113" width="68" height="72"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ubm-9s-AsK" secondAttribute="height" multiplier="17:18" id="pU0-D0-Wde"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xox-rm-bLa">
-                                <rect key="frame" x="43" y="212" width="91" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work In Progress :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNK-VL-QCr">
-                                <rect key="frame" x="114.66666666666669" y="400.66666666666669" width="146" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.59215686270000001" green="0.83529411760000005" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="ubm-9s-AsK" firstAttribute="top" secondItem="IgT-L2-b9h" secondAttribute="top" constant="69" id="LhU-FV-3yf"/>
-                            <constraint firstItem="XNK-VL-QCr" firstAttribute="centerX" secondItem="IgT-L2-b9h" secondAttribute="centerX" id="Nqy-DG-wAU"/>
-                            <constraint firstItem="IgT-L2-b9h" firstAttribute="trailing" secondItem="ubm-9s-AsK" secondAttribute="trailing" constant="154" id="PpW-Nj-W3h"/>
-                            <constraint firstItem="IgT-L2-b9h" firstAttribute="trailing" secondItem="xox-rm-bLa" secondAttribute="trailing" constant="241" id="S64-eu-KpH"/>
-                            <constraint firstItem="ubm-9s-AsK" firstAttribute="leading" secondItem="IgT-L2-b9h" secondAttribute="leading" constant="153" id="bxd-30-svr"/>
-                            <constraint firstItem="xox-rm-bLa" firstAttribute="top" secondItem="ubm-9s-AsK" secondAttribute="bottom" constant="27" id="cYv-fV-Xhs"/>
-                            <constraint firstItem="XNK-VL-QCr" firstAttribute="centerY" secondItem="IgT-L2-b9h" secondAttribute="centerY" id="feH-sU-kkL"/>
-                            <constraint firstItem="xox-rm-bLa" firstAttribute="leading" secondItem="IgT-L2-b9h" secondAttribute="leading" constant="43" id="r1A-W8-Y30"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="IgT-L2-b9h"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f4a-zm-PuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1924" y="210.59113300492612"/>
-        </scene>
         <!--Leader Board View Controller-->
         <scene sceneID="dxO-i8-UUP">
             <objects>
                 <viewController id="c9n-vc-olr" customClass="LeaderBoardViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="acJ-mq-L3F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-1" translatesAutoresizingMaskIntoConstraints="NO" id="D2h-7i-3aa">
-                                <rect key="frame" x="0.0" y="-72" width="375" height="850"/>
+                                <rect key="frame" x="0.0" y="-96" width="414" height="832"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leaderboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKD-9D-Erp">
-                                <rect key="frame" x="19" y="113" width="142" height="28"/>
+                                <rect key="frame" x="19" y="89" width="181" height="28"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT0-hq-eai">
-                                <rect key="frame" x="16" y="413" width="145" height="28"/>
+                                <rect key="frame" x="16" y="389" width="184" height="28"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDp-aF-eoM" userLabel="First Place Text Box">
-                                <rect key="frame" x="0.0" y="181" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="157" width="414" height="55"/>
                                 <color key="backgroundColor" red="0.48316270373554754" green="0.77018559644670048" blue="0.43528213999699955" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVT-Ve-q1T" userLabel="FirstPlaceDesign">
-                                <rect key="frame" x="0.0" y="181" width="13" height="55"/>
+                                <rect key="frame" x="0.0" y="157" width="13" height="55"/>
                                 <color key="backgroundColor" red="0.25644617424983385" green="0.4087880710659898" blue="0.23103281494717423" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c63-IC-gVF" userLabel="FirstPlaceUserName">
-                                <rect key="frame" x="74" y="198" width="82" height="21"/>
+                                <rect key="frame" x="74" y="174" width="121" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9C-2O-sWR">
-                                <rect key="frame" x="0.0" y="585" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="543" width="414" height="55"/>
                                 <color key="backgroundColor" red="0.48316270369999997" green="0.77018559639999995" blue="0.43528213999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ej8-0E-GbC" userLabel="YourRankDesign">
-                                <rect key="frame" x="0.0" y="585" width="13" height="55"/>
+                                <rect key="frame" x="0.0" y="543" width="13" height="55"/>
                                 <color key="backgroundColor" red="0.25644617419999999" green="0.40878807109999998" blue="0.23103281489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="uc3-OY-dVx"/>
@@ -1443,19 +1424,19 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4re-MP-iJz">
-                                <rect key="frame" x="74" y="602" width="82" height="21"/>
+                                <rect key="frame" x="74" y="560" width="121" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zw-ih-7A7">
-                                <rect key="frame" x="35" y="602" width="38" height="21"/>
+                                <rect key="frame" x="35" y="560" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0P-fU-8mn" userLabel="Second Place Text Box">
-                                <rect key="frame" x="0.0" y="253" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="229" width="414" height="55"/>
                                 <color key="backgroundColor" red="0.48316270369999997" green="0.77018559639999995" blue="0.43528213999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="1WY-XT-f4O"/>
@@ -1465,33 +1446,33 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCE-di-XB6" userLabel="2ndPlaceDesign">
-                                <rect key="frame" x="0.0" y="253" width="13" height="55"/>
+                                <rect key="frame" x="0.0" y="229" width="13" height="55"/>
                                 <color key="backgroundColor" red="0.25644617419999999" green="0.40878807109999998" blue="0.23103281489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiH-B5-Txi" userLabel="2ndPlaceUserName">
-                                <rect key="frame" x="74" y="270" width="82" height="21"/>
+                                <rect key="frame" x="74" y="246" width="121" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2nd" translatesAutoresizingMaskIntoConstraints="NO" id="o0c-ju-Xhf">
-                                <rect key="frame" x="21" y="258" width="44" height="44"/>
+                                <rect key="frame" x="21" y="234" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="sF6-7Z-AN7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZG-Pb-nMz" userLabel="Third Place Text Box">
-                                <rect key="frame" x="0.0" y="322" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="298" width="414" height="55"/>
                                 <color key="backgroundColor" red="0.48316270369999997" green="0.77018559639999995" blue="0.43528213999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKN-WV-3Ra" userLabel="3rdPlaceDesign">
-                                <rect key="frame" x="0.0" y="322" width="13" height="55"/>
+                                <rect key="frame" x="0.0" y="298" width="13" height="55"/>
                                 <color key="backgroundColor" red="0.25644617419999999" green="0.40878807109999998" blue="0.23103281489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="YYm-xY-JJB"/>
@@ -1501,16 +1482,16 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jon-j4-GiF" userLabel="3rdPlaceUsername">
-                                <rect key="frame" x="74" y="339" width="82" height="21"/>
+                                <rect key="frame" x="74" y="315" width="121" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3rd" translatesAutoresizingMaskIntoConstraints="NO" id="X4d-sf-7rK">
-                                <rect key="frame" x="21" y="327" width="44" height="44"/>
+                                <rect key="frame" x="21" y="303" width="44" height="44"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1st" translatesAutoresizingMaskIntoConstraints="NO" id="JOL-2h-wg5">
-                                <rect key="frame" x="21" y="186" width="44" height="44"/>
+                                <rect key="frame" x="21" y="162" width="44" height="44"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1604,11 +1585,11 @@ We are happy to answer any questions at 276harvest8@gmail.com
             <objects>
                 <viewController storyboardIdentifier="FoodBankViewController" title="Food Bank Details " id="dph-ia-zbx" customClass="FoodBankViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Xr-IW-Vzn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEy-3d-kKh">
-                                <rect key="frame" x="0.0" y="481" width="375" height="54"/>
+                                <rect key="frame" x="0.0" y="439" width="414" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwn-Il-xNa">
                                         <rect key="frame" x="8" y="17" width="68" height="21"/>
@@ -1617,7 +1598,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxx-1b-SBA">
-                                        <rect key="frame" x="115" y="6" width="252" height="42"/>
+                                        <rect key="frame" x="115" y="6" width="291" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1635,10 +1616,10 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-9s-1Jf">
-                                <rect key="frame" x="0.0" y="57" width="375" height="343"/>
+                                <rect key="frame" x="0.0" y="33" width="414" height="325"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ke7-nL-r9I">
-                                <rect key="frame" x="0.0" y="419" width="375" height="54"/>
+                                <rect key="frame" x="0.0" y="377" width="414" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Bank:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiE-T0-9f5">
                                         <rect key="frame" x="8" y="17" width="86" height="21"/>
@@ -1647,7 +1628,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0t-Kl-bG5">
-                                        <rect key="frame" x="102" y="17" width="265" height="21"/>
+                                        <rect key="frame" x="102" y="17" width="304" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1666,7 +1647,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zM4-bf-1fm">
-                                <rect key="frame" x="0.0" y="543" width="375" height="54"/>
+                                <rect key="frame" x="0.0" y="501" width="414" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opening hours:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfd-K5-a2Z">
                                         <rect key="frame" x="8" y="17" width="118" height="21"/>
@@ -1675,7 +1656,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWD-Ms-Cky">
-                                        <rect key="frame" x="188" y="17" width="179" height="21"/>
+                                        <rect key="frame" x="188" y="17" width="218" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="179" id="MHy-px-Ijz"/>
                                         </constraints>
@@ -1697,7 +1678,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OX-tQ-BgP">
-                                <rect key="frame" x="116" y="708" width="143" height="30"/>
+                                <rect key="frame" x="116" y="666" width="182" height="30"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.4941176471" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Directions">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1713,7 +1694,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x9q-1o-s01">
-                                <rect key="frame" x="25" y="631" width="324" height="69"/>
+                                <rect key="frame" x="25" y="589" width="363" height="69"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="uSb-uj-KOK"/>
@@ -1722,7 +1703,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9q9-Xj-PAJ">
-                                <rect key="frame" x="20.666666666666668" y="605" width="50.333333333333329" height="21"/>
+                                <rect key="frame" x="25" y="563" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1778,7 +1759,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jot-06-mYK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1yD-V8-acJ">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1800,7 +1781,6 @@ We are happy to answer any questions at 276harvest8@gmail.com
         <image name="Green alert" width="64" height="64"/>
         <image name="Icons" width="25" height="25"/>
         <image name="Map view" width="25" height="25"/>
-        <image name="ProfileIcon" width="72" height="72"/>
         <image name="VFTP_LOGO_CS3-167x300" width="167" height="300"/>
         <image name="user" width="512" height="512"/>
     </resources>
