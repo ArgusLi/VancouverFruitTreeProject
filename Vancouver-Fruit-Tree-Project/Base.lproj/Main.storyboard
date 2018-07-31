@@ -752,8 +752,54 @@
         <!--Team Members-->
         <scene sceneID="Xvb-bK-XzS">
             <objects>
-                <tableViewController id="gPm-8U-NTI" sceneMemberID="viewController">
+                <tableViewController id="gPm-8U-NTI" customClass="TeamMembersTableViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g0a-Z9-hyJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sLf-hB-pWz" customClass="TeamMembersTableViewCell" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sLf-hB-pWz" id="Iek-bd-USb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdE-s8-qZG">
+                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JpV-hJ-fGq">
+                                            <rect key="frame" x="310" y="6" width="49" height="31"/>
+                                            <connections>
+                                                <action selector="switchAction:" destination="sLf-hB-pWz" eventType="valueChanged" id="wrf-l8-x6j"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JpV-hJ-fGq" firstAttribute="top" secondItem="Iek-bd-USb" secondAttribute="top" constant="6" id="AnU-h0-p5V"/>
+                                        <constraint firstAttribute="trailing" secondItem="JpV-hJ-fGq" secondAttribute="trailing" constant="18" id="miz-Bl-js4"/>
+                                        <constraint firstItem="LdE-s8-qZG" firstAttribute="leading" secondItem="Iek-bd-USb" secondAttribute="leading" constant="16" id="rWu-1D-oa0"/>
+                                        <constraint firstItem="LdE-s8-qZG" firstAttribute="top" secondItem="Iek-bd-USb" secondAttribute="top" constant="11" id="ww3-Hf-7HL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="Name" destination="LdE-s8-qZG" id="kUr-qi-nQB"/>
+                                    <outlet property="Switch" destination="JpV-hJ-fGq" id="JTw-Sv-fAG"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gPm-8U-NTI" id="EOV-xE-xSX"/>
+                            <outlet property="delegate" destination="gPm-8U-NTI" id="3Hr-8z-hvG"/>
+                        </connections>
+                    </tableView>
                     <tabBarItem key="tabBarItem" title="Team Members" image="attendance-1" id="Mpg-UQ-mCR"/>
+                    <connections>
+                        <outlet property="table" destination="g0a-Z9-hyJ" id="wv4-7S-zV0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKQ-l1-H1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -789,7 +835,7 @@
         <!--Yield-->
         <scene sceneID="o6Y-yS-6bp">
             <objects>
-                <viewController id="sIY-p9-nm9" sceneMemberID="viewController">
+                <viewController id="sIY-p9-nm9" customClass="YieldsTableViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c5v-Tt-B3L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -812,7 +858,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="77" id="pQ0-5r-A6G">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="77" id="pQ0-5r-A6G" customClass="YieldsTableViewCell" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pQ0-5r-A6G" id="89g-XF-V9n">
@@ -863,6 +909,12 @@
                                                 <constraint firstItem="VVW-yU-jPq" firstAttribute="top" secondItem="SY7-qD-pDR" secondAttribute="bottom" constant="8" id="nUV-lM-N7y"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="Fruit" destination="SY7-qD-pDR" id="iWC-AF-BSt"/>
+                                            <outlet property="gradeAYield" destination="Iod-dV-vru" id="lCb-fG-wFg"/>
+                                            <outlet property="gradeB" destination="2ph-cv-h4b" id="10H-nJ-MAs"/>
+                                            <outlet property="gradeBYield" destination="2ph-cv-h4b" id="7ln-bk-e6J"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -872,6 +924,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Yield" image="yield" id="6sl-AF-op3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="table" destination="UCy-cB-myq" id="3Lh-19-tAY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJp-PG-NWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -892,6 +947,7 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rrO-iv-QfP"/>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="S6s-nZ-DKl">
                                             <connections>
+                                                <action selector="saveAction:" destination="WTO-fQ-EhE" id="56W-sy-A1Q"/>
                                                 <segue destination="sIY-p9-nm9" kind="show" id="x9M-b0-inh"/>
                                             </connections>
                                         </barButtonItem>

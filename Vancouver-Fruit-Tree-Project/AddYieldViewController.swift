@@ -17,6 +17,19 @@ class AddYieldViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var gradeBField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    @IBAction func saveAction(_ sender: Any) {
+        if gradeAField.hasText == true && gradeBField.hasText == true{
+            //send the database the yield for the pick - gradeAField.text and gradeBField.text and pickerChoice
+            let alert = UIAlertController(title: "Saved", message: "Yield has been saved", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        else{
+            let alert = UIAlertController(title: "Not Saved", message: "Yield has not been saved, yield amounts not given", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
     
     //Adding picker information
     var pickerData: [String] = [String]()
