@@ -396,7 +396,7 @@ class DatabaseInterface: NSObject {
         //removeSignUpForPickEvent(pickItem: pickItem, userId: userId)
     }
     
-    //Author: Cameron
+    //Author: Cameron, modified by Artem
     /// removes a pick event from the user's personal database entry
     ///
     /// - Parameters:
@@ -416,22 +416,18 @@ class DatabaseInterface: NSObject {
             print("There are existing events in the list")
             //check if pick event exists in the array
             
-            let count = UserItem._pickEvents!.count
             var index: Int?
-            var i: Int = 0
-            
-            while index == nil || count != i {
-                
-                if pickItem._userId == UserItem._pickEvents![i][0] && pickItem._creationTime == UserItem._pickEvents![i][1]{
-                    index = i
-                    print("item with matching hash found at index [" + String(index!) + "]")
-                }
-                
-                i += 1
-                print("at loop itr #" + String(i))
-                
+            if pickItem._userId == nil || pickItem._creationTime == nil{
+                //should not happen due to the process of pick item creation
+                fatalError("This event does not have user id or creation time")
             }
             
+            for ev in UserItem._pickEvents!{
+                if (ev[0] == pickItem._userId! && ev[1] == pickItem._creationTime!)
+                {
+                    index = UserItem._pickEvents?.index(of: ev)
+                }
+            }
             if index != nil {
                 UserItem._pickEvents!.remove(at: index!)
                 print("item at index [" + String(index!) + "] was removed")
@@ -457,6 +453,9 @@ class DatabaseInterface: NSObject {
         if (UserItem._role == Roles.volunteer.rawValue){
             if let i = pickItem._volunteers?.index(of: userId){
                 pickItem._volunteers?.remove(at: i)
+                if pickItem._volunteers?.count == 0{
+                    pickItem._volunteers = nil
+                }
             }
             else{
                 print("User is not signed up for this event")

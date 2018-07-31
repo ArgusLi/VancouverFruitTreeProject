@@ -694,6 +694,13 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GE7-6T-rXb">
+                                            <rect key="frame" x="255" y="26" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.74509803921568629" green="1" blue="0.70196078431372544" alpha="0.060519366197183101" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
@@ -710,6 +717,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                     <outlet property="DistanceFrom" destination="Dts-KK-y3f" id="La3-Ip-rsQ"/>
                                     <outlet property="TeamLead" destination="dgf-kI-873" id="hfz-To-ajl"/>
                                     <outlet property="Time" destination="Ase-w2-X93" id="lbR-GI-zyy"/>
+                                    <outlet property="isFull" destination="GE7-6T-rXb" id="yjK-5d-iLi"/>
                                     <outlet property="sideImage" destination="dmy-5d-BJp" id="5T2-7u-nGo"/>
                                 </connections>
                             </tableViewCell>
