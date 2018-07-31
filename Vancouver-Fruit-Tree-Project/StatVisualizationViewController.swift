@@ -205,9 +205,12 @@ class StatVisualizationViewController: UIViewController {
         var barChartDataEntriesA: [BarChartDataEntry] = [BarChartDataEntry]()
         var barChartDataEntriesB: [BarChartDataEntry] = [BarChartDataEntry]()
         
+        let barFormatter: BarChartFormatter = BarChartFormatter()
+        let xaxis = XAxis()
+        
         var response: (Int, Int) = (0, 0)
         
-        var dates: [String] = [String()]
+        var dates: [String] = [String]()
         var count = 0
         
         print("Checking between " + String(MinYear) + " / " + String(MinMonth) + " - " + String(MaxYear) + " / " + String(MaxMonth))
@@ -221,11 +224,12 @@ class StatVisualizationViewController: UIViewController {
             
             else{
                 response = DBINT.getYieldDataByMonth(year: String(currentYear), month: String(currentMonth))
-
                 dates.append(String(currentYear) + "/" + String(currentMonth))
             }
             
             print("Yield: " + String(response.0 + response.1))
+            
+            
             
             //[Double(response.0), Double(response.1)]
             
@@ -248,6 +252,18 @@ class StatVisualizationViewController: UIViewController {
             count += 1
             
         }
+        print(dates)
+        barFormatter.setMonths(dates: dates)
+        
+        for i in 0...(count-1) {
+            
+            barFormatter.stringForValue(Double(i), axis: xaxis)
+            
+        }
+        
+        xaxis.valueFormatter = barFormatter
+        
+        barChart.xAxis.valueFormatter = xaxis.valueFormatter
         
         let dataSetA = BarChartDataSet(values: barChartDataEntriesA, label: "Gr. A Yield")
         let dataSetB = BarChartDataSet(values: barChartDataEntriesB, label: "Gr. B Yield")
