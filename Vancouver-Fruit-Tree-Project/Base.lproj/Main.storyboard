@@ -1382,10 +1382,10 @@ We are happy to answer any questions at 276harvest8@gmail.com
             </objects>
             <point key="canvasLocation" x="1924" y="210.59113300492612"/>
         </scene>
-        <!--View Controller-->
+        <!--Leader Board View Controller-->
         <scene sceneID="dxO-i8-UUP">
             <objects>
-                <viewController id="c9n-vc-olr" sceneMemberID="viewController">
+                <viewController id="c9n-vc-olr" customClass="LeaderBoardViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="acJ-mq-L3F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1448,8 +1448,8 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zw-ih-7A7">
-                                <rect key="frame" x="35" y="602" width="11" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zw-ih-7A7">
+                                <rect key="frame" x="35" y="602" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1535,7 +1535,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                             <constraint firstItem="oKN-WV-3Ra" firstAttribute="trailing" secondItem="tVT-Ve-q1T" secondAttribute="trailing" id="B7z-Ya-VBu"/>
                             <constraint firstItem="M0P-fU-8mn" firstAttribute="leading" secondItem="5ZG-Pb-nMz" secondAttribute="leading" id="BrM-Pq-ZEz"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7zw-ih-7A7" secondAttribute="trailing" constant="20" symbolic="YES" id="Bsa-KQ-Z3Y"/>
-                            <constraint firstItem="4re-MP-iJz" firstAttribute="leading" secondItem="7zw-ih-7A7" secondAttribute="trailing" constant="28" id="CdR-N3-jgz"/>
+                            <constraint firstItem="4re-MP-iJz" firstAttribute="leading" secondItem="7zw-ih-7A7" secondAttribute="trailing" constant="1" id="CdR-N3-jgz"/>
                             <constraint firstItem="Ej8-0E-GbC" firstAttribute="baseline" secondItem="U9C-2O-sWR" secondAttribute="baseline" id="DQG-eO-u8V"/>
                             <constraint firstItem="QcO-jf-BYN" firstAttribute="top" secondItem="D2h-7i-3aa" secondAttribute="top" constant="160" id="DTN-V2-9nX"/>
                             <constraint firstItem="tVT-Ve-q1T" firstAttribute="top" secondItem="QcO-jf-BYN" secondAttribute="top" constant="93" id="DZh-kH-EZm"/>
@@ -1556,7 +1556,6 @@ We are happy to answer any questions at 276harvest8@gmail.com
                             <constraint firstAttribute="trailing" secondItem="4re-MP-iJz" secondAttribute="trailing" constant="219" id="Rst-k2-iTe"/>
                             <constraint firstItem="Ej8-0E-GbC" firstAttribute="centerY" secondItem="7zw-ih-7A7" secondAttribute="centerY" id="SZ7-Jc-R18"/>
                             <constraint firstItem="oKN-WV-3Ra" firstAttribute="baseline" secondItem="5ZG-Pb-nMz" secondAttribute="baseline" id="Uxa-9y-kJy"/>
-                            <constraint firstItem="M0P-fU-8mn" firstAttribute="top" secondItem="acJ-mq-L3F" secondAttribute="top" constant="229" id="V2P-p4-nbN"/>
                             <constraint firstItem="M0P-fU-8mn" firstAttribute="trailing" secondItem="U9C-2O-sWR" secondAttribute="trailing" id="X5l-wI-27g"/>
                             <constraint firstItem="M0P-fU-8mn" firstAttribute="leading" secondItem="oKN-WV-3Ra" secondAttribute="leading" id="ZTQ-aC-1TV"/>
                             <constraint firstItem="M0P-fU-8mn" firstAttribute="leading" secondItem="U9C-2O-sWR" secondAttribute="leading" id="ZfV-dS-Nef"/>
@@ -1588,10 +1587,17 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QcO-jf-BYN"/>
                     </view>
+                    <connections>
+                        <outlet property="firstPlace" destination="c63-IC-gVF" id="18q-Z0-Cn1"/>
+                        <outlet property="rank" destination="7zw-ih-7A7" id="bRJ-ps-MOY"/>
+                        <outlet property="secondPlace" destination="yiH-B5-Txi" id="ge8-XS-QVs"/>
+                        <outlet property="thirdPlace" destination="Jon-j4-GiF" id="fag-pm-JpE"/>
+                        <outlet property="userName" destination="4re-MP-iJz" id="r6S-W8-gJd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5us-L5-8R5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2845.5999999999999" y="210.04497751124438"/>
+            <point key="canvasLocation" x="2845.5999999999999" y="209.85221674876848"/>
         </scene>
         <!--Food Bank Details -->
         <scene sceneID="1Us-Xf-gqn">
