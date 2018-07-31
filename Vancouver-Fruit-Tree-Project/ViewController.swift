@@ -12,6 +12,8 @@ import AWSAuthUI
 import AWSCognitoIdentityProvider
 import AWSGoogleSignIn
 import SideMenu
+import Charts
+
 class ViewController: UIViewController {
     //MARK - hamburger menu vars
     @IBOutlet weak var leadingC: NSLayoutConstraint!

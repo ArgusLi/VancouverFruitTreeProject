@@ -14,6 +14,9 @@
 		7A78B95420FFE358005569E2 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
 		7A78B95520FFE358005569E2 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
 		7AFFF53D20FEB1F000A4D54D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
+		7E3B2994210FC109008369F5 /* StatVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */; };
+		7E3B2995210FC109008369F5 /* StatVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */; };
+		7E3B2996210FC109008369F5 /* StatVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */; };
 		7EC8776120E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
 		7EC8776220E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
 		7EC8776320E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
@@ -102,6 +105,7 @@
 		7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPickEventTableViewCell.swift; sourceTree = "<group>"; };
 		7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPicksTableViewController.swift; sourceTree = "<group>"; };
 		7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatVisualizationViewController.swift; sourceTree = "<group>"; };
 		7EC8776020E818B300F860C9 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		7EC8776420E81AA000F860C9 /* PickEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickEvents.swift; sourceTree = "<group>"; };
 		7EC8776520E81AA000F860C9 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 				AC5CD3D020F297CC00C196B9 /* SearchLocationTableViewController.swift */,
 				7A78B94420FF6012005569E2 /* FoodBankViewController.swift */,
 				AC8EB70720D03A91007E6CAA /* Main.storyboard */,
+				7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */,
 				AC8EB70A20D03A94007E6CAA /* Assets.xcassets */,
 				AC8EB70C20D03A94007E6CAA /* LaunchScreen.storyboard */,
 				7EC8776020E818B300F860C9 /* awsconfiguration.json */,
@@ -620,6 +625,7 @@
 				AC5CD3D120F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				7A78B94520FF6012005569E2 /* FoodBankViewController.swift in Sources */,
 				ACA7FD5520E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
+				7E3B2994210FC109008369F5 /* StatVisualizationViewController.swift in Sources */,
 				AC5CD3CD20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
 				7A78B95420FFE358005569E2 /* MyPickEventTableViewCell.swift in Sources */,
 				7A78B95220FFE358005569E2 /* MyPickMapViewController.swift in Sources */,
@@ -648,6 +654,7 @@
 				ACA7FD5620E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
 				ACA7FD4C20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
 				AC59A1FE20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
+				7E3B2995210FC109008369F5 /* StatVisualizationViewController.swift in Sources */,
 				ACA7FD7020EB4EB60040EEE0 /* MapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,6 +678,7 @@
 				ACA7FD5720E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
 				ACA7FD4D20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
 				AC59A1FF20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
+				7E3B2996210FC109008369F5 /* StatVisualizationViewController.swift in Sources */,
 				ACA7FD7120EB4EB60040EEE0 /* MapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
