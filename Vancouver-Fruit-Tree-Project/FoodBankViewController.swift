@@ -35,6 +35,7 @@ class FoodBankViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if pick == nil{
             print("Pick is nil")
         }

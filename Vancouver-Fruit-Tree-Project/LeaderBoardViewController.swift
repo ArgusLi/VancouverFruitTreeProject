@@ -71,8 +71,27 @@ class LeaderBoardViewController: UIViewController {
         return LeaderArray
         
     }
-
     
+/*    func testableSortLeader(arr: [Int]) -> Bool {
+        var tArr = arr
+        tArr = arr
+        let count = arr.count
+        var largerValue: Int
+        for j in 1...count - 1 {
+            if tArr[j-1] > tArr[j] {
+                largerValue = arr[j-1]
+                tArr[j-1] = tArr[j]
+                tArr[j] = largerValue
+            }
+        }
+        if tArr[0] == 1 {
+            return true
+        } else {
+            return false
+        }
+    }
+
+   */
     
     func changeLabels()
     {

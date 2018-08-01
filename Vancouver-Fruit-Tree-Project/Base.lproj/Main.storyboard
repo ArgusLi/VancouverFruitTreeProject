@@ -494,8 +494,8 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                     <constraint firstItem="OHh-8J-2Vi" firstAttribute="top" secondItem="Zo1-g0-rGN" secondAttribute="top" constant="17" id="tf8-sq-YgV"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="nzx-as-UBf">
-                                <rect key="frame" x="126.66666666666669" y="119" width="123" height="124"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nzx-as-UBf">
+                                <rect key="frame" x="126.33333333333331" y="119" width="123" height="124"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nzx-as-UBf" secondAttribute="height" multiplier="123:124" id="O6w-Oe-3Ld"/>
                                 </constraints>
@@ -1406,9 +1406,12 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54" id="cMk-Bi-pHO"/>
                                                 </constraints>
-                                                <state key="normal" title="Equipment Location">
+                                                <state key="normal" title="Open in Map App">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="directionButttonClicked:" destination="slh-jt-ZCp" eventType="touchUpInside" id="Sgh-FZ-AsX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehf-Iv-j9u">
                                                 <rect key="frame" x="0.0" y="665" width="375" height="54"/>
@@ -1433,9 +1436,16 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                                     <action selector="signup:" destination="slh-jt-ZCp" eventType="touchUpInside" id="rmo-Z4-Xfl"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Yko-4g-WZi">
+                                                <rect key="frame" x="319" y="526" width="48" height="48"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="9Xw-he-nZB">
+                                                <rect key="frame" x="319" y="597" width="48" height="48"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="9Xw-he-nZB" firstAttribute="width" secondItem="8Xq-WJ-j1W" secondAttribute="height" multiplier="8:9" id="04F-8z-pci"/>
                                             <constraint firstItem="2mO-xc-PBE" firstAttribute="width" secondItem="Yzb-mI-p8G" secondAttribute="height" multiplier="47:286" id="0hP-aQ-buw"/>
                                             <constraint firstItem="EVo-Eb-IHq" firstAttribute="top" secondItem="Yzb-mI-p8G" secondAttribute="top" id="2nM-Vx-8nn"/>
                                             <constraint firstItem="yPJ-0J-Nb8" firstAttribute="leading" secondItem="SeX-fA-27W" secondAttribute="leading" id="2tk-04-dbr"/>
@@ -1447,9 +1457,12 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <constraint firstItem="ehf-Iv-j9u" firstAttribute="top" secondItem="8Xq-WJ-j1W" secondAttribute="bottom" constant="17" id="EWk-vc-v41"/>
                                             <constraint firstItem="ehf-Iv-j9u" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" id="Jed-Tw-Zx3"/>
                                             <constraint firstAttribute="trailing" secondItem="WSP-95-OwA" secondAttribute="trailing" id="RZy-Aw-OMT"/>
+                                            <constraint firstItem="Yko-4g-WZi" firstAttribute="width" secondItem="yPJ-0J-Nb8" secondAttribute="height" multiplier="8:9" id="S6c-fZ-gPt"/>
                                             <constraint firstItem="8Xq-WJ-j1W" firstAttribute="width" secondItem="8Xq-WJ-j1W" secondAttribute="height" multiplier="125:18" id="Ta7-kq-oL1"/>
                                             <constraint firstItem="2mO-xc-PBE" firstAttribute="top" secondItem="ehf-Iv-j9u" secondAttribute="bottom" constant="50" id="Uyz-x8-NiB"/>
+                                            <constraint firstItem="Yko-4g-WZi" firstAttribute="top" secondItem="yPJ-0J-Nb8" secondAttribute="bottom" constant="-51" id="a83-Py-20e"/>
                                             <constraint firstItem="yPJ-0J-Nb8" firstAttribute="leading" secondItem="Lgc-OQ-sFg" secondAttribute="leading" id="b1S-Kr-ePi"/>
+                                            <constraint firstItem="9Xw-he-nZB" firstAttribute="top" secondItem="8Xq-WJ-j1W" secondAttribute="bottom" constant="-51" id="c0P-az-7BH"/>
                                             <constraint firstItem="WSP-95-OwA" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" id="evH-cK-Im6"/>
                                             <constraint firstAttribute="height" constant="858" id="faF-kB-jjC"/>
                                             <constraint firstItem="yPJ-0J-Nb8" firstAttribute="top" secondItem="SeX-fA-27W" secondAttribute="bottom" constant="17" id="h0d-jm-TE2"/>
@@ -1459,6 +1472,8 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <constraint firstAttribute="trailing" secondItem="8Xq-WJ-j1W" secondAttribute="trailing" id="uMc-Bk-RrB"/>
                                             <constraint firstItem="Lgc-OQ-sFg" firstAttribute="top" secondItem="WSP-95-OwA" secondAttribute="bottom" constant="17" id="xJk-Ds-Fam"/>
                                             <constraint firstItem="EVo-Eb-IHq" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" id="y1R-Ut-mpI"/>
+                                            <constraint firstItem="9Xw-he-nZB" firstAttribute="leading" secondItem="8Xq-WJ-j1W" secondAttribute="trailing" constant="-56" id="yS8-Ke-lut"/>
+                                            <constraint firstItem="Yko-4g-WZi" firstAttribute="leading" secondItem="yPJ-0J-Nb8" secondAttribute="trailing" constant="-56" id="yZ9-tH-5gu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1491,6 +1506,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                     <size key="freeformSize" width="375" height="858"/>
                     <connections>
                         <outlet property="date" destination="WSP-95-OwA" id="9y9-5U-27U"/>
+                        <outlet property="directionButton" destination="8Xq-WJ-j1W" id="urf-vR-w5u"/>
                         <outlet property="mapView" destination="EVo-Eb-IHq" id="TZr-17-Lbx"/>
                         <outlet property="signupbotton" destination="2mO-xc-PBE" id="FT6-GI-JRi"/>
                         <outlet property="teamlead" destination="SeX-fA-27W" id="oz9-9s-ecY"/>
@@ -1500,7 +1516,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDG-lR-OOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1932" y="2024"/>
+            <point key="canvasLocation" x="-1932.608695652174" y="2023.3695652173915"/>
         </scene>
         <!--My Picks Map View-->
         <scene sceneID="xgH-m2-01K">
@@ -1619,51 +1635,6 @@ We are happy to answer any questions at 276harvest8@gmail.com
                 <placeholder placeholderIdentifier="IBFirstResponder" id="reC-Fg-U9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="967" y="211"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="4tN-Nl-hl6">
-            <objects>
-                <viewController id="M9b-qj-POe" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HjQ-z4-5Fl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ubm-9s-AsK">
-                                <rect key="frame" x="153" y="113" width="68" height="72"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ubm-9s-AsK" secondAttribute="height" multiplier="17:18" id="pU0-D0-Wde"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xox-rm-bLa">
-                                <rect key="frame" x="43" y="212" width="91" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work In Progress :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNK-VL-QCr">
-                                <rect key="frame" x="114.66666666666669" y="400.66666666666669" width="146" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.59215686270000001" green="0.83529411760000005" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="ubm-9s-AsK" firstAttribute="top" secondItem="IgT-L2-b9h" secondAttribute="top" constant="69" id="LhU-FV-3yf"/>
-                            <constraint firstItem="XNK-VL-QCr" firstAttribute="centerX" secondItem="IgT-L2-b9h" secondAttribute="centerX" id="Nqy-DG-wAU"/>
-                            <constraint firstItem="IgT-L2-b9h" firstAttribute="trailing" secondItem="ubm-9s-AsK" secondAttribute="trailing" constant="154" id="PpW-Nj-W3h"/>
-                            <constraint firstItem="IgT-L2-b9h" firstAttribute="trailing" secondItem="xox-rm-bLa" secondAttribute="trailing" constant="241" id="S64-eu-KpH"/>
-                            <constraint firstItem="ubm-9s-AsK" firstAttribute="leading" secondItem="IgT-L2-b9h" secondAttribute="leading" constant="153" id="bxd-30-svr"/>
-                            <constraint firstItem="xox-rm-bLa" firstAttribute="top" secondItem="ubm-9s-AsK" secondAttribute="bottom" constant="27" id="cYv-fV-Xhs"/>
-                            <constraint firstItem="XNK-VL-QCr" firstAttribute="centerY" secondItem="IgT-L2-b9h" secondAttribute="centerY" id="feH-sU-kkL"/>
-                            <constraint firstItem="xox-rm-bLa" firstAttribute="leading" secondItem="IgT-L2-b9h" secondAttribute="leading" constant="43" id="r1A-W8-Y30"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="IgT-L2-b9h"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f4a-zm-PuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1924" y="210.59113300492612"/>
         </scene>
         <!--Leader Board View Controller-->
         <scene sceneID="dxO-i8-UUP">
@@ -2122,9 +2093,6 @@ We are happy to answer any questions at 276harvest8@gmail.com
         <image name="Map view" width="25" height="25"/>
         <image name="ProfileIcon" width="72" height="72"/>
         <image name="VFTP_LOGO_CS3-167x300" width="167" height="300"/>
-        <image name="attendance-1" width="30" height="30"/>
-        <image name="user" width="512" height="512"/>
-        <image name="yield" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FKl-hG-D75"/>
