@@ -28,7 +28,11 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     
     @IBOutlet weak var typeOfTrees: UIButton!
     @IBOutlet weak var signupbotton: UIButton!
-   
+    
+    //author: Jeff Lee
+    /// Export the map address to Apple's map app
+    ///
+    /// - Parameter sender: A clickable section
     @IBAction func directionButttonClicked(_ sender: UIButton) {
         if(getCoordinates != nil) {
             let lat = String(format: "%f", (getCoordinates?.latitude)!)

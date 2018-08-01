@@ -31,14 +31,21 @@ class Vancouver_Fruit_Tree_ProjectUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
+    // Test all essential sections in the side menu
+    // Pass - if all are place correctly
+    // Fail - if one of them is missing
+    func testSideMenuSections() {
         
- 
-      
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let app = XCUIApplication()
+        let itemButton = app.navigationBars["Vancouver_Fruit_Tree_Project.View"].buttons["Item"]
+        itemButton.tap()
         
-        
+        let tablesQuery = app.tables
+        XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["Available Picks"]/*[[".cells.staticTexts[\"Available Picks\"]",".staticTexts[\"Available Picks\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists)
+        XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["My Picks"]/*[[".cells.staticTexts[\"My Picks\"]",".staticTexts[\"My Picks\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists)
+        XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["My Account"]/*[[".cells.staticTexts[\"My Account\"]",".staticTexts[\"My Account\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists)
+        XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["Leaderboard"]/*[[".cells.staticTexts[\"Leaderboard\"]",".staticTexts[\"Leaderboard\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists)
     }
+    
     
 }

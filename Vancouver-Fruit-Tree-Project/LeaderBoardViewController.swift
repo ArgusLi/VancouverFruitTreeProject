@@ -72,26 +72,30 @@ class LeaderBoardViewController: UIViewController {
         
     }
     
-/*    func testableSortLeader(arr: [Int]) -> Bool {
-        var tArr = arr
-        tArr = arr
+    /*
+     This function is for testing purpose.
+     Testable function to test if sorting returns the right value
+     */
+    func testableSortLeader(arrIn:[Int], n: Int) -> Bool {
+        var arr = arrIn
         let count = arr.count
-        var largerValue: Int
-        for j in 1...count - 1 {
-            if tArr[j-1] > tArr[j] {
-                largerValue = arr[j-1]
-                tArr[j-1] = tArr[j]
-                tArr[j] = largerValue
+        var largerValue = 0
+        for i in 0...count {
+            for j in 1...count - 1 {
+                if arr[j-1] > arr[j] {
+                    largerValue = arr[j-1]
+                    arr[j-1] = arr[j]
+                    arr[j] = largerValue
+                }
             }
         }
-        if tArr[0] == 1 {
-            return true
+      
+        if(arr[0]==n) {
+                return true
         } else {
             return false
         }
     }
-
-   */
     
     func changeLabels()
     {

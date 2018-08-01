@@ -20,7 +20,11 @@ class FoodBankViewController: UIViewController {
     @IBOutlet weak var institutionName: UILabel!
     
     @IBOutlet weak var hours: UILabel!
-    //opens map app when clicked
+
+    // author: Jeff Lee
+    /// Click action responder to open Apple's map app
+    ///
+    /// - Parameter sender: A clickable button showing "Directions"
     @IBAction func directionClicked(_ sender: UIButton) {
         //remove all whitespaces in the string
         if (theAddress.text != "-" || pick?._dropOffLocation?.index(forKey: dropOffFields.location.rawValue) != nil){

@@ -17,7 +17,6 @@ class MyAccountViewController: UIViewController {
     @IBOutlet weak var myAccUsername: UILabel!
     @IBOutlet weak var myAccEmail: UILabel!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let db = DatabaseInterface()

@@ -22,6 +22,10 @@
 		7A78B95220FFE358005569E2 /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */; };
 		7A78B95420FFE358005569E2 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
 		7A78B95520FFE358005569E2 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
+		7A8BC2B92111C77900306D0D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
+		7A8BC2BA2111C79F00306D0D /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
+		7A8BC2BB2111C79F00306D0D /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */; };
+		7A8BC2BC2111C79F00306D0D /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
 		7AFFF53D20FEB1F000A4D54D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
 		7EC8776120E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
 		7EC8776220E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
@@ -695,6 +699,7 @@
 			files = (
 				ACE8543820FFBFA900C2FADE /* Team.swift in Sources */,
 				ACA7FD7E20EC2ED50040EEE0 /* AppDelegate.swift in Sources */,
+				7A8BC2B92111C77900306D0D /* MyAccountViewController.swift in Sources */,
 				623296A3210FB6E0006E4C62 /* LeaderBoardViewController.swift in Sources */,
 				AC5CD3CF20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
 				AC5CD3D320F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
@@ -706,12 +711,15 @@
 				ACA7FD7520EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
 				ACA7FD7A20EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
 				ACA7FD8020EC2ED80040EEE0 /* ViewController.swift in Sources */,
+				7A8BC2BB2111C79F00306D0D /* MyPickMapViewController.swift in Sources */,
 				AC8EB72420D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift in Sources */,
 				ACA7FD5720E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
 				ACA7FD4D20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
 				AC59A1FF20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACC6BF07210EE3B50038F179 /* FoodBankViewController.swift in Sources */,
 				ACA7FD7120EB4EB60040EEE0 /* MapAnnotation.swift in Sources */,
+				7A8BC2BA2111C79F00306D0D /* MyPickEventTableViewCell.swift in Sources */,
+				7A8BC2BC2111C79F00306D0D /* MyPicksTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,13 +879,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VPUNR272W3;
+				DEVELOPMENT_TEAM = QM3BQJAZQB;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject8999;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject89991;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -892,13 +900,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VPUNR272W3;
+				DEVELOPMENT_TEAM = QM3BQJAZQB;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject8999;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject89991;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
