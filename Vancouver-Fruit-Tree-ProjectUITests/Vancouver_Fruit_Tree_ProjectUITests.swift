@@ -36,7 +36,7 @@ class Vancouver_Fruit_Tree_ProjectUITests: XCTestCase {
     // Fail - if one of them is missing
     func testSideMenuSections() {
         
-        let app = XCUIApplication()
+      /*  let app = XCUIApplication()
         let itemButton = app.navigationBars["Vancouver_Fruit_Tree_Project.View"].buttons["Item"]
         itemButton.tap()
         
@@ -44,7 +44,7 @@ class Vancouver_Fruit_Tree_ProjectUITests: XCTestCase {
         XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["Available Picks"]/*[[".cells.staticTexts[\"Available Picks\"]",".staticTexts[\"Available Picks\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists)
         XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["My Picks"]/*[[".cells.staticTexts[\"My Picks\"]",".staticTexts[\"My Picks\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists)
         XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["My Account"]/*[[".cells.staticTexts[\"My Account\"]",".staticTexts[\"My Account\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists)
-        XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["Leaderboard"]/*[[".cells.staticTexts[\"Leaderboard\"]",".staticTexts[\"Leaderboard\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists)
+        XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["Leaderboard"]/*[[".cells.staticTexts[\"Leaderboard\"]",".staticTexts[\"Leaderboard\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists) */
     }
     
     
