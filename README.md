@@ -23,3 +23,19 @@ Administrator role is reserved for the staff of VFTP. This role has permissions 
 Leader role is reserved for pick leaders that are screened and hired by VFTP. This role alllows a user to sign up to be a leader of a pick. They can see a list of volunteers signed up for their events. This user can only see an approximate location of an event before they sign up. The precise adress is revealed as soon as pick leader signs up for the pick event.  This user can start a pick, take volunteer attendance and log the yield for the pick event.
 
 Volunteer is an role for volunteer fruit pickers. Anyone with a valid email adress can sign up to become a volunteer. All new users are volunteers by default. User with this role can see a list of available picks that are have a team leader and which have availale spots for volunteers (If the limit is specified). Volunteer can sign up for the pick event.
+
+## How to test ##
+To login as an adminstrator:
+1. User ID: tomgromov
+2. PW: Test123! 
+Admin can create new pick event by clicking + in the available picks table
+Admin can see the visualization for the yield
+
+To login as a team lead:
+1. User ID: TestLead
+2. PW: Test123!
+Leader can start a pick that they are leaders of, they can log the yield and mark volunteers as present.
+
+To login as a Volunteer:
+1. User ID: testaccount
+2. PW: Test123!
