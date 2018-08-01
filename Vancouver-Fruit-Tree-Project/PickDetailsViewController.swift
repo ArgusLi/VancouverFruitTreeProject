@@ -19,7 +19,8 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet weak var date: UIButton!
     
     
-
+    @IBOutlet weak var Export: UIBarButtonItem!
+    
     @IBOutlet weak var directionButton: UIButton!
     @IBOutlet weak var time: UIButton!
     
@@ -29,6 +30,23 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet weak var typeOfTrees: UIButton!
     @IBOutlet weak var signupbotton: UIButton!
    
+    @IBAction func calExport(_ sender: Any) {
+        if event == nil{
+            return
+        }
+        let notification = EventNotification()
+        let name = "Pick event"
+        
+        let adress =  event?._address
+        
+        if (event?._eventDate != nil && event?._eventTime != nil){
+            let calendar = Calendar.current
+            let startDate = (event?.getDate())!
+            let endDate = calendar.date(byAdding: .hour, value: 2, to: startDate)
+            notification.addEventToCalendar(title: name, description: adress, startDate: startDate , endDate: endDate!)
+        }
+        
+    }
     @IBAction func directionButttonClicked(_ sender: UIButton) {
         if(getCoordinates != nil) {
             let lat = String(format: "%f", (getCoordinates?.latitude)!)
@@ -165,7 +183,15 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
         
 
         
-        
+        if (event?.isSignedUpFor(user: user!))!{
+            let controllers = navigationController?.viewControllers
+            
+            for controller in controllers!{
+                if controller is PickDetailsViewController{
+                    controller.navigationItem.rightBarButtonItem = Export
+                }
+            }
+        }
         
 
         // Do any additional setup after loading the view.
