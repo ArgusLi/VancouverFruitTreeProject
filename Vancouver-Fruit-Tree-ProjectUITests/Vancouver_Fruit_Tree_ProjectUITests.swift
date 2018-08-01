@@ -34,12 +34,7 @@ class Vancouver_Fruit_Tree_ProjectUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         
-        let app = XCUIApplication()
-        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element.children(matching: .table).element.tap()
-        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Available Picks"]/*[[".cells.staticTexts[\"Available Picks\"]",".staticTexts[\"Available Picks\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app.alerts["Allow “VFTP” to access your location while you are using the app?"].buttons["Allow"].tap()
-        
-        
+ 
       
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
