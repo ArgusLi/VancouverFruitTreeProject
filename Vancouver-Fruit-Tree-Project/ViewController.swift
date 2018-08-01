@@ -102,6 +102,7 @@ class ViewController: UIViewController {
                         UserInfo = Users()
                         UserInfo!._userId = username
                         UserInfo!._role = "Volunteer"
+                        UserInfo!._yield = 0
                         
                         DBINT.UpdateOwnUserInfo(UserInfo: UserInfo!)
                     }
