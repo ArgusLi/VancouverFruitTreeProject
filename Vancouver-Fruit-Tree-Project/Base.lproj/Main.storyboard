@@ -1168,7 +1168,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fmE-OO-LON">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fmE-OO-LON">
                                 <rect key="frame" x="16" y="197" width="343" height="532"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1180,6 +1180,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         <constraints>
                             <constraint firstItem="8Uf-s1-qbh" firstAttribute="top" secondItem="Hhw-W6-TgZ" secondAttribute="bottom" constant="8" id="10m-dm-ZKl"/>
                             <constraint firstItem="Upc-0p-ftQ" firstAttribute="top" secondItem="Xva-zI-0W1" secondAttribute="top" constant="22" id="ARB-O9-W6u"/>
+                            <constraint firstItem="fmE-OO-LON" firstAttribute="top" secondItem="Xva-zI-0W1" secondAttribute="top" constant="109" id="Blu-7u-6zF"/>
                             <constraint firstItem="mzO-yg-feT" firstAttribute="top" secondItem="Xva-zI-0W1" secondAttribute="top" constant="22" id="IFX-Lc-Hgf"/>
                             <constraint firstItem="Hhw-W6-TgZ" firstAttribute="top" secondItem="Upc-0p-ftQ" secondAttribute="bottom" constant="8" id="KYW-BH-F1P"/>
                             <constraint firstItem="mzO-yg-feT" firstAttribute="leading" secondItem="Upc-0p-ftQ" secondAttribute="trailing" constant="8" id="Ldz-Sq-VRY"/>
@@ -1193,7 +1194,9 @@ We are happy to answer any questions at 276harvest8@gmail.com
                             <constraint firstItem="eSh-JD-WHd" firstAttribute="top" secondItem="mzO-yg-feT" secondAttribute="bottom" constant="8" id="iOy-OI-YhS"/>
                             <constraint firstItem="eSh-JD-WHd" firstAttribute="leading" secondItem="igT-bC-14X" secondAttribute="trailing" constant="50" id="oyb-Hz-LJo"/>
                             <constraint firstItem="Hhw-W6-TgZ" firstAttribute="leading" secondItem="Xva-zI-0W1" secondAttribute="leading" constant="16" id="sc4-Na-Oqy"/>
+                            <constraint firstItem="Xva-zI-0W1" firstAttribute="bottom" secondItem="fmE-OO-LON" secondAttribute="bottom" id="tZ9-4h-Jq6"/>
                             <constraint firstItem="igT-bC-14X" firstAttribute="leading" secondItem="Hhw-W6-TgZ" secondAttribute="trailing" constant="18" id="ueY-hr-6oU"/>
+                            <constraint firstItem="fmE-OO-LON" firstAttribute="leading" secondItem="Xva-zI-0W1" secondAttribute="leading" constant="16" id="vKe-kX-GxG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xva-zI-0W1"/>
                     </view>
