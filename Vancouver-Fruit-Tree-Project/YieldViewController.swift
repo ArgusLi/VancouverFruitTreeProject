@@ -38,7 +38,7 @@ class YieldViewController: UIViewController {
     
     @IBAction func savePress(_ sender: Any) {
         if (self.gradeAYield.hasText == true && self.gradeBYield.hasText == true){
-            dbInterface.logYield(pickItem: pickEvent, dict: [typeOfFruit.text!:[self.gradeAYield.text!, self.gradeBYield.text!]])
+            dbInterface.logYield(pickItem: pickEvent, dict: [pickEvent!._treeMap![TreeProperties.type.rawValue]!:[self.gradeAYield.text!, self.gradeBYield.text!]])
             alert.title = "Yield Saved Successfully"
             alert.message = "The Yield has been successfully saved"
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in self.navigationController?.popViewController(animated: true) }))
