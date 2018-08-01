@@ -45,6 +45,8 @@ class StatVisualizationViewController: UIViewController {
         let month = currentdate.component(.month, from: date)
         let year = currentdate.component(.year, from: date)
         
+        barChart.chartDescription?.text = "time v. yield"
+        
         MinYear = year
         MaxYear = year
         
@@ -262,6 +264,11 @@ class StatVisualizationViewController: UIViewController {
         }
         
         xaxis.valueFormatter = barFormatter
+        xaxis.drawGridLinesEnabled = true
+        xaxis.labelPosition = .bottom
+        xaxis.centerAxisLabelsEnabled = true
+        xaxis.valueFormatter = IndexAxisValueFormatter(values: dates)
+        xaxis.granularity = 1
         
         barChart.xAxis.valueFormatter = xaxis.valueFormatter
         
@@ -269,10 +276,31 @@ class StatVisualizationViewController: UIViewController {
         let dataSetB = BarChartDataSet(values: barChartDataEntriesB, label: "Gr. B Yield")
         let data = BarChartData(dataSets: [dataSetA, dataSetB])
         
+        dataSetA.colors = [UIColor(red: 53/255, green: 202/255, blue: 13/255, alpha: 1)]
+        dataSetB.colors = [UIColor(red: 243/255, green: 183/255, blue: 115/255, alpha: 1)]
+        
         barChart.data = data
         //barChart.groupBars(fromX: <#T##Double#>, groupSpace: <#T##Double#>, barSpace: <#T##Double#>)
         
+        let groupSpace = 0.3
+        let barSpace = 0.05
+        let barWidth = 0.3
+
+        barChart.xAxis.axisMinimum = Double(0)
+        
+        data.barWidth = barWidth
+        let gg = data.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
+        
+        barChart.xAxis.axisMaximum = Double(0) + gg * Double((count))
+        
+        data.groupBars(fromX: Double(0), groupSpace: groupSpace, barSpace: barSpace)
+        
         barChart.notifyDataSetChanged()
+        
+        barChart.data = data
+        
+        barChart.backgroundColor = UIColor(red: 247/255, green: 255/255, blue: 255/255, alpha: 1)
+        barChart.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .linear)
         
     }
     
