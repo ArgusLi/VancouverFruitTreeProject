@@ -3,6 +3,7 @@
 //  Vancouver-Fruit-Tree-Project
 //
 //  Created by Oliver Fujiki on 2018-07-16.
+//  Edited by Chun Kei Li on 2018-07-31.
 //  Copyright © 2018 Harvest8. All rights reserved.
 //
 
@@ -121,6 +122,9 @@ class MyPicksTableViewController: UITableViewController {
         let event = myPicks[indexPath.row]
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "PickDetailsViewController") as! PickDetailsViewController
         
+        
+        
+        
         detailVC.buttonColour = UIColor.red
         detailVC.buttonTitle = "Cancel"
         if (event._eventDate != nil && event._eventTime != nil){
@@ -142,7 +146,7 @@ class MyPicksTableViewController: UITableViewController {
         
     }
     
-    
+
     
 
     /*

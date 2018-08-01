@@ -18,6 +18,7 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
     var gettypeofTrees: String?
     @IBOutlet weak var date: UIButton!
     
+    @IBOutlet weak var startThePick: UIButton!
     
     @IBOutlet weak var Export: UIBarButtonItem!
     
@@ -45,6 +46,12 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
             let endDate = calendar.date(byAdding: .hour, value: 2, to: startDate)
             notification.addEventToCalendar(title: name, description: adress, startDate: startDate , endDate: endDate!)
         }
+        
+    }
+    @IBAction func start(_ sender: Any) {
+        let startVC = storyboard?.instantiateViewController(withIdentifier: "currentPickViewController") as! currentPickViewController
+        startVC.currentPick = event
+        self.navigationController?.pushViewController(startVC, animated: true)
         
     }
     @IBAction func directionButttonClicked(_ sender: UIButton) {
@@ -100,9 +107,11 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
         
         let user = DBINT.getCurrentUser()
         
-        
+        startThePick.isHidden = true
             
-        
+        if (user?._userId == event?._teamLead && (event?.isSignedUpFor(user: user!))!){
+            startThePick.isHidden =  false
+        }
         
         
         signupbotton.layer.cornerRadius = 8

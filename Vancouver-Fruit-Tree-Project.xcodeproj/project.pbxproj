@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		11A59BDC210E2EAE00626FF3 /* MyPickTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A59BDB210E2EAE00626FF3 /* MyPickTabBarController.swift */; };
-		11A59BE0210EB6EB00626FF3 /* AddYieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A59BDF210EB6EB00626FF3 /* AddYieldViewController.swift */; };
 		11A87EF42110F3130062C3C7 /* YieldsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF32110F3130062C3C7 /* YieldsTableViewCell.swift */; };
 		11A87EF62110F6F60062C3C7 /* TeamMembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF52110F6F60062C3C7 /* TeamMembersTableViewController.swift */; };
 		11A87EF82110F8190062C3C7 /* TeamMembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF72110F8190062C3C7 /* TeamMembersTableViewCell.swift */; };
-		11F9EE0E2110E3BB001A6967 /* YieldsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9EE0D2110E3BB001A6967 /* YieldsTableViewController.swift */; };
+		11D296AE211151870064F7BE /* YieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D296AD211151870064F7BE /* YieldViewController.swift */; };
+		11D296B021116A5F0064F7BE /* currentPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D296AF21116A5F0064F7BE /* currentPickViewController.swift */; };
+		11D296B22111C4450064F7BE /* DropOffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D296B12111C4450064F7BE /* DropOffViewController.swift */; };
 		11FBEB6520F2AE9000C74616 /* EventNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEB6420F2AE9000C74616 /* EventNotification.swift */; };
 		4D29FDB7F6C76D497D88F882 /* Pods_Vancouver_Fruit_Tree_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51153A6B11998910FAEE133 /* Pods_Vancouver_Fruit_Tree_Project.framework */; };
 		623296A1210FB6E0006E4C62 /* LeaderBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623296A0210FB6E0006E4C62 /* LeaderBoardViewController.swift */; };
@@ -88,28 +89,30 @@
 		ACC6BF03210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6BF00210E77180038F179 /* AddDropOffLocationViewController.swift */; };
 		ACC6BF06210EE3B50038F179 /* FoodBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94420FF6012005569E2 /* FoodBankViewController.swift */; };
 		ACC6BF07210EE3B50038F179 /* FoodBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94420FF6012005569E2 /* FoodBankViewController.swift */; };
-		ACC6BF0821115ED40038F179 /* EventNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEB6420F2AE9000C74616 /* EventNotification.swift */; };
-		ACC6BF0921115ED50038F179 /* EventNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEB6420F2AE9000C74616 /* EventNotification.swift */; };
-		ACC6BF0A21115EDD0038F179 /* MyPickTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A59BDB210E2EAE00626FF3 /* MyPickTabBarController.swift */; };
-		ACC6BF0B21115EDE0038F179 /* MyPickTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A59BDB210E2EAE00626FF3 /* MyPickTabBarController.swift */; };
-		ACC6BF0C21115EE00038F179 /* AddYieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A59BDF210EB6EB00626FF3 /* AddYieldViewController.swift */; };
-		ACC6BF0D21115EE10038F179 /* AddYieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A59BDF210EB6EB00626FF3 /* AddYieldViewController.swift */; };
-		ACC6BF0E21115EE40038F179 /* YieldsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9EE0D2110E3BB001A6967 /* YieldsTableViewController.swift */; };
-		ACC6BF0F21115EE40038F179 /* YieldsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9EE0D2110E3BB001A6967 /* YieldsTableViewController.swift */; };
-		ACC6BF1021115EE80038F179 /* YieldsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF32110F3130062C3C7 /* YieldsTableViewCell.swift */; };
-		ACC6BF1121115EE80038F179 /* YieldsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF32110F3130062C3C7 /* YieldsTableViewCell.swift */; };
-		ACC6BF1221115EEB0038F179 /* TeamMembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF52110F6F60062C3C7 /* TeamMembersTableViewController.swift */; };
-		ACC6BF1321115EEB0038F179 /* TeamMembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF52110F6F60062C3C7 /* TeamMembersTableViewController.swift */; };
-		ACC6BF1421115EEF0038F179 /* TeamMembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF72110F8190062C3C7 /* TeamMembersTableViewCell.swift */; };
-		ACC6BF1521115EEF0038F179 /* TeamMembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF72110F8190062C3C7 /* TeamMembersTableViewCell.swift */; };
-		ACC6BF1621115EFB0038F179 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
-		ACC6BF1721115EFC0038F179 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
-		ACC6BF1821115EFE0038F179 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
-		ACC6BF1921115EFF0038F179 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
-		ACC6BF1A21115F010038F179 /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */; };
-		ACC6BF1B21115F020038F179 /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */; };
-		ACC6BF1C21115F050038F179 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
-		ACC6BF1D21115F060038F179 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
+		ACC6BF1E21125A970038F179 /* DropOffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D296B12111C4450064F7BE /* DropOffViewController.swift */; };
+		ACC6BF1F21125A980038F179 /* DropOffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D296B12111C4450064F7BE /* DropOffViewController.swift */; };
+		ACC6BF2021125A9B0038F179 /* currentPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D296AF21116A5F0064F7BE /* currentPickViewController.swift */; };
+		ACC6BF2121125A9B0038F179 /* currentPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D296AF21116A5F0064F7BE /* currentPickViewController.swift */; };
+		ACC6BF2221125A9D0038F179 /* YieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D296AD211151870064F7BE /* YieldViewController.swift */; };
+		ACC6BF2321125A9E0038F179 /* YieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D296AD211151870064F7BE /* YieldViewController.swift */; };
+		ACC6BF2421125AA00038F179 /* TeamMembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF72110F8190062C3C7 /* TeamMembersTableViewCell.swift */; };
+		ACC6BF2521125AA10038F179 /* TeamMembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF72110F8190062C3C7 /* TeamMembersTableViewCell.swift */; };
+		ACC6BF2621125AA30038F179 /* TeamMembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF52110F6F60062C3C7 /* TeamMembersTableViewController.swift */; };
+		ACC6BF2721125AA30038F179 /* TeamMembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF52110F6F60062C3C7 /* TeamMembersTableViewController.swift */; };
+		ACC6BF2821125AA60038F179 /* YieldsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF32110F3130062C3C7 /* YieldsTableViewCell.swift */; };
+		ACC6BF2921125AA60038F179 /* YieldsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A87EF32110F3130062C3C7 /* YieldsTableViewCell.swift */; };
+		ACC6BF2A21125AA90038F179 /* MyPickTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A59BDB210E2EAE00626FF3 /* MyPickTabBarController.swift */; };
+		ACC6BF2B21125AA90038F179 /* MyPickTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A59BDB210E2EAE00626FF3 /* MyPickTabBarController.swift */; };
+		ACC6BF2C21125AAC0038F179 /* EventNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEB6420F2AE9000C74616 /* EventNotification.swift */; };
+		ACC6BF2D21125AAC0038F179 /* EventNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEB6420F2AE9000C74616 /* EventNotification.swift */; };
+		ACC6BF2E21125AB40038F179 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
+		ACC6BF2F21125AB50038F179 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
+		ACC6BF3021125AB70038F179 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
+		ACC6BF3121125AB70038F179 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
+		ACC6BF3221125ABA0038F179 /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */; };
+		ACC6BF3321125ABA0038F179 /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */; };
+		ACC6BF3421125ABD0038F179 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
+		ACC6BF3521125ABD0038F179 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
 		ACE8543620FFBFA900C2FADE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8543520FFBFA900C2FADE /* Team.swift */; };
 		ACE8543720FFBFA900C2FADE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8543520FFBFA900C2FADE /* Team.swift */; };
 		ACE8543820FFBFA900C2FADE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE8543520FFBFA900C2FADE /* Team.swift */; };
@@ -135,11 +138,12 @@
 
 /* Begin PBXFileReference section */
 		11A59BDB210E2EAE00626FF3 /* MyPickTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPickTabBarController.swift; sourceTree = "<group>"; };
-		11A59BDF210EB6EB00626FF3 /* AddYieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYieldViewController.swift; sourceTree = "<group>"; };
 		11A87EF32110F3130062C3C7 /* YieldsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YieldsTableViewCell.swift; sourceTree = "<group>"; };
 		11A87EF52110F6F60062C3C7 /* TeamMembersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembersTableViewController.swift; sourceTree = "<group>"; };
 		11A87EF72110F8190062C3C7 /* TeamMembersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembersTableViewCell.swift; sourceTree = "<group>"; };
-		11F9EE0D2110E3BB001A6967 /* YieldsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YieldsTableViewController.swift; sourceTree = "<group>"; };
+		11D296AD211151870064F7BE /* YieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YieldViewController.swift; sourceTree = "<group>"; };
+		11D296AF21116A5F0064F7BE /* currentPickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentPickViewController.swift; sourceTree = "<group>"; };
+		11D296B12111C4450064F7BE /* DropOffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropOffViewController.swift; sourceTree = "<group>"; };
 		11FBEB6420F2AE9000C74616 /* EventNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventNotification.swift; sourceTree = "<group>"; };
 		1E51FD94831BDC812745429B /* Pods_Vancouver_Fruit_Tree_ProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		282EA9A55D8B14EDA1330A08 /* Pods_Vancouver_Fruit_Tree_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vancouver_Fruit_Tree_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,11 +294,12 @@
 				AC8EB70F20D03A94007E6CAA /* Info.plist */,
 				11FBEB6420F2AE9000C74616 /* EventNotification.swift */,
 				11A59BDB210E2EAE00626FF3 /* MyPickTabBarController.swift */,
-				11A59BDF210EB6EB00626FF3 /* AddYieldViewController.swift */,
-				11F9EE0D2110E3BB001A6967 /* YieldsTableViewController.swift */,
 				11A87EF32110F3130062C3C7 /* YieldsTableViewCell.swift */,
 				11A87EF52110F6F60062C3C7 /* TeamMembersTableViewController.swift */,
 				11A87EF72110F8190062C3C7 /* TeamMembersTableViewCell.swift */,
+				11D296AD211151870064F7BE /* YieldViewController.swift */,
+				11D296AF21116A5F0064F7BE /* currentPickViewController.swift */,
+				11D296B12111C4450064F7BE /* DropOffViewController.swift */,
 			);
 			path = "Vancouver-Fruit-Tree-Project";
 			sourceTree = "<group>";
@@ -670,9 +675,9 @@
 				ACE8543620FFBFA900C2FADE /* Team.swift in Sources */,
 				11A87EF42110F3130062C3C7 /* YieldsTableViewCell.swift in Sources */,
 				7EC8776920E81AA100F860C9 /* Users.swift in Sources */,
+				11D296B22111C4450064F7BE /* DropOffViewController.swift in Sources */,
 				ACA7FD7620EC2DDE0040EEE0 /* DatabaseInterface.swift in Sources */,
 				7AFFF53D20FEB1F000A4D54D /* MyAccountViewController.swift in Sources */,
-				11F9EE0E2110E3BB001A6967 /* YieldsTableViewController.swift in Sources */,
 				7A78B95520FFE358005569E2 /* MyPicksTableViewController.swift in Sources */,
 				11A59BDC210E2EAE00626FF3 /* MyPickTabBarController.swift in Sources */,
 				7EC8776620E81AA100F860C9 /* PickEvents.swift in Sources */,
@@ -688,15 +693,16 @@
 				ACA7FD5520E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
 				11A87EF82110F8190062C3C7 /* TeamMembersTableViewCell.swift in Sources */,
 				7E3B2994210FC109008369F5 /* StatVisualizationViewController.swift in Sources */,
+				11D296B021116A5F0064F7BE /* currentPickViewController.swift in Sources */,
 				AC5CD3CD20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
 				ACC6BF01210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */,
 				7A78B95420FFE358005569E2 /* MyPickEventTableViewCell.swift in Sources */,
+				11D296AE211151870064F7BE /* YieldViewController.swift in Sources */,
 				7A78B95220FFE358005569E2 /* MyPickMapViewController.swift in Sources */,
 				ACA7FD4B20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
 				7EA7F26B2110F9D8005004E7 /* BarChartFormatter.swift in Sources */,
 				AC59A1FD20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				623296A1210FB6E0006E4C62 /* LeaderBoardViewController.swift in Sources */,
-				11A59BE0210EB6EB00626FF3 /* AddYieldViewController.swift in Sources */,
 				ACA7FD7320EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,22 +722,34 @@
 				ACC6BF0A21115EDD0038F179 /* MyPickTabBarController.swift in Sources */,
 				ACC6BF1621115EFB0038F179 /* MyAccountViewController.swift in Sources */,
 				AC5CD3D220F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
+				ACC6BF3021125AB70038F179 /* MyPicksTableViewController.swift in Sources */,
 				ACA7FD7720EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
 				7EA7F26C2110F9D8005004E7 /* BarChartFormatter.swift in Sources */,
 				ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				ACA7FD7B20EC2ED10040EEE0 /* Users.swift in Sources */,
+				ACC6BF2621125AA30038F179 /* TeamMembersTableViewController.swift in Sources */,
+				ACC6BF3421125ABD0038F179 /* MyPickEventTableViewCell.swift in Sources */,
 				AC22283421092A9D00C5AF01 /* Constants.swift in Sources */,
+				ACC6BF2E21125AB40038F179 /* MyAccountViewController.swift in Sources */,
 				ACC6BF02210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */,
 				ACA7FD7420EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
 				ACC6BF1C21115F050038F179 /* MyPickEventTableViewCell.swift in Sources */,
 				ACC6BF1821115EFE0038F179 /* MyPicksTableViewController.swift in Sources */,
 				ACC6BF1221115EEB0038F179 /* TeamMembersTableViewController.swift in Sources */,
+				ACC6BF3221125ABA0038F179 /* MyPickMapViewController.swift in Sources */,
 				ACA7FD7920EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
 				ACA7FD7F20EC2ED80040EEE0 /* ViewController.swift in Sources */,
 				ACC6BF1421115EEF0038F179 /* TeamMembersTableViewCell.swift in Sources */,
+				ACC6BF2A21125AA90038F179 /* MyPickTabBarController.swift in Sources */,
+				ACC6BF1E21125A970038F179 /* DropOffViewController.swift in Sources */,
+				ACC6BF2C21125AAC0038F179 /* EventNotification.swift in Sources */,
+				ACC6BF2021125A9B0038F179 /* currentPickViewController.swift in Sources */,
 				AC8EB71920D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectTests.swift in Sources */,
+				ACC6BF2221125A9D0038F179 /* YieldViewController.swift in Sources */,
 				ACA7FD5620E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
 				ACA7FD4C20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
+				ACC6BF2421125AA00038F179 /* TeamMembersTableViewCell.swift in Sources */,
+				ACC6BF2821125AA60038F179 /* YieldsTableViewCell.swift in Sources */,
 				AC59A1FE20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACC6BF06210EE3B50038F179 /* FoodBankViewController.swift in Sources */,
 				ACC6BF0C21115EE00038F179 /* AddYieldViewController.swift in Sources */,
@@ -755,22 +773,34 @@
 				ACC6BF0B21115EDE0038F179 /* MyPickTabBarController.swift in Sources */,
 				ACC6BF1721115EFC0038F179 /* MyAccountViewController.swift in Sources */,
 				AC5CD3D320F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
+				ACC6BF3121125AB70038F179 /* MyPicksTableViewController.swift in Sources */,
 				ACA7FD7820EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
 				7EA7F26D2110F9D8005004E7 /* BarChartFormatter.swift in Sources */,
 				ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				ACA7FD7C20EC2ED10040EEE0 /* Users.swift in Sources */,
+				ACC6BF2721125AA30038F179 /* TeamMembersTableViewController.swift in Sources */,
+				ACC6BF3521125ABD0038F179 /* MyPickEventTableViewCell.swift in Sources */,
 				AC22283521092A9D00C5AF01 /* Constants.swift in Sources */,
+				ACC6BF2F21125AB50038F179 /* MyAccountViewController.swift in Sources */,
 				ACC6BF03210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */,
 				ACA7FD7520EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
 				ACC6BF1D21115F060038F179 /* MyPickEventTableViewCell.swift in Sources */,
 				ACC6BF1921115EFF0038F179 /* MyPicksTableViewController.swift in Sources */,
 				ACC6BF1321115EEB0038F179 /* TeamMembersTableViewController.swift in Sources */,
+				ACC6BF3321125ABA0038F179 /* MyPickMapViewController.swift in Sources */,
 				ACA7FD7A20EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
 				ACA7FD8020EC2ED80040EEE0 /* ViewController.swift in Sources */,
 				ACC6BF1521115EEF0038F179 /* TeamMembersTableViewCell.swift in Sources */,
+				ACC6BF2B21125AA90038F179 /* MyPickTabBarController.swift in Sources */,
+				ACC6BF1F21125A980038F179 /* DropOffViewController.swift in Sources */,
+				ACC6BF2D21125AAC0038F179 /* EventNotification.swift in Sources */,
+				ACC6BF2121125A9B0038F179 /* currentPickViewController.swift in Sources */,
 				AC8EB72420D03A94007E6CAA /* Vancouver_Fruit_Tree_ProjectUITests.swift in Sources */,
+				ACC6BF2321125A9E0038F179 /* YieldViewController.swift in Sources */,
 				ACA7FD5720E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
 				ACA7FD4D20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
+				ACC6BF2521125AA10038F179 /* TeamMembersTableViewCell.swift in Sources */,
+				ACC6BF2921125AA60038F179 /* YieldsTableViewCell.swift in Sources */,
 				AC59A1FF20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACC6BF07210EE3B50038F179 /* FoodBankViewController.swift in Sources */,
 				ACC6BF0D21115EE10038F179 /* AddYieldViewController.swift in Sources */,
