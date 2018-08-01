@@ -2093,9 +2093,11 @@ We are happy to answer any questions at 276harvest8@gmail.com
         <image name="Map view" width="25" height="25"/>
         <image name="ProfileIcon" width="72" height="72"/>
         <image name="VFTP_LOGO_CS3-167x300" width="167" height="300"/>
+        <image name="attendance-1" width="30" height="30"/>
+        <image name="yield" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FKl-hG-D75"/>
+        <segue reference="x9M-b0-inh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
