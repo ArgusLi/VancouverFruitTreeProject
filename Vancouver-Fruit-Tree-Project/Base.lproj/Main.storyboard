@@ -1484,6 +1484,19 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                     <constraint firstItem="Yzb-mI-p8G" firstAttribute="top" secondItem="SO8-P4-exX" secondAttribute="top" id="uts-vz-QH8"/>
                                 </constraints>
                             </scrollView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JgR-0U-fLa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="bMs-ye-cVN">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="iBu-s9-xUE">
+                                            <connections>
+                                                <action selector="calExport:" destination="slh-jt-ZCp" id="OFH-pU-uDL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1505,6 +1518,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                     </view>
                     <size key="freeformSize" width="375" height="858"/>
                     <connections>
+                        <outlet property="Export" destination="iBu-s9-xUE" id="q3q-yv-stD"/>
                         <outlet property="date" destination="WSP-95-OwA" id="9y9-5U-27U"/>
                         <outlet property="directionButton" destination="8Xq-WJ-j1W" id="urf-vR-w5u"/>
                         <outlet property="mapView" destination="EVo-Eb-IHq" id="TZr-17-Lbx"/>
@@ -1516,7 +1530,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDG-lR-OOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1932.608695652174" y="2023.3695652173915"/>
+            <point key="canvasLocation" x="-1933.5999999999999" y="2023.152709359606"/>
         </scene>
         <!--My Picks Map View-->
         <scene sceneID="xgH-m2-01K">
