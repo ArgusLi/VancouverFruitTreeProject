@@ -24,11 +24,20 @@ Leader role is reserved for pick leaders that are screened and hired by VFTP. Th
 
 Volunteer is an role for volunteer fruit pickers. Anyone with a valid email adress can sign up to become a volunteer. All new users are volunteers by default. User with this role can see a list of available picks that are have a team leader and which have availale spots for volunteers (If the limit is specified). Volunteer can sign up for the pick event.
 
+## VFTP Process##
+The process starts with coordinator(Administrator) contacting fruit owners and creating a new pick event. They are required to specify the drop off location for the community partner.
+
+Then a pick lead can sign up for a pick event if non of the other pick leaders signed up for it. Once they signed up, they would be able to see the exact location for a pick.
+
+Once a pick has a leader it becomes visible to volunteers. They can signe up if there are spaces left for volunteers. Once they signed up, they would be able to see the exact location for a pick.
+
+After the pick is over the pick leader can log the yield for the pick event mark volunteers who have attened the event. Once complete the yield for pick leaders gets added up and now leader can see their rank in the leaderboard.
+ 
 ## How to test ##
 To login as an adminstrator:
 1. User ID: tomgromov
 2. PW: Test123! 
-Admin can create new pick event by clicking + in the available picks table
+Admin can create new pick event by clicking + in the available picks table. Admin can also delete a pick by swiping the cell to the right in the available picks.
 Admin can see the visualization for the yield
 
 To login as a team lead:
