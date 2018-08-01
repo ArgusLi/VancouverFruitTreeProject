@@ -12,9 +12,9 @@ import AWSAuthUI
 import AWSGoogleSignIn
 import SideMenu
 class Vancouver_Fruit_Tree_ProjectUITests: XCTestCase {
-        
+     /*
     override func setUp() {
-        super.setUp()
+       super.setUp()
         
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
@@ -29,7 +29,7 @@ class Vancouver_Fruit_Tree_ProjectUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-    }
+    } */
     
     // Test all essential sections in the side menu
     // Pass - if all are place correctly
