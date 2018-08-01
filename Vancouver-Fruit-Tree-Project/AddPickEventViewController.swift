@@ -96,10 +96,7 @@ class AddPickEventViewController: UIViewController, UIPickerViewDelegate, UIPick
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in self.navigationController?.popViewController(animated: true) }))
             
             
-            if (!result){
-                alert.title = "Error"
-                alert.message = "There has been some problem saving the event"
-            }
+           
             
             
             
