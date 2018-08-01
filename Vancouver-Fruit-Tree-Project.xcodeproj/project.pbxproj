@@ -23,6 +23,12 @@
 		7A78B95420FFE358005569E2 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
 		7A78B95520FFE358005569E2 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
 		7AFFF53D20FEB1F000A4D54D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
+		7E3B2994210FC109008369F5 /* StatVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */; };
+		7E3B2995210FC109008369F5 /* StatVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */; };
+		7E3B2996210FC109008369F5 /* StatVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */; };
+		7EA7F26B2110F9D8005004E7 /* BarChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7F26A2110F9D8005004E7 /* BarChartFormatter.swift */; };
+		7EA7F26C2110F9D8005004E7 /* BarChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7F26A2110F9D8005004E7 /* BarChartFormatter.swift */; };
+		7EA7F26D2110F9D8005004E7 /* BarChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA7F26A2110F9D8005004E7 /* BarChartFormatter.swift */; };
 		7EC8776120E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
 		7EC8776220E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
 		7EC8776320E818B300F860C9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8776020E818B300F860C9 /* awsconfiguration.json */; };
@@ -145,6 +151,8 @@
 		7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPickEventTableViewCell.swift; sourceTree = "<group>"; };
 		7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPicksTableViewController.swift; sourceTree = "<group>"; };
 		7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatVisualizationViewController.swift; sourceTree = "<group>"; };
+		7EA7F26A2110F9D8005004E7 /* BarChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartFormatter.swift; sourceTree = "<group>"; };
 		7EC8776020E818B300F860C9 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		7EC8776420E81AA000F860C9 /* PickEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickEvents.swift; sourceTree = "<group>"; };
 		7EC8776520E81AA000F860C9 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -274,6 +282,8 @@
 				AC5CD3D020F297CC00C196B9 /* SearchLocationTableViewController.swift */,
 				7A78B94420FF6012005569E2 /* FoodBankViewController.swift */,
 				AC8EB70720D03A91007E6CAA /* Main.storyboard */,
+				7EA7F26A2110F9D8005004E7 /* BarChartFormatter.swift */,
+				7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */,
 				AC8EB70A20D03A94007E6CAA /* Assets.xcassets */,
 				AC8EB70C20D03A94007E6CAA /* LaunchScreen.storyboard */,
 				7EC8776020E818B300F860C9 /* awsconfiguration.json */,
@@ -522,6 +532,7 @@
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSPinpoint/AWSPinpoint.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -539,6 +550,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSPinpoint.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -601,6 +613,7 @@
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSPinpoint/AWSPinpoint.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -618,6 +631,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSPinpoint.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -673,11 +687,13 @@
 				7A78B94520FF6012005569E2 /* FoodBankViewController.swift in Sources */,
 				ACA7FD5520E994040040EEE0 /* SlideMenuViewController.swift in Sources */,
 				11A87EF82110F8190062C3C7 /* TeamMembersTableViewCell.swift in Sources */,
+				7E3B2994210FC109008369F5 /* StatVisualizationViewController.swift in Sources */,
 				AC5CD3CD20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
 				ACC6BF01210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */,
 				7A78B95420FFE358005569E2 /* MyPickEventTableViewCell.swift in Sources */,
 				7A78B95220FFE358005569E2 /* MyPickMapViewController.swift in Sources */,
 				ACA7FD4B20E972020040EEE0 /* PickEventMapViewController.swift in Sources */,
+				7EA7F26B2110F9D8005004E7 /* BarChartFormatter.swift in Sources */,
 				AC59A1FD20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				623296A1210FB6E0006E4C62 /* LeaderBoardViewController.swift in Sources */,
 				11A59BE0210EB6EB00626FF3 /* AddYieldViewController.swift in Sources */,
@@ -701,6 +717,7 @@
 				ACC6BF1621115EFB0038F179 /* MyAccountViewController.swift in Sources */,
 				AC5CD3D220F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				ACA7FD7720EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
+				7EA7F26C2110F9D8005004E7 /* BarChartFormatter.swift in Sources */,
 				ACAB91FA20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				ACA7FD7B20EC2ED10040EEE0 /* Users.swift in Sources */,
 				AC22283421092A9D00C5AF01 /* Constants.swift in Sources */,
@@ -718,6 +735,7 @@
 				AC59A1FE20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACC6BF06210EE3B50038F179 /* FoodBankViewController.swift in Sources */,
 				ACC6BF0C21115EE00038F179 /* AddYieldViewController.swift in Sources */,
+				7E3B2995210FC109008369F5 /* StatVisualizationViewController.swift in Sources */,
 				ACA7FD7020EB4EB60040EEE0 /* MapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,6 +756,7 @@
 				ACC6BF1721115EFC0038F179 /* MyAccountViewController.swift in Sources */,
 				AC5CD3D320F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				ACA7FD7820EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
+				7EA7F26D2110F9D8005004E7 /* BarChartFormatter.swift in Sources */,
 				ACAB91FB20E81E7E00EEE7A7 /* PickEventTableViewController.swift in Sources */,
 				ACA7FD7C20EC2ED10040EEE0 /* Users.swift in Sources */,
 				AC22283521092A9D00C5AF01 /* Constants.swift in Sources */,
@@ -755,6 +774,7 @@
 				AC59A1FF20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACC6BF07210EE3B50038F179 /* FoodBankViewController.swift in Sources */,
 				ACC6BF0D21115EE10038F179 /* AddYieldViewController.swift in Sources */,
+				7E3B2996210FC109008369F5 /* StatVisualizationViewController.swift in Sources */,
 				ACA7FD7120EB4EB60040EEE0 /* MapAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

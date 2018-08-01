@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vancouver-Fruit-Tree-Project/DatabaseInterface.swift"
+            timestampString = "554672674.5164239"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "queryUsers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vancouver-Fruit-Tree-Project/DatabaseInterface.swift"
+            timestampString = "554672674.51677"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "queryUsers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vancouver_Fruit_Tree_Project.DatabaseInterface.queryUsers() -&gt; Swift.Array&lt;__ObjC.AWSCognitoIdentityProviderUserType&gt;"
+                  moduleName = "Vancouver-Fruit-Tree-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameron/Documents/GitHub/ios-app/Vancouver-Fruit-Tree-Project/DatabaseInterface.swift"
+                  timestampString = "553289209.3183089"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "1108">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.AWSCognitoIdentityProviderListUsersResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Vancouver_Fruit_Tree_Project.DatabaseInterface.queryUsers() -&gt; Swift.Array&lt;__ObjC.AWSCognitoIdentityProviderUserType&gt;"
+                  moduleName = "Vancouver-Fruit-Tree-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameron/Documents/GitHub/ios-app/Vancouver-Fruit-Tree-Project/DatabaseInterface.swift"
+                  timestampString = "553289209.319932"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vancouver-Fruit-Tree-Project/DatabaseInterface.swift"
+            timestampString = "554672674.516951"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "queryUsers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vancouver-Fruit-Tree-Project/DatabaseInterface.swift"
+            timestampString = "554672674.517125"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "queryUsers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vancouver-Fruit-Tree-Project/DatabaseInterface.swift"
+            timestampString = "554672674.5172909"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "queryUsers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vancouver-Fruit-Tree-Project/DatabaseInterface.swift"
+            timestampString = "554672674.5174561"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "queryUsers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vancouver-Fruit-Tree-Project/StatVisualizationViewController.swift"
+            timestampString = "554763030.4641941"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "StatVisualizationViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vancouver_Fruit_Tree_Project.StatVisualizationViewController.MaxMonth.getter : Swift.Int"
+                  moduleName = "Vancouver-Fruit-Tree-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameron/Documents/GitHub/ios-app/Vancouver-Fruit-Tree-Project/StatVisualizationViewController.swift"
+                  timestampString = "554700726.371326"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vancouver_Fruit_Tree_Project.StatVisualizationViewController.MaxMonth.setter : Swift.Int"
+                  moduleName = "Vancouver-Fruit-Tree-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameron/Documents/GitHub/ios-app/Vancouver-Fruit-Tree-Project/StatVisualizationViewController.swift"
+                  timestampString = "554700726.374149"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vancouver_Fruit_Tree_Project.StatVisualizationViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Vancouver_Fruit_Tree_Project.StatVisualizationViewController"
+                  moduleName = "Vancouver-Fruit-Tree-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameron/Documents/GitHub/ios-app/Vancouver-Fruit-Tree-Project/StatVisualizationViewController.swift"
+                  timestampString = "554700726.3766609"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "596">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vancouver_Fruit_Tree_Project.StatVisualizationViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Vancouver_Fruit_Tree_Project.StatVisualizationViewController&gt;"
+                  moduleName = "Vancouver-Fruit-Tree-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameron/Documents/GitHub/ios-app/Vancouver-Fruit-Tree-Project/StatVisualizationViewController.swift"
+                  timestampString = "554700726.378741"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "552">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vancouver-Fruit-Tree-Project/StatVisualizationViewController.swift"
+            timestampString = "554763030.464278"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "StatVisualizationViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vancouver_Fruit_Tree_Project.StatVisualizationViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Vancouver_Fruit_Tree_Project.StatVisualizationViewController"
+                  moduleName = "Vancouver-Fruit-Tree-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameron/Documents/GitHub/ios-app/Vancouver-Fruit-Tree-Project/StatVisualizationViewController.swift"
+                  timestampString = "554700726.385483"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "392">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vancouver_Fruit_Tree_Project.StatVisualizationViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Vancouver_Fruit_Tree_Project.StatVisualizationViewController&gt;"
+                  moduleName = "Vancouver-Fruit-Tree-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameron/Documents/GitHub/ios-app/Vancouver-Fruit-Tree-Project/StatVisualizationViewController.swift"
+                  timestampString = "554700726.387126"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "348">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

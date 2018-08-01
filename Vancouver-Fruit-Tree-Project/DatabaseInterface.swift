@@ -873,6 +873,7 @@ class DatabaseInterface: NSObject {
         pickEventItem._longitude = longitude
         pickEventItem._address = address
         pickEventItem._treeMap = treeMap
+        pickEventItem._completed = "0"
         
         //Save a new item
         dynamoDbObjectMapper.save(pickEventItem, completionHandler: {
@@ -930,6 +931,7 @@ class DatabaseInterface: NSObject {
         pickEventItem._distanceFrom = nil
         pickEventItem._volunteers = nil
         pickEventItem._teamLead = nil
+        pickEventItem._completed = "0"
         let group = DispatchGroup()
         group.enter()
 
