@@ -12,10 +12,19 @@ class TeamMembersTableViewCell: UITableViewCell {
 
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var Switch: UISwitch!
+    var whichPick = PickEvents()
+    let dbInterface = DatabaseInterface()
+    var oddoreven = 0
     
-    @IBAction func switchAction(_ sender: Any) {
-        // mark Name.text absent
+    @IBAction func switchPressed(_ sender: Any) {
+        if (oddoreven%2 == 0){
+            dbInterface.markPresent(pickItem: whichPick!, userID: Name.text!)
+        }
+        else if(oddoreven%2 == 1){
+            //mark absent
+        }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
