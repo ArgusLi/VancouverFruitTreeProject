@@ -20,6 +20,13 @@ class YieldViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if pickEvent != nil{
+            if pickEvent?._treeMap != nil{
+                if pickEvent?._treeMap?.index(forKey: TreeProperties.type.rawValue) != nil {
+                    typeOfFruit.text = "Type of a tree \(pickEvent!._treeMap![TreeProperties.type.rawValue]!)"
+                }
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -35,12 +42,14 @@ class YieldViewController: UIViewController {
             alert.title = "Yield Saved Successfully"
             alert.message = "The Yield has been successfully saved"
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in self.navigationController?.popViewController(animated: true) }))
+            self.present(alert, animated: true, completion: nil)
         
         }
         else{
             alert.title = "Error"
             alert.message = "There are no yields"
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
 

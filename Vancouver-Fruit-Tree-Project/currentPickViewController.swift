@@ -13,6 +13,22 @@ class currentPickViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    
+    let alltabs = self.viewControllers
+        for tab in alltabs!{
+            if tab is YieldViewController{
+                let yeild = tab as! YieldViewController
+              yeild.pickEvent = currentPick
+            }
+            if tab is FoodBankViewController{
+                let drop = tab as! FoodBankViewController
+                drop.pick = currentPick
+            }
+            if tab is TeamMembersTableViewController{
+                let teamVc  = tab as! TeamMembersTableViewController
+                teamVc.whichPick = currentPick
+            }
+        }
         // Do any additional setup after loading the view.
     }
 

@@ -20,7 +20,7 @@ class MyPickEventTableViewCell: UITableViewCell {
     @IBOutlet weak var Date: UILabel!
     @IBOutlet weak var Time: UILabel!
     @IBOutlet weak var TeamLead: UILabel!
-    @IBOutlet weak var pickBegin: UIButton!
+    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

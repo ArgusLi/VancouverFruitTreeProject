@@ -184,7 +184,49 @@ class DatabaseInterface: NSObject {
         }
       
     }
-    
+    func markAbsent(pickItem: PickEvents, userID: String) -> Bool{
+        var user = queryUserInfo(userId: userID)
+        if (user == nil){
+            print("user is nil")
+            return false
+        }
+        if let events = user?._pickEvents{
+            var index: Int?
+            for event in events{
+                if (event[0] == pickItem._userId! && event[1] == pickItem._creationTime!)
+                {
+                    index = events.index(of: event)
+                }
+            }
+            if (index == nil){
+                print("No mathing event found in user records")
+                return false
+            }
+            else{
+                //Mark this person as absent for this event
+                user?._pickEvents![index!][2] = "0"
+                let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+                dynamoDbObjectMapper.save(user!, completionHandler: {
+                    (error: Error?) -> Void in
+                    
+                    if let error = error {
+                        print("Amazon DynamoDB Save Error: \(error)")
+                        return
+                    }
+                    print("An item was saved.")
+                })
+                
+                return true
+                
+            }
+            
+        }
+        else{
+            print("This user has no events")
+            return false
+        }
+        
+    }
     //Author: Artem
     /// function for getting current's user email
     ///

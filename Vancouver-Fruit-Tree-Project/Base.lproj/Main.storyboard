@@ -1109,109 +1109,6 @@ We are happy to answer any questions at 276harvest8@gmail.com
             </objects>
             <point key="canvasLocation" x="2959" y="2772"/>
         </scene>
-        <!--Drop Off-->
-        <scene sceneID="Cot-Su-FKx">
-            <objects>
-                <viewController id="OTB-r6-qg3" customClass="DropOffViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5MA-5E-0i7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYg-Cf-rb6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="ObL-po-Cyg">
-                                        <barButtonItem key="backBarButtonItem" title="Back" id="alw-jC-Z9P"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partner Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upc-0p-ftQ">
-                                <rect key="frame" x="16" y="110" width="115" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzO-yg-feT">
-                                <rect key="frame" x="139" y="110" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Operating Hours:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhw-W6-TgZ">
-                                <rect key="frame" x="16" y="139" width="132" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igT-bC-14X">
-                                <rect key="frame" x="166" y="139" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLW-HW-1CL">
-                                <rect key="frame" x="317" y="139" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSh-JD-WHd">
-                                <rect key="frame" x="258" y="139" width="8" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uf-s1-qbh">
-                                <rect key="frame" x="16" y="168" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fmE-OO-LON">
-                                <rect key="frame" x="16" y="197" width="343" height="532"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="8Uf-s1-qbh" firstAttribute="top" secondItem="Hhw-W6-TgZ" secondAttribute="bottom" constant="8" id="10m-dm-ZKl"/>
-                            <constraint firstItem="Upc-0p-ftQ" firstAttribute="top" secondItem="Xva-zI-0W1" secondAttribute="top" constant="22" id="ARB-O9-W6u"/>
-                            <constraint firstItem="fmE-OO-LON" firstAttribute="top" secondItem="Xva-zI-0W1" secondAttribute="top" constant="109" id="Blu-7u-6zF"/>
-                            <constraint firstItem="mzO-yg-feT" firstAttribute="top" secondItem="Xva-zI-0W1" secondAttribute="top" constant="22" id="IFX-Lc-Hgf"/>
-                            <constraint firstItem="Hhw-W6-TgZ" firstAttribute="top" secondItem="Upc-0p-ftQ" secondAttribute="bottom" constant="8" id="KYW-BH-F1P"/>
-                            <constraint firstItem="mzO-yg-feT" firstAttribute="leading" secondItem="Upc-0p-ftQ" secondAttribute="trailing" constant="8" id="Ldz-Sq-VRY"/>
-                            <constraint firstItem="Upc-0p-ftQ" firstAttribute="leading" secondItem="Xva-zI-0W1" secondAttribute="leading" constant="16" id="Nw7-U8-vYR"/>
-                            <constraint firstItem="fmE-OO-LON" firstAttribute="centerX" secondItem="Xva-zI-0W1" secondAttribute="centerX" id="PI7-qn-Fvr"/>
-                            <constraint firstItem="oLW-HW-1CL" firstAttribute="leading" secondItem="eSh-JD-WHd" secondAttribute="trailing" constant="51" id="Tee-4L-KhA"/>
-                            <constraint firstItem="fmE-OO-LON" firstAttribute="centerX" secondItem="Xva-zI-0W1" secondAttribute="centerX" id="WDJ-E4-d3g"/>
-                            <constraint firstItem="igT-bC-14X" firstAttribute="top" secondItem="mzO-yg-feT" secondAttribute="bottom" constant="8" id="bAD-fi-PVp"/>
-                            <constraint firstItem="oLW-HW-1CL" firstAttribute="top" secondItem="mzO-yg-feT" secondAttribute="bottom" constant="8" id="buQ-eZ-XUV"/>
-                            <constraint firstItem="8Uf-s1-qbh" firstAttribute="leading" secondItem="Xva-zI-0W1" secondAttribute="leading" constant="16" id="e3D-nq-PWJ"/>
-                            <constraint firstItem="eSh-JD-WHd" firstAttribute="top" secondItem="mzO-yg-feT" secondAttribute="bottom" constant="8" id="iOy-OI-YhS"/>
-                            <constraint firstItem="eSh-JD-WHd" firstAttribute="leading" secondItem="igT-bC-14X" secondAttribute="trailing" constant="50" id="oyb-Hz-LJo"/>
-                            <constraint firstItem="Hhw-W6-TgZ" firstAttribute="leading" secondItem="Xva-zI-0W1" secondAttribute="leading" constant="16" id="sc4-Na-Oqy"/>
-                            <constraint firstItem="Xva-zI-0W1" firstAttribute="bottom" secondItem="fmE-OO-LON" secondAttribute="bottom" id="tZ9-4h-Jq6"/>
-                            <constraint firstItem="igT-bC-14X" firstAttribute="leading" secondItem="Hhw-W6-TgZ" secondAttribute="trailing" constant="18" id="ueY-hr-6oU"/>
-                            <constraint firstItem="fmE-OO-LON" firstAttribute="leading" secondItem="Xva-zI-0W1" secondAttribute="leading" constant="16" id="vKe-kX-GxG"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Xva-zI-0W1"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Drop Off" image="DropOff" id="2gH-RJ-JrL"/>
-                    <connections>
-                        <outlet property="closingHours" destination="oLW-HW-1CL" id="QvU-d2-dAZ"/>
-                        <outlet property="notes" destination="fmE-OO-LON" id="0vL-o2-lsO"/>
-                        <outlet property="openingHours" destination="igT-bC-14X" id="MXj-cl-tOB"/>
-                        <outlet property="partner" destination="mzO-yg-feT" id="DPg-Gm-VOi"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LGo-Qd-w8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3725.5999999999999" y="2435.4679802955666"/>
-        </scene>
         <!--Yield-->
         <scene sceneID="o6Y-yS-6bp">
             <objects>
@@ -1221,38 +1118,38 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fruit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-72-f5S">
-                                <rect key="frame" x="16" y="113" width="35" height="21"/>
+                                <rect key="frame" x="16" y="69" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade A Yield:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hn-hu-R4Y">
-                                <rect key="frame" x="16" y="155" width="110" height="21"/>
+                                <rect key="frame" x="16" y="111" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade B Yield:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmC-4e-zS8">
-                                <rect key="frame" x="16" y="197" width="109" height="21"/>
+                                <rect key="frame" x="16" y="153" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lbs" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Osd-m8-mgh">
-                                <rect key="frame" x="139" y="192" width="40.333333333333343" height="30"/>
+                                <rect key="frame" x="139" y="148" width="40.333333333333343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3U-xc-Xb0">
-                                <rect key="frame" x="170" y="294" width="34" height="30"/>
+                                <rect key="frame" x="170" y="250" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="savePress:" destination="sIY-p9-nm9" eventType="touchUpInside" id="f5a-ld-Wef"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lbs" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CYz-h1-Jrg">
-                                <rect key="frame" x="139" y="150" width="40.333333333333343" height="30"/>
+                                <rect key="frame" x="139" y="106" width="40.333333333333343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -1281,7 +1178,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         <outlet property="gradeAYield" destination="CYz-h1-Jrg" id="L43-Nb-eJJ"/>
                         <outlet property="gradeBYield" destination="Osd-m8-mgh" id="m2b-TD-TK5"/>
                         <outlet property="save" destination="c3U-xc-Xb0" id="jXb-6t-Q50"/>
-                        <outlet property="typeOfFruit" destination="Ecb-72-f5S" id="bKQ-JN-mqb"/>
+                        <outlet property="typeOfFruit" destination="Ecb-72-f5S" id="Gtg-5Z-uj1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJp-PG-NWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1291,7 +1188,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
         <!--Current Pick View Controller-->
         <scene sceneID="Ouw-U7-SNu">
             <objects>
-                <tabBarController id="XWr-aq-yt5" customClass="currentPickViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="currentPickViewController" id="XWr-aq-yt5" customClass="currentPickViewController" customModule="Vancouver_Fruit_Tree_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bdC-nI-7zo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1300,7 +1197,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                     <connections>
                         <segue destination="sIY-p9-nm9" kind="relationship" relationship="viewControllers" id="FKl-hG-D75"/>
                         <segue destination="gPm-8U-NTI" kind="relationship" relationship="viewControllers" id="jOo-OJ-u70"/>
-                        <segue destination="OTB-r6-qg3" kind="relationship" relationship="viewControllers" id="D7P-1D-Gi1"/>
+                        <segue destination="dph-ia-zbx" kind="relationship" relationship="viewControllers" id="jxK-ae-loM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oim-QV-1U4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1410,6 +1307,16 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="9Xw-he-nZB">
                                                 <rect key="frame" x="319" y="597" width="48" height="48"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuQ-SX-AUv">
+                                                <rect key="frame" x="117" y="731" width="141" height="30"/>
+                                                <color key="backgroundColor" red="0.47058823529999999" green="0.62352941179999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Start the Pick!">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="start:" destination="slh-jt-ZCp" eventType="touchUpInside" id="fpu-Wk-ry2"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1424,6 +1331,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <constraint firstItem="8Xq-WJ-j1W" firstAttribute="top" secondItem="yPJ-0J-Nb8" secondAttribute="bottom" constant="17" id="Aji-Ni-NZh"/>
                                             <constraint firstItem="ehf-Iv-j9u" firstAttribute="top" secondItem="8Xq-WJ-j1W" secondAttribute="bottom" constant="17" id="EWk-vc-v41"/>
                                             <constraint firstItem="ehf-Iv-j9u" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" id="Jed-Tw-Zx3"/>
+                                            <constraint firstItem="tuQ-SX-AUv" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" constant="117" id="NkH-mg-i2Z"/>
                                             <constraint firstAttribute="trailing" secondItem="WSP-95-OwA" secondAttribute="trailing" id="RZy-Aw-OMT"/>
                                             <constraint firstItem="Yko-4g-WZi" firstAttribute="width" secondItem="yPJ-0J-Nb8" secondAttribute="height" multiplier="8:9" id="S6c-fZ-gPt"/>
                                             <constraint firstItem="8Xq-WJ-j1W" firstAttribute="width" secondItem="8Xq-WJ-j1W" secondAttribute="height" multiplier="125:18" id="Ta7-kq-oL1"/>
@@ -1435,6 +1343,8 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <constraint firstAttribute="height" constant="858" id="faF-kB-jjC"/>
                                             <constraint firstItem="yPJ-0J-Nb8" firstAttribute="top" secondItem="SeX-fA-27W" secondAttribute="bottom" constant="17" id="h0d-jm-TE2"/>
                                             <constraint firstItem="8Xq-WJ-j1W" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" id="j2p-tg-5mh"/>
+                                            <constraint firstItem="2mO-xc-PBE" firstAttribute="top" secondItem="tuQ-SX-AUv" secondAttribute="bottom" constant="8" id="jWk-Xi-yuV"/>
+                                            <constraint firstAttribute="trailing" secondItem="tuQ-SX-AUv" secondAttribute="trailing" constant="117" id="k5N-NN-i5j"/>
                                             <constraint firstAttribute="width" constant="375" id="sGE-Uu-00z"/>
                                             <constraint firstItem="yPJ-0J-Nb8" firstAttribute="width" secondItem="yPJ-0J-Nb8" secondAttribute="height" multiplier="125:18" id="sfu-BQ-naV"/>
                                             <constraint firstAttribute="trailing" secondItem="8Xq-WJ-j1W" secondAttribute="trailing" id="uMc-Bk-RrB"/>
@@ -1442,6 +1352,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                             <constraint firstItem="EVo-Eb-IHq" firstAttribute="leading" secondItem="Yzb-mI-p8G" secondAttribute="leading" id="y1R-Ut-mpI"/>
                                             <constraint firstItem="9Xw-he-nZB" firstAttribute="leading" secondItem="8Xq-WJ-j1W" secondAttribute="trailing" constant="-56" id="yS8-Ke-lut"/>
                                             <constraint firstItem="Yko-4g-WZi" firstAttribute="leading" secondItem="yPJ-0J-Nb8" secondAttribute="trailing" constant="-56" id="yZ9-tH-5gu"/>
+                                            <constraint firstItem="tuQ-SX-AUv" firstAttribute="top" secondItem="ehf-Iv-j9u" secondAttribute="bottom" constant="12" id="zkT-RQ-yfw"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1477,6 +1388,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         <outlet property="directionButton" destination="8Xq-WJ-j1W" id="urf-vR-w5u"/>
                         <outlet property="mapView" destination="EVo-Eb-IHq" id="TZr-17-Lbx"/>
                         <outlet property="signupbotton" destination="2mO-xc-PBE" id="FT6-GI-JRi"/>
+                        <outlet property="startThePick" destination="tuQ-SX-AUv" id="94T-h7-PN0"/>
                         <outlet property="teamlead" destination="SeX-fA-27W" id="oz9-9s-ecY"/>
                         <outlet property="time" destination="Lgc-OQ-sFg" id="93v-Md-BVD"/>
                         <outlet property="typeOfTrees" destination="ehf-Iv-j9u" id="934-uE-tVK"/>
@@ -1484,7 +1396,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDG-lR-OOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1932.608695652174" y="2023.3695652173915"/>
+            <point key="canvasLocation" x="-1933.5999999999999" y="2023.152709359606"/>
         </scene>
         <!--My Picks Map View-->
         <scene sceneID="xgH-m2-01K">
@@ -1560,21 +1472,11 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                                 <constraint firstItem="8F3-2w-4d7" firstAttribute="top" secondItem="PyX-Vr-UIF" secondAttribute="bottom" constant="7.9999999999999858" id="fon-LI-Yto"/>
                                             </constraints>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PG0-tN-5iY">
-                                            <rect key="frame" x="282" y="35" width="77" height="30"/>
-                                            <state key="normal" title="Begin Pick!"/>
-                                            <connections>
-                                                <action selector="pickBeginPress:" destination="KO9-yJ-AEC" eventType="touchUpInside" id="sFP-e9-H8J"/>
-                                                <segue destination="XWr-aq-yt5" kind="show" identifier="startOfPick" id="XAQ-Wj-rQh"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Ebn-KX-bqP" firstAttribute="leading" secondItem="Lii-lB-44b" secondAttribute="leading" constant="16" id="3iP-y2-rpn"/>
                                         <constraint firstItem="Ebn-KX-bqP" firstAttribute="top" secondItem="Lii-lB-44b" secondAttribute="top" id="JPz-VS-wlq"/>
                                         <constraint firstAttribute="bottom" secondItem="Ebn-KX-bqP" secondAttribute="bottom" constant="25" id="eJz-ea-h8y"/>
-                                        <constraint firstItem="PG0-tN-5iY" firstAttribute="top" secondItem="Lii-lB-44b" secondAttribute="top" constant="35" id="mRw-25-HtX"/>
-                                        <constraint firstAttribute="trailing" secondItem="PG0-tN-5iY" secondAttribute="trailing" constant="16" id="qRV-TD-SCF"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="MyPicksTableViewController"/>
@@ -1582,7 +1484,6 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                     <outlet property="Date" destination="OeR-j9-CQf" id="oJC-OE-QiB"/>
                                     <outlet property="TeamLead" destination="8F3-2w-4d7" id="KVf-jQ-QGh"/>
                                     <outlet property="Time" destination="PyX-Vr-UIF" id="A09-Ya-wq6"/>
-                                    <outlet property="pickBegin" destination="PG0-tN-5iY" id="Br8-68-Xts"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1877,7 +1778,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEy-3d-kKh">
-                                <rect key="frame" x="0.0" y="481" width="375" height="54"/>
+                                <rect key="frame" x="0.0" y="432" width="375" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwn-Il-xNa">
                                         <rect key="frame" x="8" y="17" width="68" height="21"/>
@@ -1904,10 +1805,10 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-9s-1Jf">
-                                <rect key="frame" x="0.0" y="57" width="375" height="343"/>
+                                <rect key="frame" x="0.0" y="57" width="375" height="294"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ke7-nL-r9I">
-                                <rect key="frame" x="0.0" y="419" width="375" height="54"/>
+                                <rect key="frame" x="0.0" y="370" width="375" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Bank:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiE-T0-9f5">
                                         <rect key="frame" x="8" y="17" width="86" height="21"/>
@@ -1935,7 +1836,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zM4-bf-1fm">
-                                <rect key="frame" x="0.0" y="543" width="375" height="54"/>
+                                <rect key="frame" x="0.0" y="494" width="375" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opening hours:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfd-K5-a2Z">
                                         <rect key="frame" x="8" y="17" width="118" height="21"/>
@@ -1966,7 +1867,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OX-tQ-BgP">
-                                <rect key="frame" x="116" y="708" width="143" height="30"/>
+                                <rect key="frame" x="116" y="659" width="143" height="30"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.4941176471" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Directions">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1982,7 +1883,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x9q-1o-s01">
-                                <rect key="frame" x="25" y="631" width="324" height="69"/>
+                                <rect key="frame" x="25" y="582" width="324" height="69"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="uSb-uj-KOK"/>
@@ -1991,7 +1892,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9q9-Xj-PAJ">
-                                <rect key="frame" x="20.666666666666668" y="605" width="50.333333333333329" height="21"/>
+                                <rect key="frame" x="20.666666666666668" y="556" width="50.333333333333329" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2027,6 +1928,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fid-mP-JeV"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Drop off location" image="DropOff" id="I4a-vP-WX7"/>
                     <connections>
                         <outlet property="FBMapView" destination="yoh-9s-1Jf" id="s0m-FX-Jcf"/>
                         <outlet property="InstitutionName" destination="fxx-1b-SBA" id="qey-6M-o0D"/>
@@ -2039,7 +1941,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeV-bH-Zvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Gxv-8E-Hcn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1186.4000000000001" y="1951.4778325123154"/>
+            <point key="canvasLocation" x="-1026" y="2772"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RFH-y5-1D1">

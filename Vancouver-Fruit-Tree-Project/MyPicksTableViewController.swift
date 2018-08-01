@@ -122,10 +122,8 @@ class MyPicksTableViewController: UITableViewController {
         let event = myPicks[indexPath.row]
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "PickDetailsViewController") as! PickDetailsViewController
         
-        let myPick = myPicks[indexPath.row]
-        let destinationVC = currentPickViewController()
-        destinationVC.currentPick = myPick
-        destinationVC.performSegue(withIdentifier: "startOfPick", sender: self)
+        
+        
         
         detailVC.buttonColour = UIColor.red
         detailVC.buttonTitle = "Cancel"
