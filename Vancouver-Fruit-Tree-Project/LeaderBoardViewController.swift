@@ -15,8 +15,14 @@ class LeaderBoardViewController: UIViewController {
     @IBOutlet weak var firstPlace: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var rank: UILabel!
+    @IBOutlet weak var fYield: UILabel!
+    @IBOutlet weak var sYield: UILabel!
+    @IBOutlet weak var tYield: UILabel!
+    @IBOutlet weak var uYield: UILabel!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         changeLabels()
         // Do any additional setup after loading the view.
     }
@@ -80,6 +86,12 @@ class LeaderBoardViewController: UIViewController {
         
         thirdPlace.text = Array![2]._userId
         
+        fYield.text = Array![0]._yield?.stringValue
+        
+        sYield.text = Array![1]._yield?.stringValue
+        
+        tYield.text = Array![2]._yield?.stringValue
+        
         let dbi = DatabaseInterface()
         
         let userInfo: Users = dbi.queryUserInfo(userId: dbi.getUsername()!)!
@@ -90,10 +102,17 @@ class LeaderBoardViewController: UIViewController {
             let yourIndex = Array?.index(of: userInfo)
             
             rank.text = String(yourIndex! + 1)
+            
+            uYield.text = Array![yourIndex!]._yield?.stringValue
+            
         }
         else{
             rank.text = "N/A"
+            uYield.text = " "
         }
+        
+        
+        
         
     
     }

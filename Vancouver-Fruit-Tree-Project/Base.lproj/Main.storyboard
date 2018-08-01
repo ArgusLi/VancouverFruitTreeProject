@@ -1451,7 +1451,7 @@ We are happy to answer any questions at 276harvest8@gmail.com
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zw-ih-7A7">
                                 <rect key="frame" x="35" y="602" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0P-fU-8mn" userLabel="Second Place Text Box">
@@ -1512,10 +1512,35 @@ We are happy to answer any questions at 276harvest8@gmail.com
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1st" translatesAutoresizingMaskIntoConstraints="NO" id="JOL-2h-wg5">
                                 <rect key="frame" x="21" y="186" width="44" height="44"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxJ-hn-iaJ" userLabel="FirstPlaceYieldAmount">
+                                <rect key="frame" x="297" y="198" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmK-lz-yWb" userLabel="SecondPlaceYieldAmount">
+                                <rect key="frame" x="297" y="269" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeG-C4-9L4" userLabel="ThirdPlaceYieldAmount">
+                                <rect key="frame" x="297" y="339" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR2-pS-G0B" userLabel="UserYield">
+                                <rect key="frame" x="297" y="601" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Jon-j4-GiF" firstAttribute="leading" secondItem="X4d-sf-7rK" secondAttribute="trailing" constant="9" id="0R7-1n-Fpx"/>
+                            <constraint firstItem="IeG-C4-9L4" firstAttribute="centerX" secondItem="5ZG-Pb-nMz" secondAttribute="centerX" constant="130.5" id="0ZG-g9-N3K"/>
                             <constraint firstItem="JOL-2h-wg5" firstAttribute="centerY" secondItem="tVT-Ve-q1T" secondAttribute="centerY" id="0gO-Fr-CPb"/>
                             <constraint firstItem="c63-IC-gVF" firstAttribute="leading" secondItem="JOL-2h-wg5" secondAttribute="trailing" constant="9" id="1E4-f7-MmY"/>
                             <constraint firstItem="X4d-sf-7rK" firstAttribute="trailing" secondItem="o0c-ju-Xhf" secondAttribute="trailing" id="1ob-4Z-51y"/>
@@ -1530,6 +1555,8 @@ We are happy to answer any questions at 276harvest8@gmail.com
                             <constraint firstItem="QcO-jf-BYN" firstAttribute="trailing" secondItem="bKD-9D-Erp" secondAttribute="trailing" constant="214" id="8zR-Q7-ROx"/>
                             <constraint firstItem="M0P-fU-8mn" firstAttribute="top" secondItem="JOL-2h-wg5" secondAttribute="bottom" constant="23" id="915-BR-z6J"/>
                             <constraint firstItem="QcO-jf-BYN" firstAttribute="trailing" secondItem="WDp-aF-eoM" secondAttribute="trailing" id="9Op-i5-dfV"/>
+                            <constraint firstItem="YxJ-hn-iaJ" firstAttribute="top" secondItem="WDp-aF-eoM" secondAttribute="bottom" constant="-38" id="9SJ-xP-wrw"/>
+                            <constraint firstItem="YxJ-hn-iaJ" firstAttribute="centerX" secondItem="WDp-aF-eoM" secondAttribute="centerX" constant="130.5" id="AE4-8O-t3b"/>
                             <constraint firstItem="yiH-B5-Txi" firstAttribute="leading" secondItem="o0c-ju-Xhf" secondAttribute="trailing" constant="9" id="ALe-nU-nla"/>
                             <constraint firstItem="vT0-hq-eai" firstAttribute="leading" secondItem="QcO-jf-BYN" secondAttribute="leading" constant="16" id="Auf-uL-eJa"/>
                             <constraint firstItem="oKN-WV-3Ra" firstAttribute="trailing" secondItem="tVT-Ve-q1T" secondAttribute="trailing" id="B7z-Ya-VBu"/>
@@ -1553,14 +1580,17 @@ We are happy to answer any questions at 276harvest8@gmail.com
                             <constraint firstItem="tVT-Ve-q1T" firstAttribute="centerY" secondItem="c63-IC-gVF" secondAttribute="centerY" id="QTA-c8-hOX"/>
                             <constraint firstItem="oKN-WV-3Ra" firstAttribute="trailing" secondItem="yCE-di-XB6" secondAttribute="trailing" id="RBw-vf-72c"/>
                             <constraint firstItem="QcO-jf-BYN" firstAttribute="bottom" secondItem="Ej8-0E-GbC" secondAttribute="bottom" constant="138" id="RHB-xq-zSc"/>
+                            <constraint firstItem="M0P-fU-8mn" firstAttribute="top" secondItem="vmK-lz-yWb" secondAttribute="bottom" constant="-37" id="RRx-hf-IWy"/>
                             <constraint firstAttribute="trailing" secondItem="4re-MP-iJz" secondAttribute="trailing" constant="219" id="Rst-k2-iTe"/>
                             <constraint firstItem="Ej8-0E-GbC" firstAttribute="centerY" secondItem="7zw-ih-7A7" secondAttribute="centerY" id="SZ7-Jc-R18"/>
+                            <constraint firstItem="vmK-lz-yWb" firstAttribute="centerX" secondItem="M0P-fU-8mn" secondAttribute="centerX" constant="130.5" id="Sh7-d6-d4N"/>
                             <constraint firstItem="oKN-WV-3Ra" firstAttribute="baseline" secondItem="5ZG-Pb-nMz" secondAttribute="baseline" id="Uxa-9y-kJy"/>
                             <constraint firstItem="M0P-fU-8mn" firstAttribute="trailing" secondItem="U9C-2O-sWR" secondAttribute="trailing" id="X5l-wI-27g"/>
                             <constraint firstItem="M0P-fU-8mn" firstAttribute="leading" secondItem="oKN-WV-3Ra" secondAttribute="leading" id="ZTQ-aC-1TV"/>
                             <constraint firstItem="M0P-fU-8mn" firstAttribute="leading" secondItem="U9C-2O-sWR" secondAttribute="leading" id="ZfV-dS-Nef"/>
                             <constraint firstItem="WDp-aF-eoM" firstAttribute="leading" secondItem="QcO-jf-BYN" secondAttribute="leading" id="an7-qG-xG9"/>
                             <constraint firstItem="JOL-2h-wg5" firstAttribute="leading" secondItem="tVT-Ve-q1T" secondAttribute="trailing" constant="8" symbolic="YES" id="b3O-Lm-Yjz"/>
+                            <constraint firstItem="IeG-C4-9L4" firstAttribute="top" secondItem="5ZG-Pb-nMz" secondAttribute="bottom" constant="-38" id="ffo-1t-ueZ"/>
                             <constraint firstItem="X4d-sf-7rK" firstAttribute="centerY" secondItem="oKN-WV-3Ra" secondAttribute="centerY" id="fiI-K4-ble"/>
                             <constraint firstItem="QcO-jf-BYN" firstAttribute="trailing" secondItem="D2h-7i-3aa" secondAttribute="trailing" id="gJ0-F0-qin"/>
                             <constraint firstItem="Jon-j4-GiF" firstAttribute="trailing" secondItem="yiH-B5-Txi" secondAttribute="trailing" id="gjw-q5-RXF"/>
@@ -1573,10 +1603,12 @@ We are happy to answer any questions at 276harvest8@gmail.com
                             <constraint firstItem="o0c-ju-Xhf" firstAttribute="top" secondItem="WDp-aF-eoM" secondAttribute="bottom" constant="22" id="mVB-SC-ikO"/>
                             <constraint firstItem="WDp-aF-eoM" firstAttribute="top" secondItem="bKD-9D-Erp" secondAttribute="bottom" constant="40.5" id="nKw-OM-OIv"/>
                             <constraint firstItem="M0P-fU-8mn" firstAttribute="leading" secondItem="WDp-aF-eoM" secondAttribute="leading" id="o9y-JZ-Pev"/>
+                            <constraint firstItem="U9C-2O-sWR" firstAttribute="top" secondItem="qR2-pS-G0B" secondAttribute="bottom" constant="-37" id="oHm-IZ-dJK"/>
                             <constraint firstItem="M0P-fU-8mn" firstAttribute="baseline" secondItem="yCE-di-XB6" secondAttribute="baseline" id="odr-xw-3NN"/>
                             <constraint firstItem="5ZG-Pb-nMz" firstAttribute="top" secondItem="M0P-fU-8mn" secondAttribute="bottom" constant="14" id="qdH-8S-xhj"/>
                             <constraint firstItem="Ej8-0E-GbC" firstAttribute="centerY" secondItem="4re-MP-iJz" secondAttribute="centerY" id="tXm-wd-5sQ"/>
                             <constraint firstItem="QcO-jf-BYN" firstAttribute="trailing" secondItem="c63-IC-gVF" secondAttribute="trailing" constant="219" id="uGp-76-qgY"/>
+                            <constraint firstItem="qR2-pS-G0B" firstAttribute="centerX" secondItem="U9C-2O-sWR" secondAttribute="centerX" constant="130.5" id="vPc-da-fL0"/>
                             <constraint firstItem="Jon-j4-GiF" firstAttribute="leading" secondItem="yiH-B5-Txi" secondAttribute="leading" id="vmJ-6K-iOZ"/>
                             <constraint firstItem="Jon-j4-GiF" firstAttribute="leading" secondItem="c63-IC-gVF" secondAttribute="leading" id="xEh-9H-wWP"/>
                             <constraint firstItem="QcO-jf-BYN" firstAttribute="bottom" secondItem="D2h-7i-3aa" secondAttribute="bottom" id="xcK-qj-t4m"/>
@@ -1588,10 +1620,14 @@ We are happy to answer any questions at 276harvest8@gmail.com
                         <viewLayoutGuide key="safeArea" id="QcO-jf-BYN"/>
                     </view>
                     <connections>
+                        <outlet property="fYield" destination="YxJ-hn-iaJ" id="PiZ-DT-UiB"/>
                         <outlet property="firstPlace" destination="c63-IC-gVF" id="18q-Z0-Cn1"/>
                         <outlet property="rank" destination="7zw-ih-7A7" id="bRJ-ps-MOY"/>
+                        <outlet property="sYield" destination="vmK-lz-yWb" id="b7j-9z-SPd"/>
                         <outlet property="secondPlace" destination="yiH-B5-Txi" id="ge8-XS-QVs"/>
+                        <outlet property="tYield" destination="IeG-C4-9L4" id="oXn-el-4Fp"/>
                         <outlet property="thirdPlace" destination="Jon-j4-GiF" id="fag-pm-JpE"/>
+                        <outlet property="uYield" destination="qR2-pS-G0B" id="50X-R0-NKE"/>
                         <outlet property="userName" destination="4re-MP-iJz" id="r6S-W8-gJd"/>
                     </connections>
                 </viewController>
