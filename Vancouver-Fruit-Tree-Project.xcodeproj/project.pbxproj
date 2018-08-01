@@ -23,6 +23,10 @@
 		7A78B95220FFE358005569E2 /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */; };
 		7A78B95420FFE358005569E2 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
 		7A78B95520FFE358005569E2 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
+		7A8BC2B92111C77900306D0D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
+		7A8BC2BA2111C79F00306D0D /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
+		7A8BC2BB2111C79F00306D0D /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */; };
+		7A8BC2BC2111C79F00306D0D /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
 		7AFFF53D20FEB1F000A4D54D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
 		7E3B2994210FC109008369F5 /* StatVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */; };
 		7E3B2995210FC109008369F5 /* StatVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */; };
@@ -765,6 +769,7 @@
 				ACE8543820FFBFA900C2FADE /* Team.swift in Sources */,
 				ACC6BF1121115EE80038F179 /* YieldsTableViewCell.swift in Sources */,
 				ACA7FD7E20EC2ED50040EEE0 /* AppDelegate.swift in Sources */,
+				7A8BC2B92111C77900306D0D /* MyAccountViewController.swift in Sources */,
 				623296A3210FB6E0006E4C62 /* LeaderBoardViewController.swift in Sources */,
 				ACC6BF0921115ED50038F179 /* EventNotification.swift in Sources */,
 				ACC6BF0F21115EE40038F179 /* YieldsTableViewController.swift in Sources */,
@@ -806,6 +811,8 @@
 				ACC6BF0D21115EE10038F179 /* AddYieldViewController.swift in Sources */,
 				7E3B2996210FC109008369F5 /* StatVisualizationViewController.swift in Sources */,
 				ACA7FD7120EB4EB60040EEE0 /* MapAnnotation.swift in Sources */,
+				7A8BC2BA2111C79F00306D0D /* MyPickEventTableViewCell.swift in Sources */,
+				7A8BC2BC2111C79F00306D0D /* MyPicksTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -965,13 +972,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VPUNR272W3;
+				DEVELOPMENT_TEAM = QM3BQJAZQB;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject8999;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject89991;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -986,13 +993,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VPUNR272W3;
+				DEVELOPMENT_TEAM = QM3BQJAZQB;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject8999;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject89991;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

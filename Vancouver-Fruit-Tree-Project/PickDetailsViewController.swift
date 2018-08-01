@@ -54,6 +54,11 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
         self.navigationController?.pushViewController(startVC, animated: true)
         
     }
+    
+    //author: Jeff Lee
+    /// Export the map address to Apple's map app
+    ///
+    /// - Parameter sender: A clickable section
     @IBAction func directionButttonClicked(_ sender: UIButton) {
         if(getCoordinates != nil) {
             let lat = String(format: "%f", (getCoordinates?.latitude)!)

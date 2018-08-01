@@ -2,7 +2,7 @@
 //  Vancouver_Fruit_Tree_ProjectTests.swift
 //  Vancouver-Fruit-Tree-ProjectTests
 //
-//  Created by Artem Gromov on 2018-06-12.
+//  Created by Jeff Lee on 2018-08-01.
 //  Copyright © 2018 Harvest8. All rights reserved.
 //
 
@@ -21,17 +21,44 @@ class Vancouver_Fruit_Tree_ProjectTests: XCTestCase {
         super.tearDown()
     }
     
-    func testUserClass() {
-        // This is an example of a functional test case.
-        
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    //Logical test: tests if the sorting methods return the correct value
+    /// Pass if number == 1
+    /// Fail if number != 1
+    func testLeaderboadSorting()  {
+        let testVC = LeaderBoardViewController()
+        let number = 1
+        let array = [3, 2, 1, 5]
+        XCTAssertTrue(testVC.testableSortLeader(arrIn: array, n: number))
+        continueAfterFailure = false
     }
     
-    func testPerformanceExample() {
+    //Ｌoads username as an example to test if database connection is working
+    /* func testUsernameLoaded() {
+        let testVC = DatabaseInterface()
+        let testUsername = testVC.getUsername()
+        XCTAssertNotNil(testUsername)
+        continueAfterFailure = false
+    }
+    
+    func testUserEmailLoaded() {
+        let testVC = DatabaseInterface()
+        let testEmail = testVC.getEmail()
+        XCTAssertNotNil(testEmail)
+        continueAfterFailure = false
+    } */
+    
+    
+
+    
+    func testPerformance() {
         // This is an example of a performance test case.
+        let testvw = MyPicksTableViewController()
+        
         self.measure {
-            // Put the code you want to measure the time of here.
+            // testvw.loadMyPicks()
         }
+        
+       
     }
     
 }
