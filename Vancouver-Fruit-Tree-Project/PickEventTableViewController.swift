@@ -86,7 +86,6 @@ class PickEventTableViewController: UITableViewController, CLLocationManagerDele
         }
         }
         super.viewDidLoad()
-        
         loadavailablepicks()
         
         super.view.isUserInteractionEnabled = true
