@@ -24,9 +24,6 @@
 		7A78B95420FFE358005569E2 /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
 		7A78B95520FFE358005569E2 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
 		7A8BC2B92111C77900306D0D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
-		7A8BC2BA2111C79F00306D0D /* MyPickEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95020FFE358005569E2 /* MyPickEventTableViewCell.swift */; };
-		7A8BC2BB2111C79F00306D0D /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */; };
-		7A8BC2BC2111C79F00306D0D /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
 		7AFFF53D20FEB1F000A4D54D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
 		7E3B2994210FC109008369F5 /* StatVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */; };
 		7E3B2995210FC109008369F5 /* StatVisualizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3B2993210FC109008369F5 /* StatVisualizationViewController.swift */; };
@@ -110,7 +107,6 @@
 		ACC6BF2C21125AAC0038F179 /* EventNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEB6420F2AE9000C74616 /* EventNotification.swift */; };
 		ACC6BF2D21125AAC0038F179 /* EventNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEB6420F2AE9000C74616 /* EventNotification.swift */; };
 		ACC6BF2E21125AB40038F179 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
-		ACC6BF2F21125AB50038F179 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFF53C20FEB1F000A4D54D /* MyAccountViewController.swift */; };
 		ACC6BF3021125AB70038F179 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
 		ACC6BF3121125AB70038F179 /* MyPicksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B95120FFE358005569E2 /* MyPicksTableViewController.swift */; };
 		ACC6BF3221125ABA0038F179 /* MyPickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78B94E20FFE357005569E2 /* MyPickMapViewController.swift */; };
@@ -716,15 +712,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE8543720FFBFA900C2FADE /* Team.swift in Sources */,
-				ACC6BF1021115EE80038F179 /* YieldsTableViewCell.swift in Sources */,
 				ACA7FD7D20EC2ED50040EEE0 /* AppDelegate.swift in Sources */,
 				623296A2210FB6E0006E4C62 /* LeaderBoardViewController.swift in Sources */,
-				ACC6BF0821115ED40038F179 /* EventNotification.swift in Sources */,
-				ACC6BF0E21115EE40038F179 /* YieldsTableViewController.swift in Sources */,
 				AC5CD3CE20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
-				ACC6BF1A21115F010038F179 /* MyPickMapViewController.swift in Sources */,
-				ACC6BF0A21115EDD0038F179 /* MyPickTabBarController.swift in Sources */,
-				ACC6BF1621115EFB0038F179 /* MyAccountViewController.swift in Sources */,
 				AC5CD3D220F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				ACC6BF3021125AB70038F179 /* MyPicksTableViewController.swift in Sources */,
 				ACA7FD7720EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
@@ -737,13 +727,9 @@
 				ACC6BF2E21125AB40038F179 /* MyAccountViewController.swift in Sources */,
 				ACC6BF02210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */,
 				ACA7FD7420EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
-				ACC6BF1C21115F050038F179 /* MyPickEventTableViewCell.swift in Sources */,
-				ACC6BF1821115EFE0038F179 /* MyPicksTableViewController.swift in Sources */,
-				ACC6BF1221115EEB0038F179 /* TeamMembersTableViewController.swift in Sources */,
 				ACC6BF3221125ABA0038F179 /* MyPickMapViewController.swift in Sources */,
 				ACA7FD7920EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
 				ACA7FD7F20EC2ED80040EEE0 /* ViewController.swift in Sources */,
-				ACC6BF1421115EEF0038F179 /* TeamMembersTableViewCell.swift in Sources */,
 				ACC6BF2A21125AA90038F179 /* MyPickTabBarController.swift in Sources */,
 				ACC6BF1E21125A970038F179 /* DropOffViewController.swift in Sources */,
 				ACC6BF2C21125AAC0038F179 /* EventNotification.swift in Sources */,
@@ -756,7 +742,6 @@
 				ACC6BF2821125AA60038F179 /* YieldsTableViewCell.swift in Sources */,
 				AC59A1FE20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACC6BF06210EE3B50038F179 /* FoodBankViewController.swift in Sources */,
-				ACC6BF0C21115EE00038F179 /* AddYieldViewController.swift in Sources */,
 				7E3B2995210FC109008369F5 /* StatVisualizationViewController.swift in Sources */,
 				ACA7FD7020EB4EB60040EEE0 /* MapAnnotation.swift in Sources */,
 			);
@@ -767,16 +752,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE8543820FFBFA900C2FADE /* Team.swift in Sources */,
-				ACC6BF1121115EE80038F179 /* YieldsTableViewCell.swift in Sources */,
 				ACA7FD7E20EC2ED50040EEE0 /* AppDelegate.swift in Sources */,
 				7A8BC2B92111C77900306D0D /* MyAccountViewController.swift in Sources */,
 				623296A3210FB6E0006E4C62 /* LeaderBoardViewController.swift in Sources */,
-				ACC6BF0921115ED50038F179 /* EventNotification.swift in Sources */,
-				ACC6BF0F21115EE40038F179 /* YieldsTableViewController.swift in Sources */,
 				AC5CD3CF20F17E1E00C196B9 /* AddPickEventViewController.swift in Sources */,
-				ACC6BF1B21115F020038F179 /* MyPickMapViewController.swift in Sources */,
-				ACC6BF0B21115EDE0038F179 /* MyPickTabBarController.swift in Sources */,
-				ACC6BF1721115EFC0038F179 /* MyAccountViewController.swift in Sources */,
 				AC5CD3D320F297CC00C196B9 /* SearchLocationTableViewController.swift in Sources */,
 				ACC6BF3121125AB70038F179 /* MyPicksTableViewController.swift in Sources */,
 				ACA7FD7820EC2DDF0040EEE0 /* DatabaseInterface.swift in Sources */,
@@ -786,16 +765,11 @@
 				ACC6BF2721125AA30038F179 /* TeamMembersTableViewController.swift in Sources */,
 				ACC6BF3521125ABD0038F179 /* MyPickEventTableViewCell.swift in Sources */,
 				AC22283521092A9D00C5AF01 /* Constants.swift in Sources */,
-				ACC6BF2F21125AB50038F179 /* MyAccountViewController.swift in Sources */,
 				ACC6BF03210E77180038F179 /* AddDropOffLocationViewController.swift in Sources */,
 				ACA7FD7520EB4EC30040EEE0 /* PickEventTableViewCell.swift in Sources */,
-				ACC6BF1D21115F060038F179 /* MyPickEventTableViewCell.swift in Sources */,
-				ACC6BF1921115EFF0038F179 /* MyPicksTableViewController.swift in Sources */,
-				ACC6BF1321115EEB0038F179 /* TeamMembersTableViewController.swift in Sources */,
 				ACC6BF3321125ABA0038F179 /* MyPickMapViewController.swift in Sources */,
 				ACA7FD7A20EC2ECE0040EEE0 /* PickEvents.swift in Sources */,
 				ACA7FD8020EC2ED80040EEE0 /* ViewController.swift in Sources */,
-				ACC6BF1521115EEF0038F179 /* TeamMembersTableViewCell.swift in Sources */,
 				ACC6BF2B21125AA90038F179 /* MyPickTabBarController.swift in Sources */,
 				ACC6BF1F21125A980038F179 /* DropOffViewController.swift in Sources */,
 				ACC6BF2D21125AAC0038F179 /* EventNotification.swift in Sources */,
@@ -808,11 +782,8 @@
 				ACC6BF2921125AA60038F179 /* YieldsTableViewCell.swift in Sources */,
 				AC59A1FF20E85C450038BF30 /* PickDetailsViewController.swift in Sources */,
 				ACC6BF07210EE3B50038F179 /* FoodBankViewController.swift in Sources */,
-				ACC6BF0D21115EE10038F179 /* AddYieldViewController.swift in Sources */,
 				7E3B2996210FC109008369F5 /* StatVisualizationViewController.swift in Sources */,
 				ACA7FD7120EB4EB60040EEE0 /* MapAnnotation.swift in Sources */,
-				7A8BC2BA2111C79F00306D0D /* MyPickEventTableViewCell.swift in Sources */,
-				7A8BC2BC2111C79F00306D0D /* MyPicksTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -972,13 +943,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QM3BQJAZQB;
+				DEVELOPMENT_TEAM = APKLPH4X8H;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject89991;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject89;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -993,13 +964,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QM3BQJAZQB;
+				DEVELOPMENT_TEAM = APKLPH4X8H;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject89991;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.VancouverFruitTreeProject89;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -1015,6 +986,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = APKLPH4X8H;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-ProjectTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1038,6 +1010,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = APKLPH4X8H;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-ProjectTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1059,6 +1032,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = APKLPH4X8H;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-ProjectUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1081,6 +1055,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = APKLPH4X8H;
 				INFOPLIST_FILE = "Vancouver-Fruit-Tree-ProjectUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
