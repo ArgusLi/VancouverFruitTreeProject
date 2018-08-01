@@ -12,7 +12,7 @@ import AWSAuthUI
 import AWSGoogleSignIn
 import SideMenu
 class Vancouver_Fruit_Tree_ProjectUITests: XCTestCase {
-     /*
+    
     override func setUp() {
        super.setUp()
         
@@ -29,14 +29,14 @@ class Vancouver_Fruit_Tree_ProjectUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-    } */
+    }
     
     // Test all essential sections in the side menu
     // Pass - if all are place correctly
     // Fail - if one of them is missing
     func testSideMenuSections() {
         
-      /*  let app = XCUIApplication()
+        let app = XCUIApplication()
         let itemButton = app.navigationBars["Vancouver_Fruit_Tree_Project.View"].buttons["Item"]
         itemButton.tap()
         
@@ -44,7 +44,7 @@ class Vancouver_Fruit_Tree_ProjectUITests: XCTestCase {
         XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["Available Picks"]/*[[".cells.staticTexts[\"Available Picks\"]",".staticTexts[\"Available Picks\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists)
         XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["My Picks"]/*[[".cells.staticTexts[\"My Picks\"]",".staticTexts[\"My Picks\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists)
         XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["My Account"]/*[[".cells.staticTexts[\"My Account\"]",".staticTexts[\"My Account\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists)
-        XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["Leaderboard"]/*[[".cells.staticTexts[\"Leaderboard\"]",".staticTexts[\"Leaderboard\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists) */
+        XCTAssert(tablesQuery/*@START_MENU_TOKEN@*/.cells.staticTexts["Leaderboard"]/*[[".cells.staticTexts[\"Leaderboard\"]",".staticTexts[\"Leaderboard\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.exists)
     }
     
     

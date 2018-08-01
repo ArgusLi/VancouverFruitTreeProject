@@ -29,20 +29,23 @@ class Vancouver_Fruit_Tree_ProjectTests: XCTestCase {
         let number = 1
         let array = [3, 2, 1, 5]
         XCTAssertTrue(testVC.testableSortLeader(arrIn: array, n: number))
+        continueAfterFailure = false
     }
     
     //Ｌoads username as an example to test if database connection is working
-    func testUsernameLoaded() {
+    /* func testUsernameLoaded() {
         let testVC = DatabaseInterface()
         let testUsername = testVC.getUsername()
         XCTAssertNotNil(testUsername)
+        continueAfterFailure = false
     }
     
     func testUserEmailLoaded() {
         let testVC = DatabaseInterface()
         let testEmail = testVC.getEmail()
         XCTAssertNotNil(testEmail)
-    }
+        continueAfterFailure = false
+    } */
     
     
 
@@ -52,7 +55,7 @@ class Vancouver_Fruit_Tree_ProjectTests: XCTestCase {
         let testvw = MyPicksTableViewController()
         
         self.measure {
-            testvw.loadMyPicks()
+            // testvw.loadMyPicks()
         }
         
        
