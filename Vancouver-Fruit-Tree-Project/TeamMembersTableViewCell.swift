@@ -21,7 +21,7 @@ class TeamMembersTableViewCell: UITableViewCell {
             dbInterface.markPresent(pickItem: whichPick!, userID: Name.text!)
         }
         else if(oddoreven%2 == 1){
-            //mark absent
+            dbInterface.markAbsent(pickItem: whichPick!, userID: Name.text!)
         }
     }
     

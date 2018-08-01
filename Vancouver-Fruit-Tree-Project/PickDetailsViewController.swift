@@ -91,7 +91,7 @@ class PickDetailsViewController: UIViewController, CLLocationManagerDelegate, MK
         
         startThePick.isHidden = true
             
-        if (user?._role == Roles.lead.rawValue && (event?.isSignedUpFor(user: user!))!){
+        if (user?._userId == event?._teamLead && (event?.isSignedUpFor(user: user!))!){
             startThePick.isHidden =  false
         }
         
