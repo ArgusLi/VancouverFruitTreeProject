@@ -5,7 +5,7 @@ This application represents a result of collaboration between a non-for-profit o
 1. Artem Gromov
 2. Cameron Savage
 3. Oliver Fujiki
-4. Chung Li (Argus)
+4. Chun Kei Li (Argus)
 5. Jeff Lee
 
 You can contact the current development team at: 276Harvest8 at gmail . com
